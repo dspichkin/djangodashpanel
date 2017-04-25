@@ -7,7 +7,7 @@ from rest_framework.decorators import api_view
 from rest_framework.response import Response
 
 from ..models.perf import (
-    PerfCpu, PerfMemory
+    PerfCpu, PerfMemory, PerfDisk, PerfNetwork
 )
 
 
@@ -58,32 +58,6 @@ def cpu_data(request):
 
 @api_view(['GET'])
 def memory_data(request):
-    def human_size(size_bytes):
-        """
-        format a size in bytes into a 'human' file size, e.g. bytes, KB, MB, GB, TB, PB
-        Note that bytes/KB will be reported in whole numbers but MB and above will have greater precision
-        e.g. 1 byte, 43 bytes, 443 KB, 4.3 MB, 4.43 GB, etc
-        """
-        if size_bytes == 1:
-            # because I really hate unnecessary plurals
-            return "1 byte"
-
-        suffixes_table = [('bytes',0),('KB',0),('MB',1),('GB',2),('TB',2), ('PB',2)]
-
-        num = float(size_bytes)
-        for suffix, precision in suffixes_table:
-            if num < 1024.0:
-                break
-            num /= 1024.0
-
-        if precision == 0:
-            formatted_size = "%d" % num
-        else:
-            formatted_size = str(round(num, ndigits=precision))
-
-        return "%s %s" % (formatted_size, suffix)
-
-
     date_start_raw = request.GET.get('date_start')
     date_end_raw = request.GET.get('date_end')
 
@@ -103,11 +77,13 @@ def memory_data(request):
         date_end = now
 
     used = []
+    free = []
     swap_used = []
     dates = []
     memory_values = PerfMemory.objects.filter(time__range=[date_start, date_end])
     for p in memory_values:
         used.append(round(p.used, 2))
+        free.append(round(p.available, 2))
         swap_used.append(round(p.swap_used, 2))
         dates.append(timezone.localtime(p.time).strftime("%b %d %H:%M"))
 
@@ -125,6 +101,9 @@ def memory_data(request):
             "data": used,
             "label": 'Memory used'
         }, {
+            "data": free,
+            "label": 'Memory free '
+        }, {
             "data": swap_used,
             "label": 'Swap memory used'
         }
@@ -132,3 +111,113 @@ def memory_data(request):
         "dates": dates,
         "date_range": date_range
     }, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def disk_data(request):
+    date_start_raw = request.GET.get('date_start')
+    date_end_raw = request.GET.get('date_end')
+
+    date_start = None
+    date_end = None
+
+    if not date_start_raw or not date_end_raw:
+        now = timezone.now()
+        date_start = now - timedelta(hours=4)
+        date_end = now
+    else:
+        date_start = datetime.fromtimestamp(int(date_start_raw))
+        date_end = datetime.fromtimestamp(int(date_end_raw))
+    if date_start == date_end:
+        now = timezone.now()
+        date_start = now - timedelta(hours=4)
+        date_end = now
+
+    used_percent = []
+    dates = []
+    disk_values = PerfDisk.objects.filter(time__range=[date_start, date_end])
+    for p in disk_values:
+        used_percent.append(round(p.percent, 2))
+        dates.append(timezone.localtime(p.time).strftime("%b %d %H:%M"))
+
+    date_range = {
+        "start": time.mktime(timezone.localtime(disk_values[0].time).timetuple())
+    }
+    start_obj = PerfMemory.objects.all().first()
+    if start_obj:
+        date_range["start_date"] = time.mktime(timezone.localtime(start_obj.time).timetuple())
+    end_obj = PerfMemory.objects.all().last()
+    if end_obj:
+        date_range["end_date"] = time.mktime(timezone.localtime(end_obj.time).timetuple())
+    return Response({
+        "values": [{
+            "data": used_percent,
+            "label": 'Disk used %'
+        }],
+        "dates": dates,
+        "date_range": date_range
+    }, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def network_data(request):
+    date_start_raw = request.GET.get('date_start')
+    date_end_raw = request.GET.get('date_end')
+
+    date_start = None
+    date_end = None
+
+    if not date_start_raw or not date_end_raw:
+        now = timezone.now()
+        date_start = now - timedelta(hours=4)
+        date_end = now
+    else:
+        date_start = datetime.fromtimestamp(int(date_start_raw))
+        date_end = datetime.fromtimestamp(int(date_end_raw))
+    if date_start == date_end:
+        now = timezone.now()
+        date_start = now - timedelta(hours=4)
+        date_end = now
+
+    bytes_sent = []
+    bytes_recv = []
+    dates = []
+    disk_values = PerfNetwork.objects.filter(time__range=[date_start, date_end])
+
+    old_value_bytes_sent = None
+    old_value_bytes_recv = None
+    for p in disk_values:
+        if old_value_bytes_sent:
+            current_bytes_sent = p.bytes_sent - old_value_bytes_sent
+            bytes_sent.append(round(current_bytes_sent, 2))
+
+        if old_value_bytes_recv:
+            current_bytes_recv = p.bytes_recv - old_value_bytes_recv
+            bytes_recv.append(round(current_bytes_recv, 2))
+
+        if old_value_bytes_sent and old_value_bytes_recv:
+            dates.append(timezone.localtime(p.time).strftime("%b %d %H:%M"))
+        old_value_bytes_sent = p.bytes_sent
+        old_value_bytes_recv = p.bytes_recv
+
+    date_range = {
+        "start": time.mktime(timezone.localtime(disk_values[0].time).timetuple())
+    }
+    start_obj = PerfNetwork.objects.all().first()
+    if start_obj:
+        date_range["start_date"] = time.mktime(timezone.localtime(start_obj.time).timetuple())
+    end_obj = PerfNetwork.objects.all().last()
+    if end_obj:
+        date_range["end_date"] = time.mktime(timezone.localtime(end_obj.time).timetuple())
+    return Response({
+        "values": [{
+            "data": bytes_sent,
+            "label": 'Bytes send %'
+        }, {
+            "data": bytes_recv,
+            "label": 'Bytes recive %'
+        }],
+        "dates": dates,
+        "date_range": date_range
+    }, status=status.HTTP_200_OK)
+

@@ -2,16 +2,16 @@ Django dashboard panel
 ======================
 
 # In progress 
-# under development
+# under development do not use it yet
 
-# Run frontend watcher
+### Run frontend watcher
 
 ```
 ng build -w -d /static/
 ```
 
 
-# Install
+### Install
 
 ```
 urlpatterns = [
@@ -29,7 +29,7 @@ python manage.py migrate
 ```
 
 
-# Make cron task
+### Make cron task
 
 File example run_cron.sh with virtual envirement
 

@@ -5,20 +5,21 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
+import { AppSettings } from '../app.settings';
 
 
 @Injectable()
 export class ChartsService {
 
-	private baseUrl = '/dash/api/';
-	private perfCpuUrl = this.baseUrl + 'perf/cpu/';
-	private perfMemoryUrl = this.baseUrl + 'perf/memory/';
-
 	constructor (private http: Http) {}
 
-	public getPerfCpu(_params): Observable<any> {
+	
+	
+
+	public getPerf(url, _params): Observable<any> {
 		let data = _params || {};
-		
+		data.t = new Date().getTime();
+
 		let params: URLSearchParams = new URLSearchParams();
         for (var key in data) {
           	if (data.hasOwnProperty(key)) {
@@ -30,27 +31,7 @@ export class ChartsService {
         	search: params
       	});
 
-		return this.http.get(this.perfCpuUrl, options)
-			.map(this.extractData)
-			.catch(this.handleError);
-	}
-
-
-	public getMemoryCpu(_params): Observable<any> {
-		let data = _params || {};
-		
-		let params: URLSearchParams = new URLSearchParams();
-        for (var key in data) {
-          	if (data.hasOwnProperty(key)) {
-            	let val = data[key];
-             	params.set(key, val);
-          	}
-        }
-        let options = new RequestOptions({
-        	search: params
-      	});
-
-		return this.http.get(this.perfMemoryUrl, options)
+		return this.http.get(url, options)
 			.map(this.extractData)
 			.catch(this.handleError);
 	}

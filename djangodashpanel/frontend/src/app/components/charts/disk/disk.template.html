@@ -11,6 +11,7 @@
     <h3 style="color: #337ab7">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>
     <nouislider [min]="dateRangeMin" [max]="dateRangeMax"  [connect]="true" [(ngModel)]="dateRange" (ngModelChange)="onChange($event)" [disabled]="loading" [format]="formatter" [tooltips]="false" [step]="1000"></nouislider>
 
+
     <!-- Loading -->
     <div *ngIf="loading" style="position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;">
         <div style="position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;">

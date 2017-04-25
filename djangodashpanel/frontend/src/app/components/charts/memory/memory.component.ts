@@ -5,6 +5,7 @@ import { BaseChartDirective } from '../../../libs/ng2-charts/ng2-charts';
 
 import { NouisliderComponent } from 'ng2-nouislider';
 
+import { AppSettings } from '../../../app.settings';
 import { ChartsService } from '../../../services/charts.services';
 
 declare var moment: any;
@@ -53,7 +54,7 @@ export class MemoryComponent implements OnInit {
     };
 
     public lineChartData:Array<any> = [
-        {data: [], label: ''}, {data: [], label: ''}
+        {data: [], label: ''}, {data: [], label: ''}, {data: [], label: ''}
     ];
     public lineChartLabels:Array<any> = [];
 
@@ -61,28 +62,22 @@ export class MemoryComponent implements OnInit {
         animation: false,
         responsive: true,
         scales: {
-        yAxes: [{
-            ticks: {
-                callback: function(value: number, index, values) {
-                    let k = 1000, dm = 2;
-                    let bytes = value;
-                    if (value == 0) {
-                        return '0 Bytes';
+            yAxes: [{
+                ticks: {
+                    callback: function(value: number, index, values) {
+                        let k = 1000, dm = 2;
+                        let bytes = value;
+                        if (value == 0) {
+                            return '0 Bytes';
+                        }
+                        let sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
+                        i = Math.floor(Math.log(bytes) / Math.log(k));
+                        let data = parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
+                        return data;
                     }
-                    let sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
-                    i = Math.floor(Math.log(bytes) / Math.log(k));
-                    let data = parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
-                    return data;
                 }
-            }
-       }]
-     },
-
-        scaleLabel: function(label){
-            console.log("label", label)
-            return label
-            //return  '$' + label.value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-        }
+           }]
+         }
     };
     public lineChartColors:Array<any> = [{
       backgroundColor: 'rgba(28,132,198,0.3)',
@@ -93,6 +88,13 @@ export class MemoryComponent implements OnInit {
       pointHoverBorderColor: 'rgba(10,10,24,0.2)'
     }, {
       backgroundColor: 'rgba(200,159,177,0.8)',
+      borderColor: 'rgba(225,10,24,0.2)',
+      pointBackgroundColor: 'rgba(10,10,24,0.2)',
+      pointBorderColor: '#fff',
+      pointHoverBackgroundColor: '#fff',
+      pointHoverBorderColor: 'rgba(10,10,24,0.2)'
+    }, {
+      backgroundColor: 'rgba(35,198,177,0.8)',
       borderColor: 'rgba(225,10,24,0.2)',
       pointBackgroundColor: 'rgba(10,10,24,0.2)',
       pointBorderColor: '#fff',
@@ -116,7 +118,7 @@ export class MemoryComponent implements OnInit {
     ngOnInit() { 
         let self = this;
         self.loading = true;
-        self.chartService.getMemoryCpu({})
+        self.chartService.getPerf(AppSettings.perfMemoryUrl, {})
         .subscribe(
             function(data) {
                 self.loading = false;
@@ -173,7 +175,7 @@ export class MemoryComponent implements OnInit {
             date_end: this.dateRange[1]
         }
         self.loading = true;
-        self.chartService.getMemoryCpu(params)
+        self.chartService.getPerf(AppSettings.perfMemoryUrl, params)
         .subscribe(
             function(data) {
                 self.loading = false;

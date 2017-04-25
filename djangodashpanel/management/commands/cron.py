@@ -21,8 +21,12 @@ from djangodashpanel.models.security import (
     SecurityData, SecurityLoginAttemptIncorrect, SecurityLoginAttemptCorrect)
 
 
-PATH_LOGIN_ATTEMPT_INCORRECT = settings.PATH_LOGIN_ATTEMPT_INCORRECT
-PATH_LOGIN_ATTEMPT_CORRECT = settings.PATH_LOGIN_ATTEMPT_INCORRECT
+PATH_LOGIN_ATTEMPT_INCORRECT = None
+PATH_LOGIN_ATTEMPT_CORRECT = None
+if hasattr(settings, "PATH_LOGIN_ATTEMPT_INCORRECT"):
+    PATH_LOGIN_ATTEMPT_INCORRECT = settings.PATH_LOGIN_ATTEMPT_INCORRECT
+if hasattr(settings, "PATH_LOGIN_ATTEMPT_INCORRECT"):
+    PATH_LOGIN_ATTEMPT_CORRECT = settings.PATH_LOGIN_ATTEMPT_INCORRECT
 
 
 class Command(BaseCommand):

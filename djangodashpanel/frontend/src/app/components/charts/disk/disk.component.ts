@@ -8,7 +8,6 @@ import { NouisliderComponent } from 'ng2-nouislider';
 import { AppSettings } from '../../../app.settings';
 import { ChartsService } from '../../../services/charts.services';
 
-
 declare var moment: any;
 
 interface NouiFormatter {
@@ -18,10 +17,10 @@ interface NouiFormatter {
 
 
 @Component({
-    selector: 'cpu-chart',
-    templateUrl: 'cpu.template.html',
+    selector: 'disk-chart',
+    templateUrl: 'disk.template.html',
 })
-export class CpuComponent implements OnInit { 
+export class DiskComponent implements OnInit { 
     @ViewChild( BaseChartDirective ) chart: BaseChartDirective;
     @ViewChild( NouisliderComponent ) slider: NouisliderComponent;
 
@@ -53,6 +52,7 @@ export class CpuComponent implements OnInit {
     };
 
     constructor (private chartService: ChartsService, private chRef: ChangeDetectorRef) {
+        
     }
 
     public lineChartData:Array<any> = [
@@ -62,10 +62,25 @@ export class CpuComponent implements OnInit {
 
     public lineChartOptions:any = {
         animation: false,
-        responsive: true
+        responsive: true,
+        scales: {
+            yAxes: [{
+                display: true,
+                ticks: {
+                    beginAtZero: true,
+                    steps: 5,
+                    stepValue: 5,
+                    max: 100,
+                    callback: function(value: number, index, values) {
+                        return value + "%";
+                    }
+                }
+            }]
+        }
+
     };
     public lineChartColors:Array<any> = [{
-      backgroundColor: 'rgba(10,159,177,0.5)',
+      backgroundColor: 'rgba(248,172,89,0.5)',
       borderColor: 'rgba(225,10,24,0.2)',
       pointBackgroundColor: 'rgba(10,10,24,0.2)',
       pointBorderColor: '#fff',
@@ -87,7 +102,7 @@ export class CpuComponent implements OnInit {
     ngOnInit() { 
         let self = this;
         self.loading = true;
-        self.chartService.getPerf(AppSettings.perfCpuUrl,{})
+        self.chartService.getPerf(AppSettings.perfDiskUrl, {})
         .subscribe(
             function(data) {
                 self.loading = false;
@@ -98,6 +113,7 @@ export class CpuComponent implements OnInit {
                 self.onInitTime = true;
                 self.dateRangeMin =  data.date_range.start_date;
                 self.dateRangeMax =  data.date_range.end_date;
+                
                 self.slider.slider.updateOptions({
                     start: [data.date_range.start, data.date_range.end_date],
                     range: {
@@ -107,7 +123,8 @@ export class CpuComponent implements OnInit {
                 });
                 self.dateRange = [data.date_range.start, data.date_range.end_date];
                 self.chRef.detectChanges();
-                    
+
+
                 setTimeout(function() {
                     self.onInitTime = false;
                 }, 1000);
@@ -129,7 +146,6 @@ export class CpuComponent implements OnInit {
     }
 
     public onChange($event) {
-        //console.log('this.dateRange', this.dateRange)
         this.rangeStartDate = moment(this.dateRange[0], 'X').format('MMM DD HH:mm');
         this.rangeEndDate = moment(this.dateRange[1], 'X').format('MMM-DD HH:mm');
         this.getData();
@@ -146,7 +162,7 @@ export class CpuComponent implements OnInit {
             date_end: this.dateRange[1]
         }
         self.loading = true;
-        self.chartService.getPerf(AppSettings.perfCpuUrl, params)
+        self.chartService.getPerf(AppSettings.perfDiskUrl, params)
         .subscribe(
             function(data) {
                 self.loading = false;

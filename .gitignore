@@ -1,0 +1,14 @@
+.idea
+*.pyc
+.DS_Store
+._.DS_Store
+logs/
+*.db
+*.sqlite3
+*.swp
+temp/
+media/*
+
+node_modules/
+bower_components/*
+www

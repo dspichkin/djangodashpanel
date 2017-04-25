@@ -1,0 +1,14 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~nouislider/distribute/nouislider.min.css";
+
+.noUi-horizontal .noUi-handle {
+	width: 17px !important;
+}
+
+noUi-handle:after, .noUi-handle:before {
+    left: 5px !important;
+}
+
+.noUi-handle:after {
+    left: 9px !important;
+}

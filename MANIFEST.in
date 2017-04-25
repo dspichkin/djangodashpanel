@@ -1,0 +1,7 @@
+include LICENSE
+include README.rst
+recursive-include djsecurity/admin *
+recursive-include djsecurity/jobs *
+recursive-include djsecurity/static *
+recursive-include djsecurity/templates *
+recursive-include djsecurity/docs *

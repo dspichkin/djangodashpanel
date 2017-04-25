@@ -12,14 +12,15 @@ import { ROUTES } from "./app.routes";
 
 // App modules/components
 import { LayoutsModule } from "./components/common/layouts/layouts.module";
-//import { MyChartsModule } from "./components/charts/charts.module";
 
 // App views
 import { MainViewModule } from "./views/main-view/main-view.module";
 import { MinorViewModule } from "./views/minor-view/minor-view.module";
+import { PerfViewModule } from "./views/perf-view/perf-view.module";
 
 // App services
 import { ChartsService } from "./services/charts.services";
+import { DashboardService } from './services/dashboard.service';
 
 @NgModule({
   declarations: [
@@ -35,15 +36,16 @@ import { ChartsService } from "./services/charts.services";
     // Views
     MainViewModule,
     MinorViewModule,
-    //MyChartsModule,
+    PerfViewModule,
 
     // Modules
     LayoutsModule,
 
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES, { useHash: true })
   ],
   providers: [
-    ChartsService
+    ChartsService,
+    DashboardService
   ],
   bootstrap: [AppComponent]
 })

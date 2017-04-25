@@ -8,7 +8,7 @@ from djangodashpanel.views import HomePageView
 
 
 def sredirect(request, url):
-    return HttpResponseRedirect("/%s" % url)
+    return HttpResponseRedirect("/dash/#/%s" % url)
 
 
 urlpatterns = [

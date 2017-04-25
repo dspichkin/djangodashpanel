@@ -62,7 +62,21 @@ export class CpuComponent implements OnInit {
 
     public lineChartOptions:any = {
         animation: false,
-        responsive: true
+        responsive: true,
+        scales: {
+            yAxes: [{
+                display: true,
+                ticks: {
+                    beginAtZero: true,
+                    steps: 5,
+                    stepValue: 5,
+                    max: 100,
+                    callback: function(value: number, index, values) {
+                        return value + "%";
+                    }
+                }
+            }]
+        }
     };
     public lineChartColors:Array<any> = [{
       backgroundColor: 'rgba(10,159,177,0.5)',

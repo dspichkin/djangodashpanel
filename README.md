@@ -14,6 +14,18 @@ ng build -w -d /static/
 ### Install
 
 ```
+
+pip install git+https://github.com/dspichkin/djangodashpanel --update
+...
+
+INSTALLED_APPS = [
+    ...
+    'djangodashpanel',
+    ...
+]
+
+...
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     ...

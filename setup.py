@@ -8,14 +8,14 @@ with open(os.path.join(os.path.dirname(__file__), 'README.rst')) as readme:
 os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
-    name='django-polls',
+    name='django-dashpanel',
     version='0.1',
     packages=find_packages(),
     include_package_data=True,
-    license='BSD License',  # example license
-    description='A simple Django app to conduct Web-based polls.',
+    license='GNU GENERAL PUBLIC LICENSE',  # example license
+    description='A simple Django app for monitoring.',
     long_description=README,
-    url='https://github.com/dspichkin/djsecurity',
+    url='https://github.com/dspichkin/djangodashpanel',
     author='Denis Y. Spichkin',
     author_email='user783@gmail.com',
     classifiers=[
@@ -23,7 +23,7 @@ setup(
         'Framework :: Django',
         'Framework :: Django :: X.Y',  # replace "X.Y" as appropriate
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: BSD License',  # example license
+        'License :: GNU GENERAL PUBLIC LICENSE',  # example license
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         # Replace these appropriately if you are stuck on Python 2.

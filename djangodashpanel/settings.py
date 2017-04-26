@@ -5,8 +5,9 @@ import os
 # "dead".  Default is 1 minute (60 seconds)
 # LOCK_TIMEOUT = getattr(settings, 'DJSECURITY_LOCK_TIMEOUT', 60)
 
-settings.INSTALLED_APPS.append(
-    'rest_framework'
+if 'rest_framework' not in settings.INSTALLED_APPS:
+    settings.INSTALLED_APPS.append(
+        'rest_framework'
     )
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))

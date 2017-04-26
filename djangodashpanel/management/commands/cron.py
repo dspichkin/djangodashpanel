@@ -21,12 +21,7 @@ from djangodashpanel.models.security import (
     SecurityData, SecurityLoginAttemptIncorrect, SecurityLoginAttemptCorrect)
 
 
-PATH_LOGIN_ATTEMPT_INCORRECT = None
-PATH_LOGIN_ATTEMPT_CORRECT = None
-if hasattr(settings, "PATH_LOGIN_ATTEMPT_INCORRECT"):
-    PATH_LOGIN_ATTEMPT_INCORRECT = settings.PATH_LOGIN_ATTEMPT_INCORRECT
-if hasattr(settings, "PATH_LOGIN_ATTEMPT_INCORRECT"):
-    PATH_LOGIN_ATTEMPT_CORRECT = settings.PATH_LOGIN_ATTEMPT_INCORRECT
+
 
 
 class Command(BaseCommand):
@@ -129,7 +124,11 @@ class Command(BaseCommand):
         PerfSystem.objects.put(timezone.now(), systems)
 
     def set_login_attempt_incorrect(self):
-        if not PATH_LOGIN_ATTEMPT_INCORRECT or os.path.exists(PATH_LOGIN_ATTEMPT_INCORRECT):
+        PATH_LOGIN_ATTEMPT_INCORRECT = None
+        if hasattr(settings, "PATH_LOGIN_ATTEMPT_INCORRECT"):
+            PATH_LOGIN_ATTEMPT_INCORRECT = settings.PATH_LOGIN_ATTEMPT_INCORRECT
+
+        if not PATH_LOGIN_ATTEMPT_INCORRECT or not os.path.exists(PATH_LOGIN_ATTEMPT_INCORRECT):
             return
 
         sec = SecurityData.get_solo()
@@ -170,7 +169,12 @@ class Command(BaseCommand):
                         sec.save()
 
     def set_login_attempt_correct(self):
-        if not PATH_LOGIN_ATTEMPT_CORRECT or os.path.exists(PATH_LOGIN_ATTEMPT_CORRECT):
+        PATH_LOGIN_ATTEMPT_CORRECT = None
+
+        if hasattr(settings, "PATH_LOGIN_ATTEMPT_CORRECT"):
+            PATH_LOGIN_ATTEMPT_CORRECT = settings.PATH_LOGIN_ATTEMPT_CORRECT
+
+        if not PATH_LOGIN_ATTEMPT_CORRECT or not os.path.exists(PATH_LOGIN_ATTEMPT_CORRECT):
             return
 
         sec = SecurityData.get_solo()

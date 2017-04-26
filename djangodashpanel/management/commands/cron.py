@@ -137,7 +137,7 @@ class Command(BaseCommand):
                 if not sec.run_last_login_attemp_incorrect or sec.run_last_login_attemp_incorrect < dt_last_tz:
                     obj_id = int(str(dt.weekday()) + str(dt.hour) + str(int(math.ceil(dt.minute / 5)) * 5))
                     obj, created = SecurityLoginAttemptIncorrect.objects.get_or_create(pk=obj_id)
-                    obj.time = timezone.localtime(dt)
+                    obj.time = pytz.timezone(settings.TIME_ZONE).localize(dt)
 
                     if obj.value:
                         data = json.loads(obj.value)
@@ -183,7 +183,7 @@ class Command(BaseCommand):
                 if not sec.run_last_login_attemp_correct or sec.run_last_login_attemp_correct < dt_last_tz:
                     obj_id = int(str(dt.weekday()) + str(dt.hour) + str(int(math.ceil(dt.minute / 5)) * 5))
                     obj, created = SecurityLoginAttemptCorrect.objects.get_or_create(pk=obj_id)
-                    obj.time = timezone.localtime(dt)
+                    obj.time = pytz.timezone(settings.TIME_ZONE).localize(dt)
                     if obj.value:
                         data = json.loads(obj.value)
 

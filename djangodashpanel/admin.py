@@ -44,11 +44,11 @@ class SecurityDataAdmin(admin.ModelAdmin):
 
 
 class SecurityLoginAttemptIncorrectAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'value')
+    list_display = ('pk', 'time', 'value')
 
 
 class SecurityLoginAttemptCorrectAdmin(admin.ModelAdmin):
-    list_display = ('pk', 'value')
+    list_display = ('pk', 'time', 'value')
 
 
 admin.site.register(PerfData, PerfDataAdmin)

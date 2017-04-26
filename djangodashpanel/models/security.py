@@ -55,7 +55,7 @@ class SecurityLoginAttemptIncorrect(models.Model):
         ordering = ('time',)
 
     def __str__(self):
-        return "%s %s" % (self.time, self.login_attempt_incorrect)
+        return "%s %s" % (self.time, self.value)
 
 
 @python_2_unicode_compatible
@@ -75,4 +75,4 @@ class SecurityLoginAttemptCorrect(models.Model):
         ordering = ('time',)
 
     def __str__(self):
-        return "%s %s" % (self.time, self.login_attempt_incorrect)
+        return "%s %s" % (self.time, self.value)

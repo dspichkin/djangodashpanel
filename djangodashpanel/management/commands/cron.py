@@ -32,10 +32,6 @@ class Command(BaseCommand):
         perf = PerfData.get_solo()
         now = timezone.now()
 
-        self.set_login_attempt_incorrect()
-
-        return
-
         self.set_cpu()
         self.set_network()
 
@@ -51,8 +47,9 @@ class Command(BaseCommand):
         if not perf.run_last_time_1h or perf.run_last_time_1h + timedelta(minutes=60) < now:
             perf.run_last_time_1h = timezone.now()
             self.set_process()
-            #self.set_login_attempt_correct()
-        
+            self.set_login_attempt_incorrect()
+            self.set_login_attempt_correct()
+
         perf.run_last_time_5m = timezone.now()
         perf.save()
 

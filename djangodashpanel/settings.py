@@ -32,14 +32,15 @@ settings.TEMPLATES.append({
     }
 })
 
-PATH_STATIC = os.path.join(BASE_DIR, 'djangodashpanel', 'frontend', 'dist')
-if isinstance(settings.STATICFILES_DIRS, tuple):
-    settings.STATICFILES_DIRS + (PATH_STATIC,)
-if isinstance(settings.STATICFILES_DIRS, list):
-    settings.STATICFILES_DIRS.append(PATH_STATIC)
+# PATH_STATIC = os.path.join(BASE_DIR, 'djangodashpanel', 'frontend', 'dist')
 
-PATH_LOGIN_ATTEMPT_INCORRECT = os.path.join(BASE_DIR, '..', 'btmp')
-PATH_LOGIN_ATTEMPT_CORRECT = os.path.join(BASE_DIR, '..', 'wtmp')
+# if isinstance(settings.STATICFILES_DIRS, tuple):
+#    settings.STATICFILES_DIRS + (PATH_STATIC,)
+# if isinstance(settings.STATICFILES_DIRS, list):
+#    settings.STATICFILES_DIRS.append(PATH_STATIC)
 
-#setattr(settings, 'PATH_LOGIN_ATTEMPT_INCORRECT', PATH_LOGIN_ATTEMPT_INCORRECT)
-#setattr(settings, 'PATH_LOGIN_ATTEMPT_CORRECT', PATH_LOGIN_ATTEMPT_CORRECT)
+PATH_LOGIN_ATTEMPT_INCORRECT = '/var/log/btmp'
+PATH_LOGIN_ATTEMPT_CORRECT = '/var/log/wtmp'
+
+setattr(settings, 'PATH_LOGIN_ATTEMPT_INCORRECT', PATH_LOGIN_ATTEMPT_INCORRECT)
+setattr(settings, 'PATH_LOGIN_ATTEMPT_CORRECT', PATH_LOGIN_ATTEMPT_CORRECT)

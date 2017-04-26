@@ -120,8 +120,9 @@ class Command(BaseCommand):
         PerfSystem.objects.put(timezone.now(), systems)
 
     def set_login_attempt_incorrect(self):
-        if not PATH_LOGIN_ATTEMPT_INCORRECT:
+        if not PATH_LOGIN_ATTEMPT_INCORRECT or os.path.exists(PATH_LOGIN_ATTEMPT_INCORRECT):
             return
+
         sec = SecurityData.get_solo()
         with open(PATH_LOGIN_ATTEMPT_INCORRECT, 'rb') as fd:
             buf = fd.read()
@@ -160,8 +161,9 @@ class Command(BaseCommand):
                         sec.save()
 
     def set_login_attempt_correct(self):
-        if not PATH_LOGIN_ATTEMPT_CORRECT:
+        if not PATH_LOGIN_ATTEMPT_CORRECT or os.path.exists(PATH_LOGIN_ATTEMPT_CORRECT):
             return
+
         sec = SecurityData.get_solo()
         with open(PATH_LOGIN_ATTEMPT_CORRECT, 'rb') as fd:
             buf = fd.read()

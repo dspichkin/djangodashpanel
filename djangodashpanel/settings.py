@@ -28,8 +28,10 @@ settings.TEMPLATES.append({
 })
 
 PATH_STATIC = os.path.join(BASE_DIR, 'djangodashpanel', 'frontend', 'dist')
-settings.STATICFILES_DIRS + PATH_STATIC
-
+if isinstance(settings.STATICFILES_DIRS, tuple):
+    settings.STATICFILES_DIRS.add(PATH_STATIC)
+if isinstance(settings.STATICFILES_DIRS, list):
+    settings.STATICFILES_DIRS.append(PATH_STATIC)
 
 PATH_LOGIN_ATTEMPT_INCORRECT = os.path.join(BASE_DIR, '..', 'btmp')
 PATH_LOGIN_ATTEMPT_CORRECT = os.path.join(BASE_DIR, '..', 'wtmp')

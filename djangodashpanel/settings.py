@@ -29,7 +29,7 @@ settings.TEMPLATES.append({
 
 PATH_STATIC = os.path.join(BASE_DIR, 'djangodashpanel', 'frontend', 'dist')
 if isinstance(settings.STATICFILES_DIRS, tuple):
-    settings.STATICFILES_DIRS.add(PATH_STATIC)
+    settings.STATICFILES_DIRS + (PATH_STATIC,)
 if isinstance(settings.STATICFILES_DIRS, list):
     settings.STATICFILES_DIRS.append(PATH_STATIC)
 

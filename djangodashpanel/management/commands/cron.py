@@ -4,9 +4,11 @@ import logging
 import os
 import json
 import math
-import utmp
+#import utmp
 import psutil
 import pytz
+from ..pyutmp import UtmpFile
+import time
 
 from datetime import timedelta
 from django.core.management.base import BaseCommand
@@ -44,7 +46,7 @@ class Command(BaseCommand):
         if not perf.run_last_time_1h or perf.run_last_time_1h + timedelta(minutes=60) < now:
             perf.run_last_time_1h = timezone.now()
             self.set_process()
-        self.set_login_attempt_correct()
+            #self.set_login_attempt_correct()
         self.set_login_attempt_incorrect()
 
         perf.run_last_time_5m = timezone.now()
@@ -129,6 +131,11 @@ class Command(BaseCommand):
             return
 
         sec = SecurityData.get_solo()
+        
+        for utmp in UtmpFile():
+            if utmp.ut_user_process:
+                print utmp.ut_user, time.ctime(utmp.ut_time), utmp.ut_line
+        """
         with open(PATH_LOGIN_ATTEMPT_INCORRECT, 'rb') as fd:
             buf = fd.read()
             for entry in utmp.read(buf):
@@ -164,7 +171,8 @@ class Command(BaseCommand):
                     if not sec.run_last_login_attemp_incorrect or dt_last_tz > sec.run_last_login_attemp_incorrect:
                         sec.run_last_login_attemp_incorrect = dt_last_tz
                         sec.save()
-
+        """
+    """
     def set_login_attempt_correct(self):
         PATH_LOGIN_ATTEMPT_CORRECT = None
 
@@ -209,3 +217,4 @@ class Command(BaseCommand):
                     if not sec.run_last_login_attemp_correct or dt_last_tz > sec.run_last_login_attemp_correct:
                         sec.run_last_login_attemp_correct = dt_last_tz
                         sec.save()
+    """

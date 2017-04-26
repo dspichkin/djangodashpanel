@@ -9,10 +9,10 @@ if 'rest_framework' not in settings.INSTALLED_APPS:
     settings.INSTALLED_APPS.append(
         'rest_framework'
     )
-#if 'solo' not in settings.INSTALLED_APPS:
-#    settings.INSTALLED_APPS.append(
-#        'solo'
-#    )
+if 'solo' not in settings.INSTALLED_APPS:
+    settings.INSTALLED_APPS.append(
+        'solo'
+    )
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PATH_TEMPLATE = os.path.join(BASE_DIR, 'djangodashpanel', 'frontend', 'dist')

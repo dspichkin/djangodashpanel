@@ -7,7 +7,8 @@ try:
 except ImportError:
     from django.core.cache import get_cache
 
-from solo import settings as solo_settings
+#from .solo import settings as solo_settings
+import settings as solo_settings
 
 
 class SingletonModel(models.Model):

@@ -13,7 +13,6 @@ ng build -w -d /static/
 
 ### Install
 
-Required Django REST Framework
 
 ```
 
@@ -22,7 +21,6 @@ pip install git+https://github.com/dspichkin/djangodashpanel
 
 INSTALLED_APPS = [
     ...
-    'rest_framework' 
     'djangodashpanel',
     ...
 ]

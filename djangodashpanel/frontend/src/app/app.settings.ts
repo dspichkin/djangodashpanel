@@ -8,4 +8,5 @@ export class AppSettings {
 
 	public static BootTimeUrl = AppSettings.baseUrl + 'perf/boottime/';
 	public static UsersUrl = AppSettings.baseUrl + 'perf/users/';
+	public static DashUrl = AppSettings.baseUrl + 'perf/dash/';
 }

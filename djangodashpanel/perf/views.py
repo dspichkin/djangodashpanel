@@ -1,5 +1,8 @@
 import time
 import psutil
+import platform
+import socket
+import sys
 
 from datetime import datetime, timedelta
 from django.utils import timezone
@@ -12,6 +15,67 @@ from rest_framework.response import Response
 from ..models.perf import (
     PerfCpu, PerfMemory, PerfDisk, PerfNetwork
 )
+
+
+@api_view(['GET'])
+def info_data(request):
+    data = {
+        "name": socket.gethostname(),
+        "fqdn": socket.getfqdn(),
+        "system platform": sys.platform,
+        "machine": platform.machine(),
+        "node": platform.node(),
+        "platform": platform.platform(),
+        "processor": platform.processor(),
+        "system": platform.system(),
+        "release": platform.release(),
+        "version": platform.version(),
+        "cpus": str(psutil.cpu_count()),
+        # "linux_distribution": platform.linux_distribution(),
+        "physicalCpu": str(psutil.cpu_count(logical=False))
+    }
+
+    return Response({
+        "info": data
+    }, status=status.HTTP_200_OK)
+
+
+@api_view(['GET'])
+def dash_info_data(request):
+    now = timezone.now()
+    hours = request.GET.get("hours", 8)
+    date_start = now - timedelta(hours=hours)
+    date_end = now
+
+    count = 0
+    cpu_temp = 0
+    for cpu in PerfCpu.objects.filter(time__range=[date_start, date_end]):
+        cpu_temp += cpu.value
+        count += 1
+    avarage_cpu = round(float(cpu_temp) / count, 2)
+
+    count = 0
+    memory_temp = 0
+    for m in PerfMemory.objects.filter(time__range=[date_start, date_end]):
+        memory_temp += m.percent
+        count += 1
+
+    avarage_memory = round(float(memory_temp) / count, 2)
+
+    count = 0
+    disk_temp = 0
+    for m in PerfDisk.objects.filter(time__range=[date_start, date_end]):
+        disk_temp += m.percent
+        count += 1
+
+    avarage_disk = round(float(disk_temp) / count, 2)
+
+    return Response({
+        "hours": hours,
+        "avarage_cpu": avarage_cpu,
+        "avarage_memory": avarage_memory,
+        "avarage_disk": avarage_disk
+    }, status=status.HTTP_200_OK)
 
 
 @api_view(['GET'])

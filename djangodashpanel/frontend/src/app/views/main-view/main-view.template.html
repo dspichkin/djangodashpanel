@@ -5,27 +5,39 @@
     <div class="row">
         <div class="col-lg-9">
             <div class="wrapper-md">
+                <small>Last {{ avarage.hours || 0}} hours</small>
                 <div class="row row-sm">
                     <div class="col-md-3">
-                        <div class="panel padder-v item text-center bg-warning" style="height: 90px;">
-                            <div class="h1 text-white font-thin">{{ 0 }}</div>
-                            <span class="text-muted text-xs" translate>Boot time</span><br>
+                        <div class="panel padder-v item text-center bg-primary" [ngClass]="{
+                            'bg-warning': avarage.avarage_cpu > 60 && avarage.avarage_cpu < 90,
+                            'bg-danger': avarage.avarage_cpu >= 90
+                        }" style="height: 90px;" >
+                            <div class="h1 text-white font-thin">{{ avarage.avarage_cpu || 0 }}%</div>
+                            <span class="text-white text-xs" translate>Avarage cpu used</span><br>
+
+                            <div class="top text-info text-right w-full">
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="panel padder-v item text-center" [ngClass]="{
+                            'bg-warning': avarage.avarage_memory > 60 && avarage.avarage_memory < 90,
+                            'bg-danger': avarage.avarage_memory >= 90
+                        }" style="height: 90px;">
+                            <div class="h1 text-white font-thin">{{ avarage.avarage_memory || 0 }}%</div>
+                            <span class="text-white text-xs" translate>Avarage memory available</span><br>
                             <div class="top text-right w-full">
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <div class="panel padder-v item text-center bg-info">
-                            <div class="h1 text-white font-thin">0</div>
-                            <span class="text-muted text-xs" translate>Available</span><br>
-                            <div class="top text-right w-full">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="panel padder-v item text-center bg-danger">
-                            <div class="h1 text-white font-thin">0</div>
-                            <span class="text-muted text-xs" translate>SSSSsssss</span>
+                        <div class="panel padder-v item text-center bg-primary" [ngClass]="{
+                            'bg-warning': avarage.avarage_disk > 60 && avarage.avarage_disk < 90,
+                            'bg-danger': avarage.avarage_disk >= 90
+                        }" style="height: 90px;">
+                            <div class="h1 text-white font-thin">{{ avarage.avarage_disk || 0 }}%</div>
+                            <span class="text-white text-xs" translate>Avarage disk space used</span>
                             <div class="top text-right w-full">
                             </div>
                         </div>

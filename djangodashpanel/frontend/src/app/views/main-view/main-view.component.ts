@@ -15,6 +15,8 @@ export class mainViewComponent implements OnInit{
 	error_message: string = "";
 	boottime:string = "";
 	users;
+    avarage = {
+    };
 
 	constructor (private dashboardService: DashboardService) {
     }
@@ -22,7 +24,9 @@ export class mainViewComponent implements OnInit{
     ngOnInit() { 
     	let self = this;
     	self.getBootTime(function() {
-    		self.getCurrentUsers();
+    		self.getCurrentUsers(function() {
+                self.getAvarageValues();
+            });
     	})
 
     }
@@ -46,7 +50,7 @@ export class mainViewComponent implements OnInit{
         );
     }
 
-    getCurrentUsers() {
+    getCurrentUsers(callback) {
     	let self = this;
     	self.loading = true;
     	self.dashboardService.getData(AppSettings.UsersUrl, {})
@@ -54,6 +58,9 @@ export class mainViewComponent implements OnInit{
             function(data) {
                 self.loading = false;
                 self.users = data.users;
+                if (callback) {
+                    callback();
+                }
             },
             function(error) {
                 self.loading = false;
@@ -64,5 +71,21 @@ export class mainViewComponent implements OnInit{
 
     getDateFromTimestap(value) {
     	return moment(value, 'X').format('YYYY-DD-MM HH:mm')
+    }
+
+    getAvarageValues() {
+        let self = this;
+        self.loading = true;
+        self.dashboardService.getData(AppSettings.DashUrl, {})
+        .subscribe(
+            function(data) {
+                self.loading = false;
+                self.avarage = data;
+            },
+            function(error) {
+                self.loading = false;
+                self.error_message = <any>error;
+            }
+        );
     }
 }

@@ -21,9 +21,6 @@ from djangodashpanel.models.security import (
     SecurityData, SecurityLoginAttemptIncorrect, SecurityLoginAttemptCorrect)
 
 
-
-
-
 class Command(BaseCommand):
     help = 'Runs all jobs that are due.'
 
@@ -47,8 +44,8 @@ class Command(BaseCommand):
         if not perf.run_last_time_1h or perf.run_last_time_1h + timedelta(minutes=60) < now:
             perf.run_last_time_1h = timezone.now()
             self.set_process()
-            self.set_login_attempt_correct()
-            self.set_login_attempt_incorrect()
+        self.set_login_attempt_correct()
+        self.set_login_attempt_incorrect()
 
         perf.run_last_time_5m = timezone.now()
         perf.save()
@@ -140,7 +137,7 @@ class Command(BaseCommand):
                 if not sec.run_last_login_attemp_incorrect or sec.run_last_login_attemp_incorrect < dt_last_tz:
                     obj_id = int(str(dt.weekday()) + str(dt.hour) + str(int(math.ceil(dt.minute / 5)) * 5))
                     obj, created = SecurityLoginAttemptIncorrect.objects.get_or_create(pk=obj_id)
-                    obj.time = dt
+                    obj.time = timezone.localtime(dt)
 
                     if obj.value:
                         data = json.loads(obj.value)
@@ -186,7 +183,7 @@ class Command(BaseCommand):
                 if not sec.run_last_login_attemp_correct or sec.run_last_login_attemp_correct < dt_last_tz:
                     obj_id = int(str(dt.weekday()) + str(dt.hour) + str(int(math.ceil(dt.minute / 5)) * 5))
                     obj, created = SecurityLoginAttemptCorrect.objects.get_or_create(pk=obj_id)
-                    obj.time = dt
+                    obj.time = timezone.localtime(dt)
                     if obj.value:
                         data = json.loads(obj.value)
 

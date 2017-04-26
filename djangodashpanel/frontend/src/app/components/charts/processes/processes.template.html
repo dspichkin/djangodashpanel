@@ -1,0 +1,24 @@
+<div style="text-align: center;padding: 0;">
+    <canvas baseChart
+                [datasets]="lineChartData"
+                [labels]="lineChartLabels"
+                [options]="lineChartOptions"
+                [colors]="lineChartColors"
+                [chartType]="lineChartType"
+                (chartHover)="chartHovered($event)"
+                (chartClick)="chartClicked($event)"></canvas>
+
+    <h3 style="color: #337ab7">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>
+    <nouislider [min]="dateRangeMin" [max]="dateRangeMax"  [connect]="true" [(ngModel)]="dateRange" (ngModelChange)="onChange($event)" [disabled]="loading" [format]="formatter" [tooltips]="false" [step]="1000"></nouislider>
+
+    <!-- Loading -->
+    <div *ngIf="loading" style="position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;">
+        <div style="position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;">
+        </div>
+        <div style="width: 50px;margin: auto;margin-top: 60px;">
+            <i class="fa fa-spin fa-gear" style="font-size: 50px;"></i>
+        </div>
+    </div>
+    <!-- END Loading -->
+    
+</div>

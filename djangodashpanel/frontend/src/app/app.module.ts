@@ -17,10 +17,11 @@ import { LayoutsModule } from "./components/common/layouts/layouts.module";
 import { MainViewModule } from "./views/main-view/main-view.module";
 import { MinorViewModule } from "./views/minor-view/minor-view.module";
 import { PerfViewModule } from "./views/perf-view/perf-view.module";
+import { ProcessesViewModule  } from "./views/processes-view/processes-view.module";
 
 // App services
 import { ChartsService } from "./services/charts.services";
-import { DashboardService } from './services/dashboard.service';
+import { DataService } from './services/data.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { DashboardService } from './services/dashboard.service';
     MainViewModule,
     MinorViewModule,
     PerfViewModule,
-
+    ProcessesViewModule,
     // Modules
     LayoutsModule,
 
@@ -45,7 +46,7 @@ import { DashboardService } from './services/dashboard.service';
   ],
   providers: [
     ChartsService,
-    DashboardService
+    DataService
   ],
   bootstrap: [AppComponent]
 })

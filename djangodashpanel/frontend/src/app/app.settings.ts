@@ -9,4 +9,9 @@ export class AppSettings {
 	public static BootTimeUrl = AppSettings.baseUrl + 'perf/boottime/';
 	public static UsersUrl = AppSettings.baseUrl + 'perf/users/';
 	public static DashUrl = AppSettings.baseUrl + 'perf/dash/';
+
+	public static ProcessesUrl = AppSettings.baseUrl + 'processes/';
+	public static ProcessesAvarageNumberUrl =  AppSettings.baseUrl + 'processes/hours/';
+	public static ProcessesLastUrl =  AppSettings.baseUrl + 'processes/last/';
+
 }

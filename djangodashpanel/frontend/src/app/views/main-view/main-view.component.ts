@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { AppSettings } from '../../app.settings';
-import { DashboardService } from '../../services/dashboard.service';
+import { DataService } from '../../services/data.service';
 
 declare var moment: any;
 
@@ -18,7 +18,7 @@ export class mainViewComponent implements OnInit{
     avarage = {
     };
 
-	constructor (private dashboardService: DashboardService) {
+	constructor (private dashboardService: DataService) {
     }
 
     ngOnInit() { 

@@ -1,0 +1,48 @@
+<div class="wrapper wrapper-content">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="col-md-7">
+                <div class="panel panel-info">
+                    <div class="panel-heading ">
+                        <small>Last time update: {{last_time }}</small>
+                    </div>
+                    <div class="panel-body">
+                        <table class="table">
+                            <tr *ngFor="let p of last_processes">
+                                <td>
+                                    <span style="font-size: 8px;">{{p.pid}}</span>
+                                </td>
+                                <td><b>{{p.name}}</b> </td>
+                                <td>{{p.status}}</td>
+                                <td>{{p.cpu}}</td>
+                                <td>{{p.create_time}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="panel">
+                    <div class="panel-body">
+                        <div class="wrapper-md">
+                            <small>Last {{ hours }} hours</small>
+                            <div class="row row-sm">
+                                <div class="col-md-12">
+                                    <div class="panel padder-v item text-center bg-primary" style="height: 90px;" >
+                                        <div class="h1 text-white font-thin">{{ avarage_number || 0 }}</div>
+                                        <span class="text-white text-xs" translate>Number of processes</span><br>
+
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <processes-chart></processes-chart>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

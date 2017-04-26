@@ -15,6 +15,7 @@ urlpatterns = [
     url(r'^$', HomePageView.as_view(), name='home'),
     url(r'^api/security/', include('djangodashpanel.urls.security')),
     url(r'^api/perf/', include('djangodashpanel.urls.perf')),
+    url(r'^api/processes/', include('djangodashpanel.urls.processes')),
 
     url(r'^(?P<url>.*)$', sredirect),
 ]

@@ -93,12 +93,21 @@ class Command(BaseCommand):
             try:
                 pr = psutil.Process(p)
                 t = {
-                    "name": pr.name()
+                    "pid": p,
+                    "name": pr.name(),
                 }
                 try:
                     t["cpu"] = pr.cpu_percent(interval=1.0)
                 except:
                     t["cpu"] = 0.0
+                try:
+                    t["status"] = pr.status()
+                except:
+                    t["status"] = None
+                try:
+                    t["create_time"] = p.create_time()
+                except:
+                    t["create_time"] = None
                 processes.append(t)
             except:
                 pass

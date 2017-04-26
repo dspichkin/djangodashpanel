@@ -17,20 +17,24 @@ if 'rest_framework' not in settings.INSTALLED_APPS:
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PATH_TEMPLATE = os.path.join(BASE_DIR, 'djangodashpanel', 'static')
 
-settings.TEMPLATES.append({
-    'NAME': 'DJSecurity',
-    'BACKEND': 'django.template.backends.django.DjangoTemplates',
-    'DIRS': [PATH_TEMPLATE],
-    'APP_DIRS': True,
-    'OPTIONS': {
-        'context_processors': [
-            'django.template.context_processors.debug',
-            'django.template.context_processors.request',
-            'django.contrib.auth.context_processors.auth',
-            'django.contrib.messages.context_processors.messages',
-        ],
-    }
-})
+
+if len(settings.TEMPLATES) > 0:
+    settings.TEMPLATES[0].get('DIRS', []).append(PATH_TEMPLATE)
+else:
+    settings.TEMPLATES.append({
+        'NAME': 'DJSecurity',
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [PATH_TEMPLATE],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.template.context_processors.debug',
+                'django.template.context_processors.request',
+                'django.contrib.auth.context_processors.auth',
+                'django.contrib.messages.context_processors.messages',
+            ],
+        }
+    })
 
 # PATH_STATIC = os.path.join(BASE_DIR, 'djangodashpanel', 'frontend', 'dist')
 

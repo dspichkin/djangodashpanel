@@ -7,10 +7,11 @@ import math
 #import utmp
 import psutil
 import pytz
-from ..pyutmp import UtmpFile
+#from pyutmp import UtmpFile
+from ..readxtmppython import read_xtmp
 import time
 
-from datetime import timedelta
+from datetime import datetime, timedelta
 from django.core.management.base import BaseCommand
 from django.utils import timezone
 from django.conf import settings
@@ -31,6 +32,10 @@ class Command(BaseCommand):
         perf = PerfData.get_solo()
         now = timezone.now()
 
+        self.set_login_attempt_incorrect()
+
+        return
+
         self.set_cpu()
         self.set_network()
 
@@ -47,8 +52,7 @@ class Command(BaseCommand):
             perf.run_last_time_1h = timezone.now()
             self.set_process()
             #self.set_login_attempt_correct()
-        self.set_login_attempt_incorrect()
-
+        
         perf.run_last_time_5m = timezone.now()
         perf.save()
 
@@ -126,15 +130,50 @@ class Command(BaseCommand):
         PATH_LOGIN_ATTEMPT_INCORRECT = None
         if hasattr(settings, "PATH_LOGIN_ATTEMPT_INCORRECT"):
             PATH_LOGIN_ATTEMPT_INCORRECT = settings.PATH_LOGIN_ATTEMPT_INCORRECT
-
+        print "settings.PATH_LOGIN_ATTEMPT_INCORRECT", PATH_LOGIN_ATTEMPT_INCORRECT
         if not PATH_LOGIN_ATTEMPT_INCORRECT or not os.path.exists(PATH_LOGIN_ATTEMPT_INCORRECT):
             return
 
         sec = SecurityData.get_solo()
-        
-        for utmp in UtmpFile():
-            if utmp.ut_user_process:
-                print utmp.ut_user, time.ctime(utmp.ut_time), utmp.ut_line
+        print "xxx"
+        data = read_xtmp(PATH_LOGIN_ATTEMPT_INCORRECT)
+        for i in data:
+            print i
+            dt = datetime.fromtimestamp(float(i[9]))
+            host = i[5]
+            user = i[4]
+            dt_last_tz = pytz.timezone(settings.TIME_ZONE).localize(dt, is_dst=None)
+            if not sec.run_last_login_attemp_incorrect or sec.run_last_login_attemp_incorrect < dt_last_tz:
+                obj_id = int(str(dt.weekday()) + str(dt.hour) + str(int(math.ceil(dt.minute / 5)) * 5))
+                obj, created = SecurityLoginAttemptIncorrect.objects.get_or_create(pk=obj_id)
+                obj.time = pytz.timezone(settings.TIME_ZONE).localize(dt)
+
+                if obj.value:
+                    data = json.loads(obj.value)
+
+                    if host in data.get("hosts", {}):
+                        data["hosts"][host] = data["hosts"][host] + 1
+                    else:
+                        data["hosts"][host] = 1
+                    if user in data.get("users", {}):
+                        data["users"][user] += 1
+                    else:
+                        data["users"][user] = 1
+                else:
+                    data = {
+                        "hosts": {
+                            host: 1
+                        },
+                        "users": {
+                            user: 1
+                        }
+                    }
+                obj.value = json.dumps(data)
+                obj.save()
+                if not sec.run_last_login_attemp_incorrect or dt_last_tz > sec.run_last_login_attemp_incorrect:
+                    sec.run_last_login_attemp_incorrect = dt_last_tz
+                    sec.save()
+
         """
         with open(PATH_LOGIN_ATTEMPT_INCORRECT, 'rb') as fd:
             buf = fd.read()

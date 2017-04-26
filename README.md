@@ -15,8 +15,12 @@ ng build -w -d /static/
 
 
 ```
+pip install enum
+pip install utmp
+pip install psutil
 
 pip install git+https://github.com/dspichkin/djangodashpanel
+
 ...
 
 INSTALLED_APPS = [
@@ -54,3 +58,10 @@ ROOT=`pwd`
 /Home dir/.virtualenvs/name_virtual_envirement/bin/python /Home dir/Project dir/manage.py cron  > /dev/null
 
 ```
+
+### add task into cron
+```
+*/5 * * * * /Home dir/Project dir/run_cron.sh
+```
+
+

@@ -15,7 +15,7 @@ if 'rest_framework' not in settings.INSTALLED_APPS:
 #    )
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PATH_TEMPLATE = os.path.join(BASE_DIR, 'djangodashpanel', 'frontend', 'dist')
+PATH_TEMPLATE = os.path.join(BASE_DIR, 'djangodashpanel', 'static')
 
 settings.TEMPLATES.append({
     'NAME': 'DJSecurity',

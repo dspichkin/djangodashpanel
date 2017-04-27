@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import math
 import json
+import time
 
 from datetime import datetime
 
@@ -35,21 +36,34 @@ class SecurityLoginIncorrectAttemptManager(models.Manager):
                 data = json.loads(obj.value)
 
                 if host in data.get("hosts", {}):
-                    data["hosts"][host] = data["hosts"][host] + 1
+                    data["hosts"][host]["count"] = data["hosts"][host]["count"] + 1
+                    data["hosts"][host]["last_date"] = time.mktime(dt_last_tz.timetuple())
                 else:
-                    data["hosts"][host] = 1
+                    data["hosts"][host] = {
+                        "count": 1,
+                        "last_date": time.mktime(dt_last_tz.timetuple())
+                    }
+
                 if user in data.get("users", {}):
-                    data["users"][user] += 1
+                    data["users"][user]["count"] = data["users"][user]["count"] + 1
                 else:
-                    data["users"][user] = 1
+                    data["users"][user] = {
+                        "count": 1,
+                        "last_date": time.mktime(dt_last_tz.timetuple())
+                    }
+
             else:
                 data = {
-                    "hosts": {
-                        host: 1
-                    },
-                    "users": {
-                        user: 1
-                    }
+                    "hosts": {},
+                    "users": {}
+                }
+                data["hosts"][host] = {
+                    "count": 1,
+                    "last_date": time.mktime(dt_last_tz.timetuple())
+                }
+                data["users"][user] = {
+                    "count": 1,
+                    "last_date": time.mktime(dt_last_tz.timetuple())
                 }
             try:
                 obj.value = json.dumps(data)
@@ -89,30 +103,44 @@ class SecurityLoginCorrectAttemptManager(models.Manager):
             obj, created = SecurityLoginAttemptCorrect.objects.get_or_create(pk=obj_id)
             obj.time = dt_last_tz
 
-            if obj.value:
+            data = None
+            if not created and obj.value:
                 data = json.loads(obj.value)
 
                 if host in data.get("hosts", {}):
-                    data["hosts"][host] = data["hosts"][host] + 1
+                    data["hosts"][host]["count"] = data["hosts"][host]["count"] + 1
+                    data["hosts"][host]["last_date"] = time.mktime(dt_last_tz.timetuple())
                 else:
-                    data["hosts"][host] = 1
+                    data["hosts"][host] = {
+                        "count": 1,
+                        "last_date": time.mktime(dt_last_tz.timetuple())
+                    }
                 if user in data.get("users", {}):
-                    data["users"][user] += 1
+                    data["users"][user]["count"] = data["users"][user]["count"] + 1
                 else:
-                    data["users"][user] = 1
+                    data["users"][user] = {
+                        "count": 1,
+                        "last_date": time.mktime(dt_last_tz.timetuple())
+                    }
             else:
                 data = {
-                    "hosts": {
-                        host: 1
-                    },
-                    "users": {
-                        user: 1
-                    }
+                    "hosts": {},
+                    "users": {}
                 }
+                data["hosts"][host] = {
+                    "count": 1,
+                    "last_date": time.mktime(dt_last_tz.timetuple())
+                }
+                data["users"][user] = {
+                    "count": 1,
+                    "last_date": time.mktime(dt_last_tz.timetuple())
+                }
+            
             try:
                 obj.value = json.dumps(data)
                 obj.save()
-            except:
+            except Exception as e:
+                print e
                 return False
             return True
         return False

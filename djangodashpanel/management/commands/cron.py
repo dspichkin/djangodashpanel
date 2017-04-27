@@ -32,6 +32,8 @@ class Command(BaseCommand):
         perf = PerfData.get_solo()
         sec = SecurityData.get_solo()
         now = timezone.now()
+        self.set_login_attempt_correct()
+        return
 
         self.set_cpu()
         self.set_network()

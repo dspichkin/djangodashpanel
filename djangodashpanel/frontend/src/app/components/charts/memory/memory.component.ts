@@ -6,7 +6,7 @@ import { BaseChartDirective } from '../../../libs/ng2-charts/ng2-charts';
 import { NouisliderComponent } from 'ng2-nouislider';
 
 import { AppSettings } from '../../../app.settings';
-import { ChartsService } from '../../../services/charts.services';
+import { DataService } from '../../../services/data.service';
 
 declare var moment: any;
 
@@ -108,7 +108,7 @@ export class MemoryComponent implements OnInit {
     public lineChartLegend:boolean = true;
     public lineChartType:string = 'line';
 
-    constructor (private chartService: ChartsService) {
+    constructor (private dataService: DataService) {
         
     }
 
@@ -118,7 +118,7 @@ export class MemoryComponent implements OnInit {
     ngOnInit() { 
         let self = this;
         self.loading = true;
-        self.chartService.getPerf(AppSettings.perfMemoryUrl, {})
+        self.dataService.getData(AppSettings.perfMemoryUrl, {})
         .subscribe(
             function(data) {
                 self.loading = false;
@@ -175,7 +175,7 @@ export class MemoryComponent implements OnInit {
             date_end: this.dateRange[1]
         }
         self.loading = true;
-        self.chartService.getPerf(AppSettings.perfMemoryUrl, params)
+        self.dataService.getData(AppSettings.perfMemoryUrl, params)
         .subscribe(
             function(data) {
                 self.loading = false;

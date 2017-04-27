@@ -30,7 +30,7 @@ export class processesViewComponent implements OnInit {
     private getProcesses(callback?) {
     	let self = this;
     	self.loading = true;
-    	self.dataService.getData(AppSettings.ProcessesLastUrl, {})
+    	self.dataService.getData(AppSettings.processesLastUrl, {})
     	.subscribe(
             function(data) {
                 self.loading = false;
@@ -53,7 +53,7 @@ export class processesViewComponent implements OnInit {
         let self = this;
        
         self.loading = true;
-        self.dataService.getData(AppSettings.ProcessesAvarageNumberUrl, {})
+        self.dataService.getData(AppSettings.processesAvarageNumberUrl, {})
         .subscribe(
             function(data) {
             	console.log('data',data)

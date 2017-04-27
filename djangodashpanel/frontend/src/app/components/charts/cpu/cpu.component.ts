@@ -6,8 +6,7 @@ import { BaseChartDirective } from '../../../libs/ng2-charts/ng2-charts';
 import { NouisliderComponent } from 'ng2-nouislider';
 
 import { AppSettings } from '../../../app.settings';
-import { ChartsService } from '../../../services/charts.services';
-
+import { DataService } from '../../../services/data.service';
 
 declare var moment: any;
 
@@ -52,7 +51,7 @@ export class CpuComponent implements OnInit {
 
     };
 
-    constructor (private chartService: ChartsService, private chRef: ChangeDetectorRef) {
+    constructor (private dataService: DataService, private chRef: ChangeDetectorRef) {
     }
 
     public lineChartData:Array<any> = [
@@ -101,7 +100,7 @@ export class CpuComponent implements OnInit {
     ngOnInit() { 
         let self = this;
         self.loading = true;
-        self.chartService.getPerf(AppSettings.perfCpuUrl,{})
+        self.dataService.getData(AppSettings.perfCpuUrl,{})
         .subscribe(
             function(data) {
                 self.loading = false;
@@ -160,7 +159,7 @@ export class CpuComponent implements OnInit {
             date_end: this.dateRange[1]
         }
         self.loading = true;
-        self.chartService.getPerf(AppSettings.perfCpuUrl, params)
+        self.dataService.getData(AppSettings.perfCpuUrl, params)
         .subscribe(
             function(data) {
                 self.loading = false;

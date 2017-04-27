@@ -24,6 +24,7 @@ import { SecIncorrectLoginViewModule } from "./views/sec-view/sec-incorrect-logi
 // App services
 import { ChartsService } from "./services/charts.services";
 import { DataService } from './services/data.service';
+import { UserService } from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { DataService } from './services/data.service';
   ],
   providers: [
     ChartsService,
-    DataService
+    DataService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

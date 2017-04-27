@@ -13,8 +13,8 @@ from ..solo.models import SingletonModel
 
 @python_2_unicode_compatible
 class SecurityData(SingletonModel):
-    run_last_login_attemp_incorrect = models.DateTimeField(u'run last login attempt incorrect', null=True, blank=True)
-    run_last_login_attemp_correct = models.DateTimeField(u'run last login attempt correct', null=True, blank=True)
+    run_last_login_attempt_incorrect = models.DateTimeField(u'run last login attempt incorrect', null=True, blank=True)
+    run_last_login_attempt_correct = models.DateTimeField(u'run last login attempt correct', null=True, blank=True)
 
     class Meta:
         verbose_name = u'Security data'

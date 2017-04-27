@@ -40,7 +40,7 @@ class PerfSystemAdmin(admin.ModelAdmin):
 
 
 class SecurityDataAdmin(admin.ModelAdmin):
-    list_display = ('run_last_login_attemp_correct', 'run_last_login_attemp_incorrect')
+    list_display = ('run_last_login_attempt_correct', 'run_last_login_attempt_incorrect')
 
 
 class SecurityLoginAttemptIncorrectAdmin(admin.ModelAdmin):

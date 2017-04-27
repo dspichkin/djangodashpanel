@@ -88,7 +88,7 @@ export class ProcessesComponent implements OnInit {
     ngOnInit() { 
         let self = this;
         self.loading = true;
-        self.dataService.getData(AppSettings.ProcessesUrl,{})
+        self.dataService.getData(AppSettings.processesUrl,{})
         .subscribe(
             function(data) {
                 self.loading = false;
@@ -148,7 +148,7 @@ export class ProcessesComponent implements OnInit {
             date_end: this.dateRange[1]
         }
         self.loading = true;
-        self.dataService.getData(AppSettings.ProcessesUrl, params)
+        self.dataService.getData(AppSettings.processesUrl, params)
         .subscribe(
             function(data) {
                 self.loading = false;

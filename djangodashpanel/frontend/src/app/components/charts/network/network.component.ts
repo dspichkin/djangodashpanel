@@ -6,7 +6,7 @@ import { BaseChartDirective } from '../../../libs/ng2-charts/ng2-charts';
 import { NouisliderComponent } from 'ng2-nouislider';
 
 import { AppSettings } from '../../../app.settings';
-import { ChartsService } from '../../../services/charts.services';
+import { DataService } from '../../../services/data.service';
 
 declare var moment: any;
 
@@ -101,7 +101,7 @@ export class NetworkComponent implements OnInit {
     public lineChartLegend:boolean = true;
     public lineChartType:string = 'line';
 
-    constructor (private chartService: ChartsService) {
+    constructor (private dataService: DataService) {
         
     }
 
@@ -111,7 +111,7 @@ export class NetworkComponent implements OnInit {
     ngOnInit() { 
         let self = this;
         self.loading = true;
-        self.chartService.getPerf(AppSettings.perfNetworkUrl, {})
+        self.dataService.getData(AppSettings.perfNetworkUrl, {})
         .subscribe(
             function(data) {
                 self.loading = false;
@@ -168,7 +168,7 @@ export class NetworkComponent implements OnInit {
             date_end: this.dateRange[1]
         }
         self.loading = true;
-        self.chartService.getPerf(AppSettings.perfNetworkUrl, params)
+        self.dataService.getData(AppSettings.perfNetworkUrl, params)
         .subscribe(
             function(data) {
                 self.loading = false;

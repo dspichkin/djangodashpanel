@@ -34,7 +34,7 @@ export class mainViewComponent implements OnInit{
     getBootTime(callback?) {
     	let self = this;
     	self.loading = true;
-    	self.dashboardService.getData(AppSettings.BootTimeUrl, {})
+    	self.dashboardService.getData(AppSettings.bootTimeUrl, {})
     	.subscribe(
             function(data) {
                 self.loading = false;
@@ -53,7 +53,7 @@ export class mainViewComponent implements OnInit{
     getCurrentUsers(callback) {
     	let self = this;
     	self.loading = true;
-    	self.dashboardService.getData(AppSettings.UsersUrl, {})
+    	self.dashboardService.getData(AppSettings.usersUrl, {})
     	.subscribe(
             function(data) {
                 self.loading = false;
@@ -76,7 +76,7 @@ export class mainViewComponent implements OnInit{
     getAvarageValues() {
         let self = this;
         self.loading = true;
-        self.dashboardService.getData(AppSettings.DashUrl, {})
+        self.dashboardService.getData(AppSettings.dashUrl, {})
         .subscribe(
             function(data) {
                 self.loading = false;

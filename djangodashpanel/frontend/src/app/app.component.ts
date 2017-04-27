@@ -1,4 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+
+
+import { DataService } from './services/data.service';
+import { UserService } from './services/user.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +10,26 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+    title = 'app works!';
+
+    loading: boolean = false;
+    error_message;
+    user;
+
+    constructor (private dataService: DataService, private userService: UserService) {
+        
+    }
+
+
+    ngOnInit() { 
+        console.log("AppComponent");
+    }
+    
+
+    getUser() {
+        let self = this;
+        self.loading = true;
+        
+        
+    }
 }

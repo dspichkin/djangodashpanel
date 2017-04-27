@@ -6,7 +6,7 @@ import { BaseChartDirective } from '../../../libs/ng2-charts/ng2-charts';
 import { NouisliderComponent } from 'ng2-nouislider';
 
 import { AppSettings } from '../../../app.settings';
-import { ChartsService } from '../../../services/charts.services';
+import { DataService } from '../../../services/data.service';
 
 declare var moment: any;
 
@@ -51,7 +51,7 @@ export class DiskComponent implements OnInit {
 
     };
 
-    constructor (private chartService: ChartsService, private chRef: ChangeDetectorRef) {
+    constructor (private dataService: DataService, private chRef: ChangeDetectorRef) {
         
     }
 
@@ -102,7 +102,7 @@ export class DiskComponent implements OnInit {
     ngOnInit() { 
         let self = this;
         self.loading = true;
-        self.chartService.getPerf(AppSettings.perfDiskUrl, {})
+        self.dataService.getData(AppSettings.perfDiskUrl, {})
         .subscribe(
             function(data) {
                 self.loading = false;
@@ -162,7 +162,7 @@ export class DiskComponent implements OnInit {
             date_end: this.dateRange[1]
         }
         self.loading = true;
-        self.chartService.getPerf(AppSettings.perfDiskUrl, params)
+        self.dataService.getData(AppSettings.perfDiskUrl, params)
         .subscribe(
             function(data) {
                 self.loading = false;

@@ -125,6 +125,10 @@ class Command(BaseCommand):
 
     def set_login_attempt_incorrect(self):
         print "login attempt incorrect"
+        sec = SecurityData.get_solo()
+        if not sec.run_last_login_attempt_incorrect or sec.run_last_login_attempt_incorrect + timedelta(minutes=60 * 3) > now:
+            return
+
         PATH_LOGIN_ATTEMPT_INCORRECT = None
         if hasattr(settings, "PATH_LOGIN_ATTEMPT_INCORRECT"):
             PATH_LOGIN_ATTEMPT_INCORRECT = settings.PATH_LOGIN_ATTEMPT_INCORRECT
@@ -165,7 +169,16 @@ class Command(BaseCommand):
                 obj.value = json.dumps(data)
                 obj.save()
 
+        sec = SecurityData.get_solo()
+        sec.run_last_login_attempt_incorrect = timezone.now()
+        sec.save()
+
+
     def set_login_attempt_correct(self):
+        sec = SecurityData.get_solo()
+        if not sec.run_last_login_attempt_correct or sec.run_last_login_attempt_correct + timedelta(minutes=60 * 3) > now:
+            return
+
         print "login attempt correct"
         PATH_LOGIN_ATTEMPT_CORRECT = None
 
@@ -174,6 +187,7 @@ class Command(BaseCommand):
 
         if not PATH_LOGIN_ATTEMPT_CORRECT or not os.path.exists(PATH_LOGIN_ATTEMPT_CORRECT):
             return
+
 
         data = read_xtmp(PATH_LOGIN_ATTEMPT_CORRECT)
         for i in data:
@@ -208,3 +222,7 @@ class Command(BaseCommand):
                     }
                 obj.value = json.dumps(data)
                 obj.save()
+
+        
+        sec.run_last_login_attempt_correct = timezone.now()
+        sec.save()

@@ -12,16 +12,17 @@ var AppSettings = (function () {
 }());
 
 AppSettings.baseUrl = '/dash/api/';
+AppSettings.userUrl = AppSettings.baseUrl + 'user/';
 AppSettings.perfCpuUrl = AppSettings.baseUrl + 'perf/cpu/';
 AppSettings.perfMemoryUrl = AppSettings.baseUrl + 'perf/memory/';
 AppSettings.perfDiskUrl = AppSettings.baseUrl + 'perf/disk/';
 AppSettings.perfNetworkUrl = AppSettings.baseUrl + 'perf/network/';
-AppSettings.BootTimeUrl = AppSettings.baseUrl + 'perf/boottime/';
-AppSettings.UsersUrl = AppSettings.baseUrl + 'perf/users/';
-AppSettings.DashUrl = AppSettings.baseUrl + 'perf/dash/';
-AppSettings.ProcessesUrl = AppSettings.baseUrl + 'processes/';
-AppSettings.ProcessesAvarageNumberUrl = AppSettings.baseUrl + 'processes/hours/';
-AppSettings.ProcessesLastUrl = AppSettings.baseUrl + 'processes/last/';
+AppSettings.bootTimeUrl = AppSettings.baseUrl + 'perf/boottime/';
+AppSettings.usersUrl = AppSettings.baseUrl + 'perf/users/';
+AppSettings.dashUrl = AppSettings.baseUrl + 'perf/dash/';
+AppSettings.processesUrl = AppSettings.baseUrl + 'processes/';
+AppSettings.processesAvarageNumberUrl = AppSettings.baseUrl + 'processes/hours/';
+AppSettings.processesLastUrl = AppSettings.baseUrl + 'processes/last/';
 AppSettings.secCorrectLoginUrl = AppSettings.baseUrl + 'security/correctlogins/';
 AppSettings.secIncorrectLoginUrl = AppSettings.baseUrl + 'security/incorrectlogins/';
 //# sourceMappingURL=app.settings.js.map
@@ -224,6 +225,8 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_data_service__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_user_service__ = __webpack_require__(442);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -231,11 +234,26 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
 
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(dataService, userService) {
+        this.dataService = dataService;
+        this.userService = userService;
         this.title = 'app works!';
+        this.loading = false;
     }
+    AppComponent.prototype.ngOnInit = function () {
+        console.log("AppComponent");
+    };
+    AppComponent.prototype.getUser = function () {
+        var self = this;
+        self.loading = true;
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
@@ -243,9 +261,11 @@ AppComponent = __decorate([
         selector: 'app-root',
         template: __webpack_require__(378),
         styles: [__webpack_require__(365)]
-    })
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_data_service__["a" /* DataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */]) === "function" && _b || Object])
 ], AppComponent);
 
+var _a, _b;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -272,6 +292,7 @@ AppComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_sec_view_sec_incorrect_login_view_module__ = __webpack_require__(260);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_charts_services__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_data_service__ = __webpack_require__(22);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_user_service__ = __webpack_require__(442);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -297,6 +318,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 // App services
+
 
 
 var AppModule = (function () {
@@ -327,7 +349,8 @@ AppModule = __decorate([
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_15__services_charts_services__["a" /* ChartsService */],
-            __WEBPACK_IMPORTED_MODULE_16__services_data_service__["a" /* DataService */]
+            __WEBPACK_IMPORTED_MODULE_16__services_data_service__["a" /* DataService */],
+            __WEBPACK_IMPORTED_MODULE_17__services_user_service__["a" /* UserService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
@@ -385,7 +408,7 @@ var ROUTES = [
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_charts_services__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CpuComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -402,8 +425,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var CpuComponent = (function () {
-    function CpuComponent(chartService, chRef) {
-        this.chartService = chartService;
+    function CpuComponent(dataService, chRef) {
+        this.dataService = dataService;
         this.chRef = chRef;
         this.loading = false;
         this.dateRange = [0, 100];
@@ -462,7 +485,7 @@ var CpuComponent = (function () {
     CpuComponent.prototype.ngOnInit = function () {
         var self = this;
         self.loading = true;
-        self.chartService.getPerf(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfCpuUrl, {})
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfCpuUrl, {})
             .subscribe(function (data) {
             self.loading = false;
             self.lineChartData = data.values;
@@ -510,7 +533,7 @@ var CpuComponent = (function () {
             date_end: this.dateRange[1]
         };
         self.loading = true;
-        self.chartService.getPerf(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfCpuUrl, params)
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfCpuUrl, params)
             .subscribe(function (data) {
             self.loading = false;
             self.lineChartData = data.values;
@@ -536,7 +559,7 @@ CpuComponent = __decorate([
         selector: 'cpu-chart',
         template: __webpack_require__(379),
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_charts_services__["a" /* ChartsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_charts_services__["a" /* ChartsService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], CpuComponent);
 
 var _a, _b, _c, _d;
@@ -553,7 +576,7 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_charts_services__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiskComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -570,8 +593,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var DiskComponent = (function () {
-    function DiskComponent(chartService, chRef) {
-        this.chartService = chartService;
+    function DiskComponent(dataService, chRef) {
+        this.dataService = dataService;
         this.chRef = chRef;
         this.loading = false;
         this.dateRange = [0, 100];
@@ -630,7 +653,7 @@ var DiskComponent = (function () {
     DiskComponent.prototype.ngOnInit = function () {
         var self = this;
         self.loading = true;
-        self.chartService.getPerf(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfDiskUrl, {})
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfDiskUrl, {})
             .subscribe(function (data) {
             self.loading = false;
             self.lineChartData = data.values;
@@ -677,7 +700,7 @@ var DiskComponent = (function () {
             date_end: this.dateRange[1]
         };
         self.loading = true;
-        self.chartService.getPerf(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfDiskUrl, params)
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfDiskUrl, params)
             .subscribe(function (data) {
             self.loading = false;
             self.lineChartData = data.values;
@@ -703,7 +726,7 @@ DiskComponent = __decorate([
         selector: 'disk-chart',
         template: __webpack_require__(380),
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_charts_services__["a" /* ChartsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_charts_services__["a" /* ChartsService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], DiskComponent);
 
 var _a, _b, _c, _d;
@@ -720,7 +743,7 @@ var _a, _b, _c, _d;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_charts_services__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MemoryComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -737,8 +760,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MemoryComponent = (function () {
-    function MemoryComponent(chartService) {
-        this.chartService = chartService;
+    function MemoryComponent(dataService) {
+        this.dataService = dataService;
         this.loading = false;
         this.dateRange = [0, 100];
         this.formatter = {
@@ -812,7 +835,7 @@ var MemoryComponent = (function () {
     MemoryComponent.prototype.ngOnInit = function () {
         var self = this;
         self.loading = true;
-        self.chartService.getPerf(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfMemoryUrl, {})
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfMemoryUrl, {})
             .subscribe(function (data) {
             self.loading = false;
             self.lineChartData = data.values;
@@ -858,7 +881,7 @@ var MemoryComponent = (function () {
             date_end: this.dateRange[1]
         };
         self.loading = true;
-        self.chartService.getPerf(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfMemoryUrl, params)
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfMemoryUrl, params)
             .subscribe(function (data) {
             self.loading = false;
             self.lineChartData = data.values;
@@ -884,7 +907,7 @@ MemoryComponent = __decorate([
         selector: 'memory-chart',
         template: __webpack_require__(381),
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_charts_services__["a" /* ChartsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_charts_services__["a" /* ChartsService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object])
 ], MemoryComponent);
 
 var _a, _b, _c;
@@ -901,7 +924,7 @@ var _a, _b, _c;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_charts_services__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(22);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NetworkComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -918,8 +941,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var NetworkComponent = (function () {
-    function NetworkComponent(chartService) {
-        this.chartService = chartService;
+    function NetworkComponent(dataService) {
+        this.dataService = dataService;
         this.loading = false;
         this.dateRange = [0, 100];
         this.formatter = {
@@ -986,7 +1009,7 @@ var NetworkComponent = (function () {
     NetworkComponent.prototype.ngOnInit = function () {
         var self = this;
         self.loading = true;
-        self.chartService.getPerf(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfNetworkUrl, {})
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfNetworkUrl, {})
             .subscribe(function (data) {
             self.loading = false;
             self.lineChartData = data.values;
@@ -1032,7 +1055,7 @@ var NetworkComponent = (function () {
             date_end: this.dateRange[1]
         };
         self.loading = true;
-        self.chartService.getPerf(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfNetworkUrl, params)
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].perfNetworkUrl, params)
             .subscribe(function (data) {
             self.loading = false;
             self.lineChartData = data.values;
@@ -1058,7 +1081,7 @@ NetworkComponent = __decorate([
         selector: 'network-chart',
         template: __webpack_require__(382),
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_charts_services__["a" /* ChartsService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_charts_services__["a" /* ChartsService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object])
 ], NetworkComponent);
 
 var _a, _b, _c;
@@ -1138,7 +1161,7 @@ var ProcessesComponent = (function () {
     ProcessesComponent.prototype.ngOnInit = function () {
         var self = this;
         self.loading = true;
-        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].ProcessesUrl, {})
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].processesUrl, {})
             .subscribe(function (data) {
             self.loading = false;
             self.lineChartData = data.values;
@@ -1185,7 +1208,7 @@ var ProcessesComponent = (function () {
             date_end: this.dateRange[1]
         };
         self.loading = true;
-        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].ProcessesUrl, params)
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].processesUrl, params)
             .subscribe(function (data) {
             self.loading = false;
             self.lineChartData = data.values;
@@ -1367,6 +1390,7 @@ LayoutsModule = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_user_service__ = __webpack_require__(442);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavigationComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1379,12 +1403,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var NavigationComponent = (function () {
-    function NavigationComponent(router) {
+    function NavigationComponent(router, userService) {
         this.router = router;
+        this.userService = userService;
+        this.user = {
+            username: ""
+        };
     }
     NavigationComponent.prototype.ngAfterViewInit = function () {
         jQuery('#side-menu').metisMenu();
+    };
+    NavigationComponent.prototype.ngOnInit = function () {
+        var self = this;
+        this.userService.getUserFromServer(function (user) {
+            self.user = user;
+            console.log("!!!!", self.user);
+        });
     };
     NavigationComponent.prototype.activeRoute = function (routename) {
         return this.router.url.indexOf(routename) > -1;
@@ -1396,10 +1432,10 @@ NavigationComponent = __decorate([
         selector: 'navigation',
         template: __webpack_require__(387),
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */]) === "function" && _b || Object])
 ], NavigationComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=navigation.component.js.map
 
 /***/ }),
@@ -2497,7 +2533,7 @@ module.exports = "<!-- View/routes wrapper-->\n<router-outlet></router-outlet>\n
 /***/ 387:
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar-default navbar-static-side\" role=\"navigation\">\n    <div class=\"sidebar-collapse\">\n        <ul class=\"nav metismenu\" id=\"side-menu\">\n            <li class=\"nav-header\">\n                <div class=\"dropdown profile-element\">\n                    <a data-toggle=\"dropdown\" class=\"dropdown-toggle\" href=\"#\">\n                        <span class=\"block m-t-xs\"> <strong class=\"font-bold\">Example user</strong> </span>\n                        <span class=\"text-muted text-xs block\">Example <b class=\"caret\"></b> </span>\n                    </a>\n                    <ul class=\"dropdown-menu animated fadeInRight m-t-xs\">\n                        <li><a href=\"#\">Logout</a></li>\n                    </ul>\n                </div>\n                <div class=\"logo-element\">\n                    IN+\n                </div>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('dash')}\">\n                <a [routerLink]=\"['/']\"><i class=\"fa fa-th-large\"></i> <span class=\"nav-label\">Dashboard</span></a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('perf')}\">\n                <a [routerLink]=\"['/perf']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Perfomance</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('processes')}\">\n                <a [routerLink]=\"['/processes']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Processes</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('correctlogin') || activeRoute('incorrectlogin')}\">\n                <a href=\"\" class=\"auto\">      \n                  <span class=\"pull-right text-muted\">\n                    <i class=\"fa fa-fw fa-angle-right text\"></i>\n                    <i class=\"fa fa-fw fa-angle-down text-active\"></i>\n                  </span>\n                  <i class=\"glyphicon glyphicon-th\"></i>\n                  <span>Security</span>\n                </a>\n                <ul class=\"nav nav-sub dk\">\n                  <li class=\"nav-sub-header\">\n                    <a [routerLink]=\"['/correctlogin']\" style=\"font-size: 11px;margin-left: 15px;\">\n                      <span>Number of login </span>\n                    </a>\n                  </li>\n                  <li ui-sref-active=\"active\">\n                    <a [routerLink]=\"['/incorrectlogin']\" style=\"font-size: 11px;margin-left: 15px;\">\n                      <span>Incorrect attempt login</span>\n                    </a>\n                  </li>\n                </ul>\n                <!-- <a [routerLink]=\"['/minorView']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Security</span> </a> -->\n            </li>\n            <li [ngClass]=\"{active: activeRoute('minorView')}\">\n                <a [routerLink]=\"['/minorView']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Database</span> </a>\n            </li>\n        </ul>\n\n    </div>\n</nav>"
+module.exports = "<nav class=\"navbar-default navbar-static-side\" role=\"navigation\">\n    <div class=\"sidebar-collapse\">\n        <ul class=\"nav metismenu\" id=\"side-menu\">\n            <li class=\"nav-header\">\n                <a href=\"#\" style=\"padding: 0;\">\n                        <span class=\"block m-t-xs\"> <strong class=\"font-bold\">{{user.username}}</strong> </span>\n                        <!-- <span class=\"text-muted text-xs block\">Example <b class=\"caret\"></b> </span> -->\n                    </a>\n                    <!--\n                <div class=\"dropdown profile-element\">\n                    <a data-toggle=\"dropdown\" class=\"dropdown-toggle\" href=\"#\">\n                        <span class=\"block m-t-xs\"> <strong class=\"font-bold\">{{user.username}}</strong> </span>\n                        <span class=\"text-muted text-xs block\">Example <b class=\"caret\"></b> </span>\n                    </a>\n                    <ul class=\"dropdown-menu animated fadeInRight m-t-xs\">\n                        <li><a href=\"#\">Logout</a></li>\n                    </ul>\n                </div>\n                <div class=\"logo-element\">\n                    IN+\n                </div>\n                -->\n            </li>\n            <li [ngClass]=\"{active: activeRoute('dash')}\">\n                <a [routerLink]=\"['/']\"><i class=\"fa fa-th-large\"></i> <span class=\"nav-label\">Dashboard</span></a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('perf')}\">\n                <a [routerLink]=\"['/perf']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Perfomance</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('processes')}\">\n                <a [routerLink]=\"['/processes']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Processes</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('correctlogin') || activeRoute('incorrectlogin')}\">\n                <a href=\"\" class=\"auto\">      \n                  <span class=\"pull-right text-muted\">\n                    <i class=\"fa fa-fw fa-angle-right text\"></i>\n                    <i class=\"fa fa-fw fa-angle-down text-active\"></i>\n                  </span>\n                  <i class=\"glyphicon glyphicon-th\"></i>\n                  <span>Security</span>\n                </a>\n                <ul class=\"nav nav-sub dk\">\n                  <li class=\"nav-sub-header\">\n                    <a [routerLink]=\"['/correctlogin']\" style=\"font-size: 11px;margin-left: 15px;\">\n                      <span>Number of login </span>\n                    </a>\n                  </li>\n                  <li ui-sref-active=\"active\">\n                    <a [routerLink]=\"['/incorrectlogin']\" style=\"font-size: 11px;margin-left: 15px;\">\n                      <span>Incorrect attempt login</span>\n                    </a>\n                  </li>\n                </ul>\n                <!-- <a [routerLink]=\"['/minorView']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Security</span> </a> -->\n            </li>\n            <li [ngClass]=\"{active: activeRoute('minorView')}\">\n                <a [routerLink]=\"['/minorView']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Database</span> </a>\n            </li>\n        </ul>\n\n    </div>\n</nav>"
 
 /***/ }),
 
@@ -2555,6 +2591,102 @@ module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\
 
 module.exports = __webpack_require__(223);
 
+
+/***/ }),
+
+/***/ 442:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_settings__ = __webpack_require__(12);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+var UserService = (function () {
+    function UserService(http) {
+        this.http = http;
+    }
+    UserService.prototype.getUserFromServer = function (callback) {
+        var self = this;
+        var data = {
+            t: new Date().getTime()
+        };
+        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* URLSearchParams */]();
+        for (var key in data) {
+            if (data.hasOwnProperty(key)) {
+                var val = data[key];
+                params.set(key, val);
+            }
+        }
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({
+            search: params
+        });
+        this.http.get(__WEBPACK_IMPORTED_MODULE_5__app_settings__["a" /* AppSettings */].userUrl, options)
+            .map(this.extractData)
+            .catch(this.handleError)
+            .subscribe(function (data) {
+            if (!data.is_authenticated) {
+                window.location.href = "/";
+            }
+            self.user = data.user;
+            console.log(data);
+            if (callback) {
+                callback(self.user);
+            }
+        }, function (error) {
+        });
+    };
+    UserService.prototype.getUser = function () {
+        return this.user;
+    };
+    UserService.prototype.extractData = function (res) {
+        var body = res.json();
+        return body || {};
+    };
+    UserService.prototype.handleError = function (error) {
+        // In a real world app, you might use a remote logging infrastructure
+        var errMsg;
+        if (error instanceof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Response */]) {
+            var body = error.json() || '';
+            var err = body.error || JSON.stringify(body);
+            errMsg = error.status + " - " + (error.statusText || '') + " " + err;
+        }
+        else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+        console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(errMsg);
+    };
+    return UserService;
+}());
+UserService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* Http */]) === "function" && _a || Object])
+], UserService);
+
+var _a;
+//# sourceMappingURL=user.service.js.map
 
 /***/ }),
 
@@ -2626,7 +2758,7 @@ var mainViewComponent = (function () {
     mainViewComponent.prototype.getBootTime = function (callback) {
         var self = this;
         self.loading = true;
-        self.dashboardService.getData(__WEBPACK_IMPORTED_MODULE_1__app_settings__["a" /* AppSettings */].BootTimeUrl, {})
+        self.dashboardService.getData(__WEBPACK_IMPORTED_MODULE_1__app_settings__["a" /* AppSettings */].bootTimeUrl, {})
             .subscribe(function (data) {
             self.loading = false;
             self.boottime = data.boottime;
@@ -2641,7 +2773,7 @@ var mainViewComponent = (function () {
     mainViewComponent.prototype.getCurrentUsers = function (callback) {
         var self = this;
         self.loading = true;
-        self.dashboardService.getData(__WEBPACK_IMPORTED_MODULE_1__app_settings__["a" /* AppSettings */].UsersUrl, {})
+        self.dashboardService.getData(__WEBPACK_IMPORTED_MODULE_1__app_settings__["a" /* AppSettings */].usersUrl, {})
             .subscribe(function (data) {
             self.loading = false;
             self.users = data.users;
@@ -2659,7 +2791,7 @@ var mainViewComponent = (function () {
     mainViewComponent.prototype.getAvarageValues = function () {
         var self = this;
         self.loading = true;
-        self.dashboardService.getData(__WEBPACK_IMPORTED_MODULE_1__app_settings__["a" /* AppSettings */].DashUrl, {})
+        self.dashboardService.getData(__WEBPACK_IMPORTED_MODULE_1__app_settings__["a" /* AppSettings */].dashUrl, {})
             .subscribe(function (data) {
             self.loading = false;
             self.avarage = data;
@@ -2747,7 +2879,7 @@ var processesViewComponent = (function () {
     processesViewComponent.prototype.getProcesses = function (callback) {
         var self = this;
         self.loading = true;
-        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_1__app_settings__["a" /* AppSettings */].ProcessesLastUrl, {})
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_1__app_settings__["a" /* AppSettings */].processesLastUrl, {})
             .subscribe(function (data) {
             self.loading = false;
             console.log('data', data);
@@ -2764,7 +2896,7 @@ var processesViewComponent = (function () {
     processesViewComponent.prototype.getAvarageNumber = function (callback) {
         var self = this;
         self.loading = true;
-        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_1__app_settings__["a" /* AppSettings */].ProcessesAvarageNumberUrl, {})
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_1__app_settings__["a" /* AppSettings */].processesAvarageNumberUrl, {})
             .subscribe(function (data) {
             console.log('data', data);
             self.loading = false;

@@ -195,7 +195,7 @@ def incorrectlogins_data(request):
                 date_tz = pytz.timezone(settings.TIME_ZONE).localize(date, is_dst=None)
 
             if user in temp_users:
-                temp_users[user]["count"] = temp_users[user]["count"] + count
+                temp_users[user]["count"] = temp_users[user]["count"] + v.get("count")
                 temp_users[user]["last_date"] = date_tz.strftime("%b %d %H:%M")
             else:
                 temp_users[user] = {

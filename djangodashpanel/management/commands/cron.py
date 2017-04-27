@@ -51,14 +51,14 @@ class Command(BaseCommand):
             perf.save()
         
         if not sec.run_last_login_attempt_correct or sec.run_last_login_attempt_correct + timedelta(minutes=60) < now:
-            self.set_login_attempt_correct()
             sec.run_last_login_attempt_correct = timezone.now()
             sec.save()
+            self.set_login_attempt_correct()
 
         if not sec.run_last_login_attempt_incorrect or sec.run_last_login_attempt_incorrect + timedelta(minutes=60) < now:
-            self.set_login_attempt_incorrect()
             sec.run_last_login_attempt_incorrect = timezone.now()
             sec.save()
+            self.set_login_attempt_incorrect()
 
         perf.run_last_time_5m = timezone.now()
         perf.save()

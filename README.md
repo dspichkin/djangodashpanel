@@ -59,17 +59,23 @@ ROOT=`pwd`
 ```
 
 ### add task into cron
+note: for runing script user has to have enough right usually it is root right
+
 ```
+sudo crontab -e
+
+
 */5 * * * * /Home dir/Project dir/run_cron.sh
 ```
 
 ### Attempts to ssh
 
-based on data from btmp and wtmp
- to access these files you need set files path in settings.py:
+data take from btmp and wtmp
+to access these files you need set files path in settings.py :
+values by default
 PATH_LOGIN_ATTEMPT_CORRECT = '/var/log/btmp'
 PATH_LOGIN_ATTEMPT_INCORRECT = '/var/log/wtmp'
 
-note: for run script user has to have enough right usually it is root right
+
 
 

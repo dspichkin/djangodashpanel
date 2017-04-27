@@ -30,6 +30,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
 
         perf = PerfData.get_solo()
+        sec = SecurityData.get_solo()
         now = timezone.now()
 
         self.set_cpu()
@@ -46,11 +47,18 @@ class Command(BaseCommand):
 
         if not perf.run_last_time_1h or perf.run_last_time_1h + timedelta(minutes=60) < now:
             perf.run_last_time_1h = timezone.now()
-            perf.save()
             self.set_process()
-            
-            self.set_login_attempt_incorrect()
+            perf.save()
+        
+        if not sec.run_last_login_attempt_correct or sec.run_last_login_attempt_correct + timedelta(minutes=60) < now:
             self.set_login_attempt_correct()
+            sec.run_last_login_attempt_correct = timezone.now()
+            sec.save()
+
+        if not sec.run_last_login_attempt_incorrect or sec.run_last_login_attempt_incorrect + timedelta(minutes=60) < now:
+            self.set_login_attempt_incorrect()
+            sec.run_last_login_attempt_incorrect = timezone.now()
+            sec.save()
 
         perf.run_last_time_5m = timezone.now()
         perf.save()
@@ -171,10 +179,6 @@ class Command(BaseCommand):
                 obj.value = json.dumps(data)
                 obj.save()
 
-        sec = SecurityData.get_solo()
-        sec.run_last_login_attempt_incorrect = timezone.now()
-        sec.save()
-
 
     def set_login_attempt_correct(self):
         
@@ -225,6 +229,4 @@ class Command(BaseCommand):
                 obj.value = json.dumps(data)
                 obj.save()
 
-        sec = SecurityData.get_solo()
-        sec.run_last_login_attempt_correct = timezone.now()
-        sec.save()
+        

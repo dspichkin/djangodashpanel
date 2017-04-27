@@ -47,6 +47,7 @@ class Command(BaseCommand):
         if not perf.run_last_time_1h or perf.run_last_time_1h + timedelta(minutes=60) < now:
             perf.run_last_time_1h = timezone.now()
             self.set_process()
+            perf.save()
             self.set_login_attempt_incorrect()
             self.set_login_attempt_correct()
 

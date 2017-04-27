@@ -56,7 +56,7 @@ def correctlogins_data(request):
             date_tz = None 
 
             if raw_date:
-                date = datetime.fromtimestamp(int(date_start_raw))
+                date = datetime.fromtimestamp(int(raw_date))
                 date_tz = pytz.timezone(settings.TIME_ZONE).localize(date, is_dst=None)
 
             if host in temp_hosts:
@@ -74,7 +74,7 @@ def correctlogins_data(request):
             date_tz = None 
 
             if raw_date:
-                date = datetime.fromtimestamp(int(date_start_raw))
+                date = datetime.fromtimestamp(int(raw_date))
                 date_tz = pytz.timezone(settings.TIME_ZONE).localize(date, is_dst=None)
 
             if host in temp_users:
@@ -172,7 +172,7 @@ def incorrectlogins_data(request):
             date_tz = None
 
             if raw_date:
-                date = datetime.fromtimestamp(int(date_start_raw))
+                date = datetime.fromtimestamp(int(raw_date))
                 date_tz = pytz.timezone(settings.TIME_ZONE).localize(date, is_dst=None)
 
             if host in temp_hosts:
@@ -191,7 +191,7 @@ def incorrectlogins_data(request):
             date_tz = None
 
             if raw_date:
-                date = datetime.fromtimestamp(int(date_start_raw))
+                date = datetime.fromtimestamp(int(raw_date))
                 date_tz = pytz.timezone(settings.TIME_ZONE).localize(date, is_dst=None)
 
             if user in temp_users:

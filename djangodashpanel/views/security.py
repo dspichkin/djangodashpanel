@@ -49,25 +49,42 @@ def correctlogins_data(request):
         value = json.loads(p.value)
         attempt_count = 0
 
-        for h, count in value.get("hosts", {}).items():
-            attempt_count += count
+        for host, value in value.get("hosts", {}).items():
+            attempt_count += value.get("count", 0)
             count_correct_attempt += attempt_count
-            if h in temp_hosts:
-                temp_hosts[h]["count"] = temp_hosts[h]["count"] + count
-            else:
-                temp_hosts[h] = {
-                    "host": h,
-                    "count": count
-                }
-        for h, count in value.get("users", {}).items():
-            attempt_count += count
+            raw_date = value.get("last_date")
+            date_tz = None 
 
-            if h in temp_users:
-                temp_users[h]["count"] = temp_users[h]["count"] + count
+            if raw_date:
+                date = datetime.fromtimestamp(int(date_start_raw))
+                date_tz = pytz.timezone(settings.TIME_ZONE).localize(date, is_dst=None)
+
+            if host in temp_hosts:
+                temp_hosts[host]["count"] = temp_hosts[host]["count"] + value.get("count", 0)
+                temp_hosts[host]["last_date"] = date_tz.strftime("%b %d %H:%M")
             else:
-                temp_users[h] = {
+                temp_hosts[host] = {
+                    "host": host,
+                    "count": value.get("count", 0),
+                    "last_date": date_tz.strftime("%b %d %H:%M")
+                }
+        for host, value in value.get("users", {}).items():
+            attempt_count += value.get("count", 0)
+            raw_date = value.get("last_date")
+            date_tz = None 
+
+            if raw_date:
+                date = datetime.fromtimestamp(int(date_start_raw))
+                date_tz = pytz.timezone(settings.TIME_ZONE).localize(date, is_dst=None)
+
+            if host in temp_users:
+                temp_users[host]["count"] = temp_users[host]["count"] + value.get("count", 0)
+                temp_hosts[host]["last_date"] = date_tz.strftime("%b %d %H:%M")
+            else:
+                temp_users[host] = {
                     "username": h,
-                    "count": count
+                    "count": count,
+                    "last_date": date_tz.strftime("%b %d %H:%M")
                 }
 
         count_hosts.append(attempt_count)
@@ -149,26 +166,42 @@ def incorrectlogins_data(request):
         value = json.loads(p.value)
         attempt_count = 0
 
-        for h, count in value.get("hosts", {}).items():
-            attempt_count += count
+        for host, value in value.get("hosts", {}).items():
+            attempt_count += value.get("count", 0)
+            raw_date = value.get("last_date")
+            date_tz = None
 
-            if h in temp_hosts:
-                temp_hosts[h]["count"] = temp_hosts[h]["count"] + count
+            if raw_date:
+                date = datetime.fromtimestamp(int(date_start_raw))
+                date_tz = pytz.timezone(settings.TIME_ZONE).localize(date, is_dst=None)
+
+            if host in temp_hosts:
+                temp_hosts[host]["count"] = temp_hosts[host]["count"] + value.get("count", 0)
+                temp_hosts[host]["last_date"] = date_tz.strftime("%b %d %H:%M")
             else:
-                temp_hosts[h] = {
-                    "host": h,
-                    "count": count
+                temp_hosts[host] = {
+                    "host": host,
+                    "count": value.get("count", 0),
+                    "last_date": date_tz.strftime("%b %d %H:%M")
                 }
 
-        for h, count in value.get("users", {}).items():
+        for user, count in value.get("users", {}).items():
             attempt_count += count
+            raw_date = value.get("last_date")
+            date_tz = None
 
-            if h in temp_users:
-                temp_users[h]["count"] = temp_users[h]["count"] + count
+            if raw_date:
+                date = datetime.fromtimestamp(int(date_start_raw))
+                date_tz = pytz.timezone(settings.TIME_ZONE).localize(date, is_dst=None)
+
+            if user in temp_users:
+                temp_users[user]["count"] = temp_users[user]["count"] + count
+                temp_hosts[user]["last_date"] = date_tz.strftime("%b %d %H:%M")
             else:
-                temp_users[h] = {
-                    "username": h,
-                    "count": count
+                temp_users[user] = {
+                    "username": user,
+                    "count": count,
+                    "last_date": date_tz.strftime("%b %d %H:%M")
                 }
 
         count_incorrect_attepmt += attempt_count

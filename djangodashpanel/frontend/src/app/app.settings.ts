@@ -14,4 +14,8 @@ export class AppSettings {
 	public static ProcessesAvarageNumberUrl =  AppSettings.baseUrl + 'processes/hours/';
 	public static ProcessesLastUrl =  AppSettings.baseUrl + 'processes/last/';
 
+	public static secCorrectLoginUrl =  AppSettings.baseUrl + 'security/correctlogins/';
+	public static secIncorrectLoginUrl =  AppSettings.baseUrl + 'security/incorrectlogins/';
+
+	
 }

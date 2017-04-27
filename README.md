@@ -15,9 +15,8 @@ ng build -w -d /static/
 
 
 ```
-pip install enum
-pip install utmp
 pip install psutil
+pip install djangorestframework
 
 pip install git+https://github.com/dspichkin/djangodashpanel
 

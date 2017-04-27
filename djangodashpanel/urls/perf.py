@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from djangodashpanel.perf.views import (
+from djangodashpanel.views.perf import (
     cpu_data, memory_data, disk_data, network_data, boottime_data,
     users_data, info_data, dash_info_data)
 

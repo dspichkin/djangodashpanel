@@ -18,6 +18,8 @@ import { MainViewModule } from "./views/main-view/main-view.module";
 import { MinorViewModule } from "./views/minor-view/minor-view.module";
 import { PerfViewModule } from "./views/perf-view/perf-view.module";
 import { ProcessesViewModule  } from "./views/processes-view/processes-view.module";
+import { SecCorrectLoginViewModule } from "./views/sec-view/sec-correct-login-view.module";
+import { SecIncorrectLoginViewModule } from "./views/sec-view/sec-incorrect-login-view.module";
 
 // App services
 import { ChartsService } from "./services/charts.services";
@@ -39,6 +41,8 @@ import { DataService } from './services/data.service';
     MinorViewModule,
     PerfViewModule,
     ProcessesViewModule,
+    SecCorrectLoginViewModule,
+    SecIncorrectLoginViewModule,
     // Modules
     LayoutsModule,
 

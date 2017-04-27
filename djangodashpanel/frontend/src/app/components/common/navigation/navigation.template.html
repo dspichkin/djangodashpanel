@@ -24,8 +24,28 @@
             <li [ngClass]="{active: activeRoute('processes')}">
                 <a [routerLink]="['/processes']"><i class="fa fa-desktop"></i> <span class="nav-label">Processes</span> </a>
             </li>
-            <li [ngClass]="{active: activeRoute('minorView')}">
-                <a [routerLink]="['/minorView']"><i class="fa fa-desktop"></i> <span class="nav-label">Security</span> </a>
+            <li [ngClass]="{active: activeRoute('correctlogin') || activeRoute('incorrectlogin')}">
+                <a href="" class="auto">      
+                  <span class="pull-right text-muted">
+                    <i class="fa fa-fw fa-angle-right text"></i>
+                    <i class="fa fa-fw fa-angle-down text-active"></i>
+                  </span>
+                  <i class="glyphicon glyphicon-th"></i>
+                  <span>Security</span>
+                </a>
+                <ul class="nav nav-sub dk">
+                  <li class="nav-sub-header">
+                    <a [routerLink]="['/correctlogin']" style="font-size: 11px;margin-left: 15px;">
+                      <span>Number of login </span>
+                    </a>
+                  </li>
+                  <li ui-sref-active="active">
+                    <a [routerLink]="['/incorrectlogin']" style="font-size: 11px;margin-left: 15px;">
+                      <span>Incorrect attempt login</span>
+                    </a>
+                  </li>
+                </ul>
+                <!-- <a [routerLink]="['/minorView']"><i class="fa fa-desktop"></i> <span class="nav-label">Security</span> </a> -->
             </li>
             <li [ngClass]="{active: activeRoute('minorView')}">
                 <a [routerLink]="['/minorView']"><i class="fa fa-desktop"></i> <span class="nav-label">Database</span> </a>

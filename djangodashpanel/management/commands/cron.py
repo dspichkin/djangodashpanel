@@ -124,23 +124,23 @@ class Command(BaseCommand):
         PerfSystem.objects.put(timezone.now(), systems)
 
     def set_login_attempt_incorrect(self):
+        print "login attempt incorrect"
         PATH_LOGIN_ATTEMPT_INCORRECT = None
         if hasattr(settings, "PATH_LOGIN_ATTEMPT_INCORRECT"):
             PATH_LOGIN_ATTEMPT_INCORRECT = settings.PATH_LOGIN_ATTEMPT_INCORRECT
         if not PATH_LOGIN_ATTEMPT_INCORRECT or not os.path.exists(PATH_LOGIN_ATTEMPT_INCORRECT):
             return
 
-        sec = SecurityData.get_solo()
         data = read_xtmp(PATH_LOGIN_ATTEMPT_INCORRECT)
         for i in data:
             dt = datetime.fromtimestamp(float(i[9]))
             host = i[5]
             user = i[4]
             dt_last_tz = pytz.timezone(settings.TIME_ZONE).localize(dt, is_dst=None)
-            if not sec.run_last_login_attemp_incorrect or sec.run_last_login_attemp_incorrect < dt_last_tz:
+            if not SecurityLoginAttemptIncorrect.objects.filter(time=dt_last_tz):
                 obj_id = int(str(dt.weekday()) + str(dt.hour) + str(int(math.ceil(dt.minute / 5)) * 5))
                 obj, created = SecurityLoginAttemptIncorrect.objects.get_or_create(pk=obj_id)
-                obj.time = pytz.timezone(settings.TIME_ZONE).localize(dt)
+                obj.time = dt_last_tz
 
                 if obj.value:
                     data = json.loads(obj.value)
@@ -164,49 +164,9 @@ class Command(BaseCommand):
                     }
                 obj.value = json.dumps(data)
                 obj.save()
-                if not sec.run_last_login_attemp_incorrect or dt_last_tz > sec.run_last_login_attemp_incorrect:
-                    sec.run_last_login_attemp_incorrect = dt_last_tz
-                    sec.save()
-
-        """
-        with open(PATH_LOGIN_ATTEMPT_INCORRECT, 'rb') as fd:
-            buf = fd.read()
-            for entry in utmp.read(buf):
-                dt = entry.time
-                dt_last_tz = pytz.timezone(settings.TIME_ZONE).localize(dt, is_dst=None)
-                if not sec.run_last_login_attemp_incorrect or sec.run_last_login_attemp_incorrect < dt_last_tz:
-                    obj_id = int(str(dt.weekday()) + str(dt.hour) + str(int(math.ceil(dt.minute / 5)) * 5))
-                    obj, created = SecurityLoginAttemptIncorrect.objects.get_or_create(pk=obj_id)
-                    obj.time = pytz.timezone(settings.TIME_ZONE).localize(dt)
-
-                    if obj.value:
-                        data = json.loads(obj.value)
-
-                        if entry.host in data.get("hosts", {}):
-                            data["hosts"][entry.host] = data["hosts"][entry.host] + 1
-                        else:
-                            data["hosts"][entry.host] = 1
-                        if entry.user in data.get("users", {}):
-                            data["users"][entry.user] += 1
-                        else:
-                            data["users"][entry.user] = 1
-                    else:
-                        data = {
-                            "hosts": {
-                                entry.host: 1
-                            },
-                            "users": {
-                                entry.user: 1
-                            }
-                        }
-                    obj.value = json.dumps(data)
-                    obj.save()
-                    if not sec.run_last_login_attemp_incorrect or dt_last_tz > sec.run_last_login_attemp_incorrect:
-                        sec.run_last_login_attemp_incorrect = dt_last_tz
-                        sec.save()
-        """
 
     def set_login_attempt_correct(self):
+        print "login attempt correct"
         PATH_LOGIN_ATTEMPT_CORRECT = None
 
         if hasattr(settings, "PATH_LOGIN_ATTEMPT_CORRECT"):
@@ -215,17 +175,16 @@ class Command(BaseCommand):
         if not PATH_LOGIN_ATTEMPT_CORRECT or not os.path.exists(PATH_LOGIN_ATTEMPT_CORRECT):
             return
 
-        sec = SecurityData.get_solo()
         data = read_xtmp(PATH_LOGIN_ATTEMPT_CORRECT)
         for i in data:
             dt = datetime.fromtimestamp(float(i[9]))
             host = i[5]
             user = i[4]
             dt_last_tz = pytz.timezone(settings.TIME_ZONE).localize(dt, is_dst=None)
-            if not sec.run_last_login_attemp_correct or sec.run_last_login_attemp_correct < dt_last_tz:
+            if not SecurityLoginAttemptCorrect.objects.filter(time=dt_last_tz):
                 obj_id = int(str(dt.weekday()) + str(dt.hour) + str(int(math.ceil(dt.minute / 5)) * 5))
                 obj, created = SecurityLoginAttemptCorrect.objects.get_or_create(pk=obj_id)
-                obj.time = pytz.timezone(settings.TIME_ZONE).localize(dt)
+                obj.time = dt_last_tz
 
                 if obj.value:
                     data = json.loads(obj.value)
@@ -249,43 +208,3 @@ class Command(BaseCommand):
                     }
                 obj.value = json.dumps(data)
                 obj.save()
-                if not sec.run_last_login_attemp_correct or dt_last_tz > sec.run_last_login_attemp_correct:
-                    sec.run_last_login_attemp_correct = dt_last_tz
-                    sec.save()
-        """
-        sec = SecurityData.get_solo()
-        with open(PATH_LOGIN_ATTEMPT_CORRECT, 'rb') as fd:
-            buf = fd.read()
-            for entry in utmp.read(buf):
-                dt = entry.time
-                dt_last_tz = pytz.timezone(settings.TIME_ZONE).localize(dt, is_dst=None)
-                if not sec.run_last_login_attemp_correct or sec.run_last_login_attemp_correct < dt_last_tz:
-                    obj_id = int(str(dt.weekday()) + str(dt.hour) + str(int(math.ceil(dt.minute / 5)) * 5))
-                    obj, created = SecurityLoginAttemptCorrect.objects.get_or_create(pk=obj_id)
-                    obj.time = pytz.timezone(settings.TIME_ZONE).localize(dt)
-                    if obj.value:
-                        data = json.loads(obj.value)
-
-                        if entry.host in data.get("hosts", {}):
-                            data["hosts"][entry.host] = data["hosts"][entry.host] + 1
-                        else:
-                            data["hosts"][entry.host] = 1
-                        if entry.user in data.get("users", {}):
-                            data["users"][entry.user] += 1
-                        else:
-                            data["users"][entry.user] = 1
-                    else:
-                        data = {
-                            "hosts": {
-                                entry.host: 1
-                            },
-                            "users": {
-                                entry.user: 1
-                            }
-                        }
-                    obj.value = json.dumps(data)
-                    obj.save()
-                    if not sec.run_last_login_attemp_correct or dt_last_tz > sec.run_last_login_attemp_correct:
-                        sec.run_last_login_attemp_correct = dt_last_tz
-                        sec.save()
-        """

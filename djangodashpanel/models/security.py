@@ -107,7 +107,7 @@ class SecurityLoginCorrectAttemptManager(models.Manager):
             if not created and obj.value:
                 data = json.loads(obj.value)
 
-                if host in data.get("hosts", {}):
+                if host in data.get("hosts"):
                     print 'data["hosts"][host]["count"]', data["hosts"][host]["count"]
                     data["hosts"][host]["count"] = data["hosts"][host]["count"] + 1
                     data["hosts"][host]["last_date"] = time.mktime(dt_last_tz.timetuple())
@@ -116,7 +116,7 @@ class SecurityLoginCorrectAttemptManager(models.Manager):
                         "count": 1,
                         "last_date": time.mktime(dt_last_tz.timetuple())
                     }
-                if user in data.get("users", {}):
+                if user in data.get("users"):
                     data["users"][user]["count"] = data["users"][user]["count"] + 1
                 else:
                     data["users"][user] = {

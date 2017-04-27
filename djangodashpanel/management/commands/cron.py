@@ -135,9 +135,6 @@ class Command(BaseCommand):
 
     def set_login_attempt_incorrect(self):
         print "login attempt incorrect"
-        #sec = SecurityData.get_solo()
-        #if not sec.run_last_login_attempt_incorrect or sec.run_last_login_attempt_incorrect + timedelta(minutes=60 * 3) > now:
-        #    return
 
         PATH_LOGIN_ATTEMPT_INCORRECT = None
         if hasattr(settings, "PATH_LOGIN_ATTEMPT_INCORRECT"):
@@ -152,6 +149,8 @@ class Command(BaseCommand):
             user = i[4]
             dt_last_tz = pytz.timezone(settings.TIME_ZONE).localize(dt, is_dst=None)
             if not SecurityLoginAttemptIncorrect.objects.filter(time=dt_last_tz):
+                SecurityLoginAttemptIncorrect.objects.put(dt_last_tz, host, user)
+                """
                 obj_id = int(str(dt.weekday()) + str(dt.hour) + str(int(math.ceil(dt.minute / 5)) * 5))
                 obj, created = SecurityLoginAttemptIncorrect.objects.get_or_create(pk=obj_id)
                 obj.time = dt_last_tz
@@ -178,7 +177,7 @@ class Command(BaseCommand):
                     }
                 obj.value = json.dumps(data)
                 obj.save()
-
+                """
 
     def set_login_attempt_correct(self):
         
@@ -202,6 +201,8 @@ class Command(BaseCommand):
             user = i[4]
             dt_last_tz = pytz.timezone(settings.TIME_ZONE).localize(dt, is_dst=None)
             if not SecurityLoginAttemptCorrect.objects.filter(time=dt_last_tz):
+                SecurityLoginAttemptCorrect.objects.put(dt_last_tz, host, user)
+                """
                 obj_id = int(str(dt.weekday()) + str(dt.hour) + str(int(math.ceil(dt.minute / 5)) * 5))
                 obj, created = SecurityLoginAttemptCorrect.objects.get_or_create(pk=obj_id)
                 obj.time = dt_last_tz
@@ -228,5 +229,6 @@ class Command(BaseCommand):
                     }
                 obj.value = json.dumps(data)
                 obj.save()
+                """
 
         

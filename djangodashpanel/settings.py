@@ -9,10 +9,6 @@ if 'rest_framework' not in settings.INSTALLED_APPS:
     settings.INSTALLED_APPS.append(
         'rest_framework'
     )
-#if 'solo' not in settings.INSTALLED_APPS:
-#    settings.INSTALLED_APPS.append(
-#        'solo'
-#    )
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PATH_TEMPLATE = os.path.join(BASE_DIR, 'djangodashpanel', 'static')
@@ -36,15 +32,10 @@ else:
         }
     })
 
-# PATH_STATIC = os.path.join(BASE_DIR, 'djangodashpanel', 'frontend', 'dist')
-
-# if isinstance(settings.STATICFILES_DIRS, tuple):
-#    settings.STATICFILES_DIRS + (PATH_STATIC,)
-# if isinstance(settings.STATICFILES_DIRS, list):
-#    settings.STATICFILES_DIRS.append(PATH_STATIC)
-
 PATH_LOGIN_ATTEMPT_INCORRECT = '/var/log/btmp'
 PATH_LOGIN_ATTEMPT_CORRECT = '/var/log/wtmp'
 
 setattr(settings, 'PATH_LOGIN_ATTEMPT_INCORRECT', PATH_LOGIN_ATTEMPT_INCORRECT)
 setattr(settings, 'PATH_LOGIN_ATTEMPT_CORRECT', PATH_LOGIN_ATTEMPT_CORRECT)
+
+

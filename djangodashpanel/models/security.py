@@ -24,16 +24,38 @@ class SecurityData(SingletonModel):
         return "%s %s" % (self.run_last_login_attempt_correct, self.run_last_login_attempt_incorrect)
 
 
-class SecurityLoginAttemptManager(models.Manager):
-    def put(self, dt, value):
-        if dt and isinstance(dt, datetime) and value:
-            tzdt = timezone.localtime(dt)
-            obj_id = int(str(tzdt.weekday()) + str(tzdt.hour) + str(int(math.ceil(tzdt.minute / 5)) * 5))
-            obj = SecurityLoginAttemptIncorrect()
-            obj.id = obj_id
-            obj.time = dt
-            obj.value = value
-            obj.save()
+class SecurityLoginIncorrectAttemptManager(models.Manager):
+    def put(self, dt_last_tz, host, user):
+        if dt_last_tz and isinstance(dt_last_tz, datetime) and host and user:
+            obj_id = int(str(dt_last_tz.weekday()) + str(dt_last_tz.hour) + str(int(math.ceil(dt_last_tz.minute / 5)) * 5))
+            obj, created = SecurityLoginAttemptIncorrect.objects.get_or_create(pk=obj_id)
+            obj.time = dt_last_tz
+
+            if obj.value:
+                data = json.loads(obj.value)
+
+                if host in data.get("hosts", {}):
+                    data["hosts"][host] = data["hosts"][host] + 1
+                else:
+                    data["hosts"][host] = 1
+                if user in data.get("users", {}):
+                    data["users"][user] += 1
+                else:
+                    data["users"][user] = 1
+            else:
+                data = {
+                    "hosts": {
+                        host: 1
+                    },
+                    "users": {
+                        user: 1
+                    }
+                }
+            try:
+                obj.value = json.dumps(data)
+                obj.save()
+            except:
+                return False
             return True
         return False
 
@@ -47,7 +69,7 @@ class SecurityLoginAttemptIncorrect(models.Model):
     time = models.DateTimeField(u'date', null=True)
     value = models.TextField(u'value', null=True)
 
-    objects = SecurityLoginAttemptManager()
+    objects = SecurityLoginIncorrectAttemptManager()
 
     class Meta:
         verbose_name = u'Security login attempt incorrect'
@@ -58,6 +80,43 @@ class SecurityLoginAttemptIncorrect(models.Model):
         return "%s %s" % (self.time, self.value)
 
 
+class SecurityLoginCorrectAttemptManager(models.Manager):
+    def put(self, dt_last_tz, host, user):
+        if dt_last_tz and isinstance(dt_last_tz, datetime) and host and user:
+            #tzdt = timezone.localtime(dt)
+
+            obj_id = int(str(dt_last_tz.weekday()) + str(dt_last_tz.hour) + str(int(math.ceil(dt_last_tz.minute / 5)) * 5))
+            obj, created = SecurityLoginAttemptCorrect.objects.get_or_create(pk=obj_id)
+            obj.time = dt_last_tz
+
+            if obj.value:
+                data = json.loads(obj.value)
+
+                if host in data.get("hosts", {}):
+                    data["hosts"][host] = data["hosts"][host] + 1
+                else:
+                    data["hosts"][host] = 1
+                if user in data.get("users", {}):
+                    data["users"][user] += 1
+                else:
+                    data["users"][user] = 1
+            else:
+                data = {
+                    "hosts": {
+                        host: 1
+                    },
+                    "users": {
+                        user: 1
+                    }
+                }
+            try:
+                obj.value = json.dumps(data)
+                obj.save()
+            except:
+                return False
+            return True
+        return False
+
 @python_2_unicode_compatible
 class SecurityLoginAttemptCorrect(models.Model):
     """
@@ -67,7 +126,7 @@ class SecurityLoginAttemptCorrect(models.Model):
     time = models.DateTimeField(u'date', null=True)
     value = models.TextField(u'value', null=True)
 
-    objects = SecurityLoginAttemptManager()
+    objects = SecurityLoginCorrectAttemptManager()
 
     class Meta:
         verbose_name = u'Security login attempt correct'

@@ -2,13 +2,12 @@ from django.contrib.admin import ModelAdmin
 from django.conf import settings
 from . import VERSION
 
-
 def default_config():
     return {
         'VERSION': VERSION,
 
         # configurable
-        'ADMIN_NAME': 'Django Dash panel',
+        'ADMIN_NAME': 'Django Dashboard Panel',
 
     }
 

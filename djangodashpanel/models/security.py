@@ -108,7 +108,7 @@ class SecurityLoginCorrectAttemptManager(models.Manager):
                 data = json.loads(obj.value)
 
                 if host in data.get("hosts"):
-                    print 'data["hosts"][host]["count"]', data["hosts"][host]["count"]
+                    print 'data["hosts"][host]["count"]', data["hosts"][host]
                     data["hosts"][host]["count"] = data["hosts"][host]["count"] + 1
                     data["hosts"][host]["last_date"] = time.mktime(dt_last_tz.timetuple())
                 else:

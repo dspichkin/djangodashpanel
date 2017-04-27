@@ -39,7 +39,7 @@ def correctlogins_data(request):
         date_start_tz = now - timedelta(hours=24)
         date_end_tz = now
 
-    hosts = []
+    count_hosts = []
     temp_hosts = {}
     temp_users = {}
     dates = []
@@ -70,7 +70,7 @@ def correctlogins_data(request):
                     "count": count
                 }
 
-        hosts.append(attempt_count)
+        count_hosts.append(attempt_count)
         dates.append(timezone.localtime(p.time).strftime("%b %d %H:%M"))
 
     hosts = []
@@ -104,7 +104,7 @@ def correctlogins_data(request):
 
     return Response({
         "values": [{
-            "data": hosts,
+            "data": count_hosts,
             "label": 'Number of login'
         }],
         "dates": dates,

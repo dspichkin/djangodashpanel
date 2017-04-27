@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.contrib.admin import DateFieldListFilter
 
 from models.perf import (
     PerfData, PerfCpu, PerfMemory, PerfDisk, PerfNetwork, PerfProcess,
@@ -45,10 +46,15 @@ class SecurityDataAdmin(admin.ModelAdmin):
 
 class SecurityLoginAttemptIncorrectAdmin(admin.ModelAdmin):
     list_display = ('pk', 'time', 'value')
-
+    list_filter = (
+        ('time', DateFieldListFilter),
+    )
 
 class SecurityLoginAttemptCorrectAdmin(admin.ModelAdmin):
     list_display = ('pk', 'time', 'value')
+    list_filter = (
+        ('time', DateFieldListFilter),
+    )
 
 
 admin.site.register(PerfData, PerfDataAdmin)

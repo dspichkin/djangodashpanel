@@ -21,7 +21,7 @@ class SecurityData(SingletonModel):
         verbose_name_plural = u'Security data'
 
     def __str__(self):
-        return "%s %s" % (self.run_last_login_attemp_correct, self.run_last_login_attemp_incorrect)
+        return "%s %s" % (self.run_last_login_attempt_correct, self.run_last_login_attempt_incorrect)
 
 
 class SecurityLoginAttemptManager(models.Manager):

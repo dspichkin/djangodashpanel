@@ -196,11 +196,11 @@ def incorrectlogins_data(request):
 
             if user in temp_users:
                 temp_users[user]["count"] = temp_users[user]["count"] + count
-                temp_hosts[user]["last_date"] = date_tz.strftime("%b %d %H:%M")
+                temp_users[user]["last_date"] = date_tz.strftime("%b %d %H:%M")
             else:
                 temp_users[user] = {
                     "username": user,
-                    "count": count,
+                    "count": v.get("count"),
                     "last_date": date_tz.strftime("%b %d %H:%M")
                 }
 

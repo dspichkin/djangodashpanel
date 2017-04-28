@@ -16,7 +16,7 @@ class BackupData(SingletonModel):
     backups_enable = models.BooleanField(u'backups enable', default=True)
     last_run_backup = models.DateTimeField(u'last run backup', null=True, blank=True)
     result = models.NullBooleanField(u'result of last backup')
-    #run_time = models.DateTimeField(u'every day time for run', null=True, blank=True)
+    run_time = models.DateTimeField(u'every day time for run', null=True, blank=True)
     media_directories = models.TextField(u'directories', default="[]")
 
     class Meta:

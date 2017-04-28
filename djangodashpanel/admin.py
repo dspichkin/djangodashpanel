@@ -61,8 +61,8 @@ class SecurityLoginAttemptCorrectAdmin(admin.ModelAdmin):
 
 
 class BackupDataAdmin(admin.ModelAdmin):
-    list_display = ('backups_enable', 'run_time')
-
+    #list_display = ('backups_enable', 'run_time')
+    pass
 admin.site.register(PerfData, PerfDataAdmin)
 admin.site.register(PerfCpu, PerfCpuAdmin)
 admin.site.register(PerfMemory, PerfMemoryAdmin)

@@ -4,7 +4,7 @@ from djangodashpanel.backups.rotator import FileRotator
 
 
 class Command(BaseCommand):
-    help = 'Runs all jobs that are due.'
+    help = 'Runs backup'
 
     def handle(self, *args, **options):
         FileRotator()

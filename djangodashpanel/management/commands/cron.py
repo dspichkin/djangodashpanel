@@ -10,12 +10,13 @@ from django.core.management.base import BaseCommand
 from django.utils import timezone
 from django.conf import settings
 
-
+from djangodashpanel.backups.rotator import FileRotator
 from djangodashpanel.models.perf import (
     PerfData, PerfCpu, PerfMemory, PerfDisk, PerfNetwork, PerfProcess,
     PerfSystem)
 from djangodashpanel.models.security import (
     SecurityData, SecurityLoginAttemptIncorrect, SecurityLoginAttemptCorrect)
+from djangodashpanel.models.backups import BackupData
 
 
 class Command(BaseCommand):
@@ -25,6 +26,7 @@ class Command(BaseCommand):
 
         perf = PerfData.get_solo()
         sec = SecurityData.get_solo()
+        backup = BackupData.get_solo()
         now = timezone.now()
 
         self.set_cpu()
@@ -53,6 +55,11 @@ class Command(BaseCommand):
             sec.run_last_login_attempt_incorrect = timezone.now()
             sec.save()
             self.set_login_attempt_incorrect()
+
+        if backup.backups_enable:
+            if backup.last_run_backup and now >= backup.run_time and backup.run_time <= now + timedelta(minutes=60):
+                if backup.last_run_backup and now > backup.last_run_backup + timedelta(minutes=60):
+                    self.backup()
 
         perf.run_last_time_5m = timezone.now()
         perf.save()
@@ -165,5 +172,6 @@ class Command(BaseCommand):
             if not SecurityLoginAttemptCorrect.objects.filter(time=dt_last_tz):
                 SecurityLoginAttemptCorrect.objects.put(dt_last_tz, host, user)
 
-
-        
+    def backup(self):
+        print "run backup"
+        FileRotator()

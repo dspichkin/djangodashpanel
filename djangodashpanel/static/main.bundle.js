@@ -4,84 +4,6 @@ webpackJsonp([1,5],{
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(60);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var DataService = (function () {
-    function DataService(http) {
-        this.http = http;
-    }
-    DataService.prototype.getData = function (url, _params) {
-        var data = _params || {};
-        data.t = new Date().getTime();
-        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* URLSearchParams */]();
-        for (var key in data) {
-            if (data.hasOwnProperty(key)) {
-                var val = data[key];
-                params.set(key, val);
-            }
-        }
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({
-            search: params
-        });
-        return this.http.get(url, options)
-            .map(this.extractData)
-            .catch(this.handleError);
-    };
-    DataService.prototype.extractData = function (res) {
-        var body = res.json();
-        return body || {};
-    };
-    DataService.prototype.handleError = function (error) {
-        // In a real world app, you might use a remote logging infrastructure
-        var errMsg;
-        if (error instanceof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Response */]) {
-            var body = error.json() || '';
-            var err = body.error || JSON.stringify(body);
-            errMsg = error.status + " - " + (error.statusText || '') + " " + err;
-        }
-        else {
-            errMsg = error.message ? error.message : error.toString();
-        }
-        console.error(errMsg);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(errMsg);
-    };
-    return DataService;
-}());
-DataService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* Http */]) === "function" && _a || Object])
-], DataService);
-
-var _a;
-//# sourceMappingURL=data.service.js.map
-
-/***/ }),
-
-/***/ 12:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppSettings; });
 var AppSettings = (function () {
     function AppSettings() {
@@ -103,11 +25,29 @@ AppSettings.processesAvarageNumberUrl = AppSettings.baseUrl + 'processes/hours/'
 AppSettings.processesLastUrl = AppSettings.baseUrl + 'processes/last/';
 AppSettings.secCorrectLoginUrl = AppSettings.baseUrl + 'security/correctlogins/';
 AppSettings.secIncorrectLoginUrl = AppSettings.baseUrl + 'security/incorrectlogins/';
+AppSettings.backupMakeUrl = AppSettings.baseUrl + 'backups/make/';
+AppSettings.backupMakeMediaUrl = AppSettings.baseUrl + 'backups/make/media/';
+AppSettings.backupsUrl = AppSettings.baseUrl + 'backups/';
+AppSettings.backupsEnableUrl = AppSettings.baseUrl + 'backups/stoprun/';
+AppSettings.backupsSetTimeUrl = AppSettings.baseUrl + 'backups/time/';
+AppSettings.backupsPathDirUrl = AppSettings.baseUrl + 'backups/dirs/';
 //# sourceMappingURL=app.settings.js.map
 
 /***/ }),
 
-/***/ 222:
+/***/ 11:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(256);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__index__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__index__["b"]; });
+
+//# sourceMappingURL=ng2-charts.js.map
+
+/***/ }),
+
+/***/ 225:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -116,20 +56,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 222;
+webpackEmptyContext.id = 225;
 
 
 /***/ }),
 
-/***/ 223:
+/***/ 226:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(235);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(237);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(238);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(267);
 
 
 
@@ -142,12 +82,12 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 236:
+/***/ 239:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_data_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_data_service__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_user_service__ = __webpack_require__(43);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -181,8 +121,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
-        template: __webpack_require__(379),
-        styles: [__webpack_require__(366)]
+        template: __webpack_require__(386),
+        styles: [__webpack_require__(371)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_data_service__["a" /* DataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */]) === "function" && _b || Object])
 ], AppComponent);
@@ -192,29 +132,32 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 237:
+/***/ 240:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(236);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routes__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__components_common_layouts_layouts_module__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__views_main_view_main_view_module__ = __webpack_require__(255);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_minor_view_minor_view_module__ = __webpack_require__(257);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_perf_view_perf_view_module__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_processes_view_processes_view_module__ = __webpack_require__(259);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_sec_view_sec_correct_login_view_module__ = __webpack_require__(260);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_sec_view_sec_incorrect_login_view_module__ = __webpack_require__(261);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__services_charts_services__ = __webpack_require__(254);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__services_data_service__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_user_service__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routes__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_bootstrap_timepicker__ = __webpack_require__(377);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_common_layouts_layouts_module__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_main_view_main_view_module__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_minor_view_minor_view_module__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_perf_view_perf_view_module__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_processes_view_processes_view_module__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_sec_view_sec_correct_login_view_module__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_sec_view_sec_incorrect_login_view_module__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_backup_view_backup_view_module__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_charts_services__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_data_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_user_service__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_window_service__ = __webpack_require__(258);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -222,6 +165,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -239,7 +183,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+
 // App services
+
 
 
 
@@ -259,20 +205,27 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__["NouisliderModule"],
             // Views
-            __WEBPACK_IMPORTED_MODULE_9__views_main_view_main_view_module__["a" /* MainViewModule */],
-            __WEBPACK_IMPORTED_MODULE_10__views_minor_view_minor_view_module__["a" /* MinorViewModule */],
-            __WEBPACK_IMPORTED_MODULE_11__views_perf_view_perf_view_module__["a" /* PerfViewModule */],
-            __WEBPACK_IMPORTED_MODULE_12__views_processes_view_processes_view_module__["a" /* ProcessesViewModule */],
-            __WEBPACK_IMPORTED_MODULE_13__views_sec_view_sec_correct_login_view_module__["a" /* SecCorrectLoginViewModule */],
-            __WEBPACK_IMPORTED_MODULE_14__views_sec_view_sec_incorrect_login_view_module__["a" /* SecIncorrectLoginViewModule */],
+            __WEBPACK_IMPORTED_MODULE_10__views_main_view_main_view_module__["a" /* MainViewModule */],
+            __WEBPACK_IMPORTED_MODULE_11__views_minor_view_minor_view_module__["a" /* MinorViewModule */],
+            __WEBPACK_IMPORTED_MODULE_12__views_perf_view_perf_view_module__["a" /* PerfViewModule */],
+            __WEBPACK_IMPORTED_MODULE_13__views_processes_view_processes_view_module__["a" /* ProcessesViewModule */],
+            __WEBPACK_IMPORTED_MODULE_14__views_sec_view_sec_correct_login_view_module__["a" /* SecCorrectLoginViewModule */],
+            __WEBPACK_IMPORTED_MODULE_15__views_sec_view_sec_incorrect_login_view_module__["a" /* SecIncorrectLoginViewModule */],
+            __WEBPACK_IMPORTED_MODULE_16__views_backup_view_backup_view_module__["a" /* BackupViewModule */],
             // Modules
-            __WEBPACK_IMPORTED_MODULE_8__components_common_layouts_layouts_module__["a" /* LayoutsModule */],
-            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_routes__["a" /* ROUTES */], { useHash: true })
+            __WEBPACK_IMPORTED_MODULE_9__components_common_layouts_layouts_module__["a" /* LayoutsModule */],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_routes__["a" /* ROUTES */], { useHash: true }),
+            __WEBPACK_IMPORTED_MODULE_8_ngx_bootstrap_timepicker__["a" /* TimepickerModule */].forRoot()
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_15__services_charts_services__["a" /* ChartsService */],
-            __WEBPACK_IMPORTED_MODULE_16__services_data_service__["a" /* DataService */],
-            __WEBPACK_IMPORTED_MODULE_17__services_user_service__["a" /* UserService */]
+            {
+                provide: __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* XSRFStrategy */],
+                useValue: new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* CookieXSRFStrategy */]('csrftoken', 'X-CSRFToken')
+            },
+            __WEBPACK_IMPORTED_MODULE_17__services_charts_services__["a" /* ChartsService */],
+            __WEBPACK_IMPORTED_MODULE_18__services_data_service__["a" /* DataService */],
+            __WEBPACK_IMPORTED_MODULE_19__services_user_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_20__services_window_service__["a" /* WindowRef */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
@@ -282,17 +235,19 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 238:
+/***/ 241:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__views_main_view_main_view_component__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__views_perf_view_perf_view_component__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_processes_view_processes_view_component__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_common_layouts_basic_component__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_sec_view_sec_correct_login_view_component__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_sec_view_sec_incorrect_login_view_component__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__views_main_view_main_view_component__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__views_perf_view_perf_view_component__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__views_processes_view_processes_view_component__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_common_layouts_basic_component__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_sec_view_sec_correct_login_view_component__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_sec_view_sec_incorrect_login_view_component__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_backup_view_backup_view_component__ = __webpack_require__(73);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ROUTES; });
+
 
 
 
@@ -312,6 +267,8 @@ var ROUTES = [
             { path: 'processes', component: __WEBPACK_IMPORTED_MODULE_2__views_processes_view_processes_view_component__["a" /* processesViewComponent */] },
             { path: 'correctlogin', component: __WEBPACK_IMPORTED_MODULE_4__views_sec_view_sec_correct_login_view_component__["a" /* secCorrectLoginViewComponent */] },
             { path: 'incorrectlogin', component: __WEBPACK_IMPORTED_MODULE_5__views_sec_view_sec_incorrect_login_view_component__["a" /* secIncorrectLoginViewComponent */] },
+            { path: 'backups', component: __WEBPACK_IMPORTED_MODULE_6__views_backup_view_backup_view_component__["a" /* backupViewComponent */] },
+            { path: 'backups/result', component: __WEBPACK_IMPORTED_MODULE_6__views_backup_view_backup_view_component__["a" /* backupViewComponent */] },
         ]
     },
     // Handle all other routes
@@ -321,16 +278,16 @@ var ROUTES = [
 
 /***/ }),
 
-/***/ 239:
+/***/ 242:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CpuComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -479,7 +436,7 @@ __decorate([
 CpuComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'cpu-chart',
-        template: __webpack_require__(380),
+        template: __webpack_require__(387),
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], CpuComponent);
@@ -489,16 +446,16 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 240:
+/***/ 243:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiskComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -646,7 +603,7 @@ __decorate([
 DiskComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'disk-chart',
-        template: __webpack_require__(381),
+        template: __webpack_require__(388),
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], DiskComponent);
@@ -656,16 +613,16 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 241:
+/***/ 244:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MemoryComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -827,7 +784,7 @@ __decorate([
 MemoryComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'memory-chart',
-        template: __webpack_require__(382),
+        template: __webpack_require__(389),
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object])
 ], MemoryComponent);
@@ -837,16 +794,16 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 242:
+/***/ 245:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NetworkComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1001,7 +958,7 @@ __decorate([
 NetworkComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'network-chart',
-        template: __webpack_require__(383),
+        template: __webpack_require__(390),
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object])
 ], NetworkComponent);
@@ -1011,16 +968,16 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 243:
+/***/ 246:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProcessesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1154,7 +1111,7 @@ __decorate([
 ProcessesComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'processes-chart',
-        template: __webpack_require__(384),
+        template: __webpack_require__(391),
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], ProcessesComponent);
@@ -1164,7 +1121,7 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 244:
+/***/ 247:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1185,7 +1142,7 @@ var FooterComponent = (function () {
 FooterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'footer',
-        template: __webpack_require__(385)
+        template: __webpack_require__(392)
     })
 ], FooterComponent);
 
@@ -1193,13 +1150,13 @@ FooterComponent = __decorate([
 
 /***/ }),
 
-/***/ 245:
+/***/ 248:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__footer_component__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__footer_component__ = __webpack_require__(247);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FooterModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1227,7 +1184,7 @@ FooterModule = __decorate([
 
 /***/ }),
 
-/***/ 246:
+/***/ 249:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1254,7 +1211,7 @@ var blankComponent = (function () {
 blankComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'blank',
-        template: __webpack_require__(387)
+        template: __webpack_require__(394)
     })
 ], blankComponent);
 
@@ -1262,18 +1219,18 @@ blankComponent = __decorate([
 
 /***/ }),
 
-/***/ 247:
+/***/ 250:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__blank_component__ = __webpack_require__(246);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__basic_component__ = __webpack_require__(71);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__navigation_navigation_module__ = __webpack_require__(249);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__topnavbar_topnavbar_module__ = __webpack_require__(251);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__footer_footer_module__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__blank_component__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__basic_component__ = __webpack_require__(72);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__navigation_navigation_module__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__topnavbar_topnavbar_module__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__footer_footer_module__ = __webpack_require__(248);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LayoutsModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1306,12 +1263,12 @@ LayoutsModule = __decorate([
 
 /***/ }),
 
-/***/ 248:
+/***/ 251:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_user_service__ = __webpack_require__(43);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavigationComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1333,15 +1290,18 @@ var NavigationComponent = (function () {
         this.user = {
             username: ""
         };
+        this.apps = {
+            backup: false
+        };
     }
     NavigationComponent.prototype.ngAfterViewInit = function () {
         jQuery('#side-menu').metisMenu();
     };
     NavigationComponent.prototype.ngOnInit = function () {
         var self = this;
-        this.userService.getUserFromServer(function (user) {
-            self.user = user;
-            console.log("!!!!", self.user);
+        this.userService.getUserFromServer(function (data) {
+            self.user = data.user;
+            self.apps = data.apps;
         });
     };
     NavigationComponent.prototype.activeRoute = function (routename) {
@@ -1352,7 +1312,7 @@ var NavigationComponent = (function () {
 NavigationComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'navigation',
-        template: __webpack_require__(388),
+        template: __webpack_require__(395),
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */]) === "function" && _b || Object])
 ], NavigationComponent);
@@ -1362,14 +1322,14 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 249:
+/***/ 252:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__navigation_component__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__navigation_component__ = __webpack_require__(251);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavigationModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1398,7 +1358,7 @@ NavigationModule = __decorate([
 
 /***/ }),
 
-/***/ 250:
+/***/ 253:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1424,7 +1384,7 @@ var TopnavbarComponent = (function () {
 TopnavbarComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'topnavbar',
-        template: __webpack_require__(389),
+        template: __webpack_require__(396),
     })
 ], TopnavbarComponent);
 
@@ -1432,13 +1392,13 @@ TopnavbarComponent = __decorate([
 
 /***/ }),
 
-/***/ 251:
+/***/ 254:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__topnavbar_component__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__topnavbar_component__ = __webpack_require__(253);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TopnavbarModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1466,12 +1426,12 @@ TopnavbarModule = __decorate([
 
 /***/ }),
 
-/***/ 252:
+/***/ 255:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chart_js__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chart_js__ = __webpack_require__(268);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_chart_js__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BaseChartDirective; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ChartsModule; });
@@ -1783,11 +1743,11 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 253:
+/***/ 256:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__charts_charts__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__charts_charts__ = __webpack_require__(255);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__charts_charts__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__charts_charts__["b"]; });
 
@@ -1795,17 +1755,17 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 254:
+/***/ 257:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ChartsService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1829,14 +1789,14 @@ var ChartsService = (function () {
     ChartsService.prototype.getPerf = function (url, _params) {
         var data = _params || {};
         data.t = new Date().getTime();
-        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* URLSearchParams */]();
+        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* URLSearchParams */]();
         for (var key in data) {
             if (data.hasOwnProperty(key)) {
                 var val = data[key];
                 params.set(key, val);
             }
         }
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestOptions */]({
             search: params
         });
         return this.http.get(url, options)
@@ -1850,7 +1810,7 @@ var ChartsService = (function () {
     ChartsService.prototype.handleError = function (error) {
         // In a real world app, you might use a remote logging infrastructure
         var errMsg;
-        if (error instanceof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Response */]) {
+        if (error instanceof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Response */]) {
             var body = error.json() || '';
             var err = body.error || JSON.stringify(body);
             errMsg = error.status + " - " + (error.statusText || '') + " " + err;
@@ -1865,7 +1825,7 @@ var ChartsService = (function () {
 }());
 ChartsService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["g" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["g" /* Http */]) === "function" && _a || Object])
 ], ChartsService);
 
 var _a;
@@ -1873,14 +1833,93 @@ var _a;
 
 /***/ }),
 
-/***/ 255:
+/***/ 258:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return WindowRef; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+var WindowRef = (function () {
+    function WindowRef() {
+    }
+    WindowRef.prototype.getNativeWindow = function () {
+        return window;
+    };
+    return WindowRef;
+}());
+WindowRef = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [])
+], WindowRef);
+
+//# sourceMappingURL=window.service.js.map
+
+/***/ }),
+
+/***/ 259:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_view_component__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backup_view_component__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_bootstrap_timepicker__ = __webpack_require__(377);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BackupViewModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var BackupViewModule = (function () {
+    function BackupViewModule() {
+    }
+    return BackupViewModule;
+}());
+BackupViewModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_2__backup_view_component__["a" /* backupViewComponent */],
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_forms__["FormsModule"],
+            __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */],
+            __WEBPACK_IMPORTED_MODULE_5_ngx_bootstrap_timepicker__["a" /* TimepickerModule */].forRoot()
+        ],
+    })
+], BackupViewModule);
+
+//# sourceMappingURL=backup-view.module.js.map
+
+/***/ }),
+
+/***/ 260:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_view_component__ = __webpack_require__(74);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(13);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1913,7 +1952,7 @@ MainViewModule = __decorate([
 
 /***/ }),
 
-/***/ 256:
+/***/ 261:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1934,7 +1973,7 @@ var minorViewComponent = (function () {
 minorViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'minorView',
-        template: __webpack_require__(391)
+        template: __webpack_require__(399)
     })
 ], minorViewComponent);
 
@@ -1942,13 +1981,13 @@ minorViewComponent = __decorate([
 
 /***/ }),
 
-/***/ 257:
+/***/ 262:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__minor_view_component__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__minor_view_component__ = __webpack_require__(261);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MinorViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1975,20 +2014,20 @@ MinorViewModule = __decorate([
 
 /***/ }),
 
-/***/ 258:
+/***/ 263:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__perf_view_component__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_charts_cpu_cpu_component__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_charts_memory_memory_component__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_charts_disk_disk_component__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_charts_network_network_component__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__libs_ng2_charts_ng2_charts__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__perf_view_component__ = __webpack_require__(75);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_charts_cpu_cpu_component__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_charts_memory_memory_component__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_charts_disk_disk_component__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_charts_network_network_component__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_ng2_nouislider__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PerfViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2034,17 +2073,17 @@ PerfViewModule = __decorate([
 
 /***/ }),
 
-/***/ 259:
+/***/ 264:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__processes_view_component__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_charts_processes_processes_component__ = __webpack_require__(243);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__libs_ng2_charts_ng2_charts__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__processes_view_component__ = __webpack_require__(76);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_charts_processes_processes_component__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng2_nouislider__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProcessesViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2084,16 +2123,16 @@ ProcessesViewModule = __decorate([
 
 /***/ }),
 
-/***/ 260:
+/***/ 265:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sec_correct_login_view_component__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__libs_ng2_charts_ng2_charts__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sec_correct_login_view_component__ = __webpack_require__(77);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SecCorrectLoginViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2131,16 +2170,16 @@ SecCorrectLoginViewModule = __decorate([
 
 /***/ }),
 
-/***/ 261:
+/***/ 266:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sec_incorrect_login_view_component__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__libs_ng2_charts_ng2_charts__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sec_incorrect_login_view_component__ = __webpack_require__(78);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SecIncorrectLoginViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2178,7 +2217,7 @@ SecIncorrectLoginViewModule = __decorate([
 
 /***/ }),
 
-/***/ 262:
+/***/ 267:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2195,7 +2234,7 @@ var environment = {
 
 /***/ }),
 
-/***/ 366:
+/***/ 371:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)();
@@ -2213,240 +2252,240 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 371:
+/***/ 376:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 91,
-	"./af.js": 91,
-	"./ar": 98,
-	"./ar-dz": 92,
-	"./ar-dz.js": 92,
-	"./ar-kw": 93,
-	"./ar-kw.js": 93,
-	"./ar-ly": 94,
-	"./ar-ly.js": 94,
-	"./ar-ma": 95,
-	"./ar-ma.js": 95,
-	"./ar-sa": 96,
-	"./ar-sa.js": 96,
-	"./ar-tn": 97,
-	"./ar-tn.js": 97,
-	"./ar.js": 98,
-	"./az": 99,
-	"./az.js": 99,
-	"./be": 100,
-	"./be.js": 100,
-	"./bg": 101,
-	"./bg.js": 101,
-	"./bn": 102,
-	"./bn.js": 102,
-	"./bo": 103,
-	"./bo.js": 103,
-	"./br": 104,
-	"./br.js": 104,
-	"./bs": 105,
-	"./bs.js": 105,
-	"./ca": 106,
-	"./ca.js": 106,
-	"./cs": 107,
-	"./cs.js": 107,
-	"./cv": 108,
-	"./cv.js": 108,
-	"./cy": 109,
-	"./cy.js": 109,
-	"./da": 110,
-	"./da.js": 110,
-	"./de": 113,
-	"./de-at": 111,
-	"./de-at.js": 111,
-	"./de-ch": 112,
-	"./de-ch.js": 112,
-	"./de.js": 113,
-	"./dv": 114,
-	"./dv.js": 114,
-	"./el": 115,
-	"./el.js": 115,
-	"./en-au": 116,
-	"./en-au.js": 116,
-	"./en-ca": 117,
-	"./en-ca.js": 117,
-	"./en-gb": 118,
-	"./en-gb.js": 118,
-	"./en-ie": 119,
-	"./en-ie.js": 119,
-	"./en-nz": 120,
-	"./en-nz.js": 120,
-	"./eo": 121,
-	"./eo.js": 121,
-	"./es": 123,
-	"./es-do": 122,
-	"./es-do.js": 122,
-	"./es.js": 123,
-	"./et": 124,
-	"./et.js": 124,
-	"./eu": 125,
-	"./eu.js": 125,
-	"./fa": 126,
-	"./fa.js": 126,
-	"./fi": 127,
-	"./fi.js": 127,
-	"./fo": 128,
-	"./fo.js": 128,
-	"./fr": 131,
-	"./fr-ca": 129,
-	"./fr-ca.js": 129,
-	"./fr-ch": 130,
-	"./fr-ch.js": 130,
-	"./fr.js": 131,
-	"./fy": 132,
-	"./fy.js": 132,
-	"./gd": 133,
-	"./gd.js": 133,
-	"./gl": 134,
-	"./gl.js": 134,
-	"./gom-latn": 135,
-	"./gom-latn.js": 135,
-	"./he": 136,
-	"./he.js": 136,
-	"./hi": 137,
-	"./hi.js": 137,
-	"./hr": 138,
-	"./hr.js": 138,
-	"./hu": 139,
-	"./hu.js": 139,
-	"./hy-am": 140,
-	"./hy-am.js": 140,
-	"./id": 141,
-	"./id.js": 141,
-	"./is": 142,
-	"./is.js": 142,
-	"./it": 143,
-	"./it.js": 143,
-	"./ja": 144,
-	"./ja.js": 144,
-	"./jv": 145,
-	"./jv.js": 145,
-	"./ka": 146,
-	"./ka.js": 146,
-	"./kk": 147,
-	"./kk.js": 147,
-	"./km": 148,
-	"./km.js": 148,
-	"./kn": 149,
-	"./kn.js": 149,
-	"./ko": 150,
-	"./ko.js": 150,
-	"./ky": 151,
-	"./ky.js": 151,
-	"./lb": 152,
-	"./lb.js": 152,
-	"./lo": 153,
-	"./lo.js": 153,
-	"./lt": 154,
-	"./lt.js": 154,
-	"./lv": 155,
-	"./lv.js": 155,
-	"./me": 156,
-	"./me.js": 156,
-	"./mi": 157,
-	"./mi.js": 157,
-	"./mk": 158,
-	"./mk.js": 158,
-	"./ml": 159,
-	"./ml.js": 159,
-	"./mr": 160,
-	"./mr.js": 160,
-	"./ms": 162,
-	"./ms-my": 161,
-	"./ms-my.js": 161,
-	"./ms.js": 162,
-	"./my": 163,
-	"./my.js": 163,
-	"./nb": 164,
-	"./nb.js": 164,
-	"./ne": 165,
-	"./ne.js": 165,
-	"./nl": 167,
-	"./nl-be": 166,
-	"./nl-be.js": 166,
-	"./nl.js": 167,
-	"./nn": 168,
-	"./nn.js": 168,
-	"./pa-in": 169,
-	"./pa-in.js": 169,
-	"./pl": 170,
-	"./pl.js": 170,
-	"./pt": 172,
-	"./pt-br": 171,
-	"./pt-br.js": 171,
-	"./pt.js": 172,
-	"./ro": 173,
-	"./ro.js": 173,
-	"./ru": 174,
-	"./ru.js": 174,
-	"./sd": 175,
-	"./sd.js": 175,
-	"./se": 176,
-	"./se.js": 176,
-	"./si": 177,
-	"./si.js": 177,
-	"./sk": 178,
-	"./sk.js": 178,
-	"./sl": 179,
-	"./sl.js": 179,
-	"./sq": 180,
-	"./sq.js": 180,
-	"./sr": 182,
-	"./sr-cyrl": 181,
-	"./sr-cyrl.js": 181,
-	"./sr.js": 182,
-	"./ss": 183,
-	"./ss.js": 183,
-	"./sv": 184,
-	"./sv.js": 184,
-	"./sw": 185,
-	"./sw.js": 185,
-	"./ta": 186,
-	"./ta.js": 186,
-	"./te": 187,
-	"./te.js": 187,
-	"./tet": 188,
-	"./tet.js": 188,
-	"./th": 189,
-	"./th.js": 189,
-	"./tl-ph": 190,
-	"./tl-ph.js": 190,
-	"./tlh": 191,
-	"./tlh.js": 191,
-	"./tr": 192,
-	"./tr.js": 192,
-	"./tzl": 193,
-	"./tzl.js": 193,
-	"./tzm": 195,
-	"./tzm-latn": 194,
-	"./tzm-latn.js": 194,
-	"./tzm.js": 195,
-	"./uk": 196,
-	"./uk.js": 196,
-	"./ur": 197,
-	"./ur.js": 197,
-	"./uz": 199,
-	"./uz-latn": 198,
-	"./uz-latn.js": 198,
-	"./uz.js": 199,
-	"./vi": 200,
-	"./vi.js": 200,
-	"./x-pseudo": 201,
-	"./x-pseudo.js": 201,
-	"./yo": 202,
-	"./yo.js": 202,
-	"./zh-cn": 203,
-	"./zh-cn.js": 203,
-	"./zh-hk": 204,
-	"./zh-hk.js": 204,
-	"./zh-tw": 205,
-	"./zh-tw.js": 205
+	"./af": 93,
+	"./af.js": 93,
+	"./ar": 100,
+	"./ar-dz": 94,
+	"./ar-dz.js": 94,
+	"./ar-kw": 95,
+	"./ar-kw.js": 95,
+	"./ar-ly": 96,
+	"./ar-ly.js": 96,
+	"./ar-ma": 97,
+	"./ar-ma.js": 97,
+	"./ar-sa": 98,
+	"./ar-sa.js": 98,
+	"./ar-tn": 99,
+	"./ar-tn.js": 99,
+	"./ar.js": 100,
+	"./az": 101,
+	"./az.js": 101,
+	"./be": 102,
+	"./be.js": 102,
+	"./bg": 103,
+	"./bg.js": 103,
+	"./bn": 104,
+	"./bn.js": 104,
+	"./bo": 105,
+	"./bo.js": 105,
+	"./br": 106,
+	"./br.js": 106,
+	"./bs": 107,
+	"./bs.js": 107,
+	"./ca": 108,
+	"./ca.js": 108,
+	"./cs": 109,
+	"./cs.js": 109,
+	"./cv": 110,
+	"./cv.js": 110,
+	"./cy": 111,
+	"./cy.js": 111,
+	"./da": 112,
+	"./da.js": 112,
+	"./de": 115,
+	"./de-at": 113,
+	"./de-at.js": 113,
+	"./de-ch": 114,
+	"./de-ch.js": 114,
+	"./de.js": 115,
+	"./dv": 116,
+	"./dv.js": 116,
+	"./el": 117,
+	"./el.js": 117,
+	"./en-au": 118,
+	"./en-au.js": 118,
+	"./en-ca": 119,
+	"./en-ca.js": 119,
+	"./en-gb": 120,
+	"./en-gb.js": 120,
+	"./en-ie": 121,
+	"./en-ie.js": 121,
+	"./en-nz": 122,
+	"./en-nz.js": 122,
+	"./eo": 123,
+	"./eo.js": 123,
+	"./es": 125,
+	"./es-do": 124,
+	"./es-do.js": 124,
+	"./es.js": 125,
+	"./et": 126,
+	"./et.js": 126,
+	"./eu": 127,
+	"./eu.js": 127,
+	"./fa": 128,
+	"./fa.js": 128,
+	"./fi": 129,
+	"./fi.js": 129,
+	"./fo": 130,
+	"./fo.js": 130,
+	"./fr": 133,
+	"./fr-ca": 131,
+	"./fr-ca.js": 131,
+	"./fr-ch": 132,
+	"./fr-ch.js": 132,
+	"./fr.js": 133,
+	"./fy": 134,
+	"./fy.js": 134,
+	"./gd": 135,
+	"./gd.js": 135,
+	"./gl": 136,
+	"./gl.js": 136,
+	"./gom-latn": 137,
+	"./gom-latn.js": 137,
+	"./he": 138,
+	"./he.js": 138,
+	"./hi": 139,
+	"./hi.js": 139,
+	"./hr": 140,
+	"./hr.js": 140,
+	"./hu": 141,
+	"./hu.js": 141,
+	"./hy-am": 142,
+	"./hy-am.js": 142,
+	"./id": 143,
+	"./id.js": 143,
+	"./is": 144,
+	"./is.js": 144,
+	"./it": 145,
+	"./it.js": 145,
+	"./ja": 146,
+	"./ja.js": 146,
+	"./jv": 147,
+	"./jv.js": 147,
+	"./ka": 148,
+	"./ka.js": 148,
+	"./kk": 149,
+	"./kk.js": 149,
+	"./km": 150,
+	"./km.js": 150,
+	"./kn": 151,
+	"./kn.js": 151,
+	"./ko": 152,
+	"./ko.js": 152,
+	"./ky": 153,
+	"./ky.js": 153,
+	"./lb": 154,
+	"./lb.js": 154,
+	"./lo": 155,
+	"./lo.js": 155,
+	"./lt": 156,
+	"./lt.js": 156,
+	"./lv": 157,
+	"./lv.js": 157,
+	"./me": 158,
+	"./me.js": 158,
+	"./mi": 159,
+	"./mi.js": 159,
+	"./mk": 160,
+	"./mk.js": 160,
+	"./ml": 161,
+	"./ml.js": 161,
+	"./mr": 162,
+	"./mr.js": 162,
+	"./ms": 164,
+	"./ms-my": 163,
+	"./ms-my.js": 163,
+	"./ms.js": 164,
+	"./my": 165,
+	"./my.js": 165,
+	"./nb": 166,
+	"./nb.js": 166,
+	"./ne": 167,
+	"./ne.js": 167,
+	"./nl": 169,
+	"./nl-be": 168,
+	"./nl-be.js": 168,
+	"./nl.js": 169,
+	"./nn": 170,
+	"./nn.js": 170,
+	"./pa-in": 171,
+	"./pa-in.js": 171,
+	"./pl": 172,
+	"./pl.js": 172,
+	"./pt": 174,
+	"./pt-br": 173,
+	"./pt-br.js": 173,
+	"./pt.js": 174,
+	"./ro": 175,
+	"./ro.js": 175,
+	"./ru": 176,
+	"./ru.js": 176,
+	"./sd": 177,
+	"./sd.js": 177,
+	"./se": 178,
+	"./se.js": 178,
+	"./si": 179,
+	"./si.js": 179,
+	"./sk": 180,
+	"./sk.js": 180,
+	"./sl": 181,
+	"./sl.js": 181,
+	"./sq": 182,
+	"./sq.js": 182,
+	"./sr": 184,
+	"./sr-cyrl": 183,
+	"./sr-cyrl.js": 183,
+	"./sr.js": 184,
+	"./ss": 185,
+	"./ss.js": 185,
+	"./sv": 186,
+	"./sv.js": 186,
+	"./sw": 187,
+	"./sw.js": 187,
+	"./ta": 188,
+	"./ta.js": 188,
+	"./te": 189,
+	"./te.js": 189,
+	"./tet": 190,
+	"./tet.js": 190,
+	"./th": 191,
+	"./th.js": 191,
+	"./tl-ph": 192,
+	"./tl-ph.js": 192,
+	"./tlh": 193,
+	"./tlh.js": 193,
+	"./tr": 194,
+	"./tr.js": 194,
+	"./tzl": 195,
+	"./tzl.js": 195,
+	"./tzm": 197,
+	"./tzm-latn": 196,
+	"./tzm-latn.js": 196,
+	"./tzm.js": 197,
+	"./uk": 198,
+	"./uk.js": 198,
+	"./ur": 199,
+	"./ur.js": 199,
+	"./uz": 201,
+	"./uz-latn": 200,
+	"./uz-latn.js": 200,
+	"./uz.js": 201,
+	"./vi": 202,
+	"./vi.js": 202,
+	"./x-pseudo": 203,
+	"./x-pseudo.js": 203,
+	"./yo": 204,
+	"./yo.js": 204,
+	"./zh-cn": 205,
+	"./zh-cn.js": 205,
+	"./zh-hk": 206,
+	"./zh-hk.js": 206,
+	"./zh-tw": 207,
+	"./zh-tw.js": 207
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -2462,124 +2501,131 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 371;
+webpackContext.id = 376;
 
-
-/***/ }),
-
-/***/ 379:
-/***/ (function(module, exports) {
-
-module.exports = "<!-- Main view/routes wrapper-->\n<router-outlet></router-outlet>"
-
-/***/ }),
-
-/***/ 380:
-/***/ (function(module, exports) {
-
-module.exports = "<div style=\"text-align: center;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
-
-/***/ }),
-
-/***/ 381:
-/***/ (function(module, exports) {
-
-module.exports = "<div style=\"text-align: center;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
-
-/***/ }),
-
-/***/ 382:
-/***/ (function(module, exports) {
-
-module.exports = "<div style=\"text-align: center;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
-
-/***/ }),
-
-/***/ 383:
-/***/ (function(module, exports) {
-
-module.exports = "<div style=\"text-align: center;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
-
-/***/ }),
-
-/***/ 384:
-/***/ (function(module, exports) {
-
-module.exports = "<div style=\"text-align: center;padding: 0;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
-
-/***/ }),
-
-/***/ 385:
-/***/ (function(module, exports) {
-
-module.exports = "<div class=\"footer\">\n    <div class=\"pull-right\">\n        Version: <strong>0.0.1</strong>\n    </div>\n    <div>\n        <strong>Copyright</strong> Example Company &copy; 2017\n    </div>\n</div>"
 
 /***/ }),
 
 /***/ 386:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Wrapper-->\n<div id=\"wrapper\">\n\n    <!-- Left navigation bar -->\n    <navigation></navigation>\n\n    <!-- Main page wrapper -->\n    <div id=\"page-wrapper\" class=\"gray-bg\">\n\n        <!-- Top navigation -->\n        <topnavbar></topnavbar>\n\n        <!-- Main view/routes wrapper-->\n        <router-outlet></router-outlet>\n\n        <!-- Footer -->\n        <footer></footer>\n\n    </div>\n    <!-- End page wrapper-->\n\n</div>\n<!-- End wrapper-->\n"
+module.exports = "<!-- Main view/routes wrapper-->\n<router-outlet></router-outlet>"
 
 /***/ }),
 
 /***/ 387:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- View/routes wrapper-->\n<router-outlet></router-outlet>\n"
+module.exports = "<div style=\"text-align: center;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
 /***/ 388:
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar-default navbar-static-side\" role=\"navigation\">\n    <div class=\"sidebar-collapse\">\n        <ul class=\"nav metismenu\" id=\"side-menu\">\n            <li class=\"nav-header\">\n                <a href=\"#\" style=\"padding: 0;\">\n                        <span class=\"block m-t-xs\"> <strong class=\"font-bold\">{{user.username}}</strong> </span>\n                        <!-- <span class=\"text-muted text-xs block\">Example <b class=\"caret\"></b> </span> -->\n                    </a>\n                    <!--\n                <div class=\"dropdown profile-element\">\n                    <a data-toggle=\"dropdown\" class=\"dropdown-toggle\" href=\"#\">\n                        <span class=\"block m-t-xs\"> <strong class=\"font-bold\">{{user.username}}</strong> </span>\n                        <span class=\"text-muted text-xs block\">Example <b class=\"caret\"></b> </span>\n                    </a>\n                    <ul class=\"dropdown-menu animated fadeInRight m-t-xs\">\n                        <li><a href=\"#\">Logout</a></li>\n                    </ul>\n                </div>\n                <div class=\"logo-element\">\n                    IN+\n                </div>\n                -->\n            </li>\n            <li [ngClass]=\"{active: activeRoute('dash')}\">\n                <a [routerLink]=\"['/']\"><i class=\"fa fa-th-large\"></i> <span class=\"nav-label\">Dashboard</span></a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('perf')}\">\n                <a [routerLink]=\"['/perf']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Perfomance</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('processes')}\">\n                <a [routerLink]=\"['/processes']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Processes</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('correctlogin') || activeRoute('incorrectlogin')}\">\n                <a href=\"\" class=\"auto\">      \n                  <span class=\"pull-right text-muted\">\n                    <i class=\"fa fa-fw fa-angle-right text\"></i>\n                    <i class=\"fa fa-fw fa-angle-down text-active\"></i>\n                  </span>\n                  <i class=\"glyphicon glyphicon-th\"></i>\n                  <span>Security</span>\n                </a>\n                <ul class=\"nav nav-sub dk\">\n                  <li class=\"nav-sub-header\">\n                    <a [routerLink]=\"['/correctlogin']\" style=\"font-size: 11px;margin-left: 15px;\">\n                      <span>Number of login </span>\n                    </a>\n                  </li>\n                  <li ui-sref-active=\"active\">\n                    <a [routerLink]=\"['/incorrectlogin']\" style=\"font-size: 11px;margin-left: 15px;\">\n                      <span>Incorrect attempt login</span>\n                    </a>\n                  </li>\n                </ul>\n                <!-- <a [routerLink]=\"['/minorView']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Security</span> </a> -->\n            </li>\n            <li [ngClass]=\"{active: activeRoute('minorView')}\">\n                <a [routerLink]=\"['/minorView']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Database</span> </a>\n            </li>\n        </ul>\n\n    </div>\n</nav>"
+module.exports = "<div style=\"text-align: center;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
 /***/ 389:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row border-bottom\">\n    <nav class=\"navbar navbar-static-top white-bg\" role=\"navigation\" style=\"margin-bottom: 0\">\n        <div class=\"navbar-header\">\n            <a class=\"minimalize-styl-2 btn btn-primary \" (click)=\"toggleNavigation()\"><i class=\"fa fa-bars\"></i> </a>\n            <form role=\"search\" class=\"navbar-form-custom\" method=\"post\" action=\"#\">\n                <div class=\"form-group\">\n                    <input type=\"text\" placeholder=\"Search for something...\" class=\"form-control\" name=\"top-search\" id=\"top-search\">\n                </div>\n            </form>\n        </div>\n        <ul class=\"nav navbar-top-links navbar-right\">\n            <li>\n                <a href=\"#\">\n                    <i class=\"fa fa-sign-out\"></i> Log out\n                </a>\n            </li>\n        </ul>\n\n    </nav>\n</div>"
+module.exports = "<div style=\"text-align: center;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
 /***/ 390:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"text-muted font-thin pull-right\" style=\"font-size: 12px;margin: 10px;\">\n        Running time: {{ boottime || 0 }}\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-9\">\n            <div class=\"wrapper-md\">\n                <small>Last {{ avarage.hours || 0}} hours</small>\n                <div class=\"row row-sm\">\n                    <div class=\"col-md-3\">\n                        <div class=\"panel padder-v item text-center bg-primary\" [ngClass]=\"{\n                            'bg-warning': avarage.avarage_cpu > 60 && avarage.avarage_cpu < 90,\n                            'bg-danger': avarage.avarage_cpu >= 90\n                        }\" style=\"height: 90px;\" >\n                            <div class=\"h1 text-white font-thin\">{{ avarage.avarage_cpu || 0 }}%</div>\n                            <span class=\"text-white text-xs\" translate>Avarage cpu used</span><br>\n\n                            <div class=\"top text-info text-right w-full\">\n                                \n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-md-3\">\n                        <div class=\"panel padder-v item text-center bg-primary\" [ngClass]=\"{\n                            'bg-warning': avarage.avarage_memory > 60 && avarage.avarage_memory < 90,\n                            'bg-danger': avarage.avarage_memory >= 90\n                        }\" style=\"height: 90px;\">\n                            <div class=\"h1 text-white font-thin\">{{ avarage.avarage_memory || 0 }}%</div>\n                            <span class=\"text-white text-xs\" translate>Avarage memory used</span><br>\n                            <div class=\"top text-right w-full\">\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-md-3\">\n                        <div class=\"panel padder-v item text-center bg-primary\" [ngClass]=\"{\n                            'bg-warning': avarage.avarage_disk > 60 && avarage.avarage_disk < 90,\n                            'bg-danger': avarage.avarage_disk >= 90\n                        }\" style=\"height: 90px;\">\n                            <div class=\"h1 text-white font-thin\">{{ avarage.avarage_disk || 0 }}%</div>\n                            <span class=\"text-white text-xs\" translate>Avarage disk space used</span>\n                            <div class=\"top text-right w-full\">\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-lg-3\">\n            <div class=\"panel panel-default\" style=\"padding-top: 20px;\">\n                <div class=\"text-center wrapper m-b-sm\">              \n                    <h4>Current users</h4>\n                    <ul class=\"list-group\" stlye=\"text-align: left;\">\n                        <li class=\"list-group-item\" style=\"text-align: left;\" *ngFor=\"let user of users; let i = index;\">\n                            <p style=\"margin:0;font-size: 8px;text-align: right;\">{{getDateFromTimestap(user[3])}}</p>\n                            <div>\n                                <span class=\"label bg-primary\">{{i}}</span>\n                                <span>{{user[0]}} / {{user[1]}}</span>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div style=\"text-align: center;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
 /***/ 391:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content animated fadeInRight\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"text-center m-t-lg\">\n                <h1>\n                    Simple example of second view\n                </h1>\n                <small>Written as an minor-view.</small>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div style=\"text-align: center;padding: 0;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
 /***/ 392:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content animated fadeInRight\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"text-center m-t-lg\" style=\"margin-bottom: 20px;\">\n                <h1>\n                    Perfomance charts\n                </h1>\n                <small>\n                    It is an application skeleton for a typical web app. You can use it to quickly bootstrap your webapp projects and dev environment.\n                </small>\n            </div>\n\n            <div class=\"col-md-6\">\n                <cpu-chart></cpu-chart>\n            </div>\n            <div class=\"col-md-6\">\n                <memory-chart></memory-chart>\n            </div>\n            <div class=\"col-md-6\">\n                <disk-chart></disk-chart>\n            </div>\n            <div class=\"col-md-6\">\n                <network-chart></network-chart>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"footer\">\n    <div class=\"pull-right\">\n        Version: <strong>0.0.1</strong>\n    </div>\n    <div>\n        <strong>Copyright</strong> Example Company &copy; 2017\n    </div>\n</div>"
 
 /***/ }),
 
 /***/ 393:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Last time update: {{last_time }}</small>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of last_processes\">\n                                <td>\n                                    <span style=\"font-size: 8px;\">{{p.pid}}</span>\n                                </td>\n                                <td><b>{{p.name}}</b> </td>\n                                <td>{{p.status}}</td>\n                                <td>{{p.cpu}}</td>\n                                <td>{{p.create_time}}</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <small>Last {{ hours }} hours</small>\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\" >\n                                        <div class=\"h1 text-white font-thin\">{{ avarage_number || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of processes</span><br>\n\n                                        \n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <processes-chart></processes-chart>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+module.exports = "<!-- Wrapper-->\n<div id=\"wrapper\">\n\n    <!-- Left navigation bar -->\n    <navigation></navigation>\n\n    <!-- Main page wrapper -->\n    <div id=\"page-wrapper\" class=\"gray-bg\">\n\n        <!-- Top navigation -->\n        <topnavbar></topnavbar>\n\n        <!-- Main view/routes wrapper-->\n        <router-outlet></router-outlet>\n\n        <!-- Footer -->\n        <footer></footer>\n\n    </div>\n    <!-- End page wrapper-->\n\n</div>\n<!-- End wrapper-->\n"
 
 /***/ }),
 
 /***/ 394:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Top 100 source IP address</small>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of hosts\">\n                                <td>\n                                    {{p.host}}\n                                </td>\n                                <td><b>{{p.count}}</b> </td>\n                                <td>{{p.last_date}}</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\">\n                                        <div class=\"h1 text-white font-thin\">{{ count_correct_attempt || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of correct attempts login</span><br>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <div style=\"text-align: center;\">\n                            <canvas baseChart\n                                        [datasets]=\"lineChartData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartColors\"\n                                        [chartType]=\"lineChartType\"\n                                        (chartHover)=\"chartHovered($event)\"\n                                        (chartClick)=\"chartClicked($event)\"></canvas>\n\n                            <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n                            <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n                            <!-- Loading -->\n                            <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                                <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                                </div>\n                                <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                    <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                                </div>\n                            </div>\n                            <!-- END Loading -->\n                        </div>\n\n\n                        <div class=\"panel panel-info\">\n                            <div class=\"panel-heading \">\n                                <small>Top 100 usernames</small>\n                            </div>\n                            <div class=\"panel-body\">\n                                <table class=\"table\">\n                                    <tr *ngFor=\"let p of users\">\n                                        <td>\n                                            {{p.username}}\n                                        </td>\n                                        <td><b>{{p.count}}</b> </td>\n                                        <td>{{p.last_date}}</td>\n                                    </tr>\n                                </table>\n                            </div>\n                        </div>\n\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+module.exports = "<!-- View/routes wrapper-->\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
 /***/ 395:
+/***/ (function(module, exports) {
+
+module.exports = "<nav class=\"navbar-default navbar-static-side\" role=\"navigation\">\n    <div class=\"sidebar-collapse\">\n        <ul class=\"nav metismenu\" id=\"side-menu\">\n            <li class=\"nav-header\">\n                <a href=\"#\" style=\"padding: 0;\">\n                        <span class=\"block m-t-xs\"> <strong class=\"font-bold\">{{user.username}}</strong> </span>\n                        <!-- <span class=\"text-muted text-xs block\">Example <b class=\"caret\"></b> </span> -->\n                    </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('dash')}\">\n                <a [routerLink]=\"['/']\"><i class=\"fa fa-th-large\"></i> <span class=\"nav-label\">Dashboard</span></a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('perf')}\">\n                <a [routerLink]=\"['/perf']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Perfomance</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('processes')}\">\n                <a [routerLink]=\"['/processes']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Processes</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('correctlogin') || activeRoute('incorrectlogin')}\">\n                <a href=\"\" class=\"auto\">      \n                  <span class=\"pull-right text-muted\">\n                    <i class=\"fa fa-fw fa-angle-right text\"></i>\n                    <i class=\"fa fa-fw fa-angle-down text-active\"></i>\n                  </span>\n                  <i class=\"glyphicon glyphicon-th\"></i>\n                  <span>Security</span>\n                </a>\n                <ul class=\"nav nav-sub dk\">\n                  <li class=\"nav-sub-header\">\n                    <a [routerLink]=\"['/correctlogin']\" style=\"font-size: 11px;margin-left: 15px;\">\n                      <span>Number of login </span>\n                    </a>\n                  </li>\n                  <li ui-sref-active=\"active\">\n                    <a [routerLink]=\"['/incorrectlogin']\" style=\"font-size: 11px;margin-left: 15px;\">\n                      <span>Incorrect attempt login</span>\n                    </a>\n                  </li>\n                </ul>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('minorView')}\">\n                <a [routerLink]=\"['/minorView']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Database</span> </a>\n            </li>\n            <li *ngIf=\"apps.backup\" [ngClass]=\"{active: activeRoute('backups')}\">\n                <a [routerLink]=\"['/backups']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Backups</span> </a>\n            </li>\n        </ul>\n\n    </div>\n</nav>"
+
+/***/ }),
+
+/***/ 396:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"row border-bottom\">\n    <nav class=\"navbar navbar-static-top white-bg\" role=\"navigation\" style=\"margin-bottom: 0\">\n        <div class=\"navbar-header\">\n            <a class=\"minimalize-styl-2 btn btn-primary \" (click)=\"toggleNavigation()\"><i class=\"fa fa-bars\"></i> </a>\n            <form role=\"search\" class=\"navbar-form-custom\" method=\"post\" action=\"#\">\n                <div class=\"form-group\">\n                    <input type=\"text\" placeholder=\"Search for something...\" class=\"form-control\" name=\"top-search\" id=\"top-search\">\n                </div>\n            </form>\n        </div>\n        <ul class=\"nav navbar-top-links navbar-right\">\n            <li>\n                <a href=\"#\">\n                    <i class=\"fa fa-sign-out\"></i> Log out\n                </a>\n            </li>\n        </ul>\n\n    </nav>\n</div>"
+
+/***/ }),
+
+/***/ 397:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"wrapper wrapper-content\">\n    \n    <a [href]=\"backupMakeUrl\" class=\"btn btn-success\" target=\"_blank\">Make and download database backup</a>\n    <a [href]=\"backupMakeMediaUrl\" class=\"btn btn-primary\" target=\"_blank\">Make and download media backup</a>\n    \n\n    <div class=\"row\" style=\"margin-top: 10px;\">\n        <div class=\"col-lg-9\">\n            <div class=\"wrapper-md\">\n                <div class=\"tab-container\">\n                    <ul class=\"nav nav-tabs nav-stacked nav-justified\">\n                        <li [ngClass]=\"{active: router.url=='/backups'}\">\n                            <a [routerLink]=\"['/backups']\">Settings</a>\n                        </li>\n                        <li [ngClass]=\"{active: router.url=='/backups/result'}\">\n                            <a [routerLink]=\"['/backups/result']\">Result</a>\n                        </li>\n                    </ul>\n                    <div class=\"tab-content\">\n                        <div *ngIf=\"router.url=='/backups'\" class=\"tab-pane active\">\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <form>\n                                        <div class=\"form-group\">\n                                            <label>Day time for running backup (will be run everyday):</label>\n                                            <div style=\"display: flex;align-items: center;\">\n                                                <timepicker [(ngModel)]=\"model.backuptime\" [ngModelOptions]=\"{standalone: true}\" (ngModelChange)=\"changedTime()\"></timepicker>\n                                                <button type=\"button\" class=\"btn btn-info\" style=\"margin-left: 20px;height:40px;\" (click)=\"saveBackTime()\">Save</button>\n                                                <span *ngIf=\"backuptime_is_dirty\" class=\"text-warning\" style=\"margin-left: 10px;\">Time is not save</span>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <label>Absolute path for media directory (if required):</label>\n                                            <div class=\"input-group\">\n                                                <input name=\"inputedDir\" type=\"text\" class=\"form-control\" [(ngModel)]=\"model.inputedDir\" (keyup.enter)=\"addDirectory()\"/>\n                                                <span class=\"input-group-addon\" style=\"padding: 0;\"> \n                                                    <button type=\"button\" class=\"btn btn-info\" (click)=\"addDirectory()\" [disabled]=\"!model.inputedDir || loading\" style=\"margin: -2px;\">Add</button></span>\n                                            </div>\n                                        </div>\n\n                                        <div class=\"form-group\">\n                                            <div class=\"panel panel-default\">\n                                                <div class=\"panel-body\">\n                                                    <p *ngIf=\"mediadirs.length == 0\">No directories specified</p>\n                                                    <div *ngFor=\"let obj of mediadirs; let i = index;\" style=\"margin-top: 2px;\">\n                                                        <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"deletePath(i)\" [disabled]=\"loading\"><i class=\"fa fa-times\"></i></button>\n                                                        <span style=\"margin-left:20px;\">{{obj.path}}</span>\n                                                        <span>\n                                                            <i *ngIf=\"obj.checked\" class=\"fa fa-check text-info\"></i>\n                                                        </span>\n                                                        <span *ngIf=\"!obj.checked\">\n                                                            <i class=\"fa fa-exclamation text-warning\"></i> \n                                                            <small>(Path doesn't exist)</small>\n                                                        </span>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </form>\n                                </div>\n                            </div>\n                        </div>\n                        <div *ngIf=\"router.url=='/backups/result'\" class=\"tab-pane active\">\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <div *ngIf=\"backups_daily\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Daily Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_daily\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><button type=\"button\" class=\"btn btn-default btn-xs\"><i class=\"fa fa-download\"></i></button></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_weekly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Weekly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_weekly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><button type=\"button\" class=\"btn btn-default btn-xs\"><i class=\"fa fa-download\"></i></button></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_monthly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Monthly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_monthly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><button type=\"button\" class=\"btn btn-default btn-xs\"><i class=\"fa fa-download\"></i></button></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <!-- Loading -->\n        <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n            <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n            </div>\n            <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n            </div>\n        </div>\n        <!-- END Loading -->\n\n        <div class=\"col-lg-3\">\n            <div class=\"wrapper-md\">\n                <div class=\"panel panel-success\">\n                    <div class=\"panel-heading \">\n                        Info\n                    </div>\n                    <div class=\"panel-body\">\n                        <span class=\"text-success\">Last run: </span>\n                        <span>{{ last_run_backup| date: 'yyyy-MM-dd HH:mm' || \"None\"}} </span>\n\n                        <span class=\"text-success\">State: </span>\n                        <span *ngIf=\"backups_enable\" class=\"text-primary\" style=\"margin-right: 20px;\">backup is enable</span>\n                        <span *ngIf=\"!backups_enable\" class=\"text-danger\" style=\"margin-right: 20px;\">backup is disabled</span>\n                        <div style=\"margin-top: 20px\">\n                            <button *ngIf=\"backups_enable\" type=\"button\" class=\"btn btn-primary\" (click)=\"backupSwitch()\">Turn off backup</button>\n                            <button *ngIf=\"!backups_enable\" type=\"button\" class=\"btn btn-danger\" (click)=\"backupSwitch()\">Turn on backup</button>\n                        </div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ 398:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"text-muted font-thin pull-right\" style=\"font-size: 12px;margin: 10px;\">\n        Running time: {{ boottime || 0 }}\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-9\">\n            <div class=\"wrapper-md\">\n                <small>Last {{ avarage.hours || 0}} hours</small>\n                <div class=\"row row-sm\">\n                    <div class=\"col-md-3\">\n                        <div class=\"panel padder-v item text-center bg-primary\" [ngClass]=\"{\n                            'bg-warning': avarage.avarage_cpu > 60 && avarage.avarage_cpu < 90,\n                            'bg-danger': avarage.avarage_cpu >= 90\n                        }\" style=\"height: 90px;\" >\n                            <div class=\"h1 text-white font-thin\">{{ avarage.avarage_cpu || 0 }}%</div>\n                            <span class=\"text-white text-xs\" translate>Avarage cpu used</span><br>\n\n                            <div class=\"top text-info text-right w-full\">\n                                \n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-md-3\">\n                        <div class=\"panel padder-v item text-center bg-primary\" [ngClass]=\"{\n                            'bg-warning': avarage.avarage_memory > 60 && avarage.avarage_memory < 90,\n                            'bg-danger': avarage.avarage_memory >= 90\n                        }\" style=\"height: 90px;\">\n                            <div class=\"h1 text-white font-thin\">{{ avarage.avarage_memory || 0 }}%</div>\n                            <span class=\"text-white text-xs\" translate>Avarage memory used</span><br>\n                            <div class=\"top text-right w-full\">\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-md-3\">\n                        <div class=\"panel padder-v item text-center bg-primary\" [ngClass]=\"{\n                            'bg-warning': avarage.avarage_disk > 60 && avarage.avarage_disk < 90,\n                            'bg-danger': avarage.avarage_disk >= 90\n                        }\" style=\"height: 90px;\">\n                            <div class=\"h1 text-white font-thin\">{{ avarage.avarage_disk || 0 }}%</div>\n                            <span class=\"text-white text-xs\" translate>Avarage disk space used</span>\n                            <div class=\"top text-right w-full\">\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-lg-3\">\n            <div class=\"panel panel-default\" style=\"padding-top: 20px;\">\n                <div class=\"text-center wrapper m-b-sm\">              \n                    <h4>Current users</h4>\n                    <ul class=\"list-group\" stlye=\"text-align: left;\">\n                        <li class=\"list-group-item\" style=\"text-align: left;\" *ngFor=\"let user of users; let i = index;\">\n                            <p style=\"margin:0;font-size: 8px;text-align: right;\">{{getDateFromTimestap(user[3])}}</p>\n                            <div>\n                                <span class=\"label bg-primary\">{{i}}</span>\n                                <span>{{user[0]}} / {{user[1]}}</span>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ 399:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"wrapper wrapper-content animated fadeInRight\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"text-center m-t-lg\">\n                <h1>\n                    Simple example of second view\n                </h1>\n                <small>Written as an minor-view.</small>\n            </div>\n        </div>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ 400:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"wrapper wrapper-content animated fadeInRight\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"text-center m-t-lg\" style=\"margin-bottom: 20px;\">\n                <h1>\n                    Perfomance charts\n                </h1>\n                <small>\n                    It is an application skeleton for a typical web app. You can use it to quickly bootstrap your webapp projects and dev environment.\n                </small>\n            </div>\n\n            <div class=\"col-md-6\">\n                <cpu-chart></cpu-chart>\n            </div>\n            <div class=\"col-md-6\">\n                <memory-chart></memory-chart>\n            </div>\n            <div class=\"col-md-6\">\n                <disk-chart></disk-chart>\n            </div>\n            <div class=\"col-md-6\">\n                <network-chart></network-chart>\n            </div>\n        </div>\n    </div>\n</div>"
+
+/***/ }),
+
+/***/ 401:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Last time update: {{last_time }}</small>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of last_processes\">\n                                <td>\n                                    <span style=\"font-size: 8px;\">{{p.pid}}</span>\n                                </td>\n                                <td><b>{{p.name}}</b> </td>\n                                <td>{{p.status}}</td>\n                                <td>{{p.cpu}}</td>\n                                <td>{{p.create_time}}</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <small>Last {{ hours }} hours</small>\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\" >\n                                        <div class=\"h1 text-white font-thin\">{{ avarage_number || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of processes</span><br>\n\n                                        \n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <processes-chart></processes-chart>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ 402:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Top 100 source IP address</small>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of hosts\">\n                                <td>\n                                    {{p.host}}\n                                </td>\n                                <td><b>{{p.count}}</b> </td>\n                                <td>{{p.last_date}}</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\">\n                                        <div class=\"h1 text-white font-thin\">{{ count_correct_attempt || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of correct attempts login</span><br>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <div style=\"text-align: center;\">\n                            <canvas baseChart\n                                        [datasets]=\"lineChartData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartColors\"\n                                        [chartType]=\"lineChartType\"\n                                        (chartHover)=\"chartHovered($event)\"\n                                        (chartClick)=\"chartClicked($event)\"></canvas>\n\n                            <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n                            <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n                            <!-- Loading -->\n                            <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                                <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                                </div>\n                                <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                    <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                                </div>\n                            </div>\n                            <!-- END Loading -->\n                        </div>\n\n\n                        <div class=\"panel panel-info\">\n                            <div class=\"panel-heading \">\n                                <small>Top 100 usernames</small>\n                            </div>\n                            <div class=\"panel-body\">\n                                <table class=\"table\">\n                                    <tr *ngFor=\"let p of users\">\n                                        <td>\n                                            {{p.username}}\n                                        </td>\n                                        <td><b>{{p.count}}</b> </td>\n                                        <td>{{p.last_date}}</td>\n                                    </tr>\n                                </table>\n                            </div>\n                        </div>\n\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ 403:
 /***/ (function(module, exports) {
 
 module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Top 100 source IP address</small>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of hosts\">\n                                <td>\n                                    {{p.host}}\n                                </td>\n                                <td><b>{{p.count}}</b> </td>\n                                <td>{{p.last_date}}</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\" [ngClass]=\"{\n                                    'bg-warning': count_incorrect_attepmt > 0 && count_incorrect_attepmt <= 100,\n                                    'bg-danger': count_incorrect_attepmt > 100 }\">\n                                        <div class=\"h1 text-white font-thin\">{{ count_incorrect_attepmt || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of incorrect attempts login</span><br>\n\n                                        \n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n\n                        <div style=\"text-align: center;\">\n                            <canvas baseChart\n                                        [datasets]=\"lineChartData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartColors\"\n                                        [chartType]=\"lineChartType\"\n                                        (chartHover)=\"chartHovered($event)\"\n                                        (chartClick)=\"chartClicked($event)\"></canvas>\n\n                            <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n                            <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n                            <!-- Loading -->\n                            <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                                <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                                </div>\n                                <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                    <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                                </div>\n                            </div>\n                            <!-- END Loading -->\n                            \n                        </div>\n\n                        <div class=\"panel panel-info\">\n                            <div class=\"panel-heading \">\n                                <small>Top 100 usernames</small>\n                            </div>\n                            <div class=\"panel-body\">\n                                <table class=\"table\">\n                                    <tr *ngFor=\"let p of users\">\n                                        <td>\n                                            {{p.username}}\n                                        </td>\n                                        <td><b>{{p.count}}</b> </td>\n                                        <td>{{p.last_date}}</td>\n                                    </tr>\n                                </table>\n                            </div>\n                        </div>\n\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
@@ -2591,14 +2637,14 @@ module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(60);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(61);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(62);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_settings__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__app_settings__ = __webpack_require__(10);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2624,14 +2670,14 @@ var UserService = (function () {
         var data = {
             t: new Date().getTime()
         };
-        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* URLSearchParams */]();
+        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* URLSearchParams */]();
         for (var key in data) {
             if (data.hasOwnProperty(key)) {
                 var val = data[key];
                 params.set(key, val);
             }
         }
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* RequestOptions */]({
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestOptions */]({
             search: params
         });
         this.http.get(__WEBPACK_IMPORTED_MODULE_5__app_settings__["a" /* AppSettings */].userUrl, options)
@@ -2642,9 +2688,8 @@ var UserService = (function () {
                 window.location.href = "/";
             }
             self.user = data.user;
-            console.log(data);
             if (callback) {
-                callback(self.user);
+                callback(data);
             }
         }, function (error) {
         });
@@ -2659,7 +2704,7 @@ var UserService = (function () {
     UserService.prototype.handleError = function (error) {
         // In a real world app, you might use a remote logging infrastructure
         var errMsg;
-        if (error instanceof __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* Response */]) {
+        if (error instanceof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Response */]) {
             var body = error.json() || '';
             var err = body.error || JSON.stringify(body);
             errMsg = error.status + " - " + (error.statusText || '') + " " + err;
@@ -2674,7 +2719,7 @@ var UserService = (function () {
 }());
 UserService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["g" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["g" /* Http */]) === "function" && _a || Object])
 ], UserService);
 
 var _a;
@@ -2682,15 +2727,109 @@ var _a;
 
 /***/ }),
 
-/***/ 439:
+/***/ 447:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(223);
+module.exports = __webpack_require__(226);
 
 
 /***/ }),
 
-/***/ 71:
+/***/ 7:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var DataService = (function () {
+    function DataService(http) {
+        this.http = http;
+    }
+    DataService.prototype.getData = function (url, _params) {
+        var data = _params || {};
+        data.t = new Date().getTime();
+        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* URLSearchParams */]();
+        for (var key in data) {
+            if (data.hasOwnProperty(key)) {
+                var val = data[key];
+                params.set(key, val);
+            }
+        }
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestOptions */]({
+            search: params
+        });
+        return this.http.get(url, options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    DataService.prototype.postData = function (url, _params) {
+        var data = _params || {};
+        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* URLSearchParams */]();
+        for (var key in data) {
+            if (data.hasOwnProperty(key)) {
+                var val = data[key];
+                params.set(key, val);
+            }
+        }
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestOptions */]({
+            search: params
+        });
+        return this.http.post(url, data)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    DataService.prototype.extractData = function (res) {
+        var body = res.json();
+        return body || {};
+    };
+    DataService.prototype.handleError = function (error) {
+        // In a real world app, you might use a remote logging infrastructure
+        var errMsg;
+        if (error instanceof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Response */]) {
+            var body = error.json() || '';
+            var err = body.error || JSON.stringify(body);
+            errMsg = error.status + " - " + (error.statusText || '') + " " + err;
+        }
+        else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+        console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(errMsg);
+    };
+    return DataService;
+}());
+DataService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["g" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["g" /* Http */]) === "function" && _a || Object])
+], DataService);
+
+var _a;
+//# sourceMappingURL=data.service.js.map
+
+/***/ }),
+
+/***/ 72:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2711,7 +2850,7 @@ var basicComponent = (function () {
 basicComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'basic',
-        template: __webpack_require__(386)
+        template: __webpack_require__(393)
     })
 ], basicComponent);
 
@@ -2719,13 +2858,169 @@ basicComponent = __decorate([
 
 /***/ }),
 
-/***/ 72:
+/***/ 73:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_settings__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_data_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_settings__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_data_service__ = __webpack_require__(7);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return backupViewComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+var backupViewComponent = (function () {
+    function backupViewComponent(dataService, router) {
+        this.dataService = dataService;
+        this.router = router;
+        this.loading = false;
+        this.error_message = "";
+        this.backups_daily = [];
+        this.backups_weekly = [];
+        this.backups_monthly = [];
+        this.backups_enable = true;
+        this.mediadirs = [];
+        this.model = {
+            inputedDir: "",
+            backuptime: ""
+        };
+        this.backuptime_is_dirty = false;
+    }
+    backupViewComponent.prototype.ngOnInit = function () {
+        var self = this;
+        self.backupMakeUrl = __WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].backupMakeUrl;
+        self.backupMakeMediaUrl = __WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].backupMakeMediaUrl;
+        self.getBackups();
+    };
+    backupViewComponent.prototype.getBackups = function () {
+        var self = this;
+        self.loading = true;
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].backupsUrl, {})
+            .subscribe(function (data) {
+            self.loading = false;
+            self.backups_daily = data.backups.daily;
+            self.backups_weekly = data.backups.weekly;
+            self.backups_monthly = data.backups.monthly;
+            self.backups_enable = data.enable;
+            self.last_run_backup = data.last_run_backup;
+            self.mediadirs = data.media_directories;
+            self.result_last_run_backup = data.result;
+            self.model.backuptime = data.run_time;
+            self.backuptime_loaded = data.run_time;
+            if (!self.model.backuptime) {
+                self.model.backuptime = moment().toDate();
+                self.backuptime_is_dirty = true;
+            }
+        }, function (error) {
+            self.loading = false;
+            self.error_message = error;
+        });
+    };
+    backupViewComponent.prototype.getDateFromTimestap = function (value) {
+        return moment(value, 'X').format('YYYY-DD-MM HH:mm');
+    };
+    backupViewComponent.prototype.backupSwitch = function () {
+        var self = this;
+        self.loading = true;
+        self.dataService.postData(__WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].backupsEnableUrl, {})
+            .subscribe(function (data) {
+            self.loading = false;
+            self.backups_enable = data.enable;
+        }, function (error) {
+            self.loading = false;
+            self.error_message = error;
+        });
+    };
+    backupViewComponent.prototype.addDirectory = function () {
+        var self = this;
+        self.mediadirs.push({
+            path: this.model.inputedDir,
+            checked: false
+        });
+        self.loading = true;
+        self.dataService.postData(__WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].backupsPathDirUrl, {
+            dirs: self.mediadirs
+        })
+            .subscribe(function (data) {
+            self.loading = false;
+            self.model.inputedDir = "";
+            self.mediadirs = data.media_directories;
+        }, function (error) {
+            self.loading = false;
+            self.error_message = error;
+        });
+    };
+    backupViewComponent.prototype.deletePath = function (index) {
+        var self = this;
+        self.mediadirs.splice(index, 1);
+        self.loading = true;
+        self.dataService.postData(__WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].backupsPathDirUrl, {
+            dirs: self.mediadirs
+        })
+            .subscribe(function (data) {
+            self.loading = false;
+            self.mediadirs = data.media_directories;
+        }, function (error) {
+            self.loading = false;
+            self.error_message = error;
+        });
+    };
+    backupViewComponent.prototype.changedTime = function () {
+        if (this.backuptime_loaded &&
+            moment(this.backuptime_loaded).format('X') == moment(this.model.backuptime).format('X')) {
+            this.backuptime_is_dirty = false;
+        }
+        else {
+            this.backuptime_is_dirty = true;
+        }
+    };
+    backupViewComponent.prototype.saveBackTime = function () {
+        var self = this;
+        self.loading = true;
+        self.dataService.postData(__WEBPACK_IMPORTED_MODULE_2__app_settings__["a" /* AppSettings */].backupsSetTimeUrl, {
+            time: moment(self.model.backuptime).format('X')
+        })
+            .subscribe(function (data) {
+            self.loading = false;
+            self.backuptime_is_dirty = false;
+        }, function (error) {
+            self.loading = false;
+            self.error_message = error;
+        });
+    };
+    return backupViewComponent;
+}());
+backupViewComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'backupView',
+        template: __webpack_require__(397)
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_data_service__["a" /* DataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
+], backupViewComponent);
+
+var _a, _b;
+//# sourceMappingURL=backup-view.component.js.map
+
+/***/ }),
+
+/***/ 74:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_settings__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_data_service__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mainViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2805,7 +3100,7 @@ var mainViewComponent = (function () {
 mainViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'mianView',
-        template: __webpack_require__(390)
+        template: __webpack_require__(398)
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_data_service__["a" /* DataService */]) === "function" && _a || Object])
 ], mainViewComponent);
@@ -2815,7 +3110,7 @@ var _a;
 
 /***/ }),
 
-/***/ 73:
+/***/ 75:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2836,7 +3131,7 @@ var perfViewComponent = (function () {
 perfViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'perfView',
-        template: __webpack_require__(392)
+        template: __webpack_require__(400)
     })
 ], perfViewComponent);
 
@@ -2844,13 +3139,13 @@ perfViewComponent = __decorate([
 
 /***/ }),
 
-/***/ 74:
+/***/ 76:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_settings__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_data_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_settings__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_data_service__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return processesViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2915,7 +3210,7 @@ var processesViewComponent = (function () {
 processesViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'processesView',
-        template: __webpack_require__(393)
+        template: __webpack_require__(401)
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_data_service__["a" /* DataService */]) === "function" && _a || Object])
 ], processesViewComponent);
@@ -2925,16 +3220,16 @@ var _a;
 
 /***/ }),
 
-/***/ 75:
+/***/ 77:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return secCorrectLoginViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3078,7 +3373,7 @@ __decorate([
 secCorrectLoginViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'secCorrectLoginView',
-        template: __webpack_require__(394)
+        template: __webpack_require__(402)
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], secCorrectLoginViewComponent);
@@ -3088,16 +3383,16 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 76:
+/***/ 78:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(12);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return secIncorrectLoginViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3241,7 +3536,7 @@ __decorate([
 secIncorrectLoginViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'secIncorrectLoginView',
-        template: __webpack_require__(395)
+        template: __webpack_require__(403)
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], secIncorrectLoginViewComponent);
@@ -3249,19 +3544,7 @@ secIncorrectLoginViewComponent = __decorate([
 var _a, _b, _c, _d;
 //# sourceMappingURL=sec-incorrect-login-view.component.js.map
 
-/***/ }),
-
-/***/ 9:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(253);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__index__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__index__["b"]; });
-
-//# sourceMappingURL=ng2-charts.js.map
-
 /***/ })
 
-},[439]);
+},[447]);
 //# sourceMappingURL=main.bundle.js.map

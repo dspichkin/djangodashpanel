@@ -1,0 +1,155 @@
+<div class="wrapper wrapper-content">
+    
+    <a [href]="backupMakeUrl" class="btn btn-success" target="_blank">Make and download database backup</a>
+    <a [href]="backupMakeMediaUrl" class="btn btn-primary" target="_blank">Make and download media backup</a>
+    
+
+    <div class="row" style="margin-top: 10px;">
+        <div class="col-lg-9">
+            <div class="wrapper-md">
+                <div class="tab-container">
+                    <ul class="nav nav-tabs nav-stacked nav-justified">
+                        <li [ngClass]="{active: router.url=='/backups'}">
+                            <a [routerLink]="['/backups']">Settings</a>
+                        </li>
+                        <li [ngClass]="{active: router.url=='/backups/result'}">
+                            <a [routerLink]="['/backups/result']">Result</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div *ngIf="router.url=='/backups'" class="tab-pane active">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <form>
+                                        <div class="form-group">
+                                            <label>Day time for running backup (will be run everyday):</label>
+                                            <div style="display: flex;align-items: center;">
+                                                <timepicker [(ngModel)]="model.backuptime" [ngModelOptions]="{standalone: true}" (ngModelChange)="changedTime()"></timepicker>
+                                                <button type="button" class="btn btn-info" style="margin-left: 20px;height:40px;" (click)="saveBackTime()">Save</button>
+                                                <span *ngIf="backuptime_is_dirty" class="text-warning" style="margin-left: 10px;">Time is not save</span>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Absolute path for media directory (if required):</label>
+                                            <div class="input-group">
+                                                <input name="inputedDir" type="text" class="form-control" [(ngModel)]="model.inputedDir" (keyup.enter)="addDirectory()"/>
+                                                <span class="input-group-addon" style="padding: 0;"> 
+                                                    <button type="button" class="btn btn-info" (click)="addDirectory()" [disabled]="!model.inputedDir || loading" style="margin: -2px;">Add</button></span>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <div class="panel panel-default">
+                                                <div class="panel-body">
+                                                    <p *ngIf="mediadirs.length == 0">No directories specified</p>
+                                                    <div *ngFor="let obj of mediadirs; let i = index;" style="margin-top: 2px;">
+                                                        <button type="button" class="btn btn-default btn-xs" (click)="deletePath(i)" [disabled]="loading"><i class="fa fa-times"></i></button>
+                                                        <span style="margin-left:20px;">{{obj.path}}</span>
+                                                        <span>
+                                                            <i *ngIf="obj.checked" class="fa fa-check text-info"></i>
+                                                        </span>
+                                                        <span *ngIf="!obj.checked">
+                                                            <i class="fa fa-exclamation text-warning"></i> 
+                                                            <small>(Path doesn't exist)</small>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <div *ngIf="router.url=='/backups/result'" class="tab-pane active">
+                            <div class="panel panel-default">
+                                <div class="panel-body">
+                                    <div *ngIf="backups_daily" class="panel panel-info">
+                                        <div class="panel-heading ">
+                                            Daily Database Backups
+                                        </div>
+                                        <div class="panel-body">
+                                            <table class="table">
+                                                <tr *ngFor="let backup of backups_daily">
+                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>
+                                                    <td>{{backup.filename}}</td>
+                                                    <td>{{backup.size}}</td>
+                                                    <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-download"></i></button></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div *ngIf="backups_weekly" class="panel panel-info">
+                                        <div class="panel-heading ">
+                                            Weekly Database Backups
+                                        </div>
+                                        <div class="panel-body">
+                                            <table class="table">
+                                                <tr *ngFor="let backup of backups_weekly">
+                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>
+                                                    <td>{{backup.filename}}</td>
+                                                    <td>{{backup.size}}</td>
+                                                    <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-download"></i></button></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+
+                                    <div *ngIf="backups_monthly" class="panel panel-info">
+                                        <div class="panel-heading ">
+                                            Monthly Database Backups
+                                        </div>
+                                        <div class="panel-body">
+                                            <table class="table">
+                                                <tr *ngFor="let backup of backups_monthly">
+                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>
+                                                    <td>{{backup.filename}}</td>
+                                                    <td>{{backup.size}}</td>
+                                                    <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-download"></i></button></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Loading -->
+        <div *ngIf="loading" style="position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;">
+            <div style="position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;">
+            </div>
+            <div style="width: 50px;margin: auto;margin-top: 60px;">
+                <i class="fa fa-spin fa-gear" style="font-size: 50px;"></i>
+            </div>
+        </div>
+        <!-- END Loading -->
+
+        <div class="col-lg-3">
+            <div class="wrapper-md">
+                <div class="panel panel-success">
+                    <div class="panel-heading ">
+                        Info
+                    </div>
+                    <div class="panel-body">
+                        <span class="text-success">Last run: </span>
+                        <span>{{ last_run_backup| date: 'yyyy-MM-dd HH:mm' || "None"}} </span>
+
+                        <span class="text-success">State: </span>
+                        <span *ngIf="backups_enable" class="text-primary" style="margin-right: 20px;">backup is enable</span>
+                        <span *ngIf="!backups_enable" class="text-danger" style="margin-right: 20px;">backup is disabled</span>
+                        <div style="margin-top: 20px">
+                            <button *ngIf="backups_enable" type="button" class="btn btn-primary" (click)="backupSwitch()">Turn off backup</button>
+                            <button *ngIf="!backups_enable" type="button" class="btn btn-danger" (click)="backupSwitch()">Turn on backup</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

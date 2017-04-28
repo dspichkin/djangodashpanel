@@ -20,3 +20,7 @@ noUi-handle:after, .noUi-handle:before {
 .active>.auto .text-active, .active>.text-active {
     display: inline-block!important;
 }
+
+.nav-tabs > li.active > a {
+	background-color: white !important;
+}

@@ -1,7 +1,6 @@
-from django.conf.urls import include
 from django.conf.urls import url
 
-from djangodashpanel.views.security import (
+from djangodashpanel.security.views import (
     correctlogins_data, incorrectlogins_data)
 
 urlpatterns = [

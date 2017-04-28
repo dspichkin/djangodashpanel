@@ -96,14 +96,14 @@ def correctlogins_data(request):
     if hosts:
         hosts.sort(key=lambda x: x["count"], reverse=True)
         hosts = hosts[:100]
-    print "temp_users",temp_users
+
     users = []
     for i in temp_users:
         users.append(temp_users[i])
     if users:
         users.sort(key=lambda x: x["count"], reverse=True)
         users = users[:100]
-    print "users",users
+
     date_range = {
         "start":  time.mktime(timezone.localtime(date_start_tz).timetuple()),  # time.mktime(timezone.localtime(timezone.now()).timetuple()),
         "start_date": time.mktime(timezone.localtime(date_start_tz).timetuple()) + 10,  # time.mktime(timezone.localtime(timezone.now()).timetuple()),

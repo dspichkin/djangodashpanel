@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {Router} from '@angular/router';
+import { Router } from '@angular/router';
 
 import { UserService } from '../../../services/user.service';
 
@@ -15,6 +15,9 @@ export class NavigationComponent {
 	user = {
 		username: ""
 	};
+    apps = {
+        backup: false
+    };
 
     constructor(private router: Router, private userService: UserService) {}
 
@@ -25,9 +28,9 @@ export class NavigationComponent {
     ngOnInit() { 
     	let self = this;
     	
-    	this.userService.getUserFromServer(function(user) {
-    		self.user = user;
-    		console.log("!!!!", self.user)	
+    	this.userService.getUserFromServer(function(data) {
+    		self.user = data.user;
+            self.apps = data.apps;
     	})
     }
 

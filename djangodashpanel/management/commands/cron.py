@@ -1,15 +1,9 @@
 # -*- coding: utf-8 -*-
 
-import logging
 import os
-import json
-import math
-#import utmp
 import psutil
 import pytz
-#from pyutmp import UtmpFile
 from ..readxtmppython import read_xtmp
-import time
 
 from datetime import datetime, timedelta
 from django.core.management.base import BaseCommand
@@ -49,7 +43,7 @@ class Command(BaseCommand):
             perf.run_last_time_1h = timezone.now()
             self.set_process()
             perf.save()
-        
+
         if not sec.run_last_login_attempt_correct or sec.run_last_login_attempt_correct + timedelta(minutes=60) < now:
             sec.run_last_login_attempt_correct = timezone.now()
             sec.save()
@@ -150,39 +144,8 @@ class Command(BaseCommand):
             dt_last_tz = pytz.timezone(settings.TIME_ZONE).localize(dt, is_dst=None)
             if not SecurityLoginAttemptIncorrect.objects.filter(time=dt_last_tz):
                 SecurityLoginAttemptIncorrect.objects.put(dt_last_tz, host, user)
-                """
-                obj_id = int(str(dt.weekday()) + str(dt.hour) + str(int(math.ceil(dt.minute / 5)) * 5))
-                obj, created = SecurityLoginAttemptIncorrect.objects.get_or_create(pk=obj_id)
-                obj.time = dt_last_tz
-
-                if obj.value:
-                    data = json.loads(obj.value)
-
-                    if host in data.get("hosts", {}):
-                        data["hosts"][host] = data["hosts"][host] + 1
-                    else:
-                        data["hosts"][host] = 1
-                    if user in data.get("users", {}):
-                        data["users"][user] += 1
-                    else:
-                        data["users"][user] = 1
-                else:
-                    data = {
-                        "hosts": {
-                            host: 1
-                        },
-                        "users": {
-                            user: 1
-                        }
-                    }
-                obj.value = json.dumps(data)
-                obj.save()
-                """
 
     def set_login_attempt_correct(self):
-        
-        #if not sec.run_last_login_attempt_correct or sec.run_last_login_attempt_correct + timedelta(minutes=60 * 3) > now:
-        #    return
 
         print "login attempt correct"
         PATH_LOGIN_ATTEMPT_CORRECT = None
@@ -193,7 +156,6 @@ class Command(BaseCommand):
         if not PATH_LOGIN_ATTEMPT_CORRECT or not os.path.exists(PATH_LOGIN_ATTEMPT_CORRECT):
             return
 
-
         data = read_xtmp(PATH_LOGIN_ATTEMPT_CORRECT)
         for i in data:
             dt = datetime.fromtimestamp(float(i[9]))
@@ -202,33 +164,6 @@ class Command(BaseCommand):
             dt_last_tz = pytz.timezone(settings.TIME_ZONE).localize(dt, is_dst=None)
             if not SecurityLoginAttemptCorrect.objects.filter(time=dt_last_tz):
                 SecurityLoginAttemptCorrect.objects.put(dt_last_tz, host, user)
-                """
-                obj_id = int(str(dt.weekday()) + str(dt.hour) + str(int(math.ceil(dt.minute / 5)) * 5))
-                obj, created = SecurityLoginAttemptCorrect.objects.get_or_create(pk=obj_id)
-                obj.time = dt_last_tz
 
-                if obj.value:
-                    data = json.loads(obj.value)
-
-                    if host in data.get("hosts", {}):
-                        data["hosts"][host] = data["hosts"][host] + 1
-                    else:
-                        data["hosts"][host] = 1
-                    if user in data.get("users", {}):
-                        data["users"][user] += 1
-                    else:
-                        data["users"][user] = 1
-                else:
-                    data = {
-                        "hosts": {
-                            host: 1
-                        },
-                        "users": {
-                            user: 1
-                        }
-                    }
-                obj.value = json.dumps(data)
-                obj.save()
-                """
 
         

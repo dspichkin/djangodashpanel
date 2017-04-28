@@ -1,6 +1,6 @@
 from django.conf.urls import url
 
-from djangodashpanel.views.processes import (
+from djangodashpanel.processes.views import (
     processes_data, processes_number_data, processes_last_data)
 
 urlpatterns = [

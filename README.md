@@ -11,6 +11,12 @@ ng build -w -d /static/
 ```
 
 
+
+### Requirements
+
+zipfile
+
+
 ### Install
 
 

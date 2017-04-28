@@ -9,6 +9,8 @@ from models.security import (
     SecurityData, SecurityLoginAttemptIncorrect, SecurityLoginAttemptCorrect
 )
 
+from models.backups import BackupData
+
 #admin.site.index_template = 'index.html'
 
 
@@ -50,12 +52,16 @@ class SecurityLoginAttemptIncorrectAdmin(admin.ModelAdmin):
         ('time', DateFieldListFilter),
     )
 
+
 class SecurityLoginAttemptCorrectAdmin(admin.ModelAdmin):
     list_display = ('pk', 'time', 'value')
     list_filter = (
         ('time', DateFieldListFilter),
     )
 
+
+class BackupDataAdmin(admin.ModelAdmin):
+    list_display = ('backups_enable', 'run_time')
 
 admin.site.register(PerfData, PerfDataAdmin)
 admin.site.register(PerfCpu, PerfCpuAdmin)
@@ -67,6 +73,6 @@ admin.site.register(PerfSystem, PerfSystemAdmin)
 admin.site.register(SecurityData, SecurityDataAdmin)
 admin.site.register(SecurityLoginAttemptIncorrect, SecurityLoginAttemptIncorrectAdmin)
 admin.site.register(SecurityLoginAttemptCorrect, SecurityLoginAttemptCorrectAdmin)
-
+admin.site.register(BackupData, BackupDataAdmin)
 
 

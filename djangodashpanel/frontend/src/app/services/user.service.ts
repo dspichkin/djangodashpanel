@@ -41,9 +41,8 @@ export class UserService {
 	                    window.location.href = "/";
 	                }
 	                self.user = data.user;
-	                console.log(data)
 	                if (callback) {
-	                	callback(self.user);
+	                	callback(data);
 	                }
 	                
 	            },

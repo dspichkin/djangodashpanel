@@ -19,5 +19,11 @@ export class AppSettings {
 	public static secCorrectLoginUrl =  AppSettings.baseUrl + 'security/correctlogins/';
 	public static secIncorrectLoginUrl =  AppSettings.baseUrl + 'security/incorrectlogins/';
 
-	
+	public static backupMakeUrl =  AppSettings.baseUrl + 'backups/make/';
+	public static backupMakeMediaUrl =  AppSettings.baseUrl + 'backups/make/media/';
+	public static backupsUrl =  AppSettings.baseUrl + 'backups/';
+	public static backupsEnableUrl =  AppSettings.baseUrl + 'backups/stoprun/';
+	public static backupsSetTimeUrl =  AppSettings.baseUrl + 'backups/time/';
+	public static backupsPathDirUrl =  AppSettings.baseUrl + 'backups/dirs/';
+
 }

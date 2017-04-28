@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, XSRFStrategy, CookieXSRFStrategy } from '@angular/http';
 
 import { RouterModule } from "@angular/router";
 
@@ -9,6 +9,8 @@ import { NouisliderModule } from 'ng2-nouislider';
 
 import { AppComponent } from './app.component';
 import { ROUTES } from "./app.routes";
+
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 
 // App modules/components
 import { LayoutsModule } from "./components/common/layouts/layouts.module";
@@ -20,11 +22,15 @@ import { PerfViewModule } from "./views/perf-view/perf-view.module";
 import { ProcessesViewModule  } from "./views/processes-view/processes-view.module";
 import { SecCorrectLoginViewModule } from "./views/sec-view/sec-correct-login-view.module";
 import { SecIncorrectLoginViewModule } from "./views/sec-view/sec-incorrect-login-view.module";
+import { BackupViewModule } from "./views/backup-view/backup-view.module";
+
 
 // App services
 import { ChartsService } from "./services/charts.services";
 import { DataService } from './services/data.service';
 import { UserService } from './services/user.service';
+import { WindowRef } from './services/window.service';
+
 
 @NgModule({
   declarations: [
@@ -44,15 +50,24 @@ import { UserService } from './services/user.service';
     ProcessesViewModule,
     SecCorrectLoginViewModule,
     SecIncorrectLoginViewModule,
+    BackupViewModule,
+
     // Modules
     LayoutsModule,
 
-    RouterModule.forRoot(ROUTES, { useHash: true })
+    RouterModule.forRoot(ROUTES, { useHash: true }),
+
+    TimepickerModule.forRoot()
   ],
   providers: [
+    {
+      provide: XSRFStrategy,
+      useValue: new CookieXSRFStrategy('csrftoken', 'X-CSRFToken')
+    },
     ChartsService,
     DataService,
-    UserService
+    UserService,
+    WindowRef
   ],
   bootstrap: [AppComponent]
 })

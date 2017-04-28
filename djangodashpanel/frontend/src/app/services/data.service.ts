@@ -35,6 +35,26 @@ export class DataService {
 	}
 
 
+	public postData(url, _params): Observable<any> {
+		let data = _params || {};
+
+		let params: URLSearchParams = new URLSearchParams();
+        for (var key in data) {
+          	if (data.hasOwnProperty(key)) {
+            	let val = data[key];
+             	params.set(key, val);
+          	}
+        }
+        let options = new RequestOptions({
+        	search: params
+      	});
+
+		return this.http.post(url, data)
+			.map(this.extractData)
+			.catch(this.handleError);
+	}
+
+
 	private extractData(res: Response) {
 		let body = res.json();
 		return body || {};

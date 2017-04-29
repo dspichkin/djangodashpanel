@@ -150,10 +150,10 @@ class Command(BaseCommand):
         if not PATH_LOGIN_ATTEMPT_INCORRECT or not os.path.exists(PATH_LOGIN_ATTEMPT_INCORRECT):
             return
 
-        last_record = SecurityLoginAttemptIncorrect.objects.all().last()
+        last_record = SecurityLoginAttemptIncorrect.objects.all().order_by('time').last()
         last_record_tz = None
         if last_record:
-            last_record_tz = timezone.locatime(last_record)
+            last_record_tz = timezone.locatime(last_record.time)
         data = read_xtmp(PATH_LOGIN_ATTEMPT_INCORRECT)
         for i in data:
             dt = datetime.fromtimestamp(float(i[9]))
@@ -174,10 +174,10 @@ class Command(BaseCommand):
         if not PATH_LOGIN_ATTEMPT_CORRECT or not os.path.exists(PATH_LOGIN_ATTEMPT_CORRECT):
             return
 
-        last_record = SecurityLoginAttemptCorrect.objects.all().last()
+        last_record = SecurityLoginAttemptCorrect.objects.all().order_by('time').last()
         last_record_tz = None
         if last_record:
-            last_record_tz = timezone.locatime(last_record)
+            last_record_tz = timezone.locatime(last_record.time)
 
         data = read_xtmp(PATH_LOGIN_ATTEMPT_CORRECT)
         for i in data:

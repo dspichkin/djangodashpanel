@@ -27,7 +27,7 @@ class Command(BaseCommand):
         perf = PerfData.get_solo()
         sec = SecurityData.get_solo()
         backup = BackupData.get_solo()
-        now = timezone.now()
+        now = timezone.localtime(timezone.now())
 
         self.set_cpu()
         self.set_network()
@@ -56,9 +56,16 @@ class Command(BaseCommand):
             sec.save()
             self.set_login_attempt_incorrect()
 
-        if backup.backups_enable:
-            if backup.last_run_backup and now >= backup.run_time and backup.run_time <= now + timedelta(minutes=60):
-                if backup.last_run_backup and now > backup.last_run_backup + timedelta(minutes=60):
+        if backup.backups_enable and backup.run_time:
+
+            run_time = timezone.localtime(backup.run_time)
+            run_time = run_time.replace(year=now.year, month=now.month, day=now.day)
+            last_run_backup_tz = timezone.localtime(backup.last_run_backup)
+
+            if now >= run_time and run_time <= now + timedelta(minutes=60):
+                if not backup.last_run_backup:
+                    self.backup()
+                elif now > last_run_backup_tz + timedelta(minutes=60):
                     self.backup()
 
         perf.run_last_time_5m = timezone.now()

@@ -169,4 +169,8 @@ export class secCorrectLoginViewComponent implements OnInit {
             }
         );
     }
+
+    public refreshChart() {
+        this.getData();
+    }
 }

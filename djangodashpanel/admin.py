@@ -11,7 +11,7 @@ from models.security import (
 
 from models.backups import BackupData
 
-#admin.site.index_template = 'index.html'
+admin.site.index_template = 'index_dash_admin.html'
 
 
 class PerfDataAdmin(admin.ModelAdmin):

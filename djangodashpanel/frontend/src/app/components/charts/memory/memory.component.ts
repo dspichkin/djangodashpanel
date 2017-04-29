@@ -189,4 +189,8 @@ export class MemoryComponent implements OnInit {
             }
         );
     }
+
+    public refresh() {
+        this.getData();
+    }
 }

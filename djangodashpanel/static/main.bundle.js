@@ -39,7 +39,7 @@ AppSettings.backupsPathDirUrl = AppSettings.baseUrl + 'backups/dirs/';
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(257);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__index__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__index__["b"]; });
 
@@ -47,7 +47,7 @@ AppSettings.backupsPathDirUrl = AppSettings.baseUrl + 'backups/dirs/';
 
 /***/ }),
 
-/***/ 225:
+/***/ 226:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -56,20 +56,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 225;
+webpackEmptyContext.id = 226;
 
 
 /***/ }),
 
-/***/ 226:
+/***/ 227:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(238);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(239);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(268);
 
 
 
@@ -82,7 +82,7 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 239:
+/***/ 240:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -122,7 +122,7 @@ AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
         template: __webpack_require__(386),
-        styles: [__webpack_require__(371)]
+        styles: [__webpack_require__(372)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_data_service__["a" /* DataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */]) === "function" && _b || Object])
 ], AppComponent);
@@ -132,7 +132,7 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 240:
+/***/ 241:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -143,21 +143,22 @@ var _a, _b;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routes__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_bootstrap_timepicker__ = __webpack_require__(377);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_common_layouts_layouts_module__ = __webpack_require__(250);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_main_view_main_view_module__ = __webpack_require__(260);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_minor_view_minor_view_module__ = __webpack_require__(262);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_perf_view_perf_view_module__ = __webpack_require__(263);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_processes_view_processes_view_module__ = __webpack_require__(264);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_sec_view_sec_correct_login_view_module__ = __webpack_require__(265);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_sec_view_sec_incorrect_login_view_module__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_backup_view_backup_view_module__ = __webpack_require__(259);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_charts_services__ = __webpack_require__(257);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routes__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_bootstrap_timepicker__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_common_layouts_layouts_module__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_main_view_main_view_module__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_minor_view_minor_view_module__ = __webpack_require__(263);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_perf_view_perf_view_module__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_processes_view_processes_view_module__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_sec_view_sec_correct_login_view_module__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_sec_view_sec_incorrect_login_view_module__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_backup_view_backup_view_module__ = __webpack_require__(260);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_charts_services__ = __webpack_require__(258);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_data_service__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_user_service__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_window_service__ = __webpack_require__(258);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_window_service__ = __webpack_require__(259);
+/* unused harmony export xsrfFactory */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -189,6 +190,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
+function xsrfFactory() {
+    new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* CookieXSRFStrategy */]('csrftoken', 'X-CSRFToken');
+}
 var AppModule = (function () {
     function AppModule() {
     }
@@ -202,7 +206,7 @@ AppModule = __decorate([
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
-            __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* HttpModule */],
+            __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* HttpModule */],
             __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__["NouisliderModule"],
             // Views
             __WEBPACK_IMPORTED_MODULE_10__views_main_view_main_view_module__["a" /* MainViewModule */],
@@ -218,9 +222,14 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8_ngx_bootstrap_timepicker__["a" /* TimepickerModule */].forRoot()
         ],
         providers: [
+            /*
+              {
+                provide: XSRFStrategy,
+                useFactory: xsrfFactory
+              },*/
             {
-                provide: __WEBPACK_IMPORTED_MODULE_3__angular_http__["b" /* XSRFStrategy */],
-                useValue: new __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* CookieXSRFStrategy */]('csrftoken', 'X-CSRFToken')
+                provide: __WEBPACK_IMPORTED_MODULE_3__angular_http__["c" /* XSRFStrategy */],
+                useValue: new __WEBPACK_IMPORTED_MODULE_3__angular_http__["a" /* CookieXSRFStrategy */]('csrftoken', 'X-CSRFToken')
             },
             __WEBPACK_IMPORTED_MODULE_17__services_charts_services__["a" /* ChartsService */],
             __WEBPACK_IMPORTED_MODULE_18__services_data_service__["a" /* DataService */],
@@ -235,7 +244,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 241:
+/***/ 242:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -278,7 +287,7 @@ var ROUTES = [
 
 /***/ }),
 
-/***/ 242:
+/***/ 243:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -423,6 +432,9 @@ var CpuComponent = (function () {
             self.error_message = error;
         });
     };
+    CpuComponent.prototype.refresh = function () {
+        this.getData();
+    };
     return CpuComponent;
 }());
 __decorate([
@@ -446,7 +458,7 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 243:
+/***/ 244:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -590,6 +602,9 @@ var DiskComponent = (function () {
             self.error_message = error;
         });
     };
+    DiskComponent.prototype.refresh = function () {
+        this.getData();
+    };
     return DiskComponent;
 }());
 __decorate([
@@ -613,7 +628,7 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 244:
+/***/ 245:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -771,6 +786,9 @@ var MemoryComponent = (function () {
             self.error_message = error;
         });
     };
+    MemoryComponent.prototype.refresh = function () {
+        this.getData();
+    };
     return MemoryComponent;
 }());
 __decorate([
@@ -794,7 +812,7 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 245:
+/***/ 246:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -945,6 +963,9 @@ var NetworkComponent = (function () {
             self.error_message = error;
         });
     };
+    NetworkComponent.prototype.refresh = function () {
+        this.getData();
+    };
     return NetworkComponent;
 }());
 __decorate([
@@ -968,7 +989,7 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 246:
+/***/ 247:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1098,6 +1119,9 @@ var ProcessesComponent = (function () {
             self.error_message = error;
         });
     };
+    ProcessesComponent.prototype.refresh = function () {
+        this.getData();
+    };
     return ProcessesComponent;
 }());
 __decorate([
@@ -1121,7 +1145,7 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 247:
+/***/ 248:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1150,13 +1174,13 @@ FooterComponent = __decorate([
 
 /***/ }),
 
-/***/ 248:
+/***/ 249:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__footer_component__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__footer_component__ = __webpack_require__(248);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FooterModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1184,7 +1208,7 @@ FooterModule = __decorate([
 
 /***/ }),
 
-/***/ 249:
+/***/ 250:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1219,18 +1243,18 @@ blankComponent = __decorate([
 
 /***/ }),
 
-/***/ 250:
+/***/ 251:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__blank_component__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__blank_component__ = __webpack_require__(250);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__basic_component__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__navigation_navigation_module__ = __webpack_require__(252);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__topnavbar_topnavbar_module__ = __webpack_require__(254);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__footer_footer_module__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__navigation_navigation_module__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__topnavbar_topnavbar_module__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__footer_footer_module__ = __webpack_require__(249);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LayoutsModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1263,7 +1287,7 @@ LayoutsModule = __decorate([
 
 /***/ }),
 
-/***/ 251:
+/***/ 252:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1322,14 +1346,14 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 252:
+/***/ 253:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__navigation_component__ = __webpack_require__(251);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__navigation_component__ = __webpack_require__(252);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavigationModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1358,7 +1382,7 @@ NavigationModule = __decorate([
 
 /***/ }),
 
-/***/ 253:
+/***/ 254:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1392,13 +1416,13 @@ TopnavbarComponent = __decorate([
 
 /***/ }),
 
-/***/ 254:
+/***/ 255:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__topnavbar_component__ = __webpack_require__(253);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__topnavbar_component__ = __webpack_require__(254);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TopnavbarModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1426,12 +1450,12 @@ TopnavbarModule = __decorate([
 
 /***/ }),
 
-/***/ 255:
+/***/ 256:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chart_js__ = __webpack_require__(268);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chart_js__ = __webpack_require__(269);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_chart_js__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BaseChartDirective; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ChartsModule; });
@@ -1743,11 +1767,11 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 256:
+/***/ 257:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__charts_charts__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__charts_charts__ = __webpack_require__(256);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__charts_charts__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__charts_charts__["b"]; });
 
@@ -1755,7 +1779,7 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 257:
+/***/ 258:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1833,7 +1857,7 @@ var _a;
 
 /***/ }),
 
-/***/ 258:
+/***/ 259:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1866,7 +1890,7 @@ WindowRef = __decorate([
 
 /***/ }),
 
-/***/ 259:
+/***/ 260:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1875,7 +1899,7 @@ WindowRef = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backup_view_component__ = __webpack_require__(73);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_bootstrap_timepicker__ = __webpack_require__(377);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_bootstrap_timepicker__ = __webpack_require__(208);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BackupViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1912,7 +1936,7 @@ BackupViewModule = __decorate([
 
 /***/ }),
 
-/***/ 260:
+/***/ 261:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1952,7 +1976,7 @@ MainViewModule = __decorate([
 
 /***/ }),
 
-/***/ 261:
+/***/ 262:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1981,13 +2005,13 @@ minorViewComponent = __decorate([
 
 /***/ }),
 
-/***/ 262:
+/***/ 263:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__minor_view_component__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__minor_view_component__ = __webpack_require__(262);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MinorViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2014,7 +2038,7 @@ MinorViewModule = __decorate([
 
 /***/ }),
 
-/***/ 263:
+/***/ 264:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2022,10 +2046,10 @@ MinorViewModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__perf_view_component__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_charts_cpu_cpu_component__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_charts_memory_memory_component__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_charts_disk_disk_component__ = __webpack_require__(243);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_charts_network_network_component__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_charts_cpu_cpu_component__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_charts_memory_memory_component__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_charts_disk_disk_component__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_charts_network_network_component__ = __webpack_require__(246);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_ng2_nouislider__);
@@ -2073,7 +2097,7 @@ PerfViewModule = __decorate([
 
 /***/ }),
 
-/***/ 264:
+/***/ 265:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2081,7 +2105,7 @@ PerfViewModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__processes_view_component__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_charts_processes_processes_component__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_charts_processes_processes_component__ = __webpack_require__(247);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_nouislider__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng2_nouislider__);
@@ -2123,7 +2147,7 @@ ProcessesViewModule = __decorate([
 
 /***/ }),
 
-/***/ 265:
+/***/ 266:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2170,7 +2194,7 @@ SecCorrectLoginViewModule = __decorate([
 
 /***/ }),
 
-/***/ 266:
+/***/ 267:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2217,7 +2241,7 @@ SecIncorrectLoginViewModule = __decorate([
 
 /***/ }),
 
-/***/ 267:
+/***/ 268:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2234,7 +2258,7 @@ var environment = {
 
 /***/ }),
 
-/***/ 371:
+/***/ 372:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)();
@@ -2252,7 +2276,7 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 376:
+/***/ 377:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
@@ -2501,7 +2525,7 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 376;
+webpackContext.id = 377;
 
 
 /***/ }),
@@ -2516,35 +2540,35 @@ module.exports = "<!-- Main view/routes wrapper-->\n<router-outlet></router-outl
 /***/ 387:
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: center;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
+module.exports = "<div style=\"text-align: center;\">\n    <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n        <i class=\"fa fa-refresh\"></i>\n    </button>\n\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
 /***/ 388:
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: center;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
+module.exports = "<div style=\"text-align: center;\">\n    <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n        <i class=\"fa fa-refresh\"></i>\n    </button>\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
 /***/ 389:
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: center;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
+module.exports = "<div style=\"text-align: center;\">\n    <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n        <i class=\"fa fa-refresh\"></i>\n    </button>\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
 /***/ 390:
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: center;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
+module.exports = "<div style=\"text-align: center;\">\n    <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n        <i class=\"fa fa-refresh\"></i>\n    </button>\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
 /***/ 391:
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: center;padding: 0;\">\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
+module.exports = "<div style=\"text-align: center;padding: 0;\">\n    <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n        <i class=\"fa fa-refresh\"></i>\n    </button>\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
@@ -2572,21 +2596,21 @@ module.exports = "<!-- View/routes wrapper-->\n<router-outlet></router-outlet>\n
 /***/ 395:
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar-default navbar-static-side\" role=\"navigation\">\n    <div class=\"sidebar-collapse\">\n        <ul class=\"nav metismenu\" id=\"side-menu\">\n            <li class=\"nav-header\">\n                <a href=\"#\" style=\"padding: 0;\">\n                        <span class=\"block m-t-xs\"> <strong class=\"font-bold\">{{user.username}}</strong> </span>\n                        <!-- <span class=\"text-muted text-xs block\">Example <b class=\"caret\"></b> </span> -->\n                    </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('dash')}\">\n                <a [routerLink]=\"['/']\"><i class=\"fa fa-th-large\"></i> <span class=\"nav-label\">Dashboard</span></a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('perf')}\">\n                <a [routerLink]=\"['/perf']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Perfomance</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('processes')}\">\n                <a [routerLink]=\"['/processes']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Processes</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('correctlogin') || activeRoute('incorrectlogin')}\">\n                <a href=\"\" class=\"auto\">      \n                  <span class=\"pull-right text-muted\">\n                    <i class=\"fa fa-fw fa-angle-right text\"></i>\n                    <i class=\"fa fa-fw fa-angle-down text-active\"></i>\n                  </span>\n                  <i class=\"glyphicon glyphicon-th\"></i>\n                  <span>Security</span>\n                </a>\n                <ul class=\"nav nav-sub dk\">\n                  <li class=\"nav-sub-header\">\n                    <a [routerLink]=\"['/correctlogin']\" style=\"font-size: 11px;margin-left: 15px;\">\n                      <span>Number of login </span>\n                    </a>\n                  </li>\n                  <li ui-sref-active=\"active\">\n                    <a [routerLink]=\"['/incorrectlogin']\" style=\"font-size: 11px;margin-left: 15px;\">\n                      <span>Incorrect attempt login</span>\n                    </a>\n                  </li>\n                </ul>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('minorView')}\">\n                <a [routerLink]=\"['/minorView']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Database</span> </a>\n            </li>\n            <li *ngIf=\"apps.backup\" [ngClass]=\"{active: activeRoute('backups')}\">\n                <a [routerLink]=\"['/backups']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Backups</span> </a>\n            </li>\n        </ul>\n\n    </div>\n</nav>"
+module.exports = "<nav class=\"navbar-default navbar-static-side\" role=\"navigation\">\n    <div class=\"sidebar-collapse\">\n        <ul class=\"nav metismenu\" id=\"side-menu\">\n            <li class=\"nav-header\">\n                <a href=\"#\">\n                    <i class=\"fa fa-user\"></i>\n                    <span class=\"nav-label\"> <strong class=\"font-bold\">{{user.username}}</strong> </span>\n                        <!-- <span class=\"text-muted text-xs block\">Example <b class=\"caret\"></b> </span> -->\n                </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('dash')}\">\n                <a [routerLink]=\"['/']\"><i class=\"fa fa-th-large\"></i> <span class=\"nav-label\">Dashboard</span></a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('perf')}\">\n                <a [routerLink]=\"['/perf']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Perfomance</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('processes')}\">\n                <a [routerLink]=\"['/processes']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Processes</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('correctlogin') || activeRoute('incorrectlogin')}\">\n                <a href=\"\" class=\"auto\">      \n                  <span class=\"pull-right text-muted\">\n                    <i class=\"fa fa-fw fa-angle-right text\"></i>\n                    <i class=\"fa fa-fw fa-angle-down text-active\"></i>\n                  </span>\n                  <i class=\"glyphicon glyphicon-th\"></i>\n                  <span>Security</span>\n                </a>\n                <ul class=\"nav nav-sub dk\">\n                  <li class=\"nav-sub-header\">\n                    <a [routerLink]=\"['/correctlogin']\" style=\"font-size: 11px;margin-left: 15px;\">\n                      <span>Number of login </span>\n                    </a>\n                  </li>\n                  <li ui-sref-active=\"active\">\n                    <a [routerLink]=\"['/incorrectlogin']\" style=\"font-size: 11px;margin-left: 15px;\">\n                      <span>Incorrect attempt login</span>\n                    </a>\n                  </li>\n                </ul>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('minorView')}\">\n                <a [routerLink]=\"['/minorView']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Database</span> </a>\n            </li>\n            <li *ngIf=\"apps.backup\" [ngClass]=\"{active: activeRoute('backups')}\">\n                <a [routerLink]=\"['/backups']\"><i class=\"fa fa-desktop\"></i> <span class=\"nav-label\">Backups</span> </a>\n            </li>\n        </ul>\n\n    </div>\n</nav>"
 
 /***/ }),
 
 /***/ 396:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row border-bottom\">\n    <nav class=\"navbar navbar-static-top white-bg\" role=\"navigation\" style=\"margin-bottom: 0\">\n        <div class=\"navbar-header\">\n            <a class=\"minimalize-styl-2 btn btn-primary \" (click)=\"toggleNavigation()\"><i class=\"fa fa-bars\"></i> </a>\n            <form role=\"search\" class=\"navbar-form-custom\" method=\"post\" action=\"#\">\n                <div class=\"form-group\">\n                    <input type=\"text\" placeholder=\"Search for something...\" class=\"form-control\" name=\"top-search\" id=\"top-search\">\n                </div>\n            </form>\n        </div>\n        <ul class=\"nav navbar-top-links navbar-right\">\n            <li>\n                <a href=\"#\">\n                    <i class=\"fa fa-sign-out\"></i> Log out\n                </a>\n            </li>\n        </ul>\n\n    </nav>\n</div>"
+module.exports = "<div class=\"row border-bottom\">\n    <nav class=\"navbar navbar-static-top white-bg\" role=\"navigation\" style=\"margin-bottom: 0\">\n        <div class=\"navbar-header\">\n            <a class=\"minimalize-styl-2 btn btn-primary \" (click)=\"toggleNavigation()\"><i class=\"fa fa-bars\"></i> </a>\n            <form role=\"search\" class=\"navbar-form-custom\" method=\"post\" action=\"#\">\n                <div class=\"form-group\">\n                    <input type=\"text\" placeholder=\"Search for something...\" class=\"form-control\" name=\"top-search\" id=\"top-search\">\n                </div>\n            </form>\n        </div>\n        <ul class=\"nav navbar-top-links navbar-right\">\n            <li>\n                <a href=\"/admin/logout/\">\n                    <i class=\"fa fa-sign-out\"></i> Log out\n                </a>\n            </li>\n        </ul>\n\n    </nav>\n</div>"
 
 /***/ }),
 
 /***/ 397:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content\">\n    \n    <a [href]=\"backupMakeUrl\" class=\"btn btn-success\" target=\"_blank\">Make and download database backup</a>\n    <a [href]=\"backupMakeMediaUrl\" class=\"btn btn-primary\" target=\"_blank\">Make and download media backup</a>\n    \n\n    <div class=\"row\" style=\"margin-top: 10px;\">\n        <div class=\"col-lg-9\">\n            <div class=\"wrapper-md\">\n                <div class=\"tab-container\">\n                    <ul class=\"nav nav-tabs nav-stacked nav-justified\">\n                        <li [ngClass]=\"{active: router.url=='/backups'}\">\n                            <a [routerLink]=\"['/backups']\">Settings</a>\n                        </li>\n                        <li [ngClass]=\"{active: router.url=='/backups/result'}\">\n                            <a [routerLink]=\"['/backups/result']\">Result</a>\n                        </li>\n                    </ul>\n                    <div class=\"tab-content\">\n                        <div *ngIf=\"router.url=='/backups'\" class=\"tab-pane active\">\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <form>\n                                        <div class=\"form-group\">\n                                            <label>Day time for running backup (will be run everyday):</label>\n                                            <div style=\"display: flex;align-items: center;\">\n                                                <timepicker [(ngModel)]=\"model.backuptime\" [ngModelOptions]=\"{standalone: true}\" (ngModelChange)=\"changedTime()\"></timepicker>\n                                                <button type=\"button\" class=\"btn btn-info\" style=\"margin-left: 20px;height:40px;\" (click)=\"saveBackTime()\">Save</button>\n                                                <span *ngIf=\"backuptime_is_dirty\" class=\"text-warning\" style=\"margin-left: 10px;\">Time is not save</span>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <label>Absolute path for media directory (if required):</label>\n                                            <div class=\"input-group\">\n                                                <input name=\"inputedDir\" type=\"text\" class=\"form-control\" [(ngModel)]=\"model.inputedDir\" (keyup.enter)=\"addDirectory()\"/>\n                                                <span class=\"input-group-addon\" style=\"padding: 0;\"> \n                                                    <button type=\"button\" class=\"btn btn-info\" (click)=\"addDirectory()\" [disabled]=\"!model.inputedDir || loading\" style=\"margin: -2px;\">Add</button></span>\n                                            </div>\n                                        </div>\n\n                                        <div class=\"form-group\">\n                                            <div class=\"panel panel-default\">\n                                                <div class=\"panel-body\">\n                                                    <p *ngIf=\"mediadirs.length == 0\">No directories specified</p>\n                                                    <div *ngFor=\"let obj of mediadirs; let i = index;\" style=\"margin-top: 2px;\">\n                                                        <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"deletePath(i)\" [disabled]=\"loading\"><i class=\"fa fa-times\"></i></button>\n                                                        <span style=\"margin-left:20px;\">{{obj.path}}</span>\n                                                        <span>\n                                                            <i *ngIf=\"obj.checked\" class=\"fa fa-check text-info\"></i>\n                                                        </span>\n                                                        <span *ngIf=\"!obj.checked\">\n                                                            <i class=\"fa fa-exclamation text-warning\"></i> \n                                                            <small>(Path doesn't exist)</small>\n                                                        </span>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </form>\n                                </div>\n                            </div>\n                        </div>\n                        <div *ngIf=\"router.url=='/backups/result'\" class=\"tab-pane active\">\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <div *ngIf=\"backups_daily\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Daily Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_daily\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><button type=\"button\" class=\"btn btn-default btn-xs\"><i class=\"fa fa-download\"></i></button></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_weekly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Weekly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_weekly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><button type=\"button\" class=\"btn btn-default btn-xs\"><i class=\"fa fa-download\"></i></button></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_monthly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Monthly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_monthly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><button type=\"button\" class=\"btn btn-default btn-xs\"><i class=\"fa fa-download\"></i></button></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <!-- Loading -->\n        <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n            <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n            </div>\n            <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n            </div>\n        </div>\n        <!-- END Loading -->\n\n        <div class=\"col-lg-3\">\n            <div class=\"wrapper-md\">\n                <div class=\"panel panel-success\">\n                    <div class=\"panel-heading \">\n                        Info\n                    </div>\n                    <div class=\"panel-body\">\n                        <span class=\"text-success\">Last run: </span>\n                        <span>{{ last_run_backup| date: 'yyyy-MM-dd HH:mm' || \"None\"}} </span>\n\n                        <span class=\"text-success\">State: </span>\n                        <span *ngIf=\"backups_enable\" class=\"text-primary\" style=\"margin-right: 20px;\">backup is enable</span>\n                        <span *ngIf=\"!backups_enable\" class=\"text-danger\" style=\"margin-right: 20px;\">backup is disabled</span>\n                        <div style=\"margin-top: 20px\">\n                            <button *ngIf=\"backups_enable\" type=\"button\" class=\"btn btn-primary\" (click)=\"backupSwitch()\">Turn off backup</button>\n                            <button *ngIf=\"!backups_enable\" type=\"button\" class=\"btn btn-danger\" (click)=\"backupSwitch()\">Turn on backup</button>\n                        </div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+module.exports = "<div class=\"wrapper wrapper-content\">\n    \n    <a [href]=\"backupMakeUrl\" class=\"btn btn-success\" target=\"_blank\">Make and download database backup</a>\n    <a [href]=\"backupMakeMediaUrl\" class=\"btn btn-primary\" target=\"_blank\">Make and download media backup</a>\n    \n\n    <div class=\"row\" style=\"margin-top: 10px;\">\n        <div class=\"col-lg-9\">\n            <div class=\"wrapper-md\">\n                <div class=\"tab-container\">\n                    <ul class=\"nav nav-tabs nav-stacked nav-justified\">\n                        <li [ngClass]=\"{active: router.url=='/backups'}\">\n                            <a [routerLink]=\"['/backups']\">Settings</a>\n                        </li>\n                        <li [ngClass]=\"{active: router.url=='/backups/result'}\">\n                            <a [routerLink]=\"['/backups/result']\">Result</a>\n                        </li>\n                    </ul>\n                    <div class=\"tab-content\">\n                        <div *ngIf=\"router.url=='/backups'\" class=\"tab-pane active\">\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <form>\n                                        <div class=\"form-group\">\n                                            <label>Day time for running backup (will be run everyday):</label>\n                                            <div style=\"display: flex;align-items: center;\">\n                                                <timepicker [(ngModel)]=\"model.backuptime\" [ngModelOptions]=\"{standalone: true}\" (ngModelChange)=\"changedTime()\"></timepicker>\n                                                <button type=\"button\" class=\"btn btn-info\" style=\"margin-left: 20px;height:40px;\" (click)=\"saveBackTime()\">Save</button>\n                                                <span *ngIf=\"backuptime_is_dirty\" class=\"text-warning\" style=\"margin-left: 10px;\">Time is not save</span>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <label>Absolute path for media directory (if required):</label>\n                                            <div class=\"input-group\">\n                                                <input name=\"inputedDir\" type=\"text\" class=\"form-control\" [(ngModel)]=\"model.inputedDir\" (keyup.enter)=\"addDirectory()\"/>\n                                                <span class=\"input-group-addon\" style=\"padding: 0;\"> \n                                                    <button type=\"button\" class=\"btn btn-info\" (click)=\"addDirectory()\" [disabled]=\"!model.inputedDir || loading\" style=\"margin: -2px;\">Add</button></span>\n                                            </div>\n                                        </div>\n\n                                        <div *ngIf=\"mediadirs.length == 0\" class=\"form-group\">\n                                            <div class=\"panel panel-default\">\n                                                <div class=\"panel-body\">\n                                                    <p *ngIf=\"mediadirs.length == 0\">No directories specified</p>\n                                                    <div *ngFor=\"let obj of mediadirs; let i = index;\" style=\"margin-top: 2px;\">\n                                                        <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"deletePath(i)\" [disabled]=\"loading\"><i class=\"fa fa-times\"></i></button>\n                                                        <span style=\"margin-left:20px;\">{{obj.path}}</span>\n                                                        <span>\n                                                            <i *ngIf=\"obj.checked\" class=\"fa fa-check text-info\"></i>\n                                                        </span>\n                                                        <span *ngIf=\"!obj.checked\">\n                                                            <i class=\"fa fa-exclamation text-warning\"></i> \n                                                            <small>(Path doesn't exist)</small>\n                                                        </span>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </form>\n                                </div>\n                            </div>\n                        </div>\n                        <div *ngIf=\"router.url=='/backups/result'\" class=\"tab-pane active\">\n                            \n\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <div *ngIf=\"backups_daily\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Daily Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_daily\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><button type=\"button\" class=\"btn btn-default btn-xs\"><i class=\"fa fa-download\"></i></button></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_weekly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Weekly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_weekly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><button type=\"button\" class=\"btn btn-default btn-xs\"><i class=\"fa fa-download\"></i></button></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_monthly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Monthly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_monthly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><button type=\"button\" class=\"btn btn-default btn-xs\"><i class=\"fa fa-download\"></i></button></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <!-- Loading -->\n        <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n            <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n            </div>\n            <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n            </div>\n        </div>\n        <!-- END Loading -->\n\n        <div class=\"col-lg-3\">\n            <div class=\"wrapper-md\">\n                <div class=\"panel panel-success\">\n\n                    <div class=\"panel-heading \">\n                        Info\n                        <button type=\"button\" class=\"btn btn-success btn-xs pull-right\" (click)=\"refresh()\">\n                            <i class=\"fa fa-refresh\"></i>\n                        </button>\n                    </div>\n                    <div class=\"panel-body\">\n                        <span class=\"text-success\">Last run: </span>\n                        <span>{{ last_run_backup| date: 'yyyy-MM-dd HH:mm' || \"None\"}} </span>\n\n                        <span class=\"text-success\">State: </span>\n                        <span *ngIf=\"backups_enable\" class=\"text-primary\" style=\"margin-right: 20px;\">backup is enable</span>\n                        <span *ngIf=\"!backups_enable\" class=\"text-danger\" style=\"margin-right: 20px;\">backup is disabled</span>\n                        <div style=\"margin-top: 20px\">\n                            <button *ngIf=\"backups_enable\" type=\"button\" class=\"btn btn-primary\" (click)=\"backupSwitch()\">Turn off backup</button>\n                            <button *ngIf=\"!backups_enable\" type=\"button\" class=\"btn btn-danger\" (click)=\"backupSwitch()\">Turn on backup</button>\n                        </div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2614,21 +2638,21 @@ module.exports = "<div class=\"wrapper wrapper-content animated fadeInRight\">\n
 /***/ 401:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Last time update: {{last_time }}</small>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of last_processes\">\n                                <td>\n                                    <span style=\"font-size: 8px;\">{{p.pid}}</span>\n                                </td>\n                                <td><b>{{p.name}}</b> </td>\n                                <td>{{p.status}}</td>\n                                <td>{{p.cpu}}</td>\n                                <td>{{p.create_time}}</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <small>Last {{ hours }} hours</small>\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\" >\n                                        <div class=\"h1 text-white font-thin\">{{ avarage_number || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of processes</span><br>\n\n                                        \n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <processes-chart></processes-chart>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Last time update: {{last_time }}</small>\n                        <button type=\"button\" class=\"btn btn-info btn-xs pull-right\" (click)=\"refresh()\">\n                            <i class=\"fa fa-refresh\"></i>\n                        </button>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of last_processes\">\n                                <td>\n                                    <span style=\"font-size: 8px;\">{{p.pid}}</span>\n                                </td>\n                                <td><b>{{p.name}}</b> </td>\n                                <td>{{p.status}}</td>\n                                <td>{{p.cpu}}</td>\n                                <td>{{p.create_time}}</td>\n                            </tr>\n                        </table>\n\n                        <!-- Loading -->\n                        <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                            <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                            </div>\n                            <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                            </div>\n                        </div>\n                        <!-- END Loading -->\n\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <small>Last {{ hours }} hours</small>\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\" >\n                                        <div class=\"h1 text-white font-thin\">{{ avarage_number || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of processes</span><br>\n\n                                        \n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <processes-chart></processes-chart>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 402:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Top 100 source IP address</small>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of hosts\">\n                                <td>\n                                    {{p.host}}\n                                </td>\n                                <td><b>{{p.count}}</b> </td>\n                                <td>{{p.last_date}}</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\">\n                                        <div class=\"h1 text-white font-thin\">{{ count_correct_attempt || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of correct attempts login</span><br>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <div style=\"text-align: center;\">\n                            <canvas baseChart\n                                        [datasets]=\"lineChartData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartColors\"\n                                        [chartType]=\"lineChartType\"\n                                        (chartHover)=\"chartHovered($event)\"\n                                        (chartClick)=\"chartClicked($event)\"></canvas>\n\n                            <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n                            <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n                            <!-- Loading -->\n                            <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                                <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                                </div>\n                                <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                    <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                                </div>\n                            </div>\n                            <!-- END Loading -->\n                        </div>\n\n\n                        <div class=\"panel panel-info\">\n                            <div class=\"panel-heading \">\n                                <small>Top 100 usernames</small>\n                            </div>\n                            <div class=\"panel-body\">\n                                <table class=\"table\">\n                                    <tr *ngFor=\"let p of users\">\n                                        <td>\n                                            {{p.username}}\n                                        </td>\n                                        <td><b>{{p.count}}</b> </td>\n                                        <td>{{p.last_date}}</td>\n                                    </tr>\n                                </table>\n                            </div>\n                        </div>\n\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Top 100 source IP address</small>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of hosts\">\n                                <td>\n                                    {{p.host}}\n                                </td>\n                                <td><b>{{p.count}}</b> </td>\n                                <td>{{p.last_date}}</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\">\n                                        <div class=\"h1 text-white font-thin\">{{ count_correct_attempt || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of correct attempts login</span><br>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <div style=\"text-align: center;\">\n                            <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refreshChart()\">\n                                <i class=\"fa fa-refresh\"></i>\n                            </button>\n                            \n                            <canvas baseChart\n                                        [datasets]=\"lineChartData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartColors\"\n                                        [chartType]=\"lineChartType\"\n                                        (chartHover)=\"chartHovered($event)\"\n                                        (chartClick)=\"chartClicked($event)\"></canvas>\n\n                            <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n                            <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n                            <!-- Loading -->\n                            <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                                <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                                </div>\n                                <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                    <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                                </div>\n                            </div>\n                            <!-- END Loading -->\n                        </div>\n\n\n                        <div class=\"panel panel-info\">\n                            <div class=\"panel-heading \">\n                                <small>Top 100 usernames</small>\n                            </div>\n                            <div class=\"panel-body\">\n                                <table class=\"table\">\n                                    <tr *ngFor=\"let p of users\">\n                                        <td>\n                                            {{p.username}}\n                                        </td>\n                                        <td><b>{{p.count}}</b> </td>\n                                        <td>{{p.last_date}}</td>\n                                    </tr>\n                                </table>\n                            </div>\n                        </div>\n\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 403:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Top 100 source IP address</small>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of hosts\">\n                                <td>\n                                    {{p.host}}\n                                </td>\n                                <td><b>{{p.count}}</b> </td>\n                                <td>{{p.last_date}}</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\" [ngClass]=\"{\n                                    'bg-warning': count_incorrect_attepmt > 0 && count_incorrect_attepmt <= 100,\n                                    'bg-danger': count_incorrect_attepmt > 100 }\">\n                                        <div class=\"h1 text-white font-thin\">{{ count_incorrect_attepmt || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of incorrect attempts login</span><br>\n\n                                        \n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n\n                        <div style=\"text-align: center;\">\n                            <canvas baseChart\n                                        [datasets]=\"lineChartData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartColors\"\n                                        [chartType]=\"lineChartType\"\n                                        (chartHover)=\"chartHovered($event)\"\n                                        (chartClick)=\"chartClicked($event)\"></canvas>\n\n                            <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n                            <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n                            <!-- Loading -->\n                            <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                                <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                                </div>\n                                <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                    <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                                </div>\n                            </div>\n                            <!-- END Loading -->\n                            \n                        </div>\n\n                        <div class=\"panel panel-info\">\n                            <div class=\"panel-heading \">\n                                <small>Top 100 usernames</small>\n                            </div>\n                            <div class=\"panel-body\">\n                                <table class=\"table\">\n                                    <tr *ngFor=\"let p of users\">\n                                        <td>\n                                            {{p.username}}\n                                        </td>\n                                        <td><b>{{p.count}}</b> </td>\n                                        <td>{{p.last_date}}</td>\n                                    </tr>\n                                </table>\n                            </div>\n                        </div>\n\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Top 100 source IP address</small>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of hosts\">\n                                <td>\n                                    {{p.host}}\n                                </td>\n                                <td><b>{{p.count}}</b> </td>\n                                <td>{{p.last_date}}</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\" [ngClass]=\"{\n                                    'bg-warning': count_incorrect_attepmt > 0 && count_incorrect_attepmt <= 100,\n                                    'bg-danger': count_incorrect_attepmt > 100 }\">\n                                        <div class=\"h1 text-white font-thin\">{{ count_incorrect_attepmt || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of incorrect attempts login</span><br>\n\n                                        \n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n\n                        <div style=\"text-align: center;\">\n                            <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refreshChart()\">\n                                <i class=\"fa fa-refresh\"></i>\n                            </button>\n\n                            <canvas baseChart\n                                        [datasets]=\"lineChartData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartColors\"\n                                        [chartType]=\"lineChartType\"\n                                        (chartHover)=\"chartHovered($event)\"\n                                        (chartClick)=\"chartClicked($event)\"></canvas>\n\n                            <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n                            <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n                            <!-- Loading -->\n                            <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                                <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                                </div>\n                                <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                    <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                                </div>\n                            </div>\n                            <!-- END Loading -->\n                            \n                        </div>\n\n                        <div class=\"panel panel-info\">\n                            <div class=\"panel-heading \">\n                                <small>Top 100 usernames</small>\n                            </div>\n                            <div class=\"panel-body\">\n                                <table class=\"table\">\n                                    <tr *ngFor=\"let p of users\">\n                                        <td>\n                                            {{p.username}}\n                                        </td>\n                                        <td><b>{{p.count}}</b> </td>\n                                        <td>{{p.last_date}}</td>\n                                    </tr>\n                                </table>\n                            </div>\n                        </div>\n\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2730,7 +2754,7 @@ var _a;
 /***/ 447:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(226);
+module.exports = __webpack_require__(227);
 
 
 /***/ }),
@@ -2999,6 +3023,9 @@ var backupViewComponent = (function () {
             self.error_message = error;
         });
     };
+    backupViewComponent.prototype.refresh = function () {
+        this.getBackups();
+    };
     return backupViewComponent;
 }());
 backupViewComponent = __decorate([
@@ -3177,7 +3204,6 @@ var processesViewComponent = (function () {
         self.dataService.getData(__WEBPACK_IMPORTED_MODULE_1__app_settings__["a" /* AppSettings */].processesLastUrl, {})
             .subscribe(function (data) {
             self.loading = false;
-            console.log('data', data);
             self.last_time = data.time;
             self.last_processes = data.processes;
             if (callback) {
@@ -3193,7 +3219,6 @@ var processesViewComponent = (function () {
         self.loading = true;
         self.dataService.getData(__WEBPACK_IMPORTED_MODULE_1__app_settings__["a" /* AppSettings */].processesAvarageNumberUrl, {})
             .subscribe(function (data) {
-            console.log('data', data);
             self.loading = false;
             self.hours = data.hours;
             self.avarage_number = data.avarage_number;
@@ -3204,6 +3229,9 @@ var processesViewComponent = (function () {
             self.loading = false;
             self.error_message = error;
         });
+    };
+    processesViewComponent.prototype.refresh = function () {
+        this.getProcesses();
     };
     return processesViewComponent;
 }());
@@ -3360,6 +3388,9 @@ var secCorrectLoginViewComponent = (function () {
             self.error_message = error;
         });
     };
+    secCorrectLoginViewComponent.prototype.refreshChart = function () {
+        this.getData();
+    };
     return secCorrectLoginViewComponent;
 }());
 __decorate([
@@ -3487,12 +3518,6 @@ var secIncorrectLoginViewComponent = (function () {
             self.error_message = error;
         });
     };
-    secIncorrectLoginViewComponent.prototype.chartClicked = function (e) {
-        console.log(e);
-    };
-    secIncorrectLoginViewComponent.prototype.chartHovered = function (e) {
-        console.log(e);
-    };
     secIncorrectLoginViewComponent.prototype.onChange = function ($event) {
         //console.log('this.dateRange', this.dateRange)
         this.rangeStartDate = moment(this.dateRange[0], 'X').format('MMM DD HH:mm');
@@ -3522,6 +3547,9 @@ var secIncorrectLoginViewComponent = (function () {
             self.loading = false;
             self.error_message = error;
         });
+    };
+    secIncorrectLoginViewComponent.prototype.refreshChart = function () {
+        this.getData();
     };
     return secIncorrectLoginViewComponent;
 }());

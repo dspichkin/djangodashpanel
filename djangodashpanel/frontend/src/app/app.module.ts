@@ -31,6 +31,9 @@ import { DataService } from './services/data.service';
 import { UserService } from './services/user.service';
 import { WindowRef } from './services/window.service';
 
+export function xsrfFactory() {
+    new CookieXSRFStrategy('csrftoken', 'X-CSRFToken');
+}
 
 @NgModule({
   declarations: [
@@ -60,8 +63,13 @@ import { WindowRef } from './services/window.service';
     TimepickerModule.forRoot()
   ],
   providers: [
+  /*
     {
       provide: XSRFStrategy,
+      useFactory: xsrfFactory
+    },*/
+    {
+      provide:XSRFStrategy, 
       useValue: new CookieXSRFStrategy('csrftoken', 'X-CSRFToken')
     },
     ChartsService,

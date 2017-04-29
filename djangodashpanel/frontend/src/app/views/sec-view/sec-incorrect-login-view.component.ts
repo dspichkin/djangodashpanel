@@ -125,13 +125,6 @@ export class secIncorrectLoginViewComponent implements OnInit {
         
     }
 
-    public chartClicked(e:any):void {
-        console.log(e);
-    }
- 
-    public chartHovered(e:any):void {
-        console.log(e);
-    }
 
     public onChange($event) {
         //console.log('this.dateRange', this.dateRange)
@@ -169,5 +162,10 @@ export class secIncorrectLoginViewComponent implements OnInit {
         );
     }
 
+    public refreshChart() {
+        this.getData();
+    }
+
+    
     
 }

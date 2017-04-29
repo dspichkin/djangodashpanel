@@ -39,6 +39,10 @@
 
 
                         <div style="text-align: center;">
+                            <button type="button" class="btn btn-default btn-xs pull-right" (click)="refreshChart()">
+                                <i class="fa fa-refresh"></i>
+                            </button>
+
                             <canvas baseChart
                                         [datasets]="lineChartData"
                                         [labels]="lineChartLabels"

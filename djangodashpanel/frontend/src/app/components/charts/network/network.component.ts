@@ -182,4 +182,8 @@ export class NetworkComponent implements OnInit {
             }
         );
     }
+
+    public refresh() {
+        this.getData();
+    }
 }

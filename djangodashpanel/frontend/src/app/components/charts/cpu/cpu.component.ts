@@ -173,4 +173,8 @@ export class CpuComponent implements OnInit {
             }
         );
     }
+
+    public refresh() {
+        this.getData();
+    }
 }

@@ -5,6 +5,9 @@
                 <div class="panel panel-info">
                     <div class="panel-heading ">
                         <small>Last time update: {{last_time }}</small>
+                        <button type="button" class="btn btn-info btn-xs pull-right" (click)="refresh()">
+                            <i class="fa fa-refresh"></i>
+                        </button>
                     </div>
                     <div class="panel-body">
                         <table class="table">
@@ -18,6 +21,17 @@
                                 <td>{{p.create_time}}</td>
                             </tr>
                         </table>
+
+                        <!-- Loading -->
+                        <div *ngIf="loading" style="position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;">
+                            <div style="position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;">
+                            </div>
+                            <div style="width: 50px;margin: auto;margin-top: 60px;">
+                                <i class="fa fa-spin fa-gear" style="font-size: 50px;"></i>
+                            </div>
+                        </div>
+                        <!-- END Loading -->
+
                     </div>
                 </div>
             </div>

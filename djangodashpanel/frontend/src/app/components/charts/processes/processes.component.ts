@@ -163,5 +163,8 @@ export class ProcessesComponent implements OnInit {
         );
     }
 
+    public refresh() {
+        this.getData();
+    }
     
 }

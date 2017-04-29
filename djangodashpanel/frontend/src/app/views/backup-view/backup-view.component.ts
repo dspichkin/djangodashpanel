@@ -163,4 +163,8 @@ export class backupViewComponent implements OnInit{
         );
     }
    
+
+    public refresh() {
+        this.getBackups();
+    }
 }

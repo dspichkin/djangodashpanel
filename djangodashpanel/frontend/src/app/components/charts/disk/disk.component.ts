@@ -176,4 +176,8 @@ export class DiskComponent implements OnInit {
             }
         );
     }
+
+    public refresh() {
+        this.getData();
+    }
 }

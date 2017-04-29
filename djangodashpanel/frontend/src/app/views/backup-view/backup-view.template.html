@@ -61,6 +61,8 @@
                             </div>
                         </div>
                         <div *ngIf="router.url=='/backups/result'" class="tab-pane active">
+                            
+
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <div *ngIf="backups_daily" class="panel panel-info">
@@ -131,8 +133,12 @@
         <div class="col-lg-3">
             <div class="wrapper-md">
                 <div class="panel panel-success">
+
                     <div class="panel-heading ">
                         Info
+                        <button type="button" class="btn btn-success btn-xs pull-right" (click)="refresh()">
+                            <i class="fa fa-refresh"></i>
+                        </button>
                     </div>
                     <div class="panel-body">
                         <span class="text-success">Last run: </span>

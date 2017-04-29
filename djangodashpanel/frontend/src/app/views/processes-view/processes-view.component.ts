@@ -34,7 +34,6 @@ export class processesViewComponent implements OnInit {
     	.subscribe(
             function(data) {
                 self.loading = false;
-                console.log('data', data)
                 self.last_time = data.time;
                 self.last_processes = data.processes;
                 if (callback) {
@@ -56,7 +55,6 @@ export class processesViewComponent implements OnInit {
         self.dataService.getData(AppSettings.processesAvarageNumberUrl, {})
         .subscribe(
             function(data) {
-            	console.log('data',data)
                 self.loading = false;
                 self.hours = data.hours;
                 self.avarage_number = data.avarage_number;
@@ -69,5 +67,9 @@ export class processesViewComponent implements OnInit {
                 self.error_message = <any>error;
             }
         );
+    }
+
+    public refresh() {
+        this.getProcesses();
     }
 }

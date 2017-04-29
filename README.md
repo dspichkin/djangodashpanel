@@ -4,13 +4,6 @@ Django dashboard panel
 # In progress 
 # under development do not use it yet
 
-### Run frontend watcher
-
-```
-ng build -w -d /static/
-```
-
-
 
 ### Requirements
 

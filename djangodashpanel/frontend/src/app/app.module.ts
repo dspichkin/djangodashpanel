@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule, XSRFStrategy, CookieXSRFStrategy } from '@angular/http';
+import { Http, HttpModule, XSRFStrategy, CookieXSRFStrategy } from '@angular/http';
 
 import { RouterModule } from "@angular/router";
 
@@ -31,9 +31,17 @@ import { DataService } from './services/data.service';
 import { UserService } from './services/user.service';
 import { WindowRef } from './services/window.service';
 
-export function xsrfFactory() {
-    new CookieXSRFStrategy('csrftoken', 'X-CSRFToken');
+
+
+export function CookieXSRFStrategyFactory() {
+    return  new CookieXSRFStrategy('csrftoken', 'X-CSRFToken');
 }
+
+export const AppCSRF = {
+  provide: XSRFStrategy,
+  useFactory: CookieXSRFStrategyFactory,
+};
+
 
 @NgModule({
   declarations: [
@@ -67,11 +75,14 @@ export function xsrfFactory() {
     {
       provide: XSRFStrategy,
       useFactory: xsrfFactory
-    },*/
+    },
+    
     {
       provide:XSRFStrategy, 
       useValue: new CookieXSRFStrategy('csrftoken', 'X-CSRFToken')
     },
+    */
+    AppCSRF,
     ChartsService,
     DataService,
     UserService,

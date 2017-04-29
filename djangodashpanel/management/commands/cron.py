@@ -153,7 +153,7 @@ class Command(BaseCommand):
         last_record = SecurityLoginAttemptIncorrect.objects.all().order_by('time').last()
         last_record_tz = None
         if last_record:
-            last_record_tz = timezone.locatime(last_record.time)
+            last_record_tz = timezone.localtime(last_record.time)
         data = read_xtmp(PATH_LOGIN_ATTEMPT_INCORRECT)
         for i in data:
             dt = datetime.fromtimestamp(float(i[9]))
@@ -177,7 +177,7 @@ class Command(BaseCommand):
         last_record = SecurityLoginAttemptCorrect.objects.all().order_by('time').last()
         last_record_tz = None
         if last_record:
-            last_record_tz = timezone.locatime(last_record.time)
+            last_record_tz = timezone.localtime(last_record.time)
 
         data = read_xtmp(PATH_LOGIN_ATTEMPT_CORRECT)
         for i in data:

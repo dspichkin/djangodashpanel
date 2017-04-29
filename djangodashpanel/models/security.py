@@ -30,9 +30,9 @@ class SecurityLoginIncorrectAttemptManager(models.Manager):
         if dt_last_tz and isinstance(dt_last_tz, datetime) and host and user:
             obj_id = int(str(dt_last_tz.weekday()) + str(dt_last_tz.hour) + str(int(math.ceil(dt_last_tz.minute / 5)) * 5))
             obj, created = SecurityLoginAttemptIncorrect.objects.get_or_create(pk=obj_id)
-            obj.time = dt_last_tz
 
             if obj.value:
+
                 data = json.loads(obj.value)
 
                 if host in data.get("hosts", {}):
@@ -65,7 +65,9 @@ class SecurityLoginIncorrectAttemptManager(models.Manager):
                     "count": 1,
                     "last_date": time.mktime(dt_last_tz.timetuple())
                 }
+
             try:
+                obj.time = dt_last_tz
                 obj.value = json.dumps(data)
                 obj.save()
             except:

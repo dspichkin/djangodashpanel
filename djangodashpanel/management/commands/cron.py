@@ -150,13 +150,17 @@ class Command(BaseCommand):
         if not PATH_LOGIN_ATTEMPT_INCORRECT or not os.path.exists(PATH_LOGIN_ATTEMPT_INCORRECT):
             return
 
+        last_record = SecurityLoginAttemptIncorrect.objects.all().last()
+        last_record_tz = None
+        if last_record:
+            last_record_tz = timezone.locatime(last_record)
         data = read_xtmp(PATH_LOGIN_ATTEMPT_INCORRECT)
         for i in data:
             dt = datetime.fromtimestamp(float(i[9]))
             host = i[5]
             user = i[4]
             dt_last_tz = pytz.timezone(settings.TIME_ZONE).localize(dt, is_dst=None)
-            if not SecurityLoginAttemptIncorrect.objects.filter(time=dt_last_tz):
+            if not last_record_tz or last_record_tz < dt_last_tz:
                 SecurityLoginAttemptIncorrect.objects.put(dt_last_tz, host, user)
 
     def set_login_attempt_correct(self):
@@ -170,13 +174,18 @@ class Command(BaseCommand):
         if not PATH_LOGIN_ATTEMPT_CORRECT or not os.path.exists(PATH_LOGIN_ATTEMPT_CORRECT):
             return
 
+        last_record = SecurityLoginAttemptCorrect.objects.all().last()
+        last_record_tz = None
+        if last_record:
+            last_record_tz = timezone.locatime(last_record)
+
         data = read_xtmp(PATH_LOGIN_ATTEMPT_CORRECT)
         for i in data:
             dt = datetime.fromtimestamp(float(i[9]))
             host = i[5]
             user = i[4]
             dt_last_tz = pytz.timezone(settings.TIME_ZONE).localize(dt, is_dst=None)
-            if not SecurityLoginAttemptCorrect.objects.filter(time=dt_last_tz):
+            if not last_record_tz or last_record_tz < dt_last_tz:
                 SecurityLoginAttemptCorrect.objects.put(dt_last_tz, host, user)
 
     def backup(self):

@@ -76,7 +76,7 @@ def read_xtmp(fname):
             result.append(data)
 
     fp.close()
-    result.reverse()
+    # result.reverse()
 
     return result
 

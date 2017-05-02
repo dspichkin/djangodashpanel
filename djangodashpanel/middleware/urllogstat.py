@@ -43,11 +43,11 @@ class URLLogStatMiddleware(object):
                 if not re.match(pattern, request.path_info):
                     return response
 
-        sqltime = 0.0
+        sqltime = float(0)
         queries = connection.queries
         for q in queries:
-            sqltime += float(getattr(q, 'time', 0.0))
-
+            print "q", q
+            sqltime += float(q.get('time', 0.0))
         d = {
             'request_start': int(time.mktime(timezone.now().timetuple())),
             'request_method': request.method,

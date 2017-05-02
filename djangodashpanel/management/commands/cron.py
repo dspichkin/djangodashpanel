@@ -17,7 +17,6 @@ from djangodashpanel.models.perf import (
 from djangodashpanel.models.security import (
     SecurityData, SecurityLoginAttemptIncorrect, SecurityLoginAttemptCorrect)
 from djangodashpanel.models.backups import BackupData
-from djangodashpanel.urllogstat.reader import read_log_file
 
 
 class Command(BaseCommand):

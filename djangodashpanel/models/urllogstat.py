@@ -86,4 +86,4 @@ class UrlLogStat(models.Model):
         ordering = ('time',)
 
     def __str__(self):
-        return "%s %s" % (self.time, self.value)
+        return "%s" % (self.time)

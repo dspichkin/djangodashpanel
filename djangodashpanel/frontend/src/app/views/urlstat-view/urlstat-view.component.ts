@@ -207,7 +207,7 @@ export class urlstatViewComponent implements OnInit {
     }
 
     public toFixed(value) {
-        return value.toFixed(2);
+        return value.toFixed(4);
     }
     
 }

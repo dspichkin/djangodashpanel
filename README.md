@@ -65,6 +65,12 @@ DJANGODASHPANEL_URLSTAT_INCLUDES = [
 ]
 ```
 
+add backup function add folder for backups in settings file
+```
+DJANGODASHPANEL_BACKUP_DIR = os.path.join(BASE_DIR, '..', 'backups')
+```
+
+
 ```
 python manage.py makemigrations djangodashpanel
 python manage.py migrate

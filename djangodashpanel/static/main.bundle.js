@@ -3700,7 +3700,7 @@ var urlstatViewComponent = (function () {
         this.getData();
     };
     urlstatViewComponent.prototype.toFixed = function (value) {
-        return value.toFixed(2);
+        return value.toFixed(4);
     };
     return urlstatViewComponent;
 }());

@@ -105,17 +105,17 @@ def urlstat_data(request):
     return Response({
         "values": [{
             "data": urlstat,
-            "label": 'Number of requests'
+            "label": 'Number of reqs.'
         }, {
             "data": sql_count,
-            "label": 'Number of sql requests'
+            "label": 'Number of sql queries'
         }],
         "values_time": [{
             "data": request_duration,
-            "label": 'Max duration request'
+            "label": 'Max duration req.'
         }, {
             "data": sql_duration,
-            "label": 'Max duration SQL request'
+            "label": 'Max duration SQL query'
         }],
         "dates": dates,
         "all_requests": all_requests,

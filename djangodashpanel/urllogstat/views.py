@@ -71,6 +71,8 @@ def urlstat_data(request):
                 if v1.get("request_duration", 0) > last_request_duration:
                     last_request_duration = v1.get("request_duration", 0)
 
+                raw_all_requests[k][k1]["count"] = number_of_request
+
         sql_duration.append(last_sql_duration)
         request_duration.append(last_request_duration)
         sql_count.append(request_sql_count)

@@ -49,7 +49,7 @@ class URLLogStatMiddleware(object):
             print "q", q
             sqltime += float(q.get('time', 0.0))
         d = {
-            'request_start': int(time.mktime(timezone.now().timetuple())),
+            'last_time_request': int(time.mktime(timezone.localtime(timezone.now()).timetuple())),
             'request_method': request.method,
             'request_duration': time.time() - self._start,
             'request_code': response.status_code,

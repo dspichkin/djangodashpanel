@@ -24,7 +24,7 @@ class UrlLogStatManager(models.Manager):
                 if request_url in data:
                     if request_method in data[request_url]:
                         data[request_url][request_method]["count"] += 1
-                        data[request_url][request_method]["last_time_request"] = value["request_start"]
+                        data[request_url][request_method]["last_time_request"] = value["last_time_request"]
                         data[request_url][request_method]["request_duration"] = value["request_duration"]
                         data[request_url][request_method]["request_code"] = value["request_code"]
                         data[request_url][request_method]["request_sql_time"] = value["request_sql_time"]
@@ -32,7 +32,7 @@ class UrlLogStatManager(models.Manager):
                         data[request_url] = {}
                         data[request_url][request_method] = {
                             "count": 1,
-                            "last_time_request": value["request_start"],
+                            "last_time_request": value["last_time_request"],
                             "request_duration": value["request_duration"],
                             "request_code": value["request_code"],
                             "request_sql_count": value["request_sql_count"],
@@ -42,7 +42,7 @@ class UrlLogStatManager(models.Manager):
                     data[request_url] = {}
                     data[request_url][request_method] = {
                         "count": 1,
-                        "last_time_request": value["request_start"],
+                        "last_time_request": value["last_time_request"],
                         "request_duration": value["request_duration"],
                         "request_code": value["request_code"],
                         "request_sql_count": value["request_sql_count"],
@@ -56,7 +56,7 @@ class UrlLogStatManager(models.Manager):
                 data[request_url] = {}
                 data[request_url][request_method] = {
                     "count": 1,
-                    "last_time_request": value["request_start"],
+                    "last_time_request": value["last_time_request"],
                     "request_duration": value["request_duration"],
                     "request_code": value["request_code"],
                     "request_sql_count": value["request_sql_count"],

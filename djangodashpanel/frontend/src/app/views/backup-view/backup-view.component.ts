@@ -17,6 +17,7 @@ export class backupViewComponent implements OnInit{
 	error_message: string = "";
     backupMakeUrl: string;
     backupMakeMediaUrl: string;
+    backupGetMediaUrl: string;
     backups_daily:any = [];
     backups_weekly:any = [];
     backups_monthly:any = [];
@@ -39,6 +40,7 @@ export class backupViewComponent implements OnInit{
     	let self = this;
         self.backupMakeUrl = AppSettings.backupMakeUrl;
         self.backupMakeMediaUrl = AppSettings.backupMakeMediaUrl;
+        self.backupGetMediaUrl = AppSettings.backupGetMediaUrl;
         self.getBackups();
     }
 
@@ -166,5 +168,9 @@ export class backupViewComponent implements OnInit{
 
     public refresh() {
         this.getBackups();
+    }
+
+    public getFileUrl(filename) {
+        return AppSettings.backupGetMediaUrl + filename;
     }
 }

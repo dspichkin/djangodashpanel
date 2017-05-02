@@ -25,5 +25,6 @@ export class AppSettings {
 	public static backupsEnableUrl =  AppSettings.baseUrl + 'backups/stoprun/';
 	public static backupsSetTimeUrl =  AppSettings.baseUrl + 'backups/time/';
 	public static backupsPathDirUrl =  AppSettings.baseUrl + 'backups/dirs/';
+	public static backupGetMediaUrl = AppSettings.baseUrl + 'backups/file/';
 
 }

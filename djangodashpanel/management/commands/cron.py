@@ -17,6 +17,7 @@ from djangodashpanel.models.perf import (
 from djangodashpanel.models.security import (
     SecurityData, SecurityLoginAttemptIncorrect, SecurityLoginAttemptCorrect)
 from djangodashpanel.models.backups import BackupData
+from djangodashpanel.urllogstat.reader import read_log_file
 
 
 class Command(BaseCommand):
@@ -24,6 +25,10 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
 
+        if hasattr(settings, 'DJANGODASHPANEL_URLSTAT_DIR'):
+            read_log_file(settings.DJANGODASHPANEL_URLSTAT_DIR)
+        return
+        
         perf = PerfData.get_solo()
         sec = SecurityData.get_solo()
         backup = BackupData.get_solo()

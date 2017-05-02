@@ -1,28 +1,18 @@
 # -*- coding: utf-8 -*-
 #
-import time
-import json
-import pytz
 import os
 
-from datetime import datetime, timedelta
-from django.utils import timezone
 from django.conf import settings
-from django.contrib.auth.models import User
 from django.views.generic.base import TemplateView
 
 from rest_framework import status
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from rest_framework.permissions import IsAdminUser
-
-from ..models.perf import (
-    PerfProcess
-)
 
 
 class HomePageView(TemplateView):
     template_name = 'djangodashpanel.html'
+
 
 @api_view(['GET'])
 def get_current_user_data(request):
@@ -47,6 +37,11 @@ def get_current_user_data(request):
             if not os.path.exists(settings.DJANGODASHPANEL_BACKUP_DIR):
                 os.mkdir(settings.DJANGODASHPANEL_BACKUP_DIR)
             data["apps"]["backup"] = True
+
+        if hasattr(settings, 'DJANGODASHPANEL_URLSTAT_DIR'):
+            if not os.path.exists(settings.DJANGODASHPANEL_URLSTAT_DIR):
+                os.mkdir(settings.DJANGODASHPANEL_URLSTAT_DIR)
+            data["apps"]["urlstat"] = True
 
     return Response(data, status=status.HTTP_200_OK)
 

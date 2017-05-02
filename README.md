@@ -4,6 +4,7 @@ Django dashboard panel
 # In progress 
 # under development do not use it yet
 
+Version Django 1.9 
 
 ### Requirements
 
@@ -35,6 +36,14 @@ urlpatterns = [
     url(r'^dash/', include('djangodashpanel.urls')),
     ...
 ]
+```
+
+
+Once installed you need to do a little configuration to get things working. First add the middleware to your MIDDLEWARE_CLASSES in your settings file.
+
+```
+MIDDLEWARE_CLASSES = (
+  'djangodashpanel.middleware.requeststat.URLLogStatMiddleware',
 ```
 
 ```

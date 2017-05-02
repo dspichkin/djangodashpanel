@@ -2,7 +2,7 @@ from django.conf.urls import url
 
 from djangodashpanel.backups.views import (
     get_backups_data, make_backup, stoprun_backup, settime_backup,
-    setdirs_backup, make_media_backup)
+    setdirs_backup, make_media_backup, get_file_backup)
 
 urlpatterns = [
     url(r'^$', get_backups_data, name="get_backups_data"),
@@ -11,5 +11,6 @@ urlpatterns = [
     url(r'^stoprun/?$', stoprun_backup, name="stoprun_backup"),
     url(r'^time/?$', settime_backup, name="settime_backup"),
     url(r'^dirs/?$', setdirs_backup, name="setdirs_backup"),
+    url(r'^file/(?P<filename>.+)/?$', get_file_backup, name="get_file_backup"),
 ]
 

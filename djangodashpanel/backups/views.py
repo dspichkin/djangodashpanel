@@ -210,4 +210,26 @@ def setdirs_backup(request):
     }, status=status.HTTP_200_OK)
 
 
+@api_view(['GET'])
+@permission_classes((IsAdminUser, ))
+def get_file_backup(request, filename):
+    file_backup = None
+    base_file_path = settings.DJANGODASHPANEL_BACKUP_DIR
+    for d, value in DATE_FORMATS.items():
+        _path = os.path.join(base_file_path, d)
+
+        for dirpath, dirnames, filenames in os.walk(_path):
+            for f in filenames:
+                if f.endswith(FILE_EXT):
+                    if f == filename:
+                        file_backup = os.path.join(dirpath, f)
+                        break
+
+    if file_backup:
+        response = HttpResponse(FileWrapper(file(file_backup, 'r')), content_type='application/json')
+        response['Content-Disposition'] = 'attachment; filename=' + filename
+    else:
+        response = HttpResponse()
+    return response
+
 

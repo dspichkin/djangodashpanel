@@ -75,7 +75,7 @@
                                                     <td>{{getDateFromTimestap(backup.created_at)}}</td>
                                                     <td>{{backup.filename}}</td>
                                                     <td>{{backup.size}}</td>
-                                                    <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-download"></i></button></td>
+                                                    <td><a [href]="getFileUrl(backup.filename)" type="button" class="btn btn-default btn-xs" target="_blank"><i class="fa fa-download"></i></a></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -91,7 +91,7 @@
                                                     <td>{{getDateFromTimestap(backup.created_at)}}</td>
                                                     <td>{{backup.filename}}</td>
                                                     <td>{{backup.size}}</td>
-                                                    <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-download"></i></button></td>
+                                                    <td><a [href]="getFileUrl(backup.filename)" type="button" class="btn btn-default btn-xs" target="_blank"><i class="fa fa-download"></i></a></td>
                                                 </tr>
                                             </table>
                                         </div>
@@ -107,7 +107,7 @@
                                                     <td>{{getDateFromTimestap(backup.created_at)}}</td>
                                                     <td>{{backup.filename}}</td>
                                                     <td>{{backup.size}}</td>
-                                                    <td><button type="button" class="btn btn-default btn-xs"><i class="fa fa-download"></i></button></td>
+                                                    <td><a [href]="getFileUrl(backup.filename)" type="button" class="btn btn-default btn-xs" target="_blank"><i class="fa fa-download"></i></a></td>
                                                 </tr>
                                             </table>
                                         </div>

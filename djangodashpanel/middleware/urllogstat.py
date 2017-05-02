@@ -29,8 +29,8 @@ class URLLogStatMiddleware(object):
 
     def process_response(self, request, response):
         """Let's handle old-style response processing here, as usual."""
-
-        response = self.get_response(request)
+        if hasattr(self, 'get_response'):
+            response = self.get_response(request)
 
         if not hasattr(settings, 'DJANGODASHPANEL_URLSTAT') or not settings.DJANGODASHPANEL_URLSTAT:
             return response

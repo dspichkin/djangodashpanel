@@ -32,7 +32,6 @@ class Command(BaseCommand):
 
         self.set_cpu()
         self.set_network()
-        self.url_stat()
 
         if not perf.run_last_time_10m or perf.run_last_time_10m + timedelta(minutes=10) < now:
             perf.run_last_time_10m = timezone.now()
@@ -72,10 +71,6 @@ class Command(BaseCommand):
 
         perf.run_last_time_5m = timezone.now()
         perf.save()
-
-    def url_stat(self):
-        if hasattr(settings, 'DJANGODASHPANEL_URLSTAT_DIR'):
-            read_log_file(settings.DJANGODASHPANEL_URLSTAT_DIR)
 
     def set_cpu(self):
         print "cpu"

@@ -38,9 +38,7 @@ def get_current_user_data(request):
                 os.mkdir(settings.DJANGODASHPANEL_BACKUP_DIR)
             data["apps"]["backup"] = True
 
-        if hasattr(settings, 'DJANGODASHPANEL_URLSTAT_DIR'):
-            if not os.path.exists(settings.DJANGODASHPANEL_URLSTAT_DIR):
-                os.mkdir(settings.DJANGODASHPANEL_URLSTAT_DIR)
+        if hasattr(settings, 'DJANGODASHPANEL_URLSTAT') and settings.DJANGODASHPANEL_URLSTAT:
             data["apps"]["urlstat"] = True
 
     return Response(data, status=status.HTTP_200_OK)

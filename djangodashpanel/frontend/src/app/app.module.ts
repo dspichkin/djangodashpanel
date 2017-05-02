@@ -23,6 +23,7 @@ import { ProcessesViewModule  } from "./views/processes-view/processes-view.modu
 import { SecCorrectLoginViewModule } from "./views/sec-view/sec-correct-login-view.module";
 import { SecIncorrectLoginViewModule } from "./views/sec-view/sec-incorrect-login-view.module";
 import { BackupViewModule } from "./views/backup-view/backup-view.module";
+import { UrlStatViewModule } from "./views/urlstat-view/urlstat-view.module";
 
 
 // App services
@@ -62,6 +63,7 @@ export const AppCSRF = {
     SecCorrectLoginViewModule,
     SecIncorrectLoginViewModule,
     BackupViewModule,
+    UrlStatViewModule,
 
     // Modules
     LayoutsModule,
@@ -71,17 +73,6 @@ export const AppCSRF = {
     TimepickerModule.forRoot()
   ],
   providers: [
-  /*
-    {
-      provide: XSRFStrategy,
-      useFactory: xsrfFactory
-    },
-    
-    {
-      provide:XSRFStrategy, 
-      useValue: new CookieXSRFStrategy('csrftoken', 'X-CSRFToken')
-    },
-    */
     AppCSRF,
     ChartsService,
     DataService,

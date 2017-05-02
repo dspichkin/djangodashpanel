@@ -19,6 +19,7 @@ urlpatterns = [
     url(r'^api/perf/', include('djangodashpanel.perf.urls')),
     url(r'^api/processes/', include('djangodashpanel.processes.urls')),
     url(r'^api/backups/', include('djangodashpanel.backups.urls')),
+    url(r'^api/urlstat/', include('djangodashpanel.urllogstat.urls')),
 
     url(r'^(?P<url>.*)$', sredirect),
 ]

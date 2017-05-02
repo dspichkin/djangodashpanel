@@ -5,6 +5,7 @@ import { processesViewComponent } from "./views/processes-view/processes-view.co
 import { basicComponent } from "./components/common/layouts/basic.component";
 import { secCorrectLoginViewComponent } from "./views/sec-view/sec-correct-login-view.component";
 import { secIncorrectLoginViewComponent } from "./views/sec-view/sec-incorrect-login-view.component";
+import { urlstatViewComponent } from "./views/urlstat-view/urlstat-view.component";
 import { backupViewComponent } from "./views/backup-view/backup-view.component";
 
 
@@ -21,6 +22,7 @@ export const ROUTES:Routes = [
       {path: 'processes', component: processesViewComponent},
       {path: 'correctlogin', component: secCorrectLoginViewComponent},
       {path: 'incorrectlogin', component: secIncorrectLoginViewComponent},
+      {path: 'urlstat', component: urlstatViewComponent},
       {path: 'backups', component: backupViewComponent},
       {path: 'backups/result', component: backupViewComponent},
     ]

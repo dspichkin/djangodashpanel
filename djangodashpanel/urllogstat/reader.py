@@ -6,7 +6,6 @@ from djangodashpanel.models.urllogstat import UrlLogStat
 
 
 def read_log_file(filepath):
-    print "filepath",filepath
     if os.path.exists(filepath):
         filename = 'urlstat.stat'
         filenamepath = os.path.join(filepath, filename)

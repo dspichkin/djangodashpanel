@@ -27,4 +27,6 @@ export class AppSettings {
 	public static backupsPathDirUrl =  AppSettings.baseUrl + 'backups/dirs/';
 	public static backupGetMediaUrl = AppSettings.baseUrl + 'backups/file/';
 
+	public static urlStatUrl = AppSettings.baseUrl + 'urlstat/';
+
 }

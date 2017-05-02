@@ -32,23 +32,12 @@ AppSettings.backupsEnableUrl = AppSettings.baseUrl + 'backups/stoprun/';
 AppSettings.backupsSetTimeUrl = AppSettings.baseUrl + 'backups/time/';
 AppSettings.backupsPathDirUrl = AppSettings.baseUrl + 'backups/dirs/';
 AppSettings.backupGetMediaUrl = AppSettings.baseUrl + 'backups/file/';
+AppSettings.urlStatUrl = AppSettings.baseUrl + 'urlstat/';
 //# sourceMappingURL=app.settings.js.map
 
 /***/ }),
 
-/***/ 11:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(257);
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__index__["a"]; });
-/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__index__["b"]; });
-
-//# sourceMappingURL=ng2-charts.js.map
-
-/***/ }),
-
-/***/ 226:
+/***/ 227:
 /***/ (function(module, exports) {
 
 function webpackEmptyContext(req) {
@@ -57,20 +46,20 @@ function webpackEmptyContext(req) {
 webpackEmptyContext.keys = function() { return []; };
 webpackEmptyContext.resolve = webpackEmptyContext;
 module.exports = webpackEmptyContext;
-webpackEmptyContext.id = 226;
+webpackEmptyContext.id = 227;
 
 
 /***/ }),
 
-/***/ 227:
+/***/ 228:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(239);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(241);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(268);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__ = __webpack_require__(240);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__(242);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__(270);
 
 
 
@@ -83,12 +72,12 @@ __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dyna
 
 /***/ }),
 
-/***/ 240:
+/***/ 241:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_data_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__services_data_service__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_user_service__ = __webpack_require__(43);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -122,8 +111,8 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'app-root',
-        template: __webpack_require__(386),
-        styles: [__webpack_require__(372)]
+        template: __webpack_require__(388),
+        styles: [__webpack_require__(374)]
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__services_data_service__["a" /* DataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */]) === "function" && _b || Object])
 ], AppComponent);
@@ -133,32 +122,33 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 241:
+/***/ 242:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_http__ = __webpack_require__(32);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(240);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routes__ = __webpack_require__(242);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_bootstrap_timepicker__ = __webpack_require__(208);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_common_layouts_layouts_module__ = __webpack_require__(251);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_main_view_main_view_module__ = __webpack_require__(261);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_minor_view_minor_view_module__ = __webpack_require__(263);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_perf_view_perf_view_module__ = __webpack_require__(264);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_processes_view_processes_view_module__ = __webpack_require__(265);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_sec_view_sec_correct_login_view_module__ = __webpack_require__(266);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_sec_view_sec_incorrect_login_view_module__ = __webpack_require__(267);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_backup_view_backup_view_module__ = __webpack_require__(260);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__services_charts_services__ = __webpack_require__(258);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_data_service__ = __webpack_require__(7);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_user_service__ = __webpack_require__(43);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_window_service__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__app_component__ = __webpack_require__(241);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__app_routes__ = __webpack_require__(243);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_ngx_bootstrap_timepicker__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__components_common_layouts_layouts_module__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__views_main_view_main_view_module__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__views_minor_view_minor_view_module__ = __webpack_require__(264);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__views_perf_view_perf_view_module__ = __webpack_require__(265);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__views_processes_view_processes_view_module__ = __webpack_require__(266);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__views_sec_view_sec_correct_login_view_module__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__views_sec_view_sec_incorrect_login_view_module__ = __webpack_require__(268);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__views_backup_view_backup_view_module__ = __webpack_require__(261);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__views_urlstat_view_urlstat_view_module__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__services_charts_services__ = __webpack_require__(259);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_19__services_data_service__ = __webpack_require__(9);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_20__services_user_service__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_21__services_window_service__ = __webpack_require__(260);
 /* unused harmony export CookieXSRFStrategyFactory */
 /* unused harmony export AppCSRF */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
@@ -180,6 +170,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 // App modules/components
 
 // App views
+
 
 
 
@@ -222,28 +213,18 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_14__views_sec_view_sec_correct_login_view_module__["a" /* SecCorrectLoginViewModule */],
             __WEBPACK_IMPORTED_MODULE_15__views_sec_view_sec_incorrect_login_view_module__["a" /* SecIncorrectLoginViewModule */],
             __WEBPACK_IMPORTED_MODULE_16__views_backup_view_backup_view_module__["a" /* BackupViewModule */],
+            __WEBPACK_IMPORTED_MODULE_17__views_urlstat_view_urlstat_view_module__["a" /* UrlStatViewModule */],
             // Modules
             __WEBPACK_IMPORTED_MODULE_9__components_common_layouts_layouts_module__["a" /* LayoutsModule */],
             __WEBPACK_IMPORTED_MODULE_4__angular_router__["a" /* RouterModule */].forRoot(__WEBPACK_IMPORTED_MODULE_7__app_routes__["a" /* ROUTES */], { useHash: true }),
             __WEBPACK_IMPORTED_MODULE_8_ngx_bootstrap_timepicker__["a" /* TimepickerModule */].forRoot()
         ],
         providers: [
-            /*
-              {
-                provide: XSRFStrategy,
-                useFactory: xsrfFactory
-              },
-              
-              {
-                provide:XSRFStrategy,
-                useValue: new CookieXSRFStrategy('csrftoken', 'X-CSRFToken')
-              },
-              */
             AppCSRF,
-            __WEBPACK_IMPORTED_MODULE_17__services_charts_services__["a" /* ChartsService */],
-            __WEBPACK_IMPORTED_MODULE_18__services_data_service__["a" /* DataService */],
-            __WEBPACK_IMPORTED_MODULE_19__services_user_service__["a" /* UserService */],
-            __WEBPACK_IMPORTED_MODULE_20__services_window_service__["a" /* WindowRef */]
+            __WEBPACK_IMPORTED_MODULE_18__services_charts_services__["a" /* ChartsService */],
+            __WEBPACK_IMPORTED_MODULE_19__services_data_service__["a" /* DataService */],
+            __WEBPACK_IMPORTED_MODULE_20__services_user_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_21__services_window_service__["a" /* WindowRef */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_6__app_component__["a" /* AppComponent */]]
     })
@@ -253,7 +234,7 @@ AppModule = __decorate([
 
 /***/ }),
 
-/***/ 242:
+/***/ 243:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -263,8 +244,10 @@ AppModule = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__components_common_layouts_basic_component__ = __webpack_require__(72);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__views_sec_view_sec_correct_login_view_component__ = __webpack_require__(77);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__views_sec_view_sec_incorrect_login_view_component__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_backup_view_backup_view_component__ = __webpack_require__(73);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__views_urlstat_view_urlstat_view_component__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__views_backup_view_backup_view_component__ = __webpack_require__(73);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ROUTES; });
+
 
 
 
@@ -285,8 +268,9 @@ var ROUTES = [
             { path: 'processes', component: __WEBPACK_IMPORTED_MODULE_2__views_processes_view_processes_view_component__["a" /* processesViewComponent */] },
             { path: 'correctlogin', component: __WEBPACK_IMPORTED_MODULE_4__views_sec_view_sec_correct_login_view_component__["a" /* secCorrectLoginViewComponent */] },
             { path: 'incorrectlogin', component: __WEBPACK_IMPORTED_MODULE_5__views_sec_view_sec_incorrect_login_view_component__["a" /* secIncorrectLoginViewComponent */] },
-            { path: 'backups', component: __WEBPACK_IMPORTED_MODULE_6__views_backup_view_backup_view_component__["a" /* backupViewComponent */] },
-            { path: 'backups/result', component: __WEBPACK_IMPORTED_MODULE_6__views_backup_view_backup_view_component__["a" /* backupViewComponent */] },
+            { path: 'urlstat', component: __WEBPACK_IMPORTED_MODULE_6__views_urlstat_view_urlstat_view_component__["a" /* urlstatViewComponent */] },
+            { path: 'backups', component: __WEBPACK_IMPORTED_MODULE_7__views_backup_view_backup_view_component__["a" /* backupViewComponent */] },
+            { path: 'backups/result', component: __WEBPACK_IMPORTED_MODULE_7__views_backup_view_backup_view_component__["a" /* backupViewComponent */] },
         ]
     },
     // Handle all other routes
@@ -296,16 +280,16 @@ var ROUTES = [
 
 /***/ }),
 
-/***/ 243:
+/***/ 244:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CpuComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -457,7 +441,7 @@ __decorate([
 CpuComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'cpu-chart',
-        template: __webpack_require__(387),
+        template: __webpack_require__(389),
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], CpuComponent);
@@ -467,16 +451,16 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 244:
+/***/ 245:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DiskComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -627,7 +611,7 @@ __decorate([
 DiskComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'disk-chart',
-        template: __webpack_require__(388),
+        template: __webpack_require__(390),
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], DiskComponent);
@@ -637,16 +621,16 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 245:
+/***/ 246:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MemoryComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -811,7 +795,7 @@ __decorate([
 MemoryComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'memory-chart',
-        template: __webpack_require__(389),
+        template: __webpack_require__(391),
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object])
 ], MemoryComponent);
@@ -821,16 +805,16 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 246:
+/***/ 247:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NetworkComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -988,7 +972,7 @@ __decorate([
 NetworkComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'network-chart',
-        template: __webpack_require__(390),
+        template: __webpack_require__(392),
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object])
 ], NetworkComponent);
@@ -998,16 +982,16 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 247:
+/***/ 248:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProcessesComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1144,7 +1128,7 @@ __decorate([
 ProcessesComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'processes-chart',
-        template: __webpack_require__(391),
+        template: __webpack_require__(393),
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], ProcessesComponent);
@@ -1154,7 +1138,7 @@ var _a, _b, _c, _d;
 
 /***/ }),
 
-/***/ 248:
+/***/ 249:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1175,7 +1159,7 @@ var FooterComponent = (function () {
 FooterComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'footer',
-        template: __webpack_require__(392)
+        template: __webpack_require__(394)
     })
 ], FooterComponent);
 
@@ -1183,13 +1167,13 @@ FooterComponent = __decorate([
 
 /***/ }),
 
-/***/ 249:
+/***/ 250:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__footer_component__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__footer_component__ = __webpack_require__(249);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FooterModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1217,7 +1201,7 @@ FooterModule = __decorate([
 
 /***/ }),
 
-/***/ 250:
+/***/ 251:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1244,7 +1228,7 @@ var blankComponent = (function () {
 blankComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'blank',
-        template: __webpack_require__(394)
+        template: __webpack_require__(396)
     })
 ], blankComponent);
 
@@ -1252,18 +1236,18 @@ blankComponent = __decorate([
 
 /***/ }),
 
-/***/ 251:
+/***/ 252:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__blank_component__ = __webpack_require__(250);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_platform_browser__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__blank_component__ = __webpack_require__(251);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__basic_component__ = __webpack_require__(72);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__navigation_navigation_module__ = __webpack_require__(253);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__topnavbar_topnavbar_module__ = __webpack_require__(255);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__footer_footer_module__ = __webpack_require__(249);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__navigation_navigation_module__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__topnavbar_topnavbar_module__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__footer_footer_module__ = __webpack_require__(250);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LayoutsModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1296,7 +1280,7 @@ LayoutsModule = __decorate([
 
 /***/ }),
 
-/***/ 252:
+/***/ 253:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1345,7 +1329,7 @@ var NavigationComponent = (function () {
 NavigationComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'navigation',
-        template: __webpack_require__(395),
+        template: __webpack_require__(397),
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_user_service__["a" /* UserService */]) === "function" && _b || Object])
 ], NavigationComponent);
@@ -1355,14 +1339,14 @@ var _a, _b;
 
 /***/ }),
 
-/***/ 253:
+/***/ 254:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__navigation_component__ = __webpack_require__(252);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__navigation_component__ = __webpack_require__(253);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return NavigationModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1391,7 +1375,7 @@ NavigationModule = __decorate([
 
 /***/ }),
 
-/***/ 254:
+/***/ 255:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1417,7 +1401,7 @@ var TopnavbarComponent = (function () {
 TopnavbarComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'topnavbar',
-        template: __webpack_require__(396),
+        template: __webpack_require__(398),
     })
 ], TopnavbarComponent);
 
@@ -1425,13 +1409,13 @@ TopnavbarComponent = __decorate([
 
 /***/ }),
 
-/***/ 255:
+/***/ 256:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__topnavbar_component__ = __webpack_require__(254);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__topnavbar_component__ = __webpack_require__(255);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TopnavbarModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1459,12 +1443,12 @@ TopnavbarModule = __decorate([
 
 /***/ }),
 
-/***/ 256:
+/***/ 257:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chart_js__ = __webpack_require__(269);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chart_js__ = __webpack_require__(271);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_chart_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_chart_js__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BaseChartDirective; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return ChartsModule; });
@@ -1776,11 +1760,11 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 257:
+/***/ 258:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__charts_charts__ = __webpack_require__(256);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__charts_charts__ = __webpack_require__(257);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__charts_charts__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__charts_charts__["b"]; });
 
@@ -1788,7 +1772,7 @@ var _a, _b, _c;
 
 /***/ }),
 
-/***/ 258:
+/***/ 259:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1866,7 +1850,7 @@ var _a;
 
 /***/ }),
 
-/***/ 259:
+/***/ 260:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1899,16 +1883,16 @@ WindowRef = __decorate([
 
 /***/ }),
 
-/***/ 260:
+/***/ 261:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__backup_view_component__ = __webpack_require__(73);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__angular_router__ = __webpack_require__(23);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_bootstrap_timepicker__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ngx_bootstrap_timepicker__ = __webpack_require__(209);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BackupViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1945,14 +1929,14 @@ BackupViewModule = __decorate([
 
 /***/ }),
 
-/***/ 261:
+/***/ 262:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__main_view_component__ = __webpack_require__(74);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_forms__ = __webpack_require__(12);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MainViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1985,7 +1969,7 @@ MainViewModule = __decorate([
 
 /***/ }),
 
-/***/ 262:
+/***/ 263:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2006,7 +1990,7 @@ var minorViewComponent = (function () {
 minorViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'minorView',
-        template: __webpack_require__(399)
+        template: __webpack_require__(401)
     })
 ], minorViewComponent);
 
@@ -2014,13 +1998,13 @@ minorViewComponent = __decorate([
 
 /***/ }),
 
-/***/ 263:
+/***/ 264:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__minor_view_component__ = __webpack_require__(262);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__minor_view_component__ = __webpack_require__(263);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MinorViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -2047,20 +2031,20 @@ MinorViewModule = __decorate([
 
 /***/ }),
 
-/***/ 264:
+/***/ 265:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__perf_view_component__ = __webpack_require__(75);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_charts_cpu_cpu_component__ = __webpack_require__(243);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_charts_memory_memory_component__ = __webpack_require__(245);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_charts_disk_disk_component__ = __webpack_require__(244);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_charts_network_network_component__ = __webpack_require__(246);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ng2_nouislider__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_charts_cpu_cpu_component__ = __webpack_require__(244);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__components_charts_memory_memory_component__ = __webpack_require__(246);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__components_charts_disk_disk_component__ = __webpack_require__(245);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__components_charts_network_network_component__ = __webpack_require__(247);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__libs_ng2_charts_ng2_charts__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_9_ng2_nouislider__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return PerfViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2106,17 +2090,17 @@ PerfViewModule = __decorate([
 
 /***/ }),
 
-/***/ 265:
+/***/ 266:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__processes_view_component__ = __webpack_require__(76);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_charts_processes_processes_component__ = __webpack_require__(247);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_nouislider__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__components_charts_processes_processes_component__ = __webpack_require__(248);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__libs_ng2_charts_ng2_charts__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng2_nouislider__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProcessesViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2156,16 +2140,16 @@ ProcessesViewModule = __decorate([
 
 /***/ }),
 
-/***/ 266:
+/***/ 267:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sec_correct_login_view_component__ = __webpack_require__(77);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__libs_ng2_charts_ng2_charts__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SecCorrectLoginViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2203,16 +2187,16 @@ SecCorrectLoginViewModule = __decorate([
 
 /***/ }),
 
-/***/ 267:
+/***/ 268:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(5);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(13);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__sec_incorrect_login_view_component__ = __webpack_require__(78);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__libs_ng2_charts_ng2_charts__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SecIncorrectLoginViewModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -2250,7 +2234,54 @@ SecIncorrectLoginViewModule = __decorate([
 
 /***/ }),
 
-/***/ 268:
+/***/ 269:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_forms__ = __webpack_require__(12);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__urlstat_view_component__ = __webpack_require__(79);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__libs_ng2_charts_ng2_charts__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UrlStatViewModule; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+
+
+
+
+
+var UrlStatViewModule = (function () {
+    function UrlStatViewModule() {
+    }
+    return UrlStatViewModule;
+}());
+UrlStatViewModule = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+        declarations: [
+            __WEBPACK_IMPORTED_MODULE_3__urlstat_view_component__["a" /* urlstatViewComponent */]
+        ],
+        imports: [
+            __WEBPACK_IMPORTED_MODULE_1__angular_platform_browser__["a" /* BrowserModule */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_forms__["FormsModule"],
+            __WEBPACK_IMPORTED_MODULE_5_ng2_nouislider__["NouisliderModule"],
+            __WEBPACK_IMPORTED_MODULE_4__libs_ng2_charts_ng2_charts__["b" /* ChartsModule */]
+        ],
+    })
+], UrlStatViewModule);
+
+//# sourceMappingURL=urlstat-view.module.js.map
+
+/***/ }),
+
+/***/ 270:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -2267,7 +2298,7 @@ var environment = {
 
 /***/ }),
 
-/***/ 372:
+/***/ 374:
 /***/ (function(module, exports, __webpack_require__) {
 
 exports = module.exports = __webpack_require__(21)();
@@ -2285,240 +2316,240 @@ module.exports = module.exports.toString();
 
 /***/ }),
 
-/***/ 377:
+/***/ 379:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
-	"./af": 93,
-	"./af.js": 93,
-	"./ar": 100,
-	"./ar-dz": 94,
-	"./ar-dz.js": 94,
-	"./ar-kw": 95,
-	"./ar-kw.js": 95,
-	"./ar-ly": 96,
-	"./ar-ly.js": 96,
-	"./ar-ma": 97,
-	"./ar-ma.js": 97,
-	"./ar-sa": 98,
-	"./ar-sa.js": 98,
-	"./ar-tn": 99,
-	"./ar-tn.js": 99,
-	"./ar.js": 100,
-	"./az": 101,
-	"./az.js": 101,
-	"./be": 102,
-	"./be.js": 102,
-	"./bg": 103,
-	"./bg.js": 103,
-	"./bn": 104,
-	"./bn.js": 104,
-	"./bo": 105,
-	"./bo.js": 105,
-	"./br": 106,
-	"./br.js": 106,
-	"./bs": 107,
-	"./bs.js": 107,
-	"./ca": 108,
-	"./ca.js": 108,
-	"./cs": 109,
-	"./cs.js": 109,
-	"./cv": 110,
-	"./cv.js": 110,
-	"./cy": 111,
-	"./cy.js": 111,
-	"./da": 112,
-	"./da.js": 112,
-	"./de": 115,
-	"./de-at": 113,
-	"./de-at.js": 113,
-	"./de-ch": 114,
-	"./de-ch.js": 114,
-	"./de.js": 115,
-	"./dv": 116,
-	"./dv.js": 116,
-	"./el": 117,
-	"./el.js": 117,
-	"./en-au": 118,
-	"./en-au.js": 118,
-	"./en-ca": 119,
-	"./en-ca.js": 119,
-	"./en-gb": 120,
-	"./en-gb.js": 120,
-	"./en-ie": 121,
-	"./en-ie.js": 121,
-	"./en-nz": 122,
-	"./en-nz.js": 122,
-	"./eo": 123,
-	"./eo.js": 123,
-	"./es": 125,
-	"./es-do": 124,
-	"./es-do.js": 124,
-	"./es.js": 125,
-	"./et": 126,
-	"./et.js": 126,
-	"./eu": 127,
-	"./eu.js": 127,
-	"./fa": 128,
-	"./fa.js": 128,
-	"./fi": 129,
-	"./fi.js": 129,
-	"./fo": 130,
-	"./fo.js": 130,
-	"./fr": 133,
-	"./fr-ca": 131,
-	"./fr-ca.js": 131,
-	"./fr-ch": 132,
-	"./fr-ch.js": 132,
-	"./fr.js": 133,
-	"./fy": 134,
-	"./fy.js": 134,
-	"./gd": 135,
-	"./gd.js": 135,
-	"./gl": 136,
-	"./gl.js": 136,
-	"./gom-latn": 137,
-	"./gom-latn.js": 137,
-	"./he": 138,
-	"./he.js": 138,
-	"./hi": 139,
-	"./hi.js": 139,
-	"./hr": 140,
-	"./hr.js": 140,
-	"./hu": 141,
-	"./hu.js": 141,
-	"./hy-am": 142,
-	"./hy-am.js": 142,
-	"./id": 143,
-	"./id.js": 143,
-	"./is": 144,
-	"./is.js": 144,
-	"./it": 145,
-	"./it.js": 145,
-	"./ja": 146,
-	"./ja.js": 146,
-	"./jv": 147,
-	"./jv.js": 147,
-	"./ka": 148,
-	"./ka.js": 148,
-	"./kk": 149,
-	"./kk.js": 149,
-	"./km": 150,
-	"./km.js": 150,
-	"./kn": 151,
-	"./kn.js": 151,
-	"./ko": 152,
-	"./ko.js": 152,
-	"./ky": 153,
-	"./ky.js": 153,
-	"./lb": 154,
-	"./lb.js": 154,
-	"./lo": 155,
-	"./lo.js": 155,
-	"./lt": 156,
-	"./lt.js": 156,
-	"./lv": 157,
-	"./lv.js": 157,
-	"./me": 158,
-	"./me.js": 158,
-	"./mi": 159,
-	"./mi.js": 159,
-	"./mk": 160,
-	"./mk.js": 160,
-	"./ml": 161,
-	"./ml.js": 161,
-	"./mr": 162,
-	"./mr.js": 162,
-	"./ms": 164,
-	"./ms-my": 163,
-	"./ms-my.js": 163,
-	"./ms.js": 164,
-	"./my": 165,
-	"./my.js": 165,
-	"./nb": 166,
-	"./nb.js": 166,
-	"./ne": 167,
-	"./ne.js": 167,
-	"./nl": 169,
-	"./nl-be": 168,
-	"./nl-be.js": 168,
-	"./nl.js": 169,
-	"./nn": 170,
-	"./nn.js": 170,
-	"./pa-in": 171,
-	"./pa-in.js": 171,
-	"./pl": 172,
-	"./pl.js": 172,
-	"./pt": 174,
-	"./pt-br": 173,
-	"./pt-br.js": 173,
-	"./pt.js": 174,
-	"./ro": 175,
-	"./ro.js": 175,
-	"./ru": 176,
-	"./ru.js": 176,
-	"./sd": 177,
-	"./sd.js": 177,
-	"./se": 178,
-	"./se.js": 178,
-	"./si": 179,
-	"./si.js": 179,
-	"./sk": 180,
-	"./sk.js": 180,
-	"./sl": 181,
-	"./sl.js": 181,
-	"./sq": 182,
-	"./sq.js": 182,
-	"./sr": 184,
-	"./sr-cyrl": 183,
-	"./sr-cyrl.js": 183,
-	"./sr.js": 184,
-	"./ss": 185,
-	"./ss.js": 185,
-	"./sv": 186,
-	"./sv.js": 186,
-	"./sw": 187,
-	"./sw.js": 187,
-	"./ta": 188,
-	"./ta.js": 188,
-	"./te": 189,
-	"./te.js": 189,
-	"./tet": 190,
-	"./tet.js": 190,
-	"./th": 191,
-	"./th.js": 191,
-	"./tl-ph": 192,
-	"./tl-ph.js": 192,
-	"./tlh": 193,
-	"./tlh.js": 193,
-	"./tr": 194,
-	"./tr.js": 194,
-	"./tzl": 195,
-	"./tzl.js": 195,
-	"./tzm": 197,
-	"./tzm-latn": 196,
-	"./tzm-latn.js": 196,
-	"./tzm.js": 197,
-	"./uk": 198,
-	"./uk.js": 198,
-	"./ur": 199,
-	"./ur.js": 199,
-	"./uz": 201,
-	"./uz-latn": 200,
-	"./uz-latn.js": 200,
-	"./uz.js": 201,
-	"./vi": 202,
-	"./vi.js": 202,
-	"./x-pseudo": 203,
-	"./x-pseudo.js": 203,
-	"./yo": 204,
-	"./yo.js": 204,
-	"./zh-cn": 205,
-	"./zh-cn.js": 205,
-	"./zh-hk": 206,
-	"./zh-hk.js": 206,
-	"./zh-tw": 207,
-	"./zh-tw.js": 207
+	"./af": 94,
+	"./af.js": 94,
+	"./ar": 101,
+	"./ar-dz": 95,
+	"./ar-dz.js": 95,
+	"./ar-kw": 96,
+	"./ar-kw.js": 96,
+	"./ar-ly": 97,
+	"./ar-ly.js": 97,
+	"./ar-ma": 98,
+	"./ar-ma.js": 98,
+	"./ar-sa": 99,
+	"./ar-sa.js": 99,
+	"./ar-tn": 100,
+	"./ar-tn.js": 100,
+	"./ar.js": 101,
+	"./az": 102,
+	"./az.js": 102,
+	"./be": 103,
+	"./be.js": 103,
+	"./bg": 104,
+	"./bg.js": 104,
+	"./bn": 105,
+	"./bn.js": 105,
+	"./bo": 106,
+	"./bo.js": 106,
+	"./br": 107,
+	"./br.js": 107,
+	"./bs": 108,
+	"./bs.js": 108,
+	"./ca": 109,
+	"./ca.js": 109,
+	"./cs": 110,
+	"./cs.js": 110,
+	"./cv": 111,
+	"./cv.js": 111,
+	"./cy": 112,
+	"./cy.js": 112,
+	"./da": 113,
+	"./da.js": 113,
+	"./de": 116,
+	"./de-at": 114,
+	"./de-at.js": 114,
+	"./de-ch": 115,
+	"./de-ch.js": 115,
+	"./de.js": 116,
+	"./dv": 117,
+	"./dv.js": 117,
+	"./el": 118,
+	"./el.js": 118,
+	"./en-au": 119,
+	"./en-au.js": 119,
+	"./en-ca": 120,
+	"./en-ca.js": 120,
+	"./en-gb": 121,
+	"./en-gb.js": 121,
+	"./en-ie": 122,
+	"./en-ie.js": 122,
+	"./en-nz": 123,
+	"./en-nz.js": 123,
+	"./eo": 124,
+	"./eo.js": 124,
+	"./es": 126,
+	"./es-do": 125,
+	"./es-do.js": 125,
+	"./es.js": 126,
+	"./et": 127,
+	"./et.js": 127,
+	"./eu": 128,
+	"./eu.js": 128,
+	"./fa": 129,
+	"./fa.js": 129,
+	"./fi": 130,
+	"./fi.js": 130,
+	"./fo": 131,
+	"./fo.js": 131,
+	"./fr": 134,
+	"./fr-ca": 132,
+	"./fr-ca.js": 132,
+	"./fr-ch": 133,
+	"./fr-ch.js": 133,
+	"./fr.js": 134,
+	"./fy": 135,
+	"./fy.js": 135,
+	"./gd": 136,
+	"./gd.js": 136,
+	"./gl": 137,
+	"./gl.js": 137,
+	"./gom-latn": 138,
+	"./gom-latn.js": 138,
+	"./he": 139,
+	"./he.js": 139,
+	"./hi": 140,
+	"./hi.js": 140,
+	"./hr": 141,
+	"./hr.js": 141,
+	"./hu": 142,
+	"./hu.js": 142,
+	"./hy-am": 143,
+	"./hy-am.js": 143,
+	"./id": 144,
+	"./id.js": 144,
+	"./is": 145,
+	"./is.js": 145,
+	"./it": 146,
+	"./it.js": 146,
+	"./ja": 147,
+	"./ja.js": 147,
+	"./jv": 148,
+	"./jv.js": 148,
+	"./ka": 149,
+	"./ka.js": 149,
+	"./kk": 150,
+	"./kk.js": 150,
+	"./km": 151,
+	"./km.js": 151,
+	"./kn": 152,
+	"./kn.js": 152,
+	"./ko": 153,
+	"./ko.js": 153,
+	"./ky": 154,
+	"./ky.js": 154,
+	"./lb": 155,
+	"./lb.js": 155,
+	"./lo": 156,
+	"./lo.js": 156,
+	"./lt": 157,
+	"./lt.js": 157,
+	"./lv": 158,
+	"./lv.js": 158,
+	"./me": 159,
+	"./me.js": 159,
+	"./mi": 160,
+	"./mi.js": 160,
+	"./mk": 161,
+	"./mk.js": 161,
+	"./ml": 162,
+	"./ml.js": 162,
+	"./mr": 163,
+	"./mr.js": 163,
+	"./ms": 165,
+	"./ms-my": 164,
+	"./ms-my.js": 164,
+	"./ms.js": 165,
+	"./my": 166,
+	"./my.js": 166,
+	"./nb": 167,
+	"./nb.js": 167,
+	"./ne": 168,
+	"./ne.js": 168,
+	"./nl": 170,
+	"./nl-be": 169,
+	"./nl-be.js": 169,
+	"./nl.js": 170,
+	"./nn": 171,
+	"./nn.js": 171,
+	"./pa-in": 172,
+	"./pa-in.js": 172,
+	"./pl": 173,
+	"./pl.js": 173,
+	"./pt": 175,
+	"./pt-br": 174,
+	"./pt-br.js": 174,
+	"./pt.js": 175,
+	"./ro": 176,
+	"./ro.js": 176,
+	"./ru": 177,
+	"./ru.js": 177,
+	"./sd": 178,
+	"./sd.js": 178,
+	"./se": 179,
+	"./se.js": 179,
+	"./si": 180,
+	"./si.js": 180,
+	"./sk": 181,
+	"./sk.js": 181,
+	"./sl": 182,
+	"./sl.js": 182,
+	"./sq": 183,
+	"./sq.js": 183,
+	"./sr": 185,
+	"./sr-cyrl": 184,
+	"./sr-cyrl.js": 184,
+	"./sr.js": 185,
+	"./ss": 186,
+	"./ss.js": 186,
+	"./sv": 187,
+	"./sv.js": 187,
+	"./sw": 188,
+	"./sw.js": 188,
+	"./ta": 189,
+	"./ta.js": 189,
+	"./te": 190,
+	"./te.js": 190,
+	"./tet": 191,
+	"./tet.js": 191,
+	"./th": 192,
+	"./th.js": 192,
+	"./tl-ph": 193,
+	"./tl-ph.js": 193,
+	"./tlh": 194,
+	"./tlh.js": 194,
+	"./tr": 195,
+	"./tr.js": 195,
+	"./tzl": 196,
+	"./tzl.js": 196,
+	"./tzm": 198,
+	"./tzm-latn": 197,
+	"./tzm-latn.js": 197,
+	"./tzm.js": 198,
+	"./uk": 199,
+	"./uk.js": 199,
+	"./ur": 200,
+	"./ur.js": 200,
+	"./uz": 202,
+	"./uz-latn": 201,
+	"./uz-latn.js": 201,
+	"./uz.js": 202,
+	"./vi": 203,
+	"./vi.js": 203,
+	"./x-pseudo": 204,
+	"./x-pseudo.js": 204,
+	"./yo": 205,
+	"./yo.js": 205,
+	"./zh-cn": 206,
+	"./zh-cn.js": 206,
+	"./zh-hk": 207,
+	"./zh-hk.js": 207,
+	"./zh-tw": 208,
+	"./zh-tw.js": 208
 };
 function webpackContext(req) {
 	return __webpack_require__(webpackContextResolve(req));
@@ -2534,36 +2565,22 @@ webpackContext.keys = function webpackContextKeys() {
 };
 webpackContext.resolve = webpackContextResolve;
 module.exports = webpackContext;
-webpackContext.id = 377;
+webpackContext.id = 379;
 
-
-/***/ }),
-
-/***/ 386:
-/***/ (function(module, exports) {
-
-module.exports = "<!-- Main view/routes wrapper-->\n<router-outlet></router-outlet>"
-
-/***/ }),
-
-/***/ 387:
-/***/ (function(module, exports) {
-
-module.exports = "<div style=\"text-align: center;\">\n    <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n        <i class=\"fa fa-refresh\"></i>\n    </button>\n\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
 /***/ 388:
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: center;\">\n    <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n        <i class=\"fa fa-refresh\"></i>\n    </button>\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
+module.exports = "<!-- Main view/routes wrapper-->\n<router-outlet></router-outlet>"
 
 /***/ }),
 
 /***/ 389:
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: center;\">\n    <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n        <i class=\"fa fa-refresh\"></i>\n    </button>\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
+module.exports = "<div style=\"text-align: center;\">\n    <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n        <i class=\"fa fa-refresh\"></i>\n    </button>\n\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
@@ -2577,91 +2594,112 @@ module.exports = "<div style=\"text-align: center;\">\n    <button type=\"button
 /***/ 391:
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"text-align: center;padding: 0;\">\n    <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n        <i class=\"fa fa-refresh\"></i>\n    </button>\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
+module.exports = "<div style=\"text-align: center;\">\n    <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n        <i class=\"fa fa-refresh\"></i>\n    </button>\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
 /***/ 392:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"footer\">\n    <div class=\"pull-right\">\n        Version: <strong>0.0.1</strong>\n    </div>\n    <div>\n        <strong>Copyright</strong> Example Company &copy; 2017\n    </div>\n</div>"
+module.exports = "<div style=\"text-align: center;\">\n    <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n        <i class=\"fa fa-refresh\"></i>\n    </button>\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
 /***/ 393:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Wrapper-->\n<div id=\"wrapper\">\n\n    <!-- Left navigation bar -->\n    <navigation></navigation>\n\n    <!-- Main page wrapper -->\n    <div id=\"page-wrapper\" class=\"gray-bg\">\n\n        <!-- Top navigation -->\n        <topnavbar></topnavbar>\n\n        <!-- Main view/routes wrapper-->\n        <router-outlet></router-outlet>\n\n        <!-- Footer -->\n        <footer></footer>\n\n    </div>\n    <!-- End page wrapper-->\n\n</div>\n<!-- End wrapper-->\n"
+module.exports = "<div style=\"text-align: center;padding: 0;\">\n    <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n        <i class=\"fa fa-refresh\"></i>\n    </button>\n    <canvas baseChart\n                [datasets]=\"lineChartData\"\n                [labels]=\"lineChartLabels\"\n                [options]=\"lineChartOptions\"\n                [colors]=\"lineChartColors\"\n                [chartType]=\"lineChartType\"\n                (chartHover)=\"chartHovered($event)\"\n                (chartClick)=\"chartClicked($event)\"></canvas>\n\n    <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n    <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n    <!-- Loading -->\n    <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n        <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n        </div>\n        <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n            <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n        </div>\n    </div>\n    <!-- END Loading -->\n    \n</div>\n"
 
 /***/ }),
 
 /***/ 394:
 /***/ (function(module, exports) {
 
-module.exports = "<!-- View/routes wrapper-->\n<router-outlet></router-outlet>\n"
+module.exports = "<div class=\"footer\">\n    <div class=\"pull-right\">\n        Version: <strong>0.0.1</strong>\n    </div>\n    <div>\n        <strong>Copyright</strong> Example Company &copy; 2017\n    </div>\n</div>"
 
 /***/ }),
 
 /***/ 395:
 /***/ (function(module, exports) {
 
-module.exports = "<nav class=\"navbar-default navbar-static-side\" role=\"navigation\">\n    <div class=\"sidebar-collapse\">\n        <ul class=\"nav metismenu\" id=\"side-menu\">\n            <li class=\"nav-header\">\n                <a href=\"#\">\n                    <i class=\"fa fa-user\"></i>\n                    <span class=\"nav-label\"> <strong class=\"font-bold\">{{user.username}}</strong> </span>\n                        <!-- <span class=\"text-muted text-xs block\">Example <b class=\"caret\"></b> </span> -->\n                </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('dash')}\">\n                <a [routerLink]=\"['/']\"><i class=\"fa fa-th-large\"></i> <span class=\"nav-label\">Dashboard</span></a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('perf')}\">\n                <a [routerLink]=\"['/perf']\"><i class=\"fa fa-bar-chart-o\"></i> <span class=\"nav-label\">Perfomance</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('processes')}\">\n                <a [routerLink]=\"['/processes']\"><i class=\"fa fa-tasks\"></i> <span class=\"nav-label\">Processes</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('correctlogin') || activeRoute('incorrectlogin')}\">\n                <a href=\"\" class=\"auto\">      \n                  <span class=\"pull-right text-muted\">\n                    <i class=\"fa fa-fw fa-angle-right text\"></i>\n                    <i class=\"fa fa-fw fa-angle-down text-active\"></i>\n                  </span>\n                  <i class=\"fa fa-shield\"></i>\n                  <span>Security</span>\n                </a>\n                <ul class=\"nav nav-sub dk\">\n                  <li class=\"nav-sub-header\">\n                    <a [routerLink]=\"['/correctlogin']\" style=\"font-size: 11px;\">\n                      <i class=\"fa fa-square-o\"></i><span>Number of login </span>\n                    </a>\n                  </li>\n                  <li ui-sref-active=\"active\">\n                    <a [routerLink]=\"['/incorrectlogin']\" style=\"font-size: 11px;\">\n                      <i class=\"fa  fa-square\"></i><span>Incorrect attempt login</span>\n                    </a>\n                  </li>\n                </ul>\n            </li>\n            <li *ngIf=\"apps.urlstat\" [ngClass]=\"{active: activeRoute('minorView')}\">\n                <a [routerLink]=\"['/minorView']\"><i class=\"fa fa-cube\"></i> <span class=\"nav-label\">Url statistics</span> </a>\n            </li>\n            <li *ngIf=\"apps.backup\" [ngClass]=\"{active: activeRoute('backups')}\">\n                <a [routerLink]=\"['/backups']\"><i class=\"fa fa-truck\"></i> <span class=\"nav-label\">Backups</span> </a>\n            </li>\n        </ul>\n\n    </div>\n</nav>"
+module.exports = "<!-- Wrapper-->\n<div id=\"wrapper\">\n\n    <!-- Left navigation bar -->\n    <navigation></navigation>\n\n    <!-- Main page wrapper -->\n    <div id=\"page-wrapper\" class=\"gray-bg\">\n\n        <!-- Top navigation -->\n        <topnavbar></topnavbar>\n\n        <!-- Main view/routes wrapper-->\n        <router-outlet></router-outlet>\n\n        <!-- Footer -->\n        <footer></footer>\n\n    </div>\n    <!-- End page wrapper-->\n\n</div>\n<!-- End wrapper-->\n"
 
 /***/ }),
 
 /***/ 396:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row border-bottom\">\n    <nav class=\"navbar navbar-static-top white-bg\" role=\"navigation\" style=\"margin-bottom: 0\">\n        <div class=\"navbar-header\">\n            <a class=\"minimalize-styl-2 btn btn-primary \" (click)=\"toggleNavigation()\"><i class=\"fa fa-bars\"></i> </a>\n            <!--\n            <form role=\"search\" class=\"navbar-form-custom\" method=\"post\" action=\"#\">\n                <div class=\"form-group\">\n                    <input type=\"text\" placeholder=\"Search for something...\" class=\"form-control\" name=\"top-search\" id=\"top-search\">\n                </div>\n            </form>\n            -->\n        </div>\n        <ul class=\"nav navbar-top-links navbar-right\">\n            <li>\n                <a href=\"/admin/logout/\">\n                    <i class=\"fa fa-sign-out\"></i> Log out\n                </a>\n            </li>\n        </ul>\n\n    </nav>\n</div>"
+module.exports = "<!-- View/routes wrapper-->\n<router-outlet></router-outlet>\n"
 
 /***/ }),
 
 /***/ 397:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content\">\n    \n    <a [href]=\"backupMakeUrl\" class=\"btn btn-success\" target=\"_blank\">Make and download database backup</a>\n    <a [href]=\"backupMakeMediaUrl\" class=\"btn btn-primary\" target=\"_blank\">Make and download media backup</a>\n    \n\n    <div class=\"row\" style=\"margin-top: 10px;\">\n        <div class=\"col-lg-9\">\n            <div class=\"wrapper-md\">\n                <div class=\"tab-container\">\n                    <ul class=\"nav nav-tabs nav-stacked nav-justified\">\n                        <li [ngClass]=\"{active: router.url=='/backups'}\">\n                            <a [routerLink]=\"['/backups']\">Settings</a>\n                        </li>\n                        <li [ngClass]=\"{active: router.url=='/backups/result'}\">\n                            <a [routerLink]=\"['/backups/result']\">Result</a>\n                        </li>\n                    </ul>\n                    <div class=\"tab-content\">\n                        <div *ngIf=\"router.url=='/backups'\" class=\"tab-pane active\">\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <form>\n                                        <div class=\"form-group\">\n                                            <label>Day time for running backup (will be run everyday):</label>\n                                            <div style=\"display: flex;align-items: center;\">\n                                                <timepicker [(ngModel)]=\"model.backuptime\" [ngModelOptions]=\"{standalone: true}\" (ngModelChange)=\"changedTime()\"></timepicker>\n                                                <button type=\"button\" class=\"btn btn-info\" style=\"margin-left: 20px;height:40px;\" (click)=\"saveBackTime()\">Save</button>\n                                                <span *ngIf=\"backuptime_is_dirty\" class=\"text-warning\" style=\"margin-left: 10px;\">Time is not save</span>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <label>Absolute path for media directory (if required):</label>\n                                            <div class=\"input-group\">\n                                                <input name=\"inputedDir\" type=\"text\" class=\"form-control\" [(ngModel)]=\"model.inputedDir\" (keyup.enter)=\"addDirectory()\"/>\n                                                <span class=\"input-group-addon\" style=\"padding: 0;\"> \n                                                    <button type=\"button\" class=\"btn btn-info\" (click)=\"addDirectory()\" [disabled]=\"!model.inputedDir || loading\" style=\"margin: -2px;\">Add</button></span>\n                                            </div>\n                                        </div>\n\n                                        <div *ngIf=\"mediadirs.length > 0\" class=\"form-group\">\n                                            <div class=\"panel panel-default\">\n                                                <div class=\"panel-body\">\n                                                    <p *ngIf=\"mediadirs.length == 0\">No directories specified</p>\n                                                    <div *ngFor=\"let obj of mediadirs; let i = index;\" style=\"margin-top: 2px;\">\n                                                        <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"deletePath(i)\" [disabled]=\"loading\"><i class=\"fa fa-times\"></i></button>\n                                                        <span style=\"margin-left:20px;\">{{obj.path}}</span>\n                                                        <span>\n                                                            <i *ngIf=\"obj.checked\" class=\"fa fa-check text-info\"></i>\n                                                        </span>\n                                                        <span *ngIf=\"!obj.checked\">\n                                                            <i class=\"fa fa-exclamation text-warning\"></i> \n                                                            <small>(Path doesn't exist)</small>\n                                                        </span>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </form>\n                                </div>\n                            </div>\n                        </div>\n                        <div *ngIf=\"router.url=='/backups/result'\" class=\"tab-pane active\">\n                            \n\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <div *ngIf=\"backups_daily\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Daily Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_daily\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><a [href]=\"getFileUrl(backup.filename)\" type=\"button\" class=\"btn btn-default btn-xs\" target=\"_blank\"><i class=\"fa fa-download\"></i></a></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_weekly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Weekly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_weekly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><a [href]=\"getFileUrl(backup.filename)\" type=\"button\" class=\"btn btn-default btn-xs\" target=\"_blank\"><i class=\"fa fa-download\"></i></a></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_monthly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Monthly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_monthly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><a [href]=\"getFileUrl(backup.filename)\" type=\"button\" class=\"btn btn-default btn-xs\" target=\"_blank\"><i class=\"fa fa-download\"></i></a></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <!-- Loading -->\n        <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n            <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n            </div>\n            <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n            </div>\n        </div>\n        <!-- END Loading -->\n\n        <div class=\"col-lg-3\">\n            <div class=\"wrapper-md\">\n                <div class=\"panel panel-success\">\n\n                    <div class=\"panel-heading \">\n                        Info\n                        <button type=\"button\" class=\"btn btn-success btn-xs pull-right\" (click)=\"refresh()\">\n                            <i class=\"fa fa-refresh\"></i>\n                        </button>\n                    </div>\n                    <div class=\"panel-body\">\n                        <span class=\"text-success\">Last run: </span>\n                        <span>{{ last_run_backup| date: 'yyyy-MM-dd HH:mm' || \"None\"}} </span>\n\n                        <span class=\"text-success\">State: </span>\n                        <span *ngIf=\"backups_enable\" class=\"text-primary\" style=\"margin-right: 20px;\">backup is enable</span>\n                        <span *ngIf=\"!backups_enable\" class=\"text-danger\" style=\"margin-right: 20px;\">backup is disabled</span>\n                        <div style=\"margin-top: 20px\">\n                            <button *ngIf=\"backups_enable\" type=\"button\" class=\"btn btn-primary\" (click)=\"backupSwitch()\">Turn off backup</button>\n                            <button *ngIf=\"!backups_enable\" type=\"button\" class=\"btn btn-danger\" (click)=\"backupSwitch()\">Turn on backup</button>\n                        </div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+module.exports = "<nav class=\"navbar-default navbar-static-side\" role=\"navigation\">\n    <div class=\"sidebar-collapse\">\n        <ul class=\"nav metismenu\" id=\"side-menu\">\n            <li class=\"nav-header\">\n                <a href=\"#\">\n                    <i class=\"fa fa-user\"></i>\n                    <span class=\"nav-label\"> <strong class=\"font-bold\">{{user.username}}</strong> </span>\n                        <!-- <span class=\"text-muted text-xs block\">Example <b class=\"caret\"></b> </span> -->\n                </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('dash')}\">\n                <a [routerLink]=\"['/']\"><i class=\"fa fa-th-large\"></i> <span class=\"nav-label\">Dashboard</span></a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('perf')}\">\n                <a [routerLink]=\"['/perf']\"><i class=\"fa fa-bar-chart-o\"></i> <span class=\"nav-label\">Perfomance</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('processes')}\">\n                <a [routerLink]=\"['/processes']\"><i class=\"fa fa-tasks\"></i> <span class=\"nav-label\">Processes</span> </a>\n            </li>\n            <li [ngClass]=\"{active: activeRoute('correctlogin') || activeRoute('incorrectlogin')}\">\n                <a href=\"\" class=\"auto\">      \n                  <span class=\"pull-right text-muted\">\n                    <i class=\"fa fa-fw fa-angle-right text\"></i>\n                    <i class=\"fa fa-fw fa-angle-down text-active\"></i>\n                  </span>\n                  <i class=\"fa fa-shield\"></i>\n                  <span>Security</span>\n                </a>\n                <ul class=\"nav nav-sub dk\">\n                  <li class=\"nav-sub-header\">\n                    <a [routerLink]=\"['/correctlogin']\" style=\"font-size: 11px;\">\n                      <i class=\"fa fa-square-o\"></i><span>Number of login </span>\n                    </a>\n                  </li>\n                  <li ui-sref-active=\"active\">\n                    <a [routerLink]=\"['/incorrectlogin']\" style=\"font-size: 11px;\">\n                      <i class=\"fa  fa-square\"></i><span>Incorrect attempt login</span>\n                    </a>\n                  </li>\n                </ul>\n            </li>\n            <li *ngIf=\"apps.urlstat\" [ngClass]=\"{active: activeRoute('urlstat')}\">\n                <a [routerLink]=\"['/urlstat']\"><i class=\"fa fa-sitemap\"></i> <span class=\"nav-label\">Url statistics</span> </a>\n            </li>\n            <li *ngIf=\"apps.backup\" [ngClass]=\"{active: activeRoute('backups')}\">\n                <a [routerLink]=\"['/backups']\"><i class=\"fa fa-truck\"></i> <span class=\"nav-label\">Backups</span> </a>\n            </li>\n        </ul>\n\n    </div>\n</nav>"
 
 /***/ }),
 
 /***/ 398:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"text-muted font-thin pull-right\" style=\"font-size: 12px;margin: 10px;\">\n        Running time: {{ boottime || 0 }}\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-9\">\n            <div class=\"wrapper-md\">\n                <small>Last {{ avarage.hours || 0}} hours</small>\n                <div class=\"row row-sm\">\n                    <div class=\"col-md-3\">\n                        <div class=\"panel padder-v item text-center bg-primary\" [ngClass]=\"{\n                            'bg-warning': avarage.avarage_cpu > 60 && avarage.avarage_cpu < 90,\n                            'bg-danger': avarage.avarage_cpu >= 90\n                        }\" style=\"height: 90px;\" >\n                            <div class=\"h1 text-white font-thin\">{{ avarage.avarage_cpu || 0 }}%</div>\n                            <span class=\"text-white text-xs\" translate>Avarage cpu used</span><br>\n\n                            <div class=\"top text-info text-right w-full\">\n                                \n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-md-3\">\n                        <div class=\"panel padder-v item text-center bg-primary\" [ngClass]=\"{\n                            'bg-warning': avarage.avarage_memory > 60 && avarage.avarage_memory < 90,\n                            'bg-danger': avarage.avarage_memory >= 90\n                        }\" style=\"height: 90px;\">\n                            <div class=\"h1 text-white font-thin\">{{ avarage.avarage_memory || 0 }}%</div>\n                            <span class=\"text-white text-xs\" translate>Avarage memory used</span><br>\n                            <div class=\"top text-right w-full\">\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-md-3\">\n                        <div class=\"panel padder-v item text-center bg-primary\" [ngClass]=\"{\n                            'bg-warning': avarage.avarage_disk > 60 && avarage.avarage_disk < 90,\n                            'bg-danger': avarage.avarage_disk >= 90\n                        }\" style=\"height: 90px;\">\n                            <div class=\"h1 text-white font-thin\">{{ avarage.avarage_disk || 0 }}%</div>\n                            <span class=\"text-white text-xs\" translate>Avarage disk space used</span>\n                            <div class=\"top text-right w-full\">\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-lg-3\">\n            <div class=\"panel panel-default\" style=\"padding-top: 20px;\">\n                <div class=\"text-center wrapper m-b-sm\">              \n                    <h4>Current users</h4>\n                    <ul class=\"list-group\" stlye=\"text-align: left;\">\n                        <li class=\"list-group-item\" style=\"text-align: left;\" *ngFor=\"let user of users; let i = index;\">\n                            <p style=\"margin:0;font-size: 8px;text-align: right;\">{{getDateFromTimestap(user[3])}}</p>\n                            <div>\n                                <span class=\"label bg-primary\">{{i}}</span>\n                                <span>{{user[0]}} / {{user[1]}}</span>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
+module.exports = "<div class=\"row border-bottom\">\n    <nav class=\"navbar navbar-static-top white-bg\" role=\"navigation\" style=\"margin-bottom: 0\">\n        <div class=\"navbar-header\">\n            <a class=\"minimalize-styl-2 btn btn-primary \" (click)=\"toggleNavigation()\"><i class=\"fa fa-bars\"></i> </a>\n            <!--\n            <form role=\"search\" class=\"navbar-form-custom\" method=\"post\" action=\"#\">\n                <div class=\"form-group\">\n                    <input type=\"text\" placeholder=\"Search for something...\" class=\"form-control\" name=\"top-search\" id=\"top-search\">\n                </div>\n            </form>\n            -->\n        </div>\n        <ul class=\"nav navbar-top-links navbar-right\">\n            <li>\n                <a href=\"/admin/logout/\">\n                    <i class=\"fa fa-sign-out\"></i> Log out\n                </a>\n            </li>\n        </ul>\n\n    </nav>\n</div>"
 
 /***/ }),
 
 /***/ 399:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content animated fadeInRight\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"text-center m-t-lg\">\n                <h1>\n                    Simple example of second view\n                </h1>\n                <small>Written as an minor-view.</small>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"wrapper wrapper-content\">\n    \n    <a [href]=\"backupMakeUrl\" class=\"btn btn-success\" target=\"_blank\">Make and download database backup</a>\n    <a [href]=\"backupMakeMediaUrl\" class=\"btn btn-primary\" target=\"_blank\">Make and download media backup</a>\n    \n\n    <div class=\"row\" style=\"margin-top: 10px;\">\n        <div class=\"col-lg-9\">\n            <div class=\"wrapper-md\">\n                <div class=\"tab-container\">\n                    <ul class=\"nav nav-tabs nav-stacked nav-justified\">\n                        <li [ngClass]=\"{active: router.url=='/backups'}\">\n                            <a [routerLink]=\"['/backups']\">Settings</a>\n                        </li>\n                        <li [ngClass]=\"{active: router.url=='/backups/result'}\">\n                            <a [routerLink]=\"['/backups/result']\">Result</a>\n                        </li>\n                    </ul>\n                    <div class=\"tab-content\">\n                        <div *ngIf=\"router.url=='/backups'\" class=\"tab-pane active\">\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <form>\n                                        <div class=\"form-group\">\n                                            <label>Day time for running backup (will be run everyday):</label>\n                                            <div style=\"display: flex;align-items: center;\">\n                                                <timepicker [(ngModel)]=\"model.backuptime\" [ngModelOptions]=\"{standalone: true}\" (ngModelChange)=\"changedTime()\"></timepicker>\n                                                <button type=\"button\" class=\"btn btn-info\" style=\"margin-left: 20px;height:40px;\" (click)=\"saveBackTime()\">Save</button>\n                                                <span *ngIf=\"backuptime_is_dirty\" class=\"text-warning\" style=\"margin-left: 10px;\">Time is not save</span>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <label>Absolute path for media directory (if required):</label>\n                                            <div class=\"input-group\">\n                                                <input name=\"inputedDir\" type=\"text\" class=\"form-control\" [(ngModel)]=\"model.inputedDir\" (keyup.enter)=\"addDirectory()\"/>\n                                                <span class=\"input-group-addon\" style=\"padding: 0;\"> \n                                                    <button type=\"button\" class=\"btn btn-info\" (click)=\"addDirectory()\" [disabled]=\"!model.inputedDir || loading\" style=\"margin: -2px;\">Add</button></span>\n                                            </div>\n                                        </div>\n\n                                        <div *ngIf=\"mediadirs.length > 0\" class=\"form-group\">\n                                            <div class=\"panel panel-default\">\n                                                <div class=\"panel-body\">\n                                                    <p *ngIf=\"mediadirs.length == 0\">No directories specified</p>\n                                                    <div *ngFor=\"let obj of mediadirs; let i = index;\" style=\"margin-top: 2px;\">\n                                                        <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"deletePath(i)\" [disabled]=\"loading\"><i class=\"fa fa-times\"></i></button>\n                                                        <span style=\"margin-left:20px;\">{{obj.path}}</span>\n                                                        <span>\n                                                            <i *ngIf=\"obj.checked\" class=\"fa fa-check text-info\"></i>\n                                                        </span>\n                                                        <span *ngIf=\"!obj.checked\">\n                                                            <i class=\"fa fa-exclamation text-warning\"></i> \n                                                            <small>(Path doesn't exist)</small>\n                                                        </span>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </form>\n                                </div>\n                            </div>\n                        </div>\n                        <div *ngIf=\"router.url=='/backups/result'\" class=\"tab-pane active\">\n                            \n\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <div *ngIf=\"backups_daily\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Daily Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_daily\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><a [href]=\"getFileUrl(backup.filename)\" type=\"button\" class=\"btn btn-default btn-xs\" target=\"_blank\"><i class=\"fa fa-download\"></i></a></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_weekly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Weekly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_weekly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><a [href]=\"getFileUrl(backup.filename)\" type=\"button\" class=\"btn btn-default btn-xs\" target=\"_blank\"><i class=\"fa fa-download\"></i></a></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_monthly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Monthly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_monthly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><a [href]=\"getFileUrl(backup.filename)\" type=\"button\" class=\"btn btn-default btn-xs\" target=\"_blank\"><i class=\"fa fa-download\"></i></a></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <!-- Loading -->\n        <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n            <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n            </div>\n            <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n            </div>\n        </div>\n        <!-- END Loading -->\n\n        <div class=\"col-lg-3\">\n            <div class=\"wrapper-md\">\n                <div class=\"panel panel-success\">\n\n                    <div class=\"panel-heading \">\n                        Info\n                        <button type=\"button\" class=\"btn btn-success btn-xs pull-right\" (click)=\"refresh()\">\n                            <i class=\"fa fa-refresh\"></i>\n                        </button>\n                    </div>\n                    <div class=\"panel-body\">\n                        <span class=\"text-success\">Last run: </span>\n                        <span>{{ last_run_backup| date: 'yyyy-MM-dd HH:mm' || \"None\"}} </span>\n\n                        <span class=\"text-success\">State: </span>\n                        <span *ngIf=\"backups_enable\" class=\"text-primary\" style=\"margin-right: 20px;\">backup is enable</span>\n                        <span *ngIf=\"!backups_enable\" class=\"text-danger\" style=\"margin-right: 20px;\">backup is disabled</span>\n                        <div style=\"margin-top: 20px\">\n                            <button *ngIf=\"backups_enable\" type=\"button\" class=\"btn btn-primary\" (click)=\"backupSwitch()\">Turn off backup</button>\n                            <button *ngIf=\"!backups_enable\" type=\"button\" class=\"btn btn-danger\" (click)=\"backupSwitch()\">Turn on backup</button>\n                        </div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 400:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content animated fadeInRight\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"text-center m-t-lg\" style=\"margin-bottom: 20px;\">\n                <h1>\n                    Perfomance charts\n                </h1>\n                <small>\n                    It is an application skeleton for a typical web app. You can use it to quickly bootstrap your webapp projects and dev environment.\n                </small>\n            </div>\n\n            <div class=\"col-md-6\">\n                <cpu-chart></cpu-chart>\n            </div>\n            <div class=\"col-md-6\">\n                <memory-chart></memory-chart>\n            </div>\n            <div class=\"col-md-6\">\n                <disk-chart></disk-chart>\n            </div>\n            <div class=\"col-md-6\">\n                <network-chart></network-chart>\n            </div>\n        </div>\n    </div>\n</div>"
+module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"text-muted font-thin pull-right\" style=\"font-size: 12px;margin: 10px;\">\n        Running time: {{ boottime || 0 }}\n    </div>\n    <div class=\"row\">\n        <div class=\"col-lg-9\">\n            <div class=\"wrapper-md\">\n                <small>Last {{ avarage.hours || 0}} hours</small>\n                <div class=\"row row-sm\">\n                    <div class=\"col-md-3\">\n                        <div class=\"panel padder-v item text-center bg-primary\" [ngClass]=\"{\n                            'bg-warning': avarage.avarage_cpu > 60 && avarage.avarage_cpu < 90,\n                            'bg-danger': avarage.avarage_cpu >= 90\n                        }\" style=\"height: 90px;\" >\n                            <div class=\"h1 text-white font-thin\">{{ avarage.avarage_cpu || 0 }}%</div>\n                            <span class=\"text-white text-xs\" translate>Avarage cpu used</span><br>\n\n                            <div class=\"top text-info text-right w-full\">\n                                \n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-md-3\">\n                        <div class=\"panel padder-v item text-center bg-primary\" [ngClass]=\"{\n                            'bg-warning': avarage.avarage_memory > 60 && avarage.avarage_memory < 90,\n                            'bg-danger': avarage.avarage_memory >= 90\n                        }\" style=\"height: 90px;\">\n                            <div class=\"h1 text-white font-thin\">{{ avarage.avarage_memory || 0 }}%</div>\n                            <span class=\"text-white text-xs\" translate>Avarage memory used</span><br>\n                            <div class=\"top text-right w-full\">\n                            </div>\n                        </div>\n                    </div>\n                    <div class=\"col-md-3\">\n                        <div class=\"panel padder-v item text-center bg-primary\" [ngClass]=\"{\n                            'bg-warning': avarage.avarage_disk > 60 && avarage.avarage_disk < 90,\n                            'bg-danger': avarage.avarage_disk >= 90\n                        }\" style=\"height: 90px;\">\n                            <div class=\"h1 text-white font-thin\">{{ avarage.avarage_disk || 0 }}%</div>\n                            <span class=\"text-white text-xs\" translate>Avarage disk space used</span>\n                            <div class=\"top text-right w-full\">\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n        <div class=\"col-lg-3\">\n            <div class=\"panel panel-default\" style=\"padding-top: 20px;\">\n                <div class=\"text-center wrapper m-b-sm\">              \n                    <h4>Current users</h4>\n                    <ul class=\"list-group\" stlye=\"text-align: left;\">\n                        <li class=\"list-group-item\" style=\"text-align: left;\" *ngFor=\"let user of users; let i = index;\">\n                            <p style=\"margin:0;font-size: 8px;text-align: right;\">{{getDateFromTimestap(user[3])}}</p>\n                            <div>\n                                <span class=\"label bg-primary\">{{i}}</span>\n                                <span>{{user[0]}} / {{user[1]}}</span>\n                            </div>\n                        </li>\n                    </ul>\n                </div>\n            </div>\n        </div>\n    </div>\n</div>\n"
 
 /***/ }),
 
 /***/ 401:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Last time update: {{last_time }}</small>\n                        <button type=\"button\" class=\"btn btn-info btn-xs pull-right\" (click)=\"refresh()\">\n                            <i class=\"fa fa-refresh\"></i>\n                        </button>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of last_processes\">\n                                <td>\n                                    <span style=\"font-size: 8px;\">{{p.pid}}</span>\n                                </td>\n                                <td><b>{{p.name}}</b> </td>\n                                <td>{{p.status}}</td>\n                                <td>{{p.cpu}}</td>\n                                <td>{{p.create_time}}</td>\n                            </tr>\n                        </table>\n\n                        <!-- Loading -->\n                        <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                            <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                            </div>\n                            <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                            </div>\n                        </div>\n                        <!-- END Loading -->\n\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <small>Last {{ hours }} hours</small>\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\" >\n                                        <div class=\"h1 text-white font-thin\">{{ avarage_number || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of processes</span><br>\n\n                                        \n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <processes-chart></processes-chart>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+module.exports = "<div class=\"wrapper wrapper-content animated fadeInRight\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"text-center m-t-lg\">\n                <h1>\n                    Simple example of second view\n                </h1>\n                <small>Written as an minor-view.</small>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
 /***/ 402:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Top 100 source IP address</small>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of hosts\">\n                                <td>\n                                    {{p.host}}\n                                </td>\n                                <td><b>{{p.count}}</b> </td>\n                                <td>{{p.last_date}}</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\">\n                                        <div class=\"h1 text-white font-thin\">{{ count_correct_attempt || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of correct attempts login</span><br>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <div style=\"text-align: center;\">\n                            <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refreshChart()\">\n                                <i class=\"fa fa-refresh\"></i>\n                            </button>\n                            \n                            <canvas baseChart\n                                        [datasets]=\"lineChartData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartColors\"\n                                        [chartType]=\"lineChartType\"\n                                        (chartHover)=\"chartHovered($event)\"\n                                        (chartClick)=\"chartClicked($event)\"></canvas>\n\n                            <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n                            <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n                            <!-- Loading -->\n                            <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                                <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                                </div>\n                                <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                    <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                                </div>\n                            </div>\n                            <!-- END Loading -->\n                        </div>\n\n\n                        <div class=\"panel panel-info\">\n                            <div class=\"panel-heading \">\n                                <small>Top 100 usernames</small>\n                            </div>\n                            <div class=\"panel-body\">\n                                <table class=\"table\">\n                                    <tr *ngFor=\"let p of users\">\n                                        <td>\n                                            {{p.username}}\n                                        </td>\n                                        <td><b>{{p.count}}</b> </td>\n                                        <td>{{p.last_date}}</td>\n                                    </tr>\n                                </table>\n                            </div>\n                        </div>\n\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+module.exports = "<div class=\"wrapper wrapper-content animated fadeInRight\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"text-center m-t-lg\" style=\"margin-bottom: 20px;\">\n                <h1>\n                    Perfomance charts\n                </h1>\n                <small>\n                    It is an application skeleton for a typical web app. You can use it to quickly bootstrap your webapp projects and dev environment.\n                </small>\n            </div>\n\n            <div class=\"col-md-6\">\n                <cpu-chart></cpu-chart>\n            </div>\n            <div class=\"col-md-6\">\n                <memory-chart></memory-chart>\n            </div>\n            <div class=\"col-md-6\">\n                <disk-chart></disk-chart>\n            </div>\n            <div class=\"col-md-6\">\n                <network-chart></network-chart>\n            </div>\n        </div>\n    </div>\n</div>"
 
 /***/ }),
 
 /***/ 403:
 /***/ (function(module, exports) {
 
+module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Last time update: {{last_time }}</small>\n                        <button type=\"button\" class=\"btn btn-info btn-xs pull-right\" (click)=\"refresh()\">\n                            <i class=\"fa fa-refresh\"></i>\n                        </button>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of last_processes\">\n                                <td>\n                                    <span style=\"font-size: 8px;\">{{p.pid}}</span>\n                                </td>\n                                <td><b>{{p.name}}</b> </td>\n                                <td>{{p.status}}</td>\n                                <td>{{p.cpu}}</td>\n                                <td>{{p.create_time}}</td>\n                            </tr>\n                        </table>\n\n                        <!-- Loading -->\n                        <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                            <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                            </div>\n                            <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                            </div>\n                        </div>\n                        <!-- END Loading -->\n\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <small>Last {{ hours }} hours</small>\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\" >\n                                        <div class=\"h1 text-white font-thin\">{{ avarage_number || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of processes</span><br>\n\n                                        \n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <processes-chart></processes-chart>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ 404:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Top 100 source IP address</small>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of hosts\">\n                                <td>\n                                    {{p.host}}\n                                </td>\n                                <td><b>{{p.count}}</b> </td>\n                                <td>{{p.last_date}}</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\">\n                                        <div class=\"h1 text-white font-thin\">{{ count_correct_attempt || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of correct attempts login</span><br>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n                        <div style=\"text-align: center;\">\n                            <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refreshChart()\">\n                                <i class=\"fa fa-refresh\"></i>\n                            </button>\n                            \n                            <canvas baseChart\n                                        [datasets]=\"lineChartData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartColors\"\n                                        [chartType]=\"lineChartType\"\n                                        (chartHover)=\"chartHovered($event)\"\n                                        (chartClick)=\"chartClicked($event)\"></canvas>\n\n                            <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n                            <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n                            <!-- Loading -->\n                            <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                                <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                                </div>\n                                <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                    <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                                </div>\n                            </div>\n                            <!-- END Loading -->\n                        </div>\n\n\n                        <div class=\"panel panel-info\">\n                            <div class=\"panel-heading \">\n                                <small>Top 100 usernames</small>\n                            </div>\n                            <div class=\"panel-body\">\n                                <table class=\"table\">\n                                    <tr *ngFor=\"let p of users\">\n                                        <td>\n                                            {{p.username}}\n                                        </td>\n                                        <td><b>{{p.count}}</b> </td>\n                                        <td>{{p.last_date}}</td>\n                                    </tr>\n                                </table>\n                            </div>\n                        </div>\n\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ 405:
+/***/ (function(module, exports) {
+
 module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Top 100 source IP address</small>\n                    </div>\n                    <div class=\"panel-body\">\n                        <table class=\"table\">\n                            <tr *ngFor=\"let p of hosts\">\n                                <td>\n                                    {{p.host}}\n                                </td>\n                                <td><b>{{p.count}}</b> </td>\n                                <td>{{p.last_date}}</td>\n                            </tr>\n                        </table>\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div class=\"wrapper-md\">\n                            <div class=\"row row-sm\">\n                                <div class=\"col-md-12\">\n                                    <div class=\"panel padder-v item text-center bg-primary\" style=\"height: 90px;\" [ngClass]=\"{\n                                    'bg-warning': count_incorrect_attepmt > 0 && count_incorrect_attepmt <= 100,\n                                    'bg-danger': count_incorrect_attepmt > 100 }\">\n                                        <div class=\"h1 text-white font-thin\">{{ count_incorrect_attepmt || 0 }}</div>\n                                        <span class=\"text-white text-xs\" translate>Number of incorrect attempts login</span><br>\n\n                                        \n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n\n\n                        <div style=\"text-align: center;\">\n                            <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refreshChart()\">\n                                <i class=\"fa fa-refresh\"></i>\n                            </button>\n\n                            <canvas baseChart\n                                        [datasets]=\"lineChartData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartColors\"\n                                        [chartType]=\"lineChartType\"\n                                        (chartHover)=\"chartHovered($event)\"\n                                        (chartClick)=\"chartClicked($event)\"></canvas>\n\n                            <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n                            <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n                            <!-- Loading -->\n                            <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                                <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                                </div>\n                                <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                    <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                                </div>\n                            </div>\n                            <!-- END Loading -->\n                            \n                        </div>\n\n                        <div class=\"panel panel-info\">\n                            <div class=\"panel-heading \">\n                                <small>Top 100 usernames</small>\n                            </div>\n                            <div class=\"panel-body\">\n                                <table class=\"table\">\n                                    <tr *ngFor=\"let p of users\">\n                                        <td>\n                                            {{p.username}}\n                                        </td>\n                                        <td><b>{{p.count}}</b> </td>\n                                        <td>{{p.last_date}}</td>\n                                    </tr>\n                                </table>\n                            </div>\n                        </div>\n\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+
+/***/ }),
+
+/***/ 406:
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Last time update: {{last_time }}</small>\n                        <button type=\"button\" class=\"btn btn-info btn-xs pull-right\" (click)=\"refresh()\">\n                            <i class=\"fa fa-refresh\"></i>\n                        </button>\n                    </div>\n                    <div class=\"panel-body\">\n                        <div class=\"table-responsive\">\n                            <table class=\"table\">\n                                <thead>\n                                    <tr>\n                                        <th style=\"font-size: 10px;\">Count</th>\n                                        <th style=\"font-size: 10px;\">URL</th>\n                                        <th style=\"font-size: 10px;\">Duration</th>\n                                        <th style=\"font-size: 10px;\">Queries count</th>\n                                        <th style=\"font-size: 10px;\">Max query durations</th>\n                                        <th style=\"font-size: 10px;\">Last req</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor=\"let p of allRequests\">\n                                        <td>\n                                            <span>{{p.count}}</span>\n                                        </td>\n                                        <td style=\"word-break: break-word;\">\n                                            <b>{{p.url}}</b> \n                                            <p style=\"font-size: 8px\">{{p.method }} {{p.request_code}}</p>\n                                        </td>\n                                        <td>{{toFixed(p.request_duration)}}</td>\n                                        <td>{{p.request_sql_count}}</td>\n                                        <td>{{toFixed(p.request_sql_time)}}</td>\n                                        <td>{{getDateFromTimestap(p.last_time_request)}}</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                        <!-- Loading -->\n                        <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                            <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                            </div>\n                            <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                            </div>\n                        </div>\n                        <!-- END Loading -->\n\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div style=\"text-align: center;padding: 0;\">\n                            <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n                                <i class=\"fa fa-refresh\"></i>\n                            </button>\n                            <div>\n                                <canvas baseChart\n                                        [datasets]=\"lineChartData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartColors\"\n                                        [chartType]=\"lineChartType\"\n                                        ></canvas>\n                            </div>\n                            <div>\n                                <canvas baseChart\n                                        [datasets]=\"lineChartTimeData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartTimeColors\"\n                                        [chartType]=\"lineChartType\"\n                                        ></canvas>\n                            </div>\n\n                            <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n                            <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n                            <!-- Loading -->\n                            <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                                <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                                </div>\n                                <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                    <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                                </div>\n                            </div>\n                            <!-- END Loading -->\n                            \n                        </div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2760,105 +2798,11 @@ var _a;
 
 /***/ }),
 
-/***/ 447:
+/***/ 450:
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(227);
+module.exports = __webpack_require__(228);
 
-
-/***/ }),
-
-/***/ 7:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(32);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(61);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(62);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataService; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-
-
-var DataService = (function () {
-    function DataService(http) {
-        this.http = http;
-    }
-    DataService.prototype.getData = function (url, _params) {
-        var data = _params || {};
-        data.t = new Date().getTime();
-        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* URLSearchParams */]();
-        for (var key in data) {
-            if (data.hasOwnProperty(key)) {
-                var val = data[key];
-                params.set(key, val);
-            }
-        }
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestOptions */]({
-            search: params
-        });
-        return this.http.get(url, options)
-            .map(this.extractData)
-            .catch(this.handleError);
-    };
-    DataService.prototype.postData = function (url, _params) {
-        var data = _params || {};
-        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* URLSearchParams */]();
-        for (var key in data) {
-            if (data.hasOwnProperty(key)) {
-                var val = data[key];
-                params.set(key, val);
-            }
-        }
-        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestOptions */]({
-            search: params
-        });
-        return this.http.post(url, data)
-            .map(this.extractData)
-            .catch(this.handleError);
-    };
-    DataService.prototype.extractData = function (res) {
-        var body = res.json();
-        return body || {};
-    };
-    DataService.prototype.handleError = function (error) {
-        // In a real world app, you might use a remote logging infrastructure
-        var errMsg;
-        if (error instanceof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Response */]) {
-            var body = error.json() || '';
-            var err = body.error || JSON.stringify(body);
-            errMsg = error.status + " - " + (error.statusText || '') + " " + err;
-        }
-        else {
-            errMsg = error.message ? error.message : error.toString();
-        }
-        console.error(errMsg);
-        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(errMsg);
-    };
-    return DataService;
-}());
-DataService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["g" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["g" /* Http */]) === "function" && _a || Object])
-], DataService);
-
-var _a;
-//# sourceMappingURL=data.service.js.map
 
 /***/ }),
 
@@ -2883,7 +2827,7 @@ var basicComponent = (function () {
 basicComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'basic',
-        template: __webpack_require__(393)
+        template: __webpack_require__(395)
     })
 ], basicComponent);
 
@@ -2898,7 +2842,7 @@ basicComponent = __decorate([
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__(23);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_settings__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_data_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__services_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return backupViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3044,7 +2988,7 @@ var backupViewComponent = (function () {
 backupViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'backupView',
-        template: __webpack_require__(397)
+        template: __webpack_require__(399)
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__services_data_service__["a" /* DataService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* Router */]) === "function" && _b || Object])
 ], backupViewComponent);
@@ -3060,7 +3004,7 @@ var _a, _b;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_settings__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_data_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return mainViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3140,7 +3084,7 @@ var mainViewComponent = (function () {
 mainViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'mianView',
-        template: __webpack_require__(398)
+        template: __webpack_require__(400)
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_data_service__["a" /* DataService */]) === "function" && _a || Object])
 ], mainViewComponent);
@@ -3171,7 +3115,7 @@ var perfViewComponent = (function () {
 perfViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'perfView',
-        template: __webpack_require__(400)
+        template: __webpack_require__(402)
     })
 ], perfViewComponent);
 
@@ -3185,7 +3129,7 @@ perfViewComponent = __decorate([
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_settings__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_data_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__services_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return processesViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3251,7 +3195,7 @@ var processesViewComponent = (function () {
 processesViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'processesView',
-        template: __webpack_require__(401)
+        template: __webpack_require__(403)
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_2__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__services_data_service__["a" /* DataService */]) === "function" && _a || Object])
 ], processesViewComponent);
@@ -3266,11 +3210,11 @@ var _a;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return secCorrectLoginViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3417,7 +3361,7 @@ __decorate([
 secCorrectLoginViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'secCorrectLoginView',
-        template: __webpack_require__(402)
+        template: __webpack_require__(404)
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], secCorrectLoginViewComponent);
@@ -3432,11 +3376,11 @@ var _a, _b, _c, _d;
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(11);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(9);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return secIncorrectLoginViewComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -3577,7 +3521,7 @@ __decorate([
 secIncorrectLoginViewComponent = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
         selector: 'secIncorrectLoginView',
-        template: __webpack_require__(403)
+        template: __webpack_require__(405)
     }),
     __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], secIncorrectLoginViewComponent);
@@ -3585,7 +3529,307 @@ secIncorrectLoginViewComponent = __decorate([
 var _a, _b, _c, _d;
 //# sourceMappingURL=sec-incorrect-login-view.component.js.map
 
+/***/ }),
+
+/***/ 79:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_settings__ = __webpack_require__(10);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__services_data_service__ = __webpack_require__(9);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return urlstatViewComponent; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var urlstatViewComponent = (function () {
+    function urlstatViewComponent(dataService, chRef) {
+        this.dataService = dataService;
+        this.chRef = chRef;
+        this.loading = false;
+        this.dateRange = [0, 100];
+        this.allRequests = [];
+        this.formatter = {
+            to: function (value) {
+                if (value) {
+                    return moment(value, 'X').format('YYYY-DD-MM HH:mm');
+                }
+            },
+            from: function (value) {
+                if (value) {
+                    if (moment(value, 'YYYY-DD-MM HH:mm').isValid()) {
+                        var d = moment(value, 'YYYY-DD-MM HH:mm').format('X');
+                        return parseFloat(d);
+                    }
+                    return value;
+                }
+            }
+        };
+        this.lineChartData = [
+            { data: [], label: '' }, { data: [], label: '' }
+        ];
+        this.lineChartTimeData = [
+            { data: [], label: '' }, { data: [], label: '' }
+        ];
+        this.lineChartLabels = [];
+        this.lineChartOptions = {
+            animation: false,
+            responsive: true
+        };
+        this.lineChartColors = [{
+                backgroundColor: 'rgba(10,159,177,0.5)',
+                borderColor: 'rgba(225,10,24,0.2)',
+                pointBackgroundColor: 'rgba(10,10,24,0.2)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(10,10,24,0.2)'
+            }, {
+                backgroundColor: 'rgba(248,172,89,0.5)',
+                borderColor: 'rgba(225,10,24,0.2)',
+                pointBackgroundColor: 'rgba(10,10,24,0.2)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(10,10,24,0.2)'
+            }];
+        this.lineChartTimeColors = [{
+                backgroundColor: 'rgba(51,122,183,0.5)',
+                borderColor: 'rgba(225,10,24,0.2)',
+                pointBackgroundColor: 'rgba(10,10,24,0.2)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(10,10,24,0.2)'
+            }, {
+                backgroundColor: 'rgba(138,109,59,0.5)',
+                borderColor: 'rgba(225,10,24,0.2)',
+                pointBackgroundColor: 'rgba(10,10,24,0.2)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(10,10,24,0.2)'
+            }];
+        this.lineChartLegend = true;
+        this.lineChartType = 'line';
+        this.dateRangeMin = 0;
+        this.dateRangeMax = 10;
+        this.onInitTime = false;
+    }
+    urlstatViewComponent.prototype.ngOnInit = function () {
+        var self = this;
+        self.loading = true;
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].urlStatUrl, {})
+            .subscribe(function (data) {
+            self.loading = false;
+            self.lineChartData = data.values;
+            self.lineChartTimeData = data.values_time;
+            self.lineChartLabels = data.dates;
+            self.allRequests = data.all_requests;
+            self.last_time = data.last_time;
+            self.chart.ngOnChanges({});
+            self.onInitTime = true;
+            self.dateRangeMin = data.date_range.start_date;
+            self.dateRangeMax = data.date_range.end_date;
+            self.slider.slider.updateOptions({
+                start: [data.date_range.start, data.date_range.end_date],
+                range: {
+                    'min': data.date_range.start,
+                    'max': data.date_range.end_date
+                }
+            });
+            self.dateRange = [data.date_range.start, data.date_range.end_date];
+            self.chRef.detectChanges();
+            setTimeout(function () {
+                self.onInitTime = false;
+            }, 1000);
+        }, function (error) {
+            self.loading = false;
+            self.error_message = error;
+        });
+    };
+    urlstatViewComponent.prototype.chartClicked = function (e) {
+        console.log(e);
+    };
+    urlstatViewComponent.prototype.chartHovered = function (e) {
+        console.log(e);
+    };
+    urlstatViewComponent.prototype.onChange = function ($event) {
+        this.rangeStartDate = moment(this.dateRange[0], 'X').format('MMM DD HH:mm');
+        this.rangeEndDate = moment(this.dateRange[1], 'X').format('MMM-DD HH:mm');
+        this.getData();
+    };
+    urlstatViewComponent.prototype.getData = function (callback) {
+        if (this.loading || this.onInitTime) {
+            return;
+        }
+        var self = this;
+        var params = {
+            date_start: this.dateRange[0],
+            date_end: this.dateRange[1]
+        };
+        self.loading = true;
+        self.dataService.getData(__WEBPACK_IMPORTED_MODULE_3__app_settings__["a" /* AppSettings */].urlStatUrl, params)
+            .subscribe(function (data) {
+            self.loading = false;
+            self.lineChartData = data.values;
+            self.lineChartTimeData = data.values_time;
+            self.lineChartLabels = data.dates;
+            self.allRequests = data.all_requests;
+            self.last_time = data.last_time;
+            self.chart.ngOnChanges({});
+        }, function (error) {
+            self.loading = false;
+            self.error_message = error;
+        });
+    };
+    urlstatViewComponent.prototype.getDateFromTimestap = function (value) {
+        return moment(value, 'X').format('MMM DD HH:mm');
+    };
+    urlstatViewComponent.prototype.refresh = function () {
+        this.getData();
+    };
+    urlstatViewComponent.prototype.toFixed = function (value) {
+        return value.toFixed(2);
+    };
+    return urlstatViewComponent;
+}());
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__["a" /* BaseChartDirective */]),
+    __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__["a" /* BaseChartDirective */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__libs_ng2_charts_ng2_charts__["a" /* BaseChartDirective */]) === "function" && _a || Object)
+], urlstatViewComponent.prototype, "chart", void 0);
+__decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["ViewChild"])(__WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__["NouisliderComponent"]),
+    __metadata("design:type", typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__["NouisliderComponent"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2_ng2_nouislider__["NouisliderComponent"]) === "function" && _b || Object)
+], urlstatViewComponent.prototype, "slider", void 0);
+urlstatViewComponent = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+        selector: 'urlstatView',
+        template: __webpack_require__(406),
+    }),
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
+], urlstatViewComponent);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=urlstat-view.component.js.map
+
+/***/ }),
+
+/***/ 8:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__index__ = __webpack_require__(258);
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__index__["a"]; });
+/* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "b", function() { return __WEBPACK_IMPORTED_MODULE_0__index__["b"]; });
+
+//# sourceMappingURL=ng2-charts.js.map
+
+/***/ }),
+
+/***/ 9:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_http__ = __webpack_require__(32);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__ = __webpack_require__(61);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_catch__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__ = __webpack_require__(62);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4_rxjs_add_operator_map__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DataService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var DataService = (function () {
+    function DataService(http) {
+        this.http = http;
+    }
+    DataService.prototype.getData = function (url, _params) {
+        var data = _params || {};
+        data.t = new Date().getTime();
+        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* URLSearchParams */]();
+        for (var key in data) {
+            if (data.hasOwnProperty(key)) {
+                var val = data[key];
+                params.set(key, val);
+            }
+        }
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestOptions */]({
+            search: params
+        });
+        return this.http.get(url, options)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    DataService.prototype.postData = function (url, _params) {
+        var data = _params || {};
+        var params = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* URLSearchParams */]();
+        for (var key in data) {
+            if (data.hasOwnProperty(key)) {
+                var val = data[key];
+                params.set(key, val);
+            }
+        }
+        var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["e" /* RequestOptions */]({
+            search: params
+        });
+        return this.http.post(url, data)
+            .map(this.extractData)
+            .catch(this.handleError);
+    };
+    DataService.prototype.extractData = function (res) {
+        var body = res.json();
+        return body || {};
+    };
+    DataService.prototype.handleError = function (error) {
+        // In a real world app, you might use a remote logging infrastructure
+        var errMsg;
+        if (error instanceof __WEBPACK_IMPORTED_MODULE_1__angular_http__["f" /* Response */]) {
+            var body = error.json() || '';
+            var err = body.error || JSON.stringify(body);
+            errMsg = error.status + " - " + (error.statusText || '') + " " + err;
+        }
+        else {
+            errMsg = error.message ? error.message : error.toString();
+        }
+        console.error(errMsg);
+        return __WEBPACK_IMPORTED_MODULE_2_rxjs_Observable__["Observable"].throw(errMsg);
+    };
+    return DataService;
+}());
+DataService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["g" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["g" /* Http */]) === "function" && _a || Object])
+], DataService);
+
+var _a;
+//# sourceMappingURL=data.service.js.map
+
 /***/ })
 
-},[447]);
+},[450]);
 //# sourceMappingURL=main.bundle.js.map

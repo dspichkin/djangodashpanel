@@ -4,7 +4,7 @@ Django dashboard panel
 # In progress 
 # under development do not use it yet
 
-Version Django 1.9 
+Version Django 1.10 
 
 ### Requirements
 
@@ -46,11 +46,22 @@ MIDDLEWARE_CLASSES = (
   'djangodashpanel.middleware.urllogstat.URLLogStatMiddleware',
 ```
 
-and set temp folder (and exlude urls if it required) also in your settings file:
+Turn on url statisctics in your settings file:
 ```
-DJANGODASHPANEL_URLSTAT_DIR = os.path.join(BASE_DIR, '..', 'temp')
+DJANGODASHPANEL_URLSTAT = True
+```
+
+add exclude urls:
+```
 DJANGODASHPANEL_URLSTAT_EXCLUDES = [
-    "/api/user/new_count_messages/"
+    "/admin/"
+]
+```
+
+and/or add include urls:
+```
+DJANGODASHPANEL_URLSTAT_INCLUDES = [
+    "/admin/"
 ]
 ```
 

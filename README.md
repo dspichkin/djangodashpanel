@@ -39,11 +39,19 @@ urlpatterns = [
 ```
 
 
-Once installed you need to do a little configuration to get things working. First add the middleware to your MIDDLEWARE_CLASSES in your settings file.
+If you want getting url statistics you need add the middleware to your MIDDLEWARE_CLASSES in your settings file.
 
 ```
 MIDDLEWARE_CLASSES = (
-  'djangodashpanel.middleware.requeststat.URLLogStatMiddleware',
+  'djangodashpanel.middleware.urllogstat.URLLogStatMiddleware',
+```
+
+and set temp folder (and exlude urls if it required) also in your settings file:
+```
+DJANGODASHPANEL_URLSTAT_DIR = os.path.join(BASE_DIR, '..', 'temp')
+DJANGODASHPANEL_URLSTAT_EXCLUDES = [
+    "/api/user/new_count_messages/"
+]
 ```
 
 ```

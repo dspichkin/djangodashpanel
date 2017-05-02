@@ -29,8 +29,6 @@ class URLLogStatMiddleware(object):
 
     def process_response(self, request, response):
         """Let's handle old-style response processing here, as usual."""
-        if hasattr(self, 'get_response'):
-            response = self.get_response(request)
 
         if not hasattr(settings, 'DJANGODASHPANEL_URLSTAT') or not settings.DJANGODASHPANEL_URLSTAT:
             return response
@@ -59,17 +57,10 @@ class URLLogStatMiddleware(object):
             'request_sql_count': len(queries),
             'request_sql_time': sqltime,
         }
-        #msg = '%(start)d\t%(time).2f\t%(method)s\t%(url)s\t%(code)s\t%(sql)d\t%(sqltime).4f\n' % d
-        #filepath = settings.DJANGODASHPANEL_URLSTAT_DIR
-        print "!!!!!"
+
         thread = Thread(target=threaded_function, args=(d, ))
         thread.start()
 
-        #if os.path.exists(filepath):
-        #    filename = 'urlstat.stat'
-        #    filenamepath = os.path.join(filepath, filename)
-        #    with open(filenamepath, 'a') as the_file:
-        #        the_file.write(msg)
         return response
 
     def __call__(self, request):

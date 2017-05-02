@@ -57,21 +57,18 @@ def urlstat_data(request):
         last_request_duration = 0
         for k, v in value.items():
             if k not in raw_all_requests:
-                raw_all_requests[k] = v
+                raw_all_requests[k] = {}
 
             for k1, v1 in value[k].items():
-                raw_all_requests[k][k1] = v1
-                raw_all_requests[k][k1]["method"] = k1
-                raw_all_requests[k][k1]["url"] = k
-
-                number_of_request += v1.get("count", 0)
-                request_sql_count += v1.get("request_sql_count", 0)
-                if v1.get("request_sql_time", 0) > last_sql_duration:
-                    last_sql_duration = v1.get("request_sql_time", 0)
-                if v1.get("request_duration", 0) > last_request_duration:
-                    last_request_duration = v1.get("request_duration", 0)
-
-                raw_all_requests[k][k1]["count"] = number_of_request
+                if k1 in raw_all_requests[k]:
+                    count = v1["count"]
+                    number_of_request = raw_all_requests[k][k1]["count"] + count
+                    raw_all_requests[k][k1].update(v1)
+                    raw_all_requests[k][k1]["count"] = number_of_request
+                else:
+                    raw_all_requests[k][k1] = v1
+                    raw_all_requests[k][k1]["method"] = k1
+                    raw_all_requests[k][k1]["url"] = k
 
         sql_duration.append(last_sql_duration)
         request_duration.append(last_request_duration)

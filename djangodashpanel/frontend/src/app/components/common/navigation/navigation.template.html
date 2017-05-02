@@ -39,8 +39,8 @@
                   </li>
                 </ul>
             </li>
-            <li [ngClass]="{active: activeRoute('minorView')}">
-                <a [routerLink]="['/minorView']"><i class="fa fa-cube"></i> <span class="nav-label">Database</span> </a>
+            <li *ngIf="apps.urlstat" [ngClass]="{active: activeRoute('minorView')}">
+                <a [routerLink]="['/minorView']"><i class="fa fa-cube"></i> <span class="nav-label">Url statistics</span> </a>
             </li>
             <li *ngIf="apps.backup" [ngClass]="{active: activeRoute('backups')}">
                 <a [routerLink]="['/backups']"><i class="fa fa-truck"></i> <span class="nav-label">Backups</span> </a>

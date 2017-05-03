@@ -60,7 +60,10 @@ class Command(BaseCommand):
 
             run_time = timezone.localtime(backup.run_time)
             run_time = run_time.replace(year=now.year, month=now.month, day=now.day)
-            last_run_backup_tz = timezone.localtime(backup.last_run_backup)
+            
+            last_run_backup_tz = None
+            if backup.last_run_backup:
+                last_run_backup_tz = timezone.localtime(backup.last_run_backup)
 
             if now >= run_time and now <= run_time + timedelta(minutes=30):
                 if not backup.last_run_backup:

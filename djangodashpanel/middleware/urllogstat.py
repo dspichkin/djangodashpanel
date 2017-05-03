@@ -46,7 +46,6 @@ class URLLogStatMiddleware(object):
         sqltime = float(0)
         queries = connection.queries
         for q in queries:
-            print "q", q
             sqltime += float(q.get('time', 0.0))
         d = {
             'last_time_request': int(time.mktime(timezone.localtime(timezone.now()).timetuple())),

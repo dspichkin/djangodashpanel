@@ -8,6 +8,7 @@ Version Django 1.10
 
 ### Requirements
 
+psutil
 zipfile
 
 

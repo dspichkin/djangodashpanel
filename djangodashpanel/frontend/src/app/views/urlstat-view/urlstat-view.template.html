@@ -23,7 +23,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr *ngFor="let p of allRequests">
+                                    <tr *ngFor="let p of allRequests" [ngClass]="{
+                                        'text-warning': p.request_code >= 400,
+                                        'text-danger': p.request_code >= 500}">
                                         <td>
                                             <span>{{p.count}}</span>
                                         </td>

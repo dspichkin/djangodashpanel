@@ -33,6 +33,7 @@ export class urlstatViewComponent implements OnInit {
     rangeEndDate;
     allRequests = [];
     last_time;
+    debug: boolean = true;
     
    
     
@@ -125,6 +126,7 @@ export class urlstatViewComponent implements OnInit {
                 self.lineChartLabels = data.dates;
                 self.allRequests = data.all_requests;
                 self.last_time = data.last_time;
+                self.debug = data.debug || true;
                 self.chart.ngOnChanges({});
 
                 self.onInitTime = true;
@@ -188,6 +190,7 @@ export class urlstatViewComponent implements OnInit {
                 self.lineChartLabels = data.dates;
                 self.allRequests = data.all_requests;
                 self.last_time = data.last_time;
+                self.debug = data.debug || true;
 
                 self.chart.ngOnChanges({});
                 if (callback){

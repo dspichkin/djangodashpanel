@@ -126,7 +126,7 @@ export class urlstatViewComponent implements OnInit {
                 self.lineChartLabels = data.dates;
                 self.allRequests = data.all_requests;
                 self.last_time = data.last_time;
-                self.debug = data.debug || true;
+                self.debug = data.debug;
                 self.chart.ngOnChanges({});
                 console.log('self.debug', self.debug, data)
 

@@ -101,6 +101,11 @@ def urlstat_data(request):
             all_requests.append(v1)
     all_requests.sort(key=lambda x: x.get('count', 0), reverse=True)
 
+    if date_range["start_date"] == date_range["end_date"]:
+        date_range["end_date"] += 10
+    if date_range["start"] == date_range["end_date"]:
+        date_range["end_date"] += 10
+
     return Response({
         "values": [{
             "data": urlstat,
@@ -120,4 +125,5 @@ def urlstat_data(request):
         "all_requests": all_requests,
         "date_range": date_range,
         "last_time": timezone.localtime(timezone.now()).strftime("%b %d %H:%M"),
+        "debug": settings.DEBUG
     }, status=status.HTTP_200_OK)

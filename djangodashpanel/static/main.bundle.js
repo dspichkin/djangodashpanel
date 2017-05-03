@@ -404,12 +404,12 @@ var CpuComponent = (function () {
         this.rangeEndDate = moment(this.dateRange[1], 'X').format('MMM-DD HH:mm');
         this.getData();
     };
-    CpuComponent.prototype.getData = function () {
+    CpuComponent.prototype.getData = function (_params, callback) {
         if (this.loading || this.onInitTime) {
             return;
         }
         var self = this;
-        var params = {
+        var params = _params || {
             date_start: this.dateRange[0],
             date_end: this.dateRange[1]
         };
@@ -420,13 +420,20 @@ var CpuComponent = (function () {
             self.lineChartData = data.values;
             self.lineChartLabels = data.dates;
             self.chart.ngOnChanges({});
+            if (callback) {
+                callback(data);
+            }
         }, function (error) {
             self.loading = false;
             self.error_message = error;
         });
     };
     CpuComponent.prototype.refresh = function () {
-        this.getData();
+        var self = this;
+        this.getData({}, function (data) {
+            self.dateRange = [data.date_range.start, data.date_range.end_date];
+            self.chRef.detectChanges();
+        });
     };
     return CpuComponent;
 }());
@@ -574,12 +581,12 @@ var DiskComponent = (function () {
         this.rangeEndDate = moment(this.dateRange[1], 'X').format('MMM-DD HH:mm');
         this.getData();
     };
-    DiskComponent.prototype.getData = function () {
+    DiskComponent.prototype.getData = function (_params, callback) {
         if (this.loading || this.onInitTime) {
             return;
         }
         var self = this;
-        var params = {
+        var params = _params || {
             date_start: this.dateRange[0],
             date_end: this.dateRange[1]
         };
@@ -590,13 +597,20 @@ var DiskComponent = (function () {
             self.lineChartData = data.values;
             self.lineChartLabels = data.dates;
             self.chart.ngOnChanges({});
+            if (callback) {
+                callback(data);
+            }
         }, function (error) {
             self.loading = false;
             self.error_message = error;
         });
     };
     DiskComponent.prototype.refresh = function () {
-        this.getData();
+        var self = this;
+        this.getData({}, function (data) {
+            self.dateRange = [data.date_range.start, data.date_range.end_date];
+            self.chRef.detectChanges();
+        });
     };
     return DiskComponent;
 }());
@@ -647,8 +661,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var MemoryComponent = (function () {
-    function MemoryComponent(dataService) {
+    function MemoryComponent(dataService, chRef) {
         this.dataService = dataService;
+        this.chRef = chRef;
         this.loading = false;
         this.dateRange = [0, 100];
         this.formatter = {
@@ -758,12 +773,12 @@ var MemoryComponent = (function () {
         this.rangeEndDate = moment(this.dateRange[1], 'X').format('MMM-DD HH:mm');
         this.getData();
     };
-    MemoryComponent.prototype.getData = function () {
+    MemoryComponent.prototype.getData = function (_params, callback) {
         if (this.loading || this.onInitTime) {
             return;
         }
         var self = this;
-        var params = {
+        var params = _params || {
             date_start: this.dateRange[0],
             date_end: this.dateRange[1]
         };
@@ -774,13 +789,20 @@ var MemoryComponent = (function () {
             self.lineChartData = data.values;
             self.lineChartLabels = data.dates;
             self.chart.ngOnChanges({});
+            if (callback) {
+                callback(data);
+            }
         }, function (error) {
             self.loading = false;
             self.error_message = error;
         });
     };
     MemoryComponent.prototype.refresh = function () {
-        this.getData();
+        var self = this;
+        this.getData({}, function (data) {
+            self.dateRange = [data.date_range.start, data.date_range.end_date];
+            self.chRef.detectChanges();
+        });
     };
     return MemoryComponent;
 }());
@@ -797,10 +819,10 @@ MemoryComponent = __decorate([
         selector: 'memory-chart',
         template: __webpack_require__(391),
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], MemoryComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=memory.component.js.map
 
 /***/ }),
@@ -831,8 +853,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var NetworkComponent = (function () {
-    function NetworkComponent(dataService) {
+    function NetworkComponent(dataService, chRef) {
         this.dataService = dataService;
+        this.chRef = chRef;
         this.loading = false;
         this.dateRange = [0, 100];
         this.formatter = {
@@ -935,12 +958,12 @@ var NetworkComponent = (function () {
         this.rangeEndDate = moment(this.dateRange[1], 'X').format('MMM-DD HH:mm');
         this.getData();
     };
-    NetworkComponent.prototype.getData = function () {
+    NetworkComponent.prototype.getData = function (_params, callback) {
         if (this.loading || this.onInitTime) {
             return;
         }
         var self = this;
-        var params = {
+        var params = _params || {
             date_start: this.dateRange[0],
             date_end: this.dateRange[1]
         };
@@ -951,13 +974,20 @@ var NetworkComponent = (function () {
             self.lineChartData = data.values;
             self.lineChartLabels = data.dates;
             self.chart.ngOnChanges({});
+            if (callback) {
+                callback(data);
+            }
         }, function (error) {
             self.loading = false;
             self.error_message = error;
         });
     };
     NetworkComponent.prototype.refresh = function () {
-        this.getData();
+        var self = this;
+        this.getData({}, function (data) {
+            self.dateRange = [data.date_range.start, data.date_range.end_date];
+            self.chRef.detectChanges();
+        });
     };
     return NetworkComponent;
 }());
@@ -974,10 +1004,10 @@ NetworkComponent = __decorate([
         selector: 'network-chart',
         template: __webpack_require__(392),
     }),
-    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object])
+    __metadata("design:paramtypes", [typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__services_data_service__["a" /* DataService */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["ChangeDetectorRef"]) === "function" && _d || Object])
 ], NetworkComponent);
 
-var _a, _b, _c;
+var _a, _b, _c, _d;
 //# sourceMappingURL=network.component.js.map
 
 /***/ }),
@@ -1091,12 +1121,12 @@ var ProcessesComponent = (function () {
         this.rangeEndDate = moment(this.dateRange[1], 'X').format('MMM-DD HH:mm');
         this.getData();
     };
-    ProcessesComponent.prototype.getData = function (callback) {
+    ProcessesComponent.prototype.getData = function (_params, callback) {
         if (this.loading || this.onInitTime) {
             return;
         }
         var self = this;
-        var params = {
+        var params = _params || {
             date_start: this.dateRange[0],
             date_end: this.dateRange[1]
         };
@@ -1107,13 +1137,20 @@ var ProcessesComponent = (function () {
             self.lineChartData = data.values;
             self.lineChartLabels = data.dates;
             self.chart.ngOnChanges({});
+            if (callback) {
+                callback(data);
+            }
         }, function (error) {
             self.loading = false;
             self.error_message = error;
         });
     };
     ProcessesComponent.prototype.refresh = function () {
-        this.getData();
+        var self = this;
+        this.getData({}, function (data) {
+            self.dateRange = [data.date_range.start, data.date_range.end_date];
+            self.chRef.detectChanges();
+        });
     };
     return ProcessesComponent;
 }());
@@ -2650,7 +2687,7 @@ module.exports = "<div class=\"row border-bottom\">\n    <nav class=\"navbar nav
 /***/ 399:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content\">\n    \n    <a [href]=\"backupMakeUrl\" class=\"btn btn-success\" target=\"_blank\">Make and download database backup</a>\n    <a [href]=\"backupMakeMediaUrl\" class=\"btn btn-primary\" target=\"_blank\">Make and download media backup</a>\n    \n\n    <div class=\"row\" style=\"margin-top: 10px;\">\n        <div class=\"col-lg-9\">\n            <div class=\"wrapper-md\">\n                <div class=\"tab-container\">\n                    <ul class=\"nav nav-tabs nav-stacked nav-justified\">\n                        <li [ngClass]=\"{active: router.url=='/backups'}\">\n                            <a [routerLink]=\"['/backups']\">Settings</a>\n                        </li>\n                        <li [ngClass]=\"{active: router.url=='/backups/result'}\">\n                            <a [routerLink]=\"['/backups/result']\">Result</a>\n                        </li>\n                    </ul>\n                    <div class=\"tab-content\">\n                        <div *ngIf=\"router.url=='/backups'\" class=\"tab-pane active\">\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <form>\n                                        <div class=\"form-group\">\n                                            <label>Day time for running backup (will be run everyday):</label>\n                                            <div style=\"display: flex;align-items: center;\">\n                                                <timepicker [(ngModel)]=\"model.backuptime\" [ngModelOptions]=\"{standalone: true}\" (ngModelChange)=\"changedTime()\"></timepicker>\n                                                <button type=\"button\" class=\"btn btn-info\" style=\"margin-left: 20px;height:40px;\" (click)=\"saveBackTime()\">Save</button>\n                                                <span *ngIf=\"backuptime_is_dirty\" class=\"text-warning\" style=\"margin-left: 10px;\">Time is not save</span>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <label>Absolute path for media directory (if required):</label>\n                                            <div class=\"input-group\">\n                                                <input name=\"inputedDir\" type=\"text\" class=\"form-control\" [(ngModel)]=\"model.inputedDir\" (keyup.enter)=\"addDirectory()\"/>\n                                                <span class=\"input-group-addon\" style=\"padding: 0;\"> \n                                                    <button type=\"button\" class=\"btn btn-info\" (click)=\"addDirectory()\" [disabled]=\"!model.inputedDir || loading\" style=\"margin: -2px;\">Add</button></span>\n                                            </div>\n                                        </div>\n\n                                        <div *ngIf=\"mediadirs.length > 0\" class=\"form-group\">\n                                            <div class=\"panel panel-default\">\n                                                <div class=\"panel-body\">\n                                                    <p *ngIf=\"mediadirs.length == 0\">No directories specified</p>\n                                                    <div *ngFor=\"let obj of mediadirs; let i = index;\" style=\"margin-top: 2px;\">\n                                                        <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"deletePath(i)\" [disabled]=\"loading\"><i class=\"fa fa-times\"></i></button>\n                                                        <span style=\"margin-left:20px;\">{{obj.path}}</span>\n                                                        <span>\n                                                            <i *ngIf=\"obj.checked\" class=\"fa fa-check text-info\"></i>\n                                                        </span>\n                                                        <span *ngIf=\"!obj.checked\">\n                                                            <i class=\"fa fa-exclamation text-warning\"></i> \n                                                            <small>(Path doesn't exist)</small>\n                                                        </span>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </form>\n                                </div>\n                            </div>\n                        </div>\n                        <div *ngIf=\"router.url=='/backups/result'\" class=\"tab-pane active\">\n                            \n\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <div *ngIf=\"backups_daily\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Daily Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_daily\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><a [href]=\"getFileUrl(backup.filename)\" type=\"button\" class=\"btn btn-default btn-xs\" target=\"_blank\"><i class=\"fa fa-download\"></i></a></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_weekly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Weekly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_weekly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><a [href]=\"getFileUrl(backup.filename)\" type=\"button\" class=\"btn btn-default btn-xs\" target=\"_blank\"><i class=\"fa fa-download\"></i></a></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_monthly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Monthly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_monthly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><a [href]=\"getFileUrl(backup.filename)\" type=\"button\" class=\"btn btn-default btn-xs\" target=\"_blank\"><i class=\"fa fa-download\"></i></a></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <!-- Loading -->\n        <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n            <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n            </div>\n            <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n            </div>\n        </div>\n        <!-- END Loading -->\n\n        <div class=\"col-lg-3\">\n            <div class=\"wrapper-md\">\n                <div class=\"panel panel-success\">\n\n                    <div class=\"panel-heading \">\n                        Info\n                        <button type=\"button\" class=\"btn btn-success btn-xs pull-right\" (click)=\"refresh()\">\n                            <i class=\"fa fa-refresh\"></i>\n                        </button>\n                    </div>\n                    <div class=\"panel-body\">\n                        <span class=\"text-success\">Last run: </span>\n                        <span>{{ last_run_backup| date: 'yyyy-MM-dd HH:mm' || \"None\"}} </span>\n\n                        <span class=\"text-success\">State: </span>\n                        <span *ngIf=\"backups_enable\" class=\"text-primary\" style=\"margin-right: 20px;\">backup is enable</span>\n                        <span *ngIf=\"!backups_enable\" class=\"text-danger\" style=\"margin-right: 20px;\">backup is disabled</span>\n                        <div style=\"margin-top: 20px\">\n                            <button *ngIf=\"backups_enable\" type=\"button\" class=\"btn btn-primary\" (click)=\"backupSwitch()\">Turn off backup</button>\n                            <button *ngIf=\"!backups_enable\" type=\"button\" class=\"btn btn-danger\" (click)=\"backupSwitch()\">Turn on backup</button>\n                        </div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+module.exports = "<div class=\"wrapper wrapper-content\">\n    \n    <a [href]=\"backupMakeUrl\" class=\"btn btn-success\" target=\"_blank\">Make and download database backup</a>\n    <a [href]=\"backupMakeMediaUrl\" class=\"btn btn-primary\" target=\"_blank\">Make and download media backup</a>\n    \n\n    <div class=\"row\" style=\"margin-top: 10px;\">\n        <div class=\"col-lg-9\">\n            <div class=\"wrapper-md\">\n                <div class=\"tab-container\">\n                    <ul class=\"nav nav-tabs nav-stacked nav-justified\">\n                        <li [ngClass]=\"{active: router.url=='/backups'}\">\n                            <a [routerLink]=\"['/backups']\">Settings</a>\n                        </li>\n                        <li [ngClass]=\"{active: router.url=='/backups/result'}\">\n                            <a [routerLink]=\"['/backups/result']\">Result</a>\n                        </li>\n                    </ul>\n                    <div class=\"tab-content\">\n                        <div *ngIf=\"router.url=='/backups'\" class=\"tab-pane active\">\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <form>\n                                        <div class=\"form-group\">\n                                            <label>Day time for running backup (will be run everyday):</label>\n                                            <div style=\"display: flex;align-items: center;\">\n                                                <timepicker [(ngModel)]=\"model.backuptime\" [ngModelOptions]=\"{standalone: true}\" (ngModelChange)=\"changedTime()\"></timepicker>\n                                                <button type=\"button\" class=\"btn btn-info\" style=\"margin-left: 20px;height:40px;\" (click)=\"saveBackTime()\">Save</button>\n                                                <span *ngIf=\"backuptime_is_dirty\" class=\"text-warning\" style=\"margin-left: 10px;\">Time is not save</span>\n                                            </div>\n                                        </div>\n                                        <div class=\"form-group\">\n                                            <label>Absolute path for media directory (optional):</label>\n                                            <div class=\"input-group\">\n                                                <input name=\"inputedDir\" type=\"text\" class=\"form-control\" [(ngModel)]=\"model.inputedDir\" (keyup.enter)=\"addDirectory()\"/>\n                                                <span class=\"input-group-addon\" style=\"padding: 0;\"> \n                                                    <button type=\"button\" class=\"btn btn-info\" (click)=\"addDirectory()\" [disabled]=\"!model.inputedDir || loading\" style=\"margin: -2px;\">Add</button></span>\n                                            </div>\n                                        </div>\n\n                                        <div *ngIf=\"mediadirs.length > 0\" class=\"form-group\">\n                                            <div class=\"panel panel-default\">\n                                                <div class=\"panel-body\">\n                                                    <p *ngIf=\"mediadirs.length == 0\">No directories specified</p>\n                                                    <div *ngFor=\"let obj of mediadirs; let i = index;\" style=\"margin-top: 2px;\">\n                                                        <button type=\"button\" class=\"btn btn-default btn-xs\" (click)=\"deletePath(i)\" [disabled]=\"loading\"><i class=\"fa fa-times\"></i></button>\n                                                        <span style=\"margin-left:20px;\">{{obj.path}}</span>\n                                                        <span>\n                                                            <i *ngIf=\"obj.checked\" class=\"fa fa-check text-info\"></i>\n                                                        </span>\n                                                        <span *ngIf=\"!obj.checked\">\n                                                            <i class=\"fa fa-exclamation text-warning\"></i> \n                                                            <small>(Path doesn't exist)</small>\n                                                        </span>\n                                                    </div>\n                                                </div>\n                                            </div>\n                                        </div>\n                                    </form>\n                                </div>\n                            </div>\n                        </div>\n                        <div *ngIf=\"router.url=='/backups/result'\" class=\"tab-pane active\">\n                            \n\n                            <div class=\"panel panel-default\">\n                                <div class=\"panel-body\">\n                                    <div *ngIf=\"backups_daily\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Daily Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_daily\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><a [href]=\"getFileUrl(backup.filename)\" type=\"button\" class=\"btn btn-default btn-xs\" target=\"_blank\"><i class=\"fa fa-download\"></i></a></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_weekly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Weekly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_weekly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><a [href]=\"getFileUrl(backup.filename)\" type=\"button\" class=\"btn btn-default btn-xs\" target=\"_blank\"><i class=\"fa fa-download\"></i></a></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n\n                                    <div *ngIf=\"backups_monthly\" class=\"panel panel-info\">\n                                        <div class=\"panel-heading \">\n                                            Monthly Database Backups\n                                        </div>\n                                        <div class=\"panel-body\">\n                                            <table class=\"table\">\n                                                <tr *ngFor=\"let backup of backups_monthly\">\n                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>\n                                                    <td>{{backup.filename}}</td>\n                                                    <td>{{backup.size}}</td>\n                                                    <td><a [href]=\"getFileUrl(backup.filename)\" type=\"button\" class=\"btn btn-default btn-xs\" target=\"_blank\"><i class=\"fa fa-download\"></i></a></td>\n                                                </tr>\n                                            </table>\n                                        </div>\n                                    </div>\n                                </div>\n                            </div>\n                        </div>\n                    </div>\n                </div>\n            </div>\n        </div>\n\n        <!-- Loading -->\n        <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n            <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n            </div>\n            <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n            </div>\n        </div>\n        <!-- END Loading -->\n\n        <div class=\"col-lg-3\">\n            <div class=\"wrapper-md\">\n                <div class=\"panel panel-success\">\n\n                    <div class=\"panel-heading \">\n                        Info\n                        <button type=\"button\" class=\"btn btn-success btn-xs pull-right\" (click)=\"refresh()\">\n                            <i class=\"fa fa-refresh\"></i>\n                        </button>\n                    </div>\n                    <div class=\"panel-body\">\n                        <span class=\"text-success\">Last run: </span>\n                        <span>{{ last_run_backup| date: 'yyyy-MM-dd HH:mm' || \"None\"}} </span>\n\n                        <span class=\"text-success\">State: </span>\n                        <span *ngIf=\"backups_enable\" class=\"text-primary\" style=\"margin-right: 20px;\">backup is enable</span>\n                        <span *ngIf=\"!backups_enable\" class=\"text-danger\" style=\"margin-right: 20px;\">backup is disabled</span>\n                        <div style=\"margin-top: 20px\">\n                            <button *ngIf=\"backups_enable\" type=\"button\" class=\"btn btn-primary\" (click)=\"backupSwitch()\">Turn off backup</button>\n                            <button *ngIf=\"!backups_enable\" type=\"button\" class=\"btn btn-danger\" (click)=\"backupSwitch()\">Turn on backup</button>\n                        </div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -2699,7 +2736,7 @@ module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\
 /***/ 406:
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Last time update: {{last_time }}</small>\n                        <button type=\"button\" class=\"btn btn-info btn-xs pull-right\" (click)=\"refresh()\">\n                            <i class=\"fa fa-refresh\"></i>\n                        </button>\n                    </div>\n                    <div class=\"panel-body\">\n                        <div class=\"table-responsive\">\n                            <table class=\"table\">\n                                <thead>\n                                    <tr>\n                                        <th style=\"font-size: 10px;\">Count</th>\n                                        <th style=\"font-size: 10px;\">URL</th>\n                                        <th style=\"font-size: 10px;\">Duration</th>\n                                        <th style=\"font-size: 10px;\">Queries count</th>\n                                        <th style=\"font-size: 10px;\">Max query durations</th>\n                                        <th style=\"font-size: 10px;\">Last req</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor=\"let p of allRequests\">\n                                        <td>\n                                            <span>{{p.count}}</span>\n                                        </td>\n                                        <td style=\"word-break: break-word;\">\n                                            <b>{{p.url}}</b> \n                                            <p style=\"font-size: 8px\">{{p.method }} {{p.request_code}}</p>\n                                        </td>\n                                        <td>{{toFixed(p.request_duration)}}</td>\n                                        <td>{{p.request_sql_count}}</td>\n                                        <td>{{toFixed(p.request_sql_time)}}</td>\n                                        <td>{{getDateFromTimestap(p.last_time_request)}}</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                        <!-- Loading -->\n                        <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                            <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                            </div>\n                            <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                            </div>\n                        </div>\n                        <!-- END Loading -->\n\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div style=\"text-align: center;padding: 0;\">\n                            <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n                                <i class=\"fa fa-refresh\"></i>\n                            </button>\n                            <div>\n                                <canvas baseChart\n                                        [datasets]=\"lineChartData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartColors\"\n                                        [chartType]=\"lineChartType\"\n                                        ></canvas>\n                            </div>\n                            <div>\n                                <canvas baseChart\n                                        [datasets]=\"lineChartTimeData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartTimeColors\"\n                                        [chartType]=\"lineChartType\"\n                                        ></canvas>\n                            </div>\n\n                            <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n                            <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n                            <!-- Loading -->\n                            <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                                <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                                </div>\n                                <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                    <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                                </div>\n                            </div>\n                            <!-- END Loading -->\n                            \n                        </div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
+module.exports = "<div class=\"wrapper wrapper-content\">\n    <div class=\"row\">\n        <div class=\"col-lg-12\">\n            <div class=\"col-md-7\">\n                <div class=\"panel panel-info\">\n                    <div class=\"panel-heading \">\n                        <small>Last time update: {{last_time }}</small>\n                        <button type=\"button\" class=\"btn btn-info btn-xs pull-right\" (click)=\"refresh()\">\n                            <i class=\"fa fa-refresh\"></i>\n                        </button>\n                    </div>\n                    <div class=\"panel-body\">\n                        <p *ngIf=\"debug==false\" class=\"text-warning\">Django in mode DEBUG = False so we can't get sql statistics</p>\n                        <div class=\"table-responsive\">\n                            <table class=\"table\">\n                                <thead>\n                                    <tr>\n                                        <th style=\"font-size: 10px;\">Count</th>\n                                        <th style=\"font-size: 10px;\">URL</th>\n                                        <th style=\"font-size: 10px;\">Duration</th>\n                                        <th style=\"font-size: 10px;\">Queries count</th>\n                                        <th style=\"font-size: 10px;\">Max query durations</th>\n                                        <th style=\"font-size: 10px;\">Last req</th>\n                                    </tr>\n                                </thead>\n                                <tbody>\n                                    <tr *ngFor=\"let p of allRequests\" [ngClass]=\"{\n                                        'text-warning': p.request_code >= 400,\n                                        'text-danger': p.request_code >= 500}\">\n                                        <td>\n                                            <span>{{p.count}}</span>\n                                        </td>\n                                        <td style=\"word-break: break-word;\">\n                                            <b>{{p.url}}</b> \n                                            <p style=\"font-size: 8px\">{{p.method }} {{p.request_code}}</p>\n                                        </td>\n                                        <td>{{toFixed(p.request_duration)}}</td>\n                                        <td>{{p.request_sql_count}}</td>\n                                        <td>{{toFixed(p.request_sql_time)}}</td>\n                                        <td>{{getDateFromTimestap(p.last_time_request)}}</td>\n                                    </tr>\n                                </tbody>\n                            </table>\n                        </div>\n                        <!-- Loading -->\n                        <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                            <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                            </div>\n                            <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                            </div>\n                        </div>\n                        <!-- END Loading -->\n\n                    </div>\n                </div>\n            </div>\n            <div class=\"col-md-5\">\n                <div class=\"panel\">\n                    <div class=\"panel-body\">\n                        <div style=\"text-align: center;padding: 0;\">\n                            <button type=\"button\" class=\"btn btn-default btn-xs pull-right\" (click)=\"refresh()\">\n                                <i class=\"fa fa-refresh\"></i>\n                            </button>\n                            <div>\n                                <canvas baseChart\n                                        [datasets]=\"lineChartData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartColors\"\n                                        [chartType]=\"lineChartType\"\n                                        ></canvas>\n                            </div>\n                            <div>\n                                <canvas baseChart\n                                        [datasets]=\"lineChartTimeData\"\n                                        [labels]=\"lineChartLabels\"\n                                        [options]=\"lineChartOptions\"\n                                        [colors]=\"lineChartTimeColors\"\n                                        [chartType]=\"lineChartType\"\n                                        ></canvas>\n                            </div>\n\n                            <h3 style=\"color: #337ab7\">{{ rangeStartDate }} - {{ rangeEndDate }}</h3>\n                            <nouislider [min]=\"dateRangeMin\" [max]=\"dateRangeMax\"  [connect]=\"true\" [(ngModel)]=\"dateRange\" (ngModelChange)=\"onChange($event)\" [disabled]=\"loading\" [format]=\"formatter\" [tooltips]=\"false\" [step]=\"1000\"></nouislider>\n\n                            <!-- Loading -->\n                            <div *ngIf=\"loading\" style=\"position: absolute;top:0;left:0;width:100%;height:100%;z-index: 100;\">\n                                <div style=\"position: absolute;opacity: 0.5;width:100%;height:100%;background-color: white;\">\n                                </div>\n                                <div style=\"width: 50px;margin: auto;margin-top: 60px;\">\n                                    <i class=\"fa fa-spin fa-gear\" style=\"font-size: 50px;\"></i>\n                                </div>\n                            </div>\n                            <!-- END Loading -->\n                            \n                        </div>\n\n                    </div>\n                </div>\n            </div>\n        </div>\n\n    </div>\n</div>\n"
 
 /***/ }),
 
@@ -3321,12 +3358,12 @@ var secCorrectLoginViewComponent = (function () {
         this.rangeEndDate = moment(this.dateRange[1], 'X').format('MMM-DD HH:mm');
         this.getData();
     };
-    secCorrectLoginViewComponent.prototype.getData = function () {
+    secCorrectLoginViewComponent.prototype.getData = function (_params, callback) {
         if (this.loading || this.onInitTime) {
             return;
         }
         var self = this;
-        var params = {
+        var params = _params || {
             date_start: this.dateRange[0],
             date_end: this.dateRange[1]
         };
@@ -3340,13 +3377,20 @@ var secCorrectLoginViewComponent = (function () {
             self.hosts = data.hosts;
             self.users = data.users;
             self.chart.ngOnChanges({});
+            if (callback) {
+                callback(data);
+            }
         }, function (error) {
             self.loading = false;
             self.error_message = error;
         });
     };
     secCorrectLoginViewComponent.prototype.refreshChart = function () {
-        this.getData();
+        var self = this;
+        self.getData({}, function (data) {
+            self.dateRange = [data.date_range.start, data.date_range.end_date];
+            self.chRef.detectChanges();
+        });
     };
     return secCorrectLoginViewComponent;
 }());
@@ -3481,12 +3525,12 @@ var secIncorrectLoginViewComponent = (function () {
         this.rangeEndDate = moment(this.dateRange[1], 'X').format('MMM-DD HH:mm');
         this.getData();
     };
-    secIncorrectLoginViewComponent.prototype.getData = function () {
+    secIncorrectLoginViewComponent.prototype.getData = function (_params, callback) {
         if (this.loading || this.onInitTime) {
             return;
         }
         var self = this;
-        var params = {
+        var params = _params || {
             date_start: this.dateRange[0],
             date_end: this.dateRange[1]
         };
@@ -3500,13 +3544,20 @@ var secIncorrectLoginViewComponent = (function () {
             self.hosts = data.hosts;
             self.users = data.users;
             self.chart.ngOnChanges({});
+            if (callback) {
+                callback(data);
+            }
         }, function (error) {
             self.loading = false;
             self.error_message = error;
         });
     };
     secIncorrectLoginViewComponent.prototype.refreshChart = function () {
-        this.getData();
+        var self = this;
+        self.getData({}, function (data) {
+            self.dateRange = [data.date_range.start, data.date_range.end_date];
+            self.chRef.detectChanges();
+        });
     };
     return secIncorrectLoginViewComponent;
 }());
@@ -3669,12 +3720,12 @@ var urlstatViewComponent = (function () {
         this.rangeEndDate = moment(this.dateRange[1], 'X').format('MMM-DD HH:mm');
         this.getData();
     };
-    urlstatViewComponent.prototype.getData = function (callback) {
+    urlstatViewComponent.prototype.getData = function (_params, callback) {
         if (this.loading || this.onInitTime) {
             return;
         }
         var self = this;
-        var params = {
+        var params = _params || {
             date_start: this.dateRange[0],
             date_end: this.dateRange[1]
         };
@@ -3688,6 +3739,9 @@ var urlstatViewComponent = (function () {
             self.allRequests = data.all_requests;
             self.last_time = data.last_time;
             self.chart.ngOnChanges({});
+            if (callback) {
+                callback(data);
+            }
         }, function (error) {
             self.loading = false;
             self.error_message = error;
@@ -3697,7 +3751,11 @@ var urlstatViewComponent = (function () {
         return moment(value, 'X').format('MMM DD HH:mm');
     };
     urlstatViewComponent.prototype.refresh = function () {
-        this.getData();
+        var self = this;
+        self.getData({}, function (data) {
+            self.dateRange = [data.date_range.start, data.date_range.end_date];
+            self.chRef.detectChanges();
+        });
     };
     urlstatViewComponent.prototype.toFixed = function (value) {
         return value.toFixed(4);

@@ -168,13 +168,13 @@ export class urlstatViewComponent implements OnInit {
         this.getData();
     }
 
-    private getData(callback?) {
+    private getData(_params?, callback?) {
         if (this.loading || this.onInitTime ) {
             return;
         }
 
         let self = this;
-        let params = {
+        let params = _params || {
             date_start: this.dateRange[0],
             date_end: this.dateRange[1]
         }
@@ -190,6 +190,9 @@ export class urlstatViewComponent implements OnInit {
                 self.last_time = data.last_time;
 
                 self.chart.ngOnChanges({});
+                if (callback){
+                    callback(data)
+                }
             },
             function(error) {
                 self.loading = false;
@@ -203,7 +206,11 @@ export class urlstatViewComponent implements OnInit {
     }
 
     public refresh() {
-        this.getData();
+        let self = this;
+        self.getData({}, function(data) {
+            self.dateRange = [data.date_range.start, data.date_range.end_date];
+            self.chRef.detectChanges();
+        });
     }
 
     public toFixed(value) {

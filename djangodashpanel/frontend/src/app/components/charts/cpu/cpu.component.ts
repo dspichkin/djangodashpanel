@@ -148,13 +148,13 @@ export class CpuComponent implements OnInit {
         this.getData();
     }
 
-    private getData() {
+    private getData(_params?, callback?) {
         if (this.loading || this.onInitTime ) {
             return;
         }
 
         let self = this;
-        let params = {
+        let params = _params || {
             date_start: this.dateRange[0],
             date_end: this.dateRange[1]
         }
@@ -166,6 +166,9 @@ export class CpuComponent implements OnInit {
                 self.lineChartData = data.values;
                 self.lineChartLabels = data.dates;
                 self.chart.ngOnChanges({});
+                if (callback){
+                    callback(data)
+                }
             },
             function(error) {
                 self.loading = false;
@@ -175,6 +178,10 @@ export class CpuComponent implements OnInit {
     }
 
     public refresh() {
-        this.getData();
+        let self = this;
+        this.getData({}, function(data) {
+            self.dateRange = [data.date_range.start, data.date_range.end_date];
+            self.chRef.detectChanges();
+        });
     }
 }

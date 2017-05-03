@@ -44,10 +44,6 @@ class URLLogStatMiddleware(object):
                     return response
 
         sqltime = float(0)
-        old_setting = None
-        if settings.DEBUG is False:
-            old_setting = True
-            settings.DEBUG = True
 
         queries = connection.queries
 
@@ -62,9 +58,7 @@ class URLLogStatMiddleware(object):
             'request_sql_count': len(queries),
             'request_sql_time': sqltime,
         }
-        if old_setting is True:
-            old_setting = None
-            settings.DEBUG = False
+
         thread = Thread(target=threaded_function, args=(d, ))
         thread.start()
 

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, ChangeDetectorRef } from '@angular/core';
 
 
 import { BaseChartDirective } from '../../../libs/ng2-charts/ng2-charts';
@@ -108,7 +108,7 @@ export class MemoryComponent implements OnInit {
     public lineChartLegend:boolean = true;
     public lineChartType:string = 'line';
 
-    constructor (private dataService: DataService) {
+    constructor (private dataService: DataService, private chRef: ChangeDetectorRef) {
         
     }
 
@@ -164,13 +164,13 @@ export class MemoryComponent implements OnInit {
         this.getData();
     }
 
-    private getData() {
+    private getData(_params?, callback?) {
         if (this.loading || this.onInitTime ) {
             return;
         }
 
         let self = this;
-        let params = {
+        let params = _params || {
             date_start: this.dateRange[0],
             date_end: this.dateRange[1]
         }
@@ -182,6 +182,9 @@ export class MemoryComponent implements OnInit {
                 self.lineChartData = data.values;
                 self.lineChartLabels = data.dates;
                 self.chart.ngOnChanges({});
+                if (callback){
+                    callback(data)
+                }
             },
             function(error) {
                 self.loading = false;
@@ -191,6 +194,10 @@ export class MemoryComponent implements OnInit {
     }
 
     public refresh() {
-        this.getData();
+        let self = this;
+        this.getData({}, function(data) {
+            self.dateRange = [data.date_range.start, data.date_range.end_date];
+            self.chRef.detectChanges();
+        });
     }
 }

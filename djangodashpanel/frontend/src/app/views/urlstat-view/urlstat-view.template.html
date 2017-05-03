@@ -10,6 +10,7 @@
                         </button>
                     </div>
                     <div class="panel-body">
+                        <p *ngIf="debug==false" class="text-warning">Django in mode DEBUG = False so we can't get sql statistics</p>
                         <div class="table-responsive">
                             <table class="table">
                                 <thead>

@@ -3691,7 +3691,6 @@ var urlstatViewComponent = (function () {
             self.last_time = data.last_time;
             self.debug = data.debug;
             self.chart.ngOnChanges({});
-            console.log('self.debug', self.debug, data);
             self.onInitTime = true;
             self.dateRangeMin = data.date_range.start_date;
             self.dateRangeMax = data.date_range.end_date;

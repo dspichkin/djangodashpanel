@@ -24,6 +24,7 @@ export class backupViewComponent implements OnInit{
     backups_enable:boolean = true;
     last_run_backup: null;
     result_last_run_backup: "";
+    backups_media: any = [];
 
     mediadirs = [];
     model = {
@@ -60,6 +61,8 @@ export class backupViewComponent implements OnInit{
                 self.result_last_run_backup = data.result;
                 self.model.backuptime = data.run_time;
                 self.backuptime_loaded = data.run_time;
+                self.backups_media = data.backups_media;
+
                 if (!self.model.backuptime) {
                     self.model.backuptime = moment().toDate();
                     self.backuptime_is_dirty = true;

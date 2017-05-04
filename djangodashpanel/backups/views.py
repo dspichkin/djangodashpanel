@@ -64,10 +64,24 @@ def get_backups_data(request):
                     })
             backups[d] = files_in_dir
 
+    backups_media = []
+    MEDIA_DIR = os.path.join(settings.DJANGODASHPANEL_BACKUP_DIR, 'media')
+    if os.path.exists(MEDIA_DIR):
+        for dirpath, dirnames, filenames in os.walk(MEDIA_DIR):
+            files_in_dir = []
+            # take into account only file with extension self.ext
+            for f in filenames:
+                if f.endswith('.zip'):
+                    backups_media.append({
+                        "filename": f,
+                        "size": file_size(os.path.join(dirpath, f)),
+                        "created_at": os.path.getmtime(os.path.join(dirpath, f))
+                    })
     setdata = BackupData.get_solo()
 
     data = {
         "backups": backups,
+        "backups_media": backups_media,
         "enable": setdata.backups_enable,
         "last_run_backup": setdata.last_run_backup,
         "result": setdata.result,
@@ -225,11 +239,19 @@ def get_file_backup(request, filename):
                         file_backup = os.path.join(dirpath, f)
                         break
 
+    if not file_backup:
+        MEDIA_DIR = os.path.join(settings.DJANGODASHPANEL_BACKUP_DIR, 'media')
+        for dirpath, dirnames, filenames in os.walk(MEDIA_DIR):
+            for f in filenames:
+                if f.endswith('.zip'):
+                    if f == filename:
+                        file_backup = os.path.join(dirpath, f)
+                        break
+
     if file_backup:
         response = HttpResponse(FileWrapper(file(file_backup, 'r')), content_type='application/json')
         response['Content-Disposition'] = 'attachment; filename=' + filename
-    else:
-        response = HttpResponse()
-    return response
+        return response
+    return Response(status=status.HTTP_404_NOT_FOUND)
 
 

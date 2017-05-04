@@ -62,7 +62,6 @@
                         </div>
                         <div *ngIf="router.url=='/backups/result'" class="tab-pane active">
                             
-
                             <div class="panel panel-default">
                                 <div class="panel-body">
                                     <div *ngIf="backups_daily" class="panel panel-info">
@@ -112,6 +111,24 @@
                                             </table>
                                         </div>
                                     </div>
+
+
+                                    <div *ngIf="backups_media.length > 0" class="panel panel-success">
+                                        <div class="panel-heading ">
+                                            Media Backups
+                                        </div>
+                                        <div class="panel-body">
+                                            <table class="table">
+                                                <tr *ngFor="let backup of backups_media">
+                                                    <td>{{getDateFromTimestap(backup.created_at)}}</td>
+                                                    <td>{{backup.filename}}</td>
+                                                    <td>{{backup.size}}</td>
+                                                    <td><a [href]="getFileUrl(backup.filename)" type="button" class="btn btn-default btn-xs" target="_blank"><i class="fa fa-download"></i></a></td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -141,12 +158,15 @@
                         </button>
                     </div>
                     <div class="panel-body">
-                        <span class="text-success">Last run: </span>
-                        <span>{{ last_run_backup| date: 'yyyy-MM-dd HH:mm' || "None"}} </span>
-
-                        <span class="text-success">State: </span>
-                        <span *ngIf="backups_enable" class="text-primary" style="margin-right: 20px;">backup is enable</span>
-                        <span *ngIf="!backups_enable" class="text-danger" style="margin-right: 20px;">backup is disabled</span>
+                        <p class="text-success">
+                            <span>Last run: </span>
+                            <span>{{ last_run_backup| date: 'yyyy-MM-dd HH:mm' || "None"}} </span>
+                        </p>
+                        <p>
+                            <span class="text-success">State: </span>
+                            <span *ngIf="backups_enable" class="text-primary" style="margin-right: 20px;">backup is enable</span>
+                            <span *ngIf="!backups_enable" class="text-danger" style="margin-right: 20px;">backup is disabled</span>
+                        </p>
                         <div style="margin-top: 20px">
                             <button *ngIf="backups_enable" type="button" class="btn btn-primary" (click)="backupSwitch()">Turn off backup</button>
                             <button *ngIf="!backups_enable" type="button" class="btn btn-danger" (click)="backupSwitch()">Turn on backup</button>

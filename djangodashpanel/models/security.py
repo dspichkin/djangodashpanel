@@ -3,11 +3,10 @@ import math
 import json
 import time
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from django.utils.encoding import python_2_unicode_compatible
 from django.db import models
-from django.utils import timezone
 
 from ..solo.models import SingletonModel
 
@@ -31,7 +30,7 @@ class SecurityLoginIncorrectAttemptManager(models.Manager):
             obj_id = int(str(dt_last_tz.weekday()) + str(dt_last_tz.hour) + str(int(math.ceil(dt_last_tz.minute / 5)) * 5))
             obj, created = SecurityLoginAttemptIncorrect.objects.get_or_create(pk=obj_id)
 
-            if obj.value:
+            if obj.value and obj.time and dt_last_tz < obj.time + timedelta(minutes=60):
 
                 data = json.loads(obj.value)
 
@@ -105,9 +104,8 @@ class SecurityLoginCorrectAttemptManager(models.Manager):
             obj.time = dt_last_tz
 
             data = None
-            if not created and obj.value:
+            if obj.value and obj.time and dt_last_tz < obj.time + timedelta(minutes=60):
                 data = json.loads(obj.value)
-                print data
                 if host in data.get("hosts"):
                     data["hosts"][host]["count"] = data["hosts"][host]["count"] + 1
                     data["hosts"][host]["last_date"] = time.mktime(dt_last_tz.timetuple())
@@ -138,7 +136,6 @@ class SecurityLoginCorrectAttemptManager(models.Manager):
                     "count": 1,
                     "last_date": time.mktime(dt_last_tz.timetuple())
                 }
-            
             try:
                 obj.value = json.dumps(data)
                 obj.save()
@@ -147,6 +144,7 @@ class SecurityLoginCorrectAttemptManager(models.Manager):
                 return False
             return True
         return False
+
 
 @python_2_unicode_compatible
 class SecurityLoginAttemptCorrect(models.Model):

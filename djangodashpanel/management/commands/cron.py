@@ -29,38 +29,38 @@ class Command(BaseCommand):
         backup = BackupData.get_solo()
         now = timezone.localtime(timezone.now())
 
-        self.set_cpu()
-        self.set_network()
+        self.get_cpu()
+        self.get_network()
 
         if not perf.run_last_time_10m or perf.run_last_time_10m + timedelta(minutes=10) < now:
             perf.run_last_time_10m = timezone.now()
-            self.set_memory()
+            self.get_memory()
 
         if not perf.run_last_time_30m or perf.run_last_time_30m + timedelta(minutes=30) < now:
             perf.run_last_time_30m = timezone.now()
-            self.set_disk()
-            self.set_system()
+            self.get_disk()
+            self.get_system()
 
         if not perf.run_last_time_1h or perf.run_last_time_1h + timedelta(minutes=60) < now:
             perf.run_last_time_1h = timezone.now()
-            self.set_process()
+            self.get_process()
             perf.save()
 
         if not sec.run_last_login_attempt_correct or sec.run_last_login_attempt_correct + timedelta(minutes=60) < now:
             sec.run_last_login_attempt_correct = timezone.now()
             sec.save()
-            self.set_login_attempt_correct()
+            self.get_login_attempt_correct()
 
         if not sec.run_last_login_attempt_incorrect or sec.run_last_login_attempt_incorrect + timedelta(minutes=60) < now:
             sec.run_last_login_attempt_incorrect = timezone.now()
             sec.save()
-            self.set_login_attempt_incorrect()
+            self.get_login_attempt_incorrect()
 
         if backup.backups_enable and backup.run_time:
 
             run_time = timezone.localtime(backup.run_time)
             run_time = run_time.replace(year=now.year, month=now.month, day=now.day)
-            
+
             last_run_backup_tz = None
             if backup.last_run_backup:
                 last_run_backup_tz = timezone.localtime(backup.last_run_backup)
@@ -74,7 +74,7 @@ class Command(BaseCommand):
         perf.run_last_time_5m = timezone.now()
         perf.save()
 
-    def set_cpu(self):
+    def get_cpu(self):
         print "cpu"
         num = []
         for x in range(3):
@@ -86,23 +86,23 @@ class Command(BaseCommand):
         data = round(float(m) / len(num), 2)
         PerfCpu.objects.put(timezone.now(), data)
 
-    def set_memory(self):
+    def get_memory(self):
         print "memory"
         vm = psutil.virtual_memory()
         sm = psutil.swap_memory()
         PerfMemory.objects.put(timezone.now(), vm, sm)
 
-    def set_disk(self):
+    def get_disk(self):
         print "disk"
         dsk = psutil.disk_usage('/')
         PerfDisk.objects.put(timezone.now(), dsk)
 
-    def set_network(self):
+    def get_network(self):
         print "network"
         net = psutil.net_io_counters()
         PerfNetwork.objects.put(timezone.now(), net)
 
-    def set_process(self):
+    def get_process(self):
         print "process"
         processes = []
         for p in psutil.pids():
@@ -129,7 +129,7 @@ class Command(BaseCommand):
                 pass
         PerfProcess.objects.put(timezone.now(), processes)
 
-    def set_system(self):
+    def get_system(self):
         print "system"
         systems = []
         for user in psutil.users():
@@ -144,7 +144,7 @@ class Command(BaseCommand):
 
         PerfSystem.objects.put(timezone.now(), systems)
 
-    def set_login_attempt_incorrect(self):
+    def get_login_attempt_incorrect(self):
         print "login attempt incorrect"
 
         PATH_LOGIN_ATTEMPT_INCORRECT = None
@@ -166,7 +166,7 @@ class Command(BaseCommand):
             if not last_record_tz or last_record_tz < dt_last_tz:
                 SecurityLoginAttemptIncorrect.objects.put(dt_last_tz, host, user)
 
-    def set_login_attempt_correct(self):
+    def get_login_attempt_correct(self):
 
         print "login attempt correct"
         PATH_LOGIN_ATTEMPT_CORRECT = None

@@ -2,11 +2,10 @@
 import math
 import json
 
-from datetime import datetime
+from datetime import datetime, timedelta
 
 from django.utils.encoding import python_2_unicode_compatible
 from django.db import models
-from django.utils import timezone
 
 
 class UrlLogStatManager(models.Manager):
@@ -16,7 +15,7 @@ class UrlLogStatManager(models.Manager):
             obj, created = UrlLogStat.objects.get_or_create(pk=obj_id)
             obj.time = dt_last_tz
 
-            if obj.value:
+            if obj.value and obj.time and dt_last_tz < obj.time + timedelta(minutes=6):
                 data = json.loads(obj.value)
                 request_url = value["request_url"]
                 request_method = value["request_method"]

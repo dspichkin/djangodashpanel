@@ -12,10 +12,10 @@ Features
 
 - CPU Usage
 - Memory Usage
-- Disk Usage (with partitions)
+- Disk Usage
 - Network Usage
 - All processes
-- Number of ssh login attemps
+- Number of ssh login correct/incorrect attempts
 - Url statistics
 - Backup Database (with rotation) and media catalogs
 
@@ -124,9 +124,9 @@ sudo crontab -e
 Data taking from btmp and wtmp files
 to access these files you need set files path in settings.py :
 values by default
+```
 PATH_LOGIN_ATTEMPT_CORRECT = '/var/log/btmp'
 PATH_LOGIN_ATTEMPT_INCORRECT = '/var/log/wtmp'
-
-
+```
 
 

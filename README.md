@@ -1,7 +1,11 @@
 Monitoring and backup panel in Django 
 ======================
 
-Version Django 1.10 
+Versions:
+Python 2.7,
+Django 1.10, 
+DjangoRestFramework > 3
+
 
 Features
 =========================
@@ -18,6 +22,7 @@ Features
 
 Requirements
 =========================
+- Django REST Framework (http://www.django-rest-framework.org/)
 - psutil (https://pypi.python.org/pypi/psutil)
 
 
@@ -36,6 +41,7 @@ pip install git+https://github.com/dspichkin/djangodashpanel
 
 INSTALLED_APPS = [
     ...
+    'rest_framework',
     'djangodashpanel',
     ...
 ]

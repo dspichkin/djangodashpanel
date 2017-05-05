@@ -76,7 +76,7 @@ export class backupViewComponent implements OnInit{
     }
 
     getDateFromTimestap(value) {
-        return moment(value, 'X').format('YYYY-DD-MM HH:mm')
+        return moment(value, 'X').format('YYYY-MM-DD HH:mm')
     }
       
     backupSwitch() {

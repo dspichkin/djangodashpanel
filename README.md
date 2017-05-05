@@ -1,18 +1,29 @@
-Django dashboard panel
+Monitoring and backup panel in Django 
 ======================
-
-# In progress 
-# under development do not use it yet
 
 Version Django 1.10 
 
-### Requirements
+Features
+=========================
 
-psutil
-zipfile
+- CPU Usage
+- Memory Usage
+- Disk Usage (with partitions)
+- Network Usage
+- All processes
+- Number of ssh login attemps
+- Url statistics
+- Backup Database (with rotation) and media catalogs
 
 
-### Install
+Requirements
+=========================
+- psutil (https://pypi.python.org/pypi/psutil)
+
+
+
+Installation/Usage
+=========================
 
 
 ```
@@ -102,9 +113,9 @@ sudo crontab -e
 */5 * * * * /Home dir/Project dir/run_cron.sh
 ```
 
-### Attempts to ssh
+### Login attempts to ssh
 
-data take from btmp and wtmp
+Data taking from btmp and wtmp files
 to access these files you need set files path in settings.py :
 values by default
 PATH_LOGIN_ATTEMPT_CORRECT = '/var/log/btmp'

@@ -15,7 +15,7 @@ class UrlLogStatManager(models.Manager):
             obj, created = UrlLogStat.objects.get_or_create(pk=obj_id)
             obj.time = dt_last_tz
 
-            if obj.value and obj.time and dt_last_tz < obj.time + timedelta(minutes=6):
+            if obj.value and obj.time and dt_last_tz < obj.time + timedelta(minutes=60):
                 data = json.loads(obj.value)
                 request_url = value["request_url"]
                 request_method = value["request_method"]
